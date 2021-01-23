@@ -1,0 +1,46 @@
+#cara {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #eeeded;
+}
+
+#cara .cara-title {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+#cara span {
+    color: #af915f;
+}
+
+
+#cara p {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 23px;
+}
+
+.testimonial {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/11.jpg');
+    background-repeat: no-repeat;
+    height: 430px;
+    background-size: cover;
+}
+
+.testimonial .card {
+    background-color: rgb(34, 34, 34);
+    opacity: 0.6;
+}
+
+.spacer {
+    border: none;
+    height: 1px;
+    width: 80%;
+    background-color: rgb(221, 221, 221);
+}
+@media only screen and (max-width: 991px) {
+    .btn {
+        margin-bottom: 30px;
+    }
+}

@@ -1,0 +1,132 @@
+.carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border: 2px solid #af915f;
+    background-color: transparent;
+    border-radius: 100%;
+}
+.carousel-indicators .active {
+    background-color: #af915f;
+}
+.carousel-caption {
+    margin-bottom: 5%;
+    padding: 50px 100px;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 5px black;
+}
+.carousel-caption h1{
+    font-size: 3.7em;
+    text-transform: uppercase;
+}
+.carousel-caption h3{
+    font-size: 2em;
+    text-transform: uppercase;
+}
+.carousel-caption h6{
+    font-size: 1em;
+    text-transform: uppercase;
+    text-shadow: none;
+}
+.carousel-caption p {
+    font-size: 1rem;
+}
+
+@media only screen and (max-width:1166px) {
+    .carousel-caption {
+        margin-bottom: 2%;
+    }
+    .carousel-caption h1{
+        font-size: 3em;
+    }
+    .carousel-caption h3{
+        font-size: 1em;
+    }
+    .carousel-caption h6{
+        font-size: 12px;
+        text-shadow: none;
+    }
+    .carousel-caption p {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width:999px) {
+    .carousel-caption {
+        margin-bottom: 0%;
+    }
+    .carousel-caption h1{
+        font-size: 2em;
+    }
+    .carousel-caption h3{
+        font-size: 1em;
+    }
+    .carousel-caption h6{
+        font-size: 10px;
+        text-shadow: none;
+    }
+    .carousel-caption p {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width:767px) {
+    .carousel-caption {
+        padding: 40px 100px;
+    }
+    .carousel-caption h1{
+        font-size: 1.5em;
+    }
+    .carousel-caption h3{
+        font-size: 1em;
+    }
+    .carousel-caption h6{
+        font-size: 10px;
+        text-shadow: none;
+    }
+    .carousel-caption p {
+        font-size: 12px;
+    }
+    .carousel-caption .btn {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width:642px) {
+    .carousel-caption {
+        padding: 20px 100px;
+    }
+    .carousel-caption h1{
+        font-size: 1em;
+    }
+    
+    .carousel-caption h6{
+        font-size: 8px;
+        text-shadow: none;
+    }
+    .carousel-caption p {
+        font-size: 8px;
+    }
+    .carousel-caption .btn {
+        font-size: 8px;
+    }
+    .carousel-indicators li {
+        width: 5px;
+        height: 5px;
+    }
+}
+
+@media only screen and (max-width:642px) {
+    .carousel-caption {
+        padding: 20px 80px;
+    }
+}
+
+@media only screen and (max-width:466px) {
+    .carousel-caption {
+        padding: 20px 60px;
+        margin: -2%;
+    }
+    .carousel-caption h1 , p {
+        margin: 0;
+    }
+}

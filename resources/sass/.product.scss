@@ -1,0 +1,38 @@
+.figure {
+    overflow: hidden;
+}
+.featured-image {
+    -webkit-transform: scale(1.2);
+	transform: scale(1.2);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.featured-image:hover {
+    -webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+#product {
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+#product h6 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+#product span {
+    padding-left: 40px;
+    color:  rgb(233, 64, 52);
+    font-weight: 800;
+}
+#product p {
+    color: #9E9E9E;
+}
+
+@media only screen and (max-width: 991px) {
+    #product .card {
+        margin-top: 30px;
+    }
+}
+

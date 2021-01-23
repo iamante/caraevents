@@ -1,0 +1,114 @@
+.top-login {
+    background-color: #f8f9fa;
+    padding: 5px;
+}
+.top-login a {
+    color: #4d4d4d;
+    font-size: 12px;
+    font-weight: 550;
+    letter-spacing: .1rem;
+    text-decoration: none;
+}
+.top-icon i {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.bord a {
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+}
+.dropdown a {
+    text-decoration: none;
+}
+
+.dropdown a:hover {
+    color:  #af915f;
+}
+
+@media only screen and (max-width:768px) {
+    .top-icon i {
+        margin-right: 2px;
+        margin-left: 2px;
+    }
+}
+
+@media only screen and (max-width:576px) {
+    .top-icon i {
+        margin: 0;
+    }
+}
+
+.dropdown-menu-right {
+    z-index: 10 !important;
+    position: absolute !important;
+}
+
+.dropdown-menu-right::before {
+    content:"";
+    position: absolute;
+    right: 20px;
+    top: -10.5px;
+    width: 0;
+    height: 0;
+    border-color: black;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #ffffff transparent;
+    z-index:9;
+}
+
+.dropdown-menu-right::after {
+    content:"";
+    position: absolute;
+    right: 19.1px;
+    top: -12px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 11.1px 11.2px 11.1px;
+    border-color: transparent transparent #d1d1d1 transparent;
+    z-index:8;
+}
+
+.cara-bgimage {
+    width:100%;
+    height:500px;
+    background: url("/images/1.jpg") ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+  }
+
+  .cara-text {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    color: rgb(106, 106, 106);
+  }
+  
+  .cara-head {
+    text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  .cara-text button {
+    text-transform: uppercase;
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 10px 25px;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .cara-text button:hover {
+    background-color: rgb(43, 42, 42);
+    color: #fff;
+  }
+
+  @media only screen and (max-width: 700px ) {
+    .cara-text {
+        top: 60%;
+      }
+  }

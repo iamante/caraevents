@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="118.441" height="98.45" viewBox="0 0 118.441 98.45">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #707070;
+        stroke-width: 6px;
+      }
+    </style>
+  </defs>
+  <g id="Logout" transform="translate(-651.825 -491)">
+    <g id="Logout-2" data-name="Logout">
+      <g id="Group_1" data-name="Group 1" transform="translate(1399 1080.776) rotate(180)">
+        <line id="Line_1" data-name="Line 1" class="cls-1" x2="91" transform="translate(654 540.388)"/>
+        <line id="Line_2" data-name="Line 2" class="cls-1" x1="19" y1="20" transform="translate(726 521.388)"/>
+        <line id="Line_3" data-name="Line 3" class="cls-1" y1="20" x2="19" transform="translate(726 539.388)"/>
+      </g>
+      <path id="Path_1" data-name="Path 1" class="cls-1" d="M917.133,510.109v20.453h64.633v-92.45H917.133v25.362" transform="translate(-214.5 55.888)"/>
+    </g>
+  </g>
+</svg>

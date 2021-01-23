@@ -1,0 +1,22 @@
+.grecaptcha-badge { 
+    visibility: hidden; 
+}
+
+.more-oauth-login-title:before {
+    left: 0;
+}
+
+.more-oauth-login-title:after, .more-oauth-login-title:before {
+    content: '';
+    width: 45%;
+    height: 1px;
+    background: #F0F0F0;
+    position: absolute;
+    top: 50%;
+}
+
+.more-oauth-login-title {
+    text-align: center;
+    position: relative;
+    color: #ccc;
+}

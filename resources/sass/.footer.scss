@@ -1,0 +1,33 @@
+footer {
+    background-color: #f7f7f7;
+}
+
+footer .container-fluid {
+    background-color: #ffffff;
+}
+
+.bot-footer a {
+    text-decoration: none;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.top-footer a {
+    font-size: 11px;
+}
+.footer-links {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-links a , li {
+    color:#9E9E9E;
+}
+
+.footer td {
+    padding: 3px;
+    color: #9E9E9E;
+}
+
+.fa-angle-right , .fa-phone , .fa-map-marker-alt , .fa-envelope{
+    padding-right: 10px;
+}

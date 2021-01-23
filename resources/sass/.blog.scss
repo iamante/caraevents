@@ -1,0 +1,25 @@
+#blog {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #eeeded;
+}
+
+#blog .blog-title {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+#blog .testimonial-name::after {
+    content: " ";
+    position: relative;
+    display: block;
+    width: 65px;
+    height: 10px;
+    border-bottom: solid 1px #28a745;
+    margin: auto;
+}
+
+#blog .checked {
+    color: rgb(255, 166, 0);
+}

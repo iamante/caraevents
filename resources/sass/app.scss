@@ -1,0 +1,32 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+// Variables
+@import 'variables';
+
+// Fontawesome
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+//jQuery
+@import '~jquery-ui/themes/base/all.css';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Custom Css
+@import '.top-login.scss';
+@import '.navbar.scss';
+@import '.carousel.scss';
+@import '.service.scss';
+@import '.services.scss';
+@import '.blog.scss';
+@import '.product.scss';
+@import '.cara.scss';
+@import '.footer.scss';
+@import '.login.scss';
+@import '.thankyou.scss';
+@import '.contact.scss';

@@ -1,0 +1,104 @@
+<div class="container-fluid top-login">
+    <div class="container-fluid px-5 d-flex justify-content-between align-items-center">
+            <div class="top-icon">
+            <a href="tel:+639228097519" style="font-size: 11px">Call Us. <span class="tel" >+63 922 809 7519</span></a>
+            </div>
+            
+        <div class="nav-item">
+            @guest
+                <div class="my-1">
+                    @if (Route::has('register')) 
+                    <a href="{{ route('register') }}" class="py-2 px-2 register">{{ __('Sign Up') }}</a>
+                    @endif
+                    <span class="px-1 text-muted">|</span>
+                    <a href="{{ route('login') }}" class="px-2 register"><img src="{{ asset('images/icons/Sign in.svg')}}" alt="login" width="20" class="mr-1"> {{ __('Login') }}
+                    </a>
+                    
+                </div>
+            @else
+            <div>
+                <!-- Right Side Of Navbar {{ Auth::user()->name }} -->
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Authentication Links -->
+                    @if (Auth::guest())
+                        <li><a href="{{ url('/login') }}">Login</a></li>
+                        <li><a href="{{ url('/register') }}">Register</a></li>
+                    @else
+                        <div class="d-flex align-items-center">
+                            <a href="#"><i class="far fa-bell"></i> Notifications</a>  
+                            <li class="dropdown ml-2" > 
+                                <a href="#" class="dropdown-toggle text-muted username" data-toggle="dropdown" role="button" aria-expanded="false">
+                                     <img src="{{ asset('storage/users/woman.svg') }}" alt="" class="img-fluid ml-2" width="25" style="border: 1px solid #cccccc; border-radius: 50%;"> 
+                                     My account
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                                    <li class="dropdown-item">
+                                        <div class="d-flex align-items-center">
+                                            <div class="mx-2">
+                                                <a href="/user-profile">
+                                                    {{ Auth::user()->name }}
+                                                </a>
+                                                    <br>
+                                                <span class="px-2 py-0 text-white" style="font-size: 9px; background-color: rgb(109, 206, 109); border-radius: 20px">Verify</span>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="dropdown-divider my-1"></div>
+                                    </li>
+                                    <li class="dropdown-item py-2">
+                                        <a href="#" class="d-flex align-items-center">
+                                            <i class="fas fa-tty pr-2 text-muted"></i>  Reservation
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item py-2">
+                                        <a href="#" class="d-flex align-items-center">
+                                            <i class="fas fa-wrench pr-2 text-muted"></i> Rentals
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="{{ url('/logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();" class="mr-4" >
+                                            <i class="fas fa-power-off text-muted"></i> Logout
+                                        </a>
+    
+                                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        </div>
+                    @endif
+                </ul>
+            </div>
+            @endguest
+        </div>
+
+            <!-- Right Side Of Navbar -->
+                <!-- Authentication Links -->
+            <!--@guest
+                <div>
+                    <a class="mr-3" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}">{{ __('Register') }}</a>
+                    @endif
+                </div>
+            @else
+                <div>    
+                    <a class="mr-3" href="#">
+                        {{ Auth::user()->name }}
+                     </a>
+                    <a href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                            @csrf
+                    </form>
+                </div>
+            @endguest-->
+    </div>
+</div>

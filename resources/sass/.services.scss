@@ -1,0 +1,58 @@
+.services-icon {
+    list-style: none;
+    padding-left: 0;
+}
+.services-icon i {
+ font-size: 1.5rem;   
+}
+
+
+.services-card:hover a{
+    text-decoration: none;
+}
+
+.services-card h5{
+    color: #000;
+}
+
+.list-group li {
+	list-style: none;
+	text-decoration: none;
+}
+
+.list-group li.active a {
+	color: #f0a5a5 !important;
+}
+
+.page-link {
+	color: rgb(119, 119, 119);
+}
+
+.page-item.active .page-link{
+	background-color: rgb(230, 230, 230);
+	border-color: rgb(213, 213, 213);
+	color: rgb(119, 119, 119);
+}
+
+/* Flashing */
+.services-image:hover {
+	opacity: 1;
+	-webkit-animation: flash 1.5s;
+	animation: flash 1.5s;
+}
+@-webkit-keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
