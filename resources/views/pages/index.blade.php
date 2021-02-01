@@ -82,7 +82,7 @@
                         <img class="card-img-top featured-image" src={{ asset('storage/'. $service->image) }} alt="Card image cap" style="height: 100%">
                     </div>
                     <p class="text-dark text-center mb-0 mt-1" style="text-transform: uppercase; font-weight: 900; letter-spacing: 3px;">{{ $service->name }}</p>
-                    <p class="text-center">₱ {{ $service->price }}</p>
+                    <p class="text-center">{{ $service->presentPrice() }}</p>
                 </div>
                 @endforeach
                 <div class="col-md-12 col-lg-6">
@@ -93,7 +93,7 @@
                                     <a href="{{ route('services.show', $service->slug ) }}"><img class="card-img-top featured-image" src={{ asset('storage/'. $service->image) }} alt="Card image cap"></a>
                                 </div>
                                 <p class="text-dark text-center mb-0 mt-1" style="text-transform: uppercase; font-weight: 900; letter-spacing: 3px;">{{ $service->name }}</p>
-                                <p class="text-center mb-1">₱ {{ $service->price }}</p>
+                                <p class="text-center mb-1">{{ $service->presentPrice() }}</p>
                             </div>
                         @endforeach
                     </div>
@@ -104,7 +104,7 @@
                                         <img class="card-img-top featured-image" src={{ asset('storage/'.$service->image) }} alt="Card image cap">
                                     </div>
                                     <p class="text-dark text-center mb-0 mt-1" style="text-transform: uppercase; font-weight: 900; letter-spacing: 3px;">{{ $service->name }}</p>
-                                    <p class="text-center">₱ {{ $service->price }}</p>
+                                    <p class="text-center">{{ $service->presentPrice() }}</p>
                                 </div>
                             @endforeach  
                         </div>

@@ -13,13 +13,16 @@
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^6.3",
         "hardevine/shoppingcart": "^2.9",
+        "intervention/image": "^2.5",
         "laravel/framework": "^7.24",
         "laravel/socialite": "^5.1",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.2",
         "laravelista/comments": "^3.6",
         "nesbot/carbon": "^2.40",
-        "tcg/voyager": "^1.4"
+        "nicolaslopezj/searchable": "^1.13",
+        "tcg/voyager": "^1.4",
+        "willvincent/laravel-rateable": "^2.3"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

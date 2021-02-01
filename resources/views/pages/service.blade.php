@@ -65,7 +65,7 @@
                             </div>
                         </div>
                         <span class="text-muted text-uppercase">{{ $service->details }}</span>
-                        <p class="mb-0" style="font-size: 25px; font-weight: bold"><span>₱</span>{{ $service->price }}</p>
+                        <p class="mb-0" style="font-size: 25px; font-weight: bold">{{ $service->presentPrice() }}</p>
                       <div class="spacer my-1"></div>
                         <ul class="list-unstyled d-flex justify-content-around py-2">
                           <li class="w-100">
@@ -129,7 +129,11 @@
 
         <div class="row mb-4">
           <div class="col-lg-8 border bg-white py-3 rounded">
-            asdas
+           @if ($service->comments->count() == 0)
+           @else
+              <p>Comments {{ $service->comments->count() }}</p>
+           @endif
+            @comments(['model' => $service])
           </div>
           <div class="col-lg-4 bg-white py-3 px-5">
             <small><i>Like us on <a href="">facebook</a> to get updates on our latest promotions! <br>

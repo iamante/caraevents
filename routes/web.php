@@ -20,6 +20,7 @@ Route::get('/clothing', 'ClothRentalsController@index');
 Route::get('/clothing/{rentals}', 'ClothRentalsController@show')->name('clothrentals.show');
 Route::get('/services', 'ServicesController@index')->name('services.index');
 Route::get('/services/{service}', 'ServicesController@show')->name('services.show');
+Route::get('/search', 'ServicesController@search')->name('search');
 
 Route::get('/rental', 'RentalsController@index')->name('rental.index');
 
@@ -44,7 +45,8 @@ Route::get('login/{website}', 'Auth\LoginController@redirectToProvider');
 Route::get('login/{website}/callback', 'Auth\LoginController@handleProviderCallback');
 
 Route::middleware('auth')->group(function () {
-    Route::get('user-profile', 'UsersController@edit')->name('users.edit');
+    Route::get('/user-profile', 'UsersController@edit')->name('users.edit');
     Route::patch('user-profile', 'UsersController@update')->name('users.update');
-    
+    Route::get('/my-reservation', 'ReservesController@index')->name('reservation.index');
+    Route::get('/my-reservation/{id}', 'ReservesController@show')->name('reservation.show');
 });

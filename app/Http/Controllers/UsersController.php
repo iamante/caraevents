@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Image;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
@@ -67,7 +67,40 @@ class UsersController extends Controller
      */
     public function update(Request $request)
     {
-        dd($request->all());
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => 'required|string|email|max:255|unique:users,email,'.auth()->id(),
+            'password' => ['sometimes', 'nullable', 'string', 'min:6', 'confirmed'],
+        ]);
+
+        $user = auth()->user();
+
+        if ($request->hasFile('avatar'))
+        {
+            $avatar = $request->file('avatar');
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->resize(300,300)->save( public_path('storage/users/'. $filename));
+            
+            $user->avatar = $filename;
+            $user->save();
+
+            return back();
+        }
+
+        $input = $request->except('password', 'password_confirmation');
+        
+
+        if (!$request->filled('password'))
+        {
+            $user->fill($input)->save();
+
+            return back()->with('success_message', 'Profile Updated Successfully!');
+        }
+
+            $user->password = bcrypt($request->password);
+            $user->fill($input)->save();
+            
+            return back()->with('success_message', 'Profile and Password Updated Successfully!');
     }
 
     /**

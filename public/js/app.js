@@ -41301,6 +41301,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery_ui_ui_widgets_datepicker_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery_ui_ui_widgets_datepicker_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var jquery_ui_ui_widgets_tabs_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jquery-ui/ui/widgets/tabs.js */ "./node_modules/jquery-ui/ui/widgets/tabs.js");
 /* harmony import */ var jquery_ui_ui_widgets_tabs_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery_ui_ui_widgets_tabs_js__WEBPACK_IMPORTED_MODULE_2__);
+__webpack_require__(/*! ./main */ "./resources/js/main.js");
+
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./carousel */ "./resources/js/carousel.js");
@@ -41372,6 +41374,38 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ (function(module, exports) {
 
 $('#my-calendar').datepicker();
+
+/***/ }),
+
+/***/ "./resources/js/main.js":
+/*!******************************!*\
+  !*** ./resources/js/main.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(function () {
+  $(".inpFile").on("click", function () {
+    $("#inpFile").trigger('click');
+  });
+  var inpFile = document.getElementById("inpFile");
+  var imageContainer = document.getElementById("imageContainer");
+  var imagePreview = document.querySelector(".imagePreview");
+
+  if (inpFile) {
+    inpFile.addEventListener("change", function () {
+      var file = this.files[0];
+
+      if (file) {
+        var reader = new FileReader();
+        reader.addEventListener("load", function () {
+          imagePreview.setAttribute("src", this.result);
+        });
+        reader.readAsDataURL(file);
+      }
+    });
+  }
+});
 
 /***/ }),
 

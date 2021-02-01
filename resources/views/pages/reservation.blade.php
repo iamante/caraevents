@@ -111,7 +111,7 @@
                     </div>    
                     <div class="d-flex justify-content-between px-3">
                         <h6 class="font-weight-bold">Total</h6>
-                        <p class="font-weight-bold">{{ $service->price}}</p>
+                        <p class="font-weight-bold">{{ $service->presentPrice() }}</p>
                         <input type="hidden" name="price" value="{{ $service->price}}">
                     </div>
                     <div class="px-3">

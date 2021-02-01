@@ -4,22 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Service;
 use App\Reservation;
-use App\ReservationService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class ReservationsController extends Controller
+class ReservesController extends Controller
 {
-
     /**
      * Display a listing of the resource.
-     * @param  string  $slug
+     *
      * @return \Illuminate\Http\Response
      */
-    public function index($slug)
+    public function index()
     {
-        $title = 'Reservation';
-        $service = Service::where('slug', $slug)->firstOrFail();
-        return view('pages.reservation')->with(['service' => $service, 'title' => $title]);
+        $reserves = auth()->user()->reserve;
+
+        return view('pages.my-reservation')->with('reserves', $reserves);
     }
 
     /**
@@ -36,30 +35,11 @@ class ReservationsController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //return $request->all();
-        $reserve = Reservation::create([
-           'user_id' => auth()->user() ? auth()->user()->id : null,
-           'email' => $request->input('email'),
-           'phone' => $request->input('phone'),
-           'address' => $request->input('address'),
-           'city' => $request->input('city'), 
-           'province' => $request->input('province'), 
-           'postal' => $request->input('postal'), 
-           'name' => $request->input('name'), 
-           'details' => $request->input('details'), 
-           'date' => $request->input('date'),
-           'time' => $request->input('time'),
-           'price' => $request->input('price'),
-        ]);
-
-        $reserve->save();
-        return redirect()->route('thankyou.index')->with('success_message','Well done Your Reservation has been send! Thank you!');
-    
+        //
     }
 
     /**
@@ -70,7 +50,8 @@ class ReservationsController extends Controller
      */
     public function show($id)
     {
-        //
+        $service = Reservation::where('id', $id)->firstOrFail();
+        return view('pages.my-orderdetails')->with('service', $service);
     }
 
     /**

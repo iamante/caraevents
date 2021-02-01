@@ -1,3 +1,4 @@
+require('./main');
 require('./bootstrap');
 require('./carousel');
 
@@ -15,3 +16,4 @@ import 'jquery-ui/ui/widgets/tabs.js';
 $("#service-tabs").tabs();
 
 $('[data-toggle="popover"]').popover();
+

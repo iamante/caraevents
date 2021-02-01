@@ -68,6 +68,7 @@ class ServicesController extends Controller
     {
         //
     }
+    
 
     /**
      * Display the specified resource.
@@ -79,8 +80,22 @@ class ServicesController extends Controller
     {
         $title = 'Service';
         $service = Service::where('slug', $slug)->firstOrFail();
+
         return view('pages.service')->with(['service' => $service, 'title' => $title]);
     }
+
+     public function search(Request $request)
+     {
+        $request->validate([
+            'query' => 'required|min:3',
+        ]);
+
+        $title = "Search Results";
+        $query = request()->input('query');
+        $services = Service::search($query)->paginate(16);
+
+        return view('pages.search-results')->with(['title' => $title, 'services' => $services ]);
+     }
 
     /**
      * Show the form for editing the specified resource.

@@ -19,4 +19,9 @@ class Reservation extends Model
     {
         return $this->belongsToMany('App\Service');
     }
+
+    public function presentPrice()
+    {
+        return "₱".number_format($this->price, 2, '.',',');
+    }
 }

@@ -55,3 +55,30 @@
 .dropdown-services {
     position: absolute;
 }
+
+.search {
+    position: relative;
+
+    input {
+
+        &:focus {
+            box-shadow: none !important;
+        }
+
+        &::-webkit-search-cancel-button {
+            -webkit-appearance: none;
+            width: 14px;
+            height: 14px;
+            background: url(https://pro.fontawesome.com/releases/v5.10.0/svgs/light/times.svg) no-repeat;
+            
+        }
+    }
+
+    .fa-times {
+        position: absolute;
+        right: -2px;
+        display: none;
+    }
+}
+
+

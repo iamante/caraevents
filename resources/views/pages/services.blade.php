@@ -24,7 +24,7 @@
                     </h3>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                         <div class="dropdown">
                             <button class="btn btn-default border dropdown-toggle" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false" style="border-radius: 0;">
                               Most Popular <i class="fa fa-angle-down mx-1" aria-hidden="true"></i>
@@ -36,14 +36,17 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="input-group border">
-                            <input type="search" class="form-control rounded border-0" placeholder="Search" aria-label="Search"
-                              aria-describedby="search" />
-                            <span class="input-group-text border-0 bg-light" id="search">
+                    <div class="col-md-4">
+                        <form action="{{ route('search') }}" method="GET" class="search-form">
+                        <div class="input-group border search" style="position: relative">
+                            <input id="query" type="search" name="query" class="form-control rounded border-0" placeholder="Search" aria-label="Search"
+                              aria-describedby="search" value="{{ request()->input('query') }}" />
+                            <i class="fas fa-times"></i>
+                            <button type="submit" class="input-group-text border-0 bg-light" id="search">
                               <i class="fas fa-search"></i>
-                            </span>
+                            </button type="submit">
                         </div>
+                        </form>
                     </div>
                 </div>
                 <div class="row">
@@ -57,7 +60,7 @@
                                     <div class="col-12 py-1 text-center">
                                         <h5 class="card-title mb-0" style="line-height: 12px;">{{ $service->name }}</h5>
                                         <span class="text-muted mb-0" style="border-radius: 20px;text-transform:uppercase; font-size: 13px;">{{ $service->details }}</span>
-                                        <p class="mb-0 text-dark" style="font-size: 18px; font-weight:bold; letter-spacing:1px; line-height: 20px;">₱{{ $service->price }}</p>
+                                        <p class="mb-0 text-dark" style="font-size: 18px; font-weight:bold; letter-spacing:1px; line-height: 20px;">{{ $service->presentPrice() }}</p>
                                         <span class="fa fa-star checked" style="color: orange; font-size: 10px"></span>
                                         <span class="fa fa-star checked" style="color:orange; font-size: 10px"></span>
                                         <span class="fa fa-star checked" style="color: orange; font-size: 10px"></span>

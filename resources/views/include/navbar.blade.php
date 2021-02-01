@@ -2,7 +2,7 @@
     <div class="container-fluid px-5">
         <div>
             <a class="navbar-brantext-white d-flex align-items-center" href="/" style="color: #af915f">
-                <img src="{{ asset('storage/users/logo.png') }}" alt="" class="img-fluid mr-2" width="35" > 
+                <img src="{{ asset('storage/users/logo1.png') }}" alt="" class="img-fluid mr-2" width="35" > 
                 <div class="brands">
                     <span style="font-size: 23px">Caraevents </span><br>
                     <span class="text-muted" style="padding-left: 2px">Consultancy and Co.</span>
@@ -70,9 +70,6 @@
                 </div>
                 <li class="nav-item d-flex align-items-center">
                     <a class="nav-link px-2" href="/contact" style="color:#505050">CONTACT</a>
-                </li>
-                <li class="nav-item d-flex align-items-center">
-                    <i class="fas fa-search py-1 pl-4 pr-3" style="font-size: 11px;"></i>
                 </li>
             </ul>
         </div>

@@ -5,8 +5,12 @@
             <div class="row">
                 <div class="col-lg-3 px-3">
                     <div >
-                        <div class="d-flex align-items-center mt-5 mb-3 bg-white shadow-sm p-3">
-                            <img src="{{ asset('storage/users/woman.svg') }}" alt="" class="img-fluid mr-3" width="50"style="border: 1px solid #cccccc; border-radius: 50%;">
+                        <div class="d-flex align-items-center mb-3 bg-white shadow-sm p-3">
+                            @if (auth()->user()->avatar == 'users/default.png')
+                            <img src="{{ asset('storage/'. auth()->user()->avatar) }}" alt="" class="img-fluid mr-3" width="50"style="border: 1px solid #cccccc; border-radius: 50%;">
+                            @else
+                            <img src="{{ asset('storage/users/'. auth()->user()->avatar) }}" alt="" class="img-fluid mr-3" width="50"style="border: 1px solid #cccccc; border-radius: 50%;">
+                            @endif
                             <div>
                                 <a href="/user-profile" class="text-dark font-weight-bold">
                                     {{ Auth::user()->name }}
@@ -16,58 +20,80 @@
                         </div>
                         
                         <ul class="list-unstyled bg-white shadow-sm p-3" style="font-size: 14px;">
-                            <li class="pb-1"><i class="far fa-user mr-3 ml-1"></i> Profile</li>
-                            <li class="pb-1"><i class="far fa-bell mr-3 ml-1"></i> Notification</li>
-                            <li class="pb-1"><i class="fa fa-ticket-alt mr-3 ml-1"></i>Reservation</li>
-                            <li class="pb-1"><i class="fas fa-key mr-3 ml-1"></i>Change Password</li>
-                            <li class="pb-1"><img src="{{ asset('images/icons/logout.svg')}}" alt="logout" width="18" class="mr-3"> Logout</li>
+                           <li class="pb-1"><i class="far fa-user mr-3 ml-1"></i><a href="/user-profile" class="font-weight-bold text-dark"> Profile</li></a>
+                            <li class="pb-1"><i class="far fa-bell mr-3 ml-1"></i><a href="#">Notification</a></li>
+                            <li class="pb-1"><i class="fa fa-ticket-alt mr-3 ml-1"></i><a href="/my-reservation">Reservation</a></li>
+                            <li class="pb-1"><img src="{{ asset('images/icons/logout.svg')}}" alt="logout" width="18" class="mr-3">
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+                                
+                                <form action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>    
+                            </li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-9 bg-white p-5 shadow-sm">
-                    <!-- <div class="d-flex justify-content-center">
-                       <img src="{{ asset('images/services/yatchfarewell-a.jpg')}}" alt="" class=" rounded-circle" width="160" height="160">
-                    </div> 
-                    <h4 class="text-center mt-3 mb-4">James Amante</h4>
-                    -->
-                    <form action="{{ route('users.update')}}" method="POST">
+                    <form enctype="multipart/form-data" action="{{ route('users.update')}}" method="POST">
                         @method('patch')
                         @csrf
-                        <h4 class="font-weight-bold" style="font-family: 'Times New Roman', Times, serif">My Profile</h4 >
+                        <h4 class="font-weight-bold">My Profile</h4 >
                         <p>Manage and Edit your profile</p>
                         <hr>
-                        <div class="d-flex justify-content-between">
-                            <div class="form-group w-100 pr-3">
-                                <label for="name">Name</label>
-                                <input name="name" type="text" class="form-control" value="{{ old('name', $user->name)}}">
+                        <div class="w-50 d-flex align-items-center">
+                            @if (session('status'))
+                                <div class="alert alert-success" role="alert">
+                                    {{ session('status') }}
+                                </div>
+                            @endif
+                
+                        @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <ul class="list-unstyled mb-0">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{$error}}</li>
+                                    @endforeach
+                                </ul>
                             </div>
-                            <div class="form-group w-100 pl-3">
-                                <label for="name">Last Name</label>
-                                <input name="lname" type="text" class="form-control">
+                        @endif
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group w-100">
+                                    <label for="name">Name</label>
+                                    <input name="name" type="text" class="form-control" value="{{ old('name', $user->name)}}">
+                                </div>
+                                <div class="form-group w-100">
+                                    <label for="name">Email</label>
+                                    <input name="email" type="email" class="form-control" value="{{ old('email', $user->email)}}">
+                                </div>
+                                <div class="form-group w-100">
+                                    <label for="name">Password</label>
+                                    <input name="password" type="password" class="form-control">
+                                    <p>Leave password blank to keep current password</p>
+                                </div>
+                                <div class="form-group w-100">
+                                    <label for="name">Confirm Password</label>
+                                    <input name="password_confirmation" type="password" class="form-control">
+                                </div>
+                                <button type="submit" class="btn btn-success">Save</button>
+                            </div>
+                            <div class="col-md-6 text-center w-100 mx-auto d-block p-5">
+                                @if (auth()->user()->avatar == 'users/default.png')
+                                    <img src="{{ asset('storage/'.auth()->user()->avatar ) }}" alt="avatar" class="img-fluid rounded-circle imagePreview" style="width: 100px; height: 100px;">
+                                @else
+                                    <img src="{{ asset('storage/users/'.auth()->user()->avatar ) }}" alt="avatar" class="img-fluid rounded-circle imagePreview" style="width: 100px; height: 100px;">
+                                @endif
+                                <div>{{ Auth::user()->name }}</div>
+                                <p class="font-weight-bold mb-1">Update Profile Image</p>
+                                <label for="files" class="btn inpFile">Select Image</label>
+                                <input type="file" name="avatar" id="inpFile" style="display: none">
                             </div>
                         </div>
-                        <div class="d-flex justify-content-between">
-                            <div class="form-group w-100 pr-3">
-                                <label for="name">Phone Number</label>
-                                <input name="phone" type="text" class="form-control">
-                            </div>
-                            <div class="form-group w-100 pl-3">
-                                <label for="name">Email</label>
-                                <input name="email" type="text" class="form-control" value="{{ old('name', $user->email)}}">
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <div class="form-group w-100 pr-3">
-                                <label for="name">Password</label>
-                                <input name="password" type="text" class="form-control">
-                            </div>
-                            <div class="form-group w-100 pl-3">
-                                <label for="name">Confirm Password</label>
-                                <input name="confirm_password" type="text" class="form-control">
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-success">Update Profile</button>
                     </form>
+                    
                 </div>
             </div>
         </div>
