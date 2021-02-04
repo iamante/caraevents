@@ -18643,6 +18643,12 @@ a.text-dark:focus {
   }
 }
 
+.brands span {
+  font-size: 19px;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0;
+}
+
 .brands:hover {
   color: #ca96a6;
 }
@@ -19163,6 +19169,13 @@ a.text-dark:focus {
   #product .card {
     margin-top: 30px;
   }
+}
+
+.service-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
 }
 
 #cara {

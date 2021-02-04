@@ -1,7 +1,7 @@
 <div class="container-fluid top-login">
     <div class="container-fluid px-5 d-flex justify-content-between align-items-center">
             <div class="top-icon">
-            <a href="tel:+639228097519" style="font-size: 11px">Call Us. <span class="tel" >+63 922 809 7519</span></a>
+            <a href="tel:+639228097519" style="font-size: 11px">Call Us. <i class="fa fa-phone m-0 pr-1"></i><span class="tel" >+63 922 809 7519</span></a>
             </div>
             
         <div class="nav-item">
@@ -52,11 +52,6 @@
                                     <li class="dropdown-item py-2">
                                         <a href="/my-reservation" class="d-flex align-items-center">
                                             <i class="fas fa-tty pr-2 text-muted"></i>  Reservation
-                                        </a>
-                                    </li>
-                                    <li class="dropdown-item py-2">
-                                        <a href="#" class="d-flex align-items-center">
-                                            <i class="fas fa-wrench pr-2 text-muted"></i> Rentals
                                         </a>
                                     </li>
                                     <li class="dropdown-item">

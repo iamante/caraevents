@@ -4,8 +4,7 @@
             <a class="navbar-brantext-white d-flex align-items-center" href="/" style="color: #af915f">
                 <img src="{{ asset('storage/users/logo1.png') }}" alt="" class="img-fluid mr-2" width="35" > 
                 <div class="brands">
-                    <span style="font-size: 23px">Caraevents </span><br>
-                    <span class="text-muted" style="padding-left: 2px">Consultancy and Co.</span>
+                    <span>caraevents</span>
                 </div>
             </a>
         </div>
@@ -48,15 +47,9 @@
                     <a class="dropdown-item py-2" href="/clothing">COAT</a>
                 </div>
                 </li>
-                <li class="nav-item mr-3 dropdown">
-                    <a style="color:#505050" class="nav-link px-2 dropdown-toggle" href="/gallery" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                     GALLERY <span class="arrow-down"></span>
-                </a>
-                <div class="dropdown-menu py-1 dropdown-services" aria-labelledby="navbarDropdown" style="border-radius: 0">
-                    <a class="dropdown-item py-2" href="/gallery">GALLERY</a>
-                    <div class="dropdown-divider my-1"></div>
-                    <a class="dropdown-item py-2" href="/clothing">VIDEO GALLERY</a>
-                </div>
+                <li class="nav-item d-flex align-items-center mr-3">
+                    <a class="nav-link px-2" href="/gallery" style="color:#505050">GALLERY</a>
+                </li>
                 <li class="nav-item mr-3 dropdown">
                     <a style="color:#505050" class="nav-link px-2 dropdown-toggle" href="/about" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     ABOUT <span class="arrow-down"></span>

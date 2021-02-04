@@ -61,12 +61,6 @@
                                         <h5 class="card-title mb-0" style="line-height: 12px;">{{ $service->name }}</h5>
                                         <span class="text-muted mb-0" style="border-radius: 20px;text-transform:uppercase; font-size: 13px;">{{ $service->details }}</span>
                                         <p class="mb-0 text-dark" style="font-size: 18px; font-weight:bold; letter-spacing:1px; line-height: 20px;">{{ $service->presentPrice() }}</p>
-                                        <span class="fa fa-star checked" style="color: orange; font-size: 10px"></span>
-                                        <span class="fa fa-star checked" style="color:orange; font-size: 10px"></span>
-                                        <span class="fa fa-star checked" style="color: orange; font-size: 10px"></span>
-                                        <span class="fa fa-star" style="color: orange; font-size: 10px"></span>
-                                        <span class="far fa-star" style="color: orange; font-size: 10px"></span>
-                                        <span style="font-size: 10px">( 509 )</span>
                                         <div class="d-flex justify-content-between align-items-center">
                                         </div>
                                     </div>

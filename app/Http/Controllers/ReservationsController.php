@@ -55,6 +55,7 @@ class ReservationsController extends Controller
            'date' => $request->input('date'),
            'time' => $request->input('time'),
            'price' => $request->input('price'),
+           'image' => $request->input('image'),
         ]);
 
         $reserve->save();

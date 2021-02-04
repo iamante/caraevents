@@ -4,13 +4,11 @@ namespace App;
 
 use Laravelista\Comments\Commentable;
 use Illuminate\Database\Eloquent\Model;
-use willvincent\Rateable\Rateable;
 use Nicolaslopezj\Searchable\SearchableTrait;
 
 
 class Service extends Model
 {
-    use Rateable;
     use Commentable;
     use SearchableTrait;
 
@@ -36,7 +34,7 @@ class Service extends Model
 
     public function presentPrice()
     {
-        return "₱".number_format($this->price, 2, '.',',');
+        return "₱ ".number_format($this->price, 0, '.',',');
     }
 
     public function categories()

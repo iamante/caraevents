@@ -4,7 +4,7 @@
         <div class="thankyou text-center mr-auto ml-auto">
             <h2>Well done! Reservation has been send.</h2>
             <p>Wait for confirmation of your Reservation</p>
-            <button> Home Page </button>
+           <a href="/"><button> Home Page </button></a>
         </div>
     </div>
 @endsection

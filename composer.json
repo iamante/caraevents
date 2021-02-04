@@ -21,8 +21,7 @@
         "laravelista/comments": "^3.6",
         "nesbot/carbon": "^2.40",
         "nicolaslopezj/searchable": "^1.13",
-        "tcg/voyager": "^1.4",
-        "willvincent/laravel-rateable": "^2.3"
+        "tcg/voyager": "^1.4"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

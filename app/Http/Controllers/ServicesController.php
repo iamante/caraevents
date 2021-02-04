@@ -80,7 +80,6 @@ class ServicesController extends Controller
     {
         $title = 'Service';
         $service = Service::where('slug', $slug)->firstOrFail();
-
         return view('pages.service')->with(['service' => $service, 'title' => $title]);
     }
 

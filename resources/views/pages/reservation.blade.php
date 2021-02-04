@@ -85,6 +85,7 @@
                         </div>
                         <div class="col-6">
                             <img src={{ asset('storage/'. $service->image) }} alt="" class="img-fluid rounded">
+                            <input type="hidden" name="image" value="{{ $service->image }}">
                         </div>
                     </div>
                     <p class="text-center pt-3 pb-1 mb-0">Expected Date</p>

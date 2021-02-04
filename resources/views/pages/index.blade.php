@@ -3,7 +3,7 @@
 
 <!-- -------------------------------- carousel -------------------------------- -->
 <div class="cara-bgimage">
-    <div class="cara-text">
+    <div class="cara-text text-center">
         <h1 style="font-size: 40px" class="cara-head">Caraevents<br> Consultancy and Co.</h1>
         <p>We Offer Wedding, Birthday, Party, Catering, Debut and many more!</p>
         <a href="/services"><button style="border: 1px solid black">Inquire Now</button></a>
@@ -47,25 +47,27 @@
 <!-- ----------------------------- end of carousel ---------------------------- -->
 
 <div class="container text-center my-5">
-    <h2 style="font-family: 'Times New Roman', Times, serif">Everything you need in one place.</h2>
-    <p>Save the dates, invitations, video cover pages, event scheduling, RSVPs, notifications, photo sharing, travel planning and more!</p>
-    <div class="row my-5 bg-light p-3">
-        <div class="col-4">
-            <img src="images/icons/quality.png" alt="" width="50" class="m-2">
-            <h4 style="font-family: 'Times New Roman', Times, serif">HIGH QUALITY SERVICES</h4>
-            <p><small>Select designs from top names in fashion and lifestyle, No tech skills required to publish content instantly.</small></p>
-        </div>
-        <div class="col-4">
-            <img src="images/icons/lowest-promo.png" alt="" width="50" class="m-2">
-            <h4 style="font-family: 'Times New Roman', Times, serif">LOWEST PROMO</h4>
-            <p><small>Invite and delight your guests with one-to-one settings for posting, viewing, sharing.</small></p>
-        </div>
-        <div class="col-4">
-            <img src="images/icons/reserve.png" alt="" width="85" class="m-2">
-            <h4 style="font-family: 'Times New Roman', Times, serif">MADE RESERVATION EASY</h4>
-            <p><small>Stay on top of it all wherever you go. Collect replies and update details from any device.</small></p>
-        </div>
+    <h2 style="font-family: 'Times New Roman', Times, serif">We will give everything you need in one place.</h2>
+    <p>Save the dates, invitations, video cover pages, event scheduling, RSVPs, notifications and more!</p>
+</div>
+
+<div class="container text-center my-5">
+    <div class="row">
+        @foreach ($services as $service)
+            <div class="col-md-3 px-0">
+                <img class="img-fluid service-border" src="{{ asset('images/border/border.svg') }}" alt="border" style="pointer-events:none; width: 100% ; height: 72%;object-fit: cover;">
+                <img src="{{ asset('storage/'. $service->image) }}" alt="" style="width: 100% ; height: 70%;object-fit: cover; background-repeat: no-repeat;">
+                <h5 class="font-weight-bold mt-4">{{ $service->name }}</h5>
+                <p>{{ strip_tags($service->description) }}</p>
+            </div>
+        @endforeach
     </div>
+    <div class="btn btn-light border text-center mt-5 px-3" style="border-radius: 20px;">More Services</div>
+</div>
+<!-- --------------------------------- other -------------------------------- -->
+
+<div class="container text-center">
+    <h4>We also Offer Other Services</h4>
 </div>
 
 
@@ -271,6 +273,26 @@
         </div>
     </section>
 <!-- ----------------------------- end of about ----------------------------- -->
+
+<div class="container text-center my-5">
+    <div class="row my-5 bg-light p-3">
+        <div class="col-4">
+            <img src="images/icons/quality.png" alt="" width="50" class="m-2">
+            <h4 style="font-family: 'Times New Roman', Times, serif">HIGH QUALITY SERVICES</h4>
+            <p><small>Select designs from top names in fashion and lifestyle, No tech skills required to publish content instantly.</small></p>
+        </div>
+        <div class="col-4">
+            <img src="images/icons/lowest-promo.png" alt="" width="50" class="m-2">
+            <h4 style="font-family: 'Times New Roman', Times, serif">LOWEST PROMO</h4>
+            <p><small>Invite and delight your guests with one-to-one settings for posting, viewing, sharing.</small></p>
+        </div>
+        <div class="col-4">
+            <img src="images/icons/reserve.png" alt="" width="85" class="m-2">
+            <h4 style="font-family: 'Times New Roman', Times, serif">MADE RESERVATION EASY</h4>
+            <p><small>Stay on top of it all wherever you go. Collect replies and update details from any device.</small></p>
+        </div>
+    </div>
+</div>
 
 
 <!-- ----------------------------- map ----------------------------- -->

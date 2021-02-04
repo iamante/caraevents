@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Reservation extends Model
 {
     protected $fillable = [
-        'user_id', 'email', 'phone', 'address', 'city', 'province', 'postal', 'name', 'details', 'date', 'time', 'price',
+        'user_id', 'email', 'phone', 'address', 'city', 'province', 'postal', 'name', 'details', 'date', 'time', 'price', 'image',
     ];
 
     public function user() 
@@ -22,6 +22,6 @@ class Reservation extends Model
 
     public function presentPrice()
     {
-        return "₱".number_format($this->price, 2, '.',',');
+        return "₱ ".number_format($this->price, 0, '.',',');
     }
 }
