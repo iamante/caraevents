@@ -38,16 +38,13 @@
                                 <ul class="dropdown-menu dropdown-menu-right" role="menu">
                                     <li class="dropdown-item">
                                         <div class="d-flex align-items-center">
-                                            <div class="mx-2">
+                                            <i class="far fa-user pr-2 text-muted"></i>
+                                            <div>
                                                 <a href="/user-profile">
-                                                    {{ Auth::user()->name }}
+                                                    My Profile
                                                 </a>
-                                                    <br>
-                                                <span class="px-2 py-0 text-white" style="font-size: 9px; background-color: rgb(109, 206, 109); border-radius: 20px">Verify</span>
-                                                
                                             </div>
                                         </div>
-                                        <div class="dropdown-divider my-1"></div>
                                     </li>
                                     <li class="dropdown-item py-2">
                                         <a href="/my-reservation" class="d-flex align-items-center">

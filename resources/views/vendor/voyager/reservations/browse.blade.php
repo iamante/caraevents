@@ -165,15 +165,14 @@
                                                         @endif
 
                                                 @elseif(($row->type == 'select_dropdown' || $row->type == 'radio_btn') && property_exists($row->details, 'options'))
-
                                                     {!! $row->details->options->{$data->{$row->field}} ?? '' !!}
-
                                                 @elseif($row->type == 'date' || $row->type == 'timestamp')
                                                     @if ( property_exists($row->details, 'format') && !is_null($data->{$row->field}) )
-                                                        {{ \Carbon\Carbon::parse($data->{$row->field})->formatLocalized($row->details->format) }}
+                                                        {{ \Carbon\Carbon::parse($data->{$row->field})->isoFormat('MMMM D, YYYY') }}
                                                     @else
                                                         {{ $data->{$row->field} }}
                                                     @endif
+
                                                 @elseif($row->type == 'checkbox')
                                                     @if(property_exists($row->details, 'on') && property_exists($row->details, 'off'))
                                                         @if($data->{$row->field})

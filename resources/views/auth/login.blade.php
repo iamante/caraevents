@@ -56,27 +56,24 @@
                                     @endif
                                 </div>
                         </div>
+                        
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-default button-grad w-100 text-white bg-dark">
+                                {{ __('Login') }}
+                            </button>
+                        </div>
 
                             <p class="more-oauth-login-title">
-                                OR
+                                Or sign in using   
                             </p>
 
                         <ul class="d-flex align-items-center justify-content-around more-oauth-login-list text-uppercase list-unstyled">
-                            <li class="d-flex justify-content-center border px-3 py-2 mx-1 w-100 btn btn-light ">
+                            <li class="d-flex justify-content-center border px-3 py-2 w-100 btn btn-light ">
                                 <img src="{{ asset('images/icons/google.svg')}}" alt="" class="mx-1" width="15">
                                 <a href="login/google" class="text-decoration-none text-muted">google</a>
                             </li>
-                            <li class="d-flex justify-content-center border px-3 py-2 mx-1 w-100 btn btn-light">
-                                <img src="{{ asset('images/icons/facebook.svg')}}" alt="" class="mx-1" width="15">
-                                <a href="login/facebook" class="text-decoration-none text-muted">facebook</a>
-                            </li>
                         </ul>
-
-                        <div class="form-group">
-                                <button type="submit" class="btn btn-default w-50 text-white bg-dark">
-                                    {{ __('Login') }}
-                                </button>
-                        </div>
 
                         <div class="pt-5 text-muted">
                             <small>

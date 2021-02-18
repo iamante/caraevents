@@ -118,7 +118,7 @@
                       <input type="hidden" name="name" value="{{ $service->name }}">
                       <input type="hidden" name="price" value="{{ $service->price }}">
                       <input type="hidden" name="detail" value="{{ $service->details }}">
-                      <button type="submit" class="text-white w-100 mt-2 py-1 text-uppercase border-0 btn btn-success reserve-btn">Reserve Now</button>
+                      <button type="submit" class="w-100 button-grad mt-2 py-1 text-uppercase btn btn-default">Reserve Now</button>
                     </form>
                     </div>
 

@@ -31,3 +31,12 @@ footer .container-fluid {
 .fa-angle-right , .fa-phone , .fa-map-marker-alt , .fa-envelope{
     padding-right: 10px;
 }
+
+.footer-icon i{
+    color: white;
+    width: 30px;
+    height: 30px;
+    padding: 8px;
+    border-radius: 50%;
+    background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+}

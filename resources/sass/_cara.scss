@@ -5,7 +5,6 @@
     z-index: 99;
 }
 
-
 #cara {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -22,7 +21,6 @@
     color: #af915f;
 }
 
-
 #cara p {
     font-size: 14px;
     font-weight: normal;
@@ -30,7 +28,8 @@
 }
 
 .testimonial {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/11.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url("/images/11.jpg");
     background-repeat: no-repeat;
     height: 430px;
     background-size: cover;
@@ -50,5 +49,113 @@
 @media only screen and (max-width: 991px) {
     .btn {
         margin-bottom: 30px;
+    }
+}
+
+.cara-bgimage {
+    width: 100%;
+    height: 500px;
+    background: url("/images/1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.cara-text {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    color: rgb(106, 106, 106);
+}
+
+.cara-head {
+    text-transform: uppercase;
+    font-family: "Times New Roman", Times, serif;
+
+    &::before {
+        background-image: url("/public/images/icons/heart.svg");
+        background-size: 50px 50px;
+        display: block;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.cara-text button {
+    text-transform: uppercase;
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 10px 25px;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+}
+
+.cara-text button:hover {
+    background-color: rgb(43, 42, 42);
+    color: #fff;
+}
+
+@media only screen and (max-width: 700px) {
+    .cara-text {
+        top: 60%;
+    }
+}
+
+.button-grad {
+    color: white;
+    border-radius: 20px;
+    background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+    padding: 8px 48px 8px 48px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        color: rgb(19, 206, 156);
+        border: 2px solid rgb(0, 255, 200);
+        background-image: none;
+        background-color: white;
+    }
+}
+
+#scroll {
+    position: fixed;
+    right: 20px;
+    bottom: 60px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    background-color: #3498db;
+    background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+    text-indent: -9999px;
+    display: none;
+    -webkit-border-radius: 60px;
+    -moz-border-radius: 60px;
+    border-radius: 60px;
+    opacity: 0.5;
+}
+#scroll span img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -13.5px;
+    margin-top: -12px;
+    width: 25px;
+    height: 25px;
+}
+#scroll:hover {
+    background-image: none;
+    background-color: skyblue;
+    opacity: 1;
+    filter: "alpha(opacity=100)";
+    -ms-filter: "alpha(opacity=100)";
+}
+
+.image-animate {
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        transform: scale(0.96);
     }
 }

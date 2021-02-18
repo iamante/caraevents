@@ -93,7 +93,7 @@
                         <div class="d-flex my-2 text-muted">
                             <div class="d-flex w-50 mr-1 align-items-center border rounded">
                               <i id="calendar" class="far fa-calendar pl-3 pr-1 py-2"></i>
-                              <input type="text" name="date" class="datepicker w-100" placeholder="Date" style="border: none" required>
+                              <input type="text" name="date" class="datepicker w-100" data-date-format='yy-mm-dd' placeholder="Date" style="border: none" required>
                             </div>
                             <div class="d-flex w-50 ml-1 align-items-center border rounded">
                               <i class="far fa-clock pl-3 pr-1 py-2"></i>

@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Reservation extends Model
 {
@@ -23,5 +24,19 @@ class Reservation extends Model
     public function presentPrice()
     {
         return "₱ ".number_format($this->price, 0, '.',',');
+    }
+
+    public function formatDate()
+    {
+        $date = Carbon::parse($this->date);
+
+        return $date->isoFormat('MMMM D, YYYY');
+    }
+
+    public function formatTime()
+    {
+        $time = Carbon::parse($this->time);
+
+        return $time->isoFormat('h:mm a');
     }
 }

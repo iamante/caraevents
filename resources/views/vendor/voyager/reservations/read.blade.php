@@ -116,8 +116,8 @@
                             <div class="col-md-6">
                                 <h5 class="pb-3" style="font-weight:800;">Requested Date :</h5> 
                                 <div style="display: flex;">
-                                    <p style="padding-right: 50px;">{{ $dataTypeContent->date }}</p>
-                                    {{ $dataTypeContent->time }}
+                                    <p style="padding-right: 50px;">{{ $dataTypeContent->formatDate() }}</p>
+                                    {{ $dataTypeContent->formatTime() }}
                                 </div>
                         </div>
                     </div>

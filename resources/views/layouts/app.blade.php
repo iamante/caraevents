@@ -21,7 +21,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('build/jquery.datetimepicker.min.css') }}" >
-    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css')}}"/>
 
     
 </head>
@@ -51,6 +52,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/carousel.js') }}" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
     <script src="{{ asset('build/jquery.datetimepicker.full.min.js')}}"></script>
     <script>
         $('.datepicker').datetimepicker({
@@ -65,8 +67,6 @@
             format:'H:i:s',
         });
 
-    </script>
-     <script>
         function onSubmit(token) {
             document.getElementById("demo-form").submit();
         }

@@ -78,7 +78,7 @@
                                     <label for="name">Confirm Password</label>
                                     <input name="password_confirmation" type="password" class="form-control">
                                 </div>
-                                <button type="submit" class="btn btn-success">Save</button>
+                                <button type="submit" class="button-grad border">Save</button>
                             </div>
                             <div class="col-md-6 text-center w-100 mx-auto d-block p-5">
                                 @if (auth()->user()->avatar == 'users/default.png')

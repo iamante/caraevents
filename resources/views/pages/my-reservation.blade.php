@@ -54,7 +54,7 @@
                                             <div class="w-50 pl-2">
                                                 <div class="mb-0 font-weight-bold">{{ $reserve->name }}</div>
                                                 <small>{{ $reserve->details }}</small>
-                                                <div>Reserve Date: <br> {{ $reserve->date }} {{ $reserve->time }}</div>
+                                                <div>Reserve Date: <br> {{ $reserve->formatDate() }} {{ $reserve->formatTime() }}</div>
                                             </div>
                                         </div>
                                         <div class="card-footer d-flex justify-content-between px-3 py-2">

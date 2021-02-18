@@ -77,7 +77,7 @@
 
                         <input type="hidden" class="g-recaptcha" name="g-recaptcha">
                         <div class="form-group text-right my-2">
-                                <button type="submit" class="btn btn-default text-white w-100 bg-dark">
+                                <button type="submit" class="btn btn-default button-grad text-white w-100 bg-dark">
                                     {{ __('Register') }}
                                 </button>
                         </div>

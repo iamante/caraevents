@@ -55,11 +55,11 @@
                             <a href="{{ route('services.show', $service->slug ) }}">
                                 <div class="row m-1">
                                     <div class="col-12 pr-0 pl-2 py-2">
-                                        <img class="img-fluid w-100 services-image rounded" src={{ asset('storage/'. $service->image) }} alt="" style="height: 250px;">
+                                        <img class="img-fluid w-100 mb-2 services-image rounded" src={{ asset('storage/'. $service->image) }} alt="" style="height: 250px;">
                                     </div>
-                                    <div class="col-12 py-1 text-center">
-                                        <h5 class="card-title mb-0" style="line-height: 12px;">{{ $service->name }}</h5>
-                                        <span class="text-muted mb-0" style="border-radius: 20px;text-transform:uppercase; font-size: 13px;">{{ $service->details }}</span>
+                                    <div class="col-12 py-1 text-center mb-4">
+                                        <h5 class="card-title mb-1" style="line-height: 12px;">{{ $service->name }}</h5>
+                                        <span class="text-muted" style="border-radius: 20px;font-size: 15px;"><i>{{ $service->details }}</i></span>
                                         <p class="mb-0 text-dark" style="font-size: 18px; font-weight:bold; letter-spacing:1px; line-height: 20px;">{{ $service->presentPrice() }}</p>
                                         <div class="d-flex justify-content-between align-items-center">
                                         </div>

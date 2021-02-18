@@ -75,8 +75,8 @@
             <div>
                 <span class="text-dark" style="font-size: 11px">Caraevents | &copy; 2020 All right reserved</span>
             </div>
-            <div>
-                <a href="https://www.facebook.com/caraevents/"><i class="fab fa-facebook-f"></i></a>
+            <div class="footer-icon d-flex justify-content-around align-items-center">
+                <a href="https://www.facebook.com/caraevents/"><i class="fab fa-facebook-f" style="padding-left: 10px"></i></a>
                 <a href="https://www.instagram.com/caraevents/?hl=tl"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="https://www.youtube.com/channel/UCwnkAYO7K2WKn4aZt3iyCFw"><i class="fab fa-youtube"></i></a>

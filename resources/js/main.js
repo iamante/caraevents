@@ -1,4 +1,5 @@
 $(function() {
+    
 
     $(".inpFile").on("click", function() {
         $("#inpFile").trigger('click');
@@ -24,6 +25,18 @@ $(function() {
             }
         });
     }
+
+    $(window).on('scroll',function(){ 
+        if ($(this).scrollTop() > 100) { 
+            $('#scroll').fadeIn(); 
+        } else { 
+            $('#scroll').fadeOut(); 
+        } 
+    }); 
+    $('#scroll').on('click',function(){ 
+        $("html, body").animate({ scrollTop: 0 }, 1200); 
+        return false; 
+    }); 
 });
     
 

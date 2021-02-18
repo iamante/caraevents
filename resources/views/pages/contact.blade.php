@@ -41,7 +41,7 @@
                                         <textarea name="textbox" id="" cols="50" rows="10" class="form-control w-100"></textarea>
                                     </div>
                                     <div>
-                                        <div class="btn btn-default my-2 send-mail" style="border: 1px solid black">Send Mail</div>
+                                        <div class="btn btn-default my-2 button-grad">Send Mail</div>
                                     </div>
                                 </div>
                             </div>

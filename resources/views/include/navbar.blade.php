@@ -16,11 +16,11 @@
                 <li class="nav-item mr-3 d-flex align-items-center">
                     <a class="nav-link px-2" href="/" style="color:#505050">HOME</a>
                 </li>
-                <li class="nav-item dropdown mr-3 ">
+                <li class="nav-item dropdown mr-3">
                     <a style="color:#505050" class="nav-link px-2 dropdown-toggle" href="/services" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     SERVICES <span class="arrow-down"></span>
                 </a>
-                <div class="dropdown-menu dropdown-menu-sm-center py-1 dropdown-services" aria-labelledby="navbarDropdown" style="border-radius: 0">
+                <div class="dropdown-menu dropdown-menu-left dropdown-menu-sm-center py-1 dropdown-services" aria-labelledby="navbarDropdown" style="border-radius: 0">
                     <a class="dropdown-item py-2" href="/services">All Services</a>
                     <div class="dropdown-divider my-1"></div>
                     <a class="dropdown-item py-2" href="/services?category=wedding">Wedding</a>
@@ -37,7 +37,7 @@
                     <a style="color:#505050" class="nav-link px-2 dropdown-toggle" href="/services" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     RENTALS <span class="arrow-down"></span>
                 </a>
-                <div class="dropdown-menu py-1 dropdown-services" aria-labelledby="navbarDropdown" style="border-radius: 0">
+                <div class="dropdown-menu dropdown-menu-left py-1 dropdown-services" aria-labelledby="navbarDropdown" style="border-radius: 0">
                     <a class="dropdown-item py-2" href="/rental">CAR</a>
                     <div class="dropdown-divider my-1"></div>
                     <a class="dropdown-item py-2" href="/clothing">GOWN</a>
@@ -50,17 +50,9 @@
                 <li class="nav-item d-flex align-items-center mr-3">
                     <a class="nav-link px-2" href="/gallery" style="color:#505050">GALLERY</a>
                 </li>
-                <li class="nav-item mr-3 dropdown">
-                    <a style="color:#505050" class="nav-link px-2 dropdown-toggle" href="/about" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    ABOUT <span class="arrow-down"></span>
-                </a>
-                <div class="dropdown-menu py-1 dropdown-services" aria-labelledby="navbarDropdown" style="border-radius: 0">
-                    <a class="dropdown-item py-2" href="/about">ABOUT US</a>
-                    <div class="dropdown-divider my-1"></div>
-                    <a class="dropdown-item py-2" href="/about">BLOG</a>
-                    <div class="dropdown-divider my-1"></div>
-                    <a class="dropdown-item py-2" href="/about">SOCIAL MEDIA</a>
-                </div>
+                <li class="nav-item d-flex align-items-center mr-3">
+                    <a class="nav-link px-2" href="/about" style="color:#505050">ABOUT</a>
+                </li>
                 <li class="nav-item d-flex align-items-center">
                     <a class="nav-link px-2" href="/contact" style="color:#505050">CONTACT</a>
                 </li>
