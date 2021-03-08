@@ -21,7 +21,7 @@
                         
                         <ul class="list-unstyled bg-white shadow-sm p-3" style="font-size: 14px;">
                             <li class="pb-1"><i class="far fa-user mr-3 ml-1"></i><a href="/user-profile"> Profile</a></li>
-                            <li class="pb-1"><i class="far fa-bell mr-3 ml-1"></i><a href="#">Notification</a></li>
+                            {{-- <li class="pb-1"><i class="far fa-bell mr-3 ml-1"></i><a href="#">Notification</a></li> --}}
                             <li class="pb-1"><i class="fa fa-ticket-alt mr-3 ml-1"></i><a href="/my-reservation" class="font-weight-bold text-dark">Reservation</a></li>
                             <li class="pb-1"><img src="{{ asset('images/icons/logout.svg')}}" alt="logout" width="18" class="mr-3">
                                 <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -35,10 +35,9 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-9 bg-white p-5 shadow-sm">
-                    <h4 class="mb-4">My Reservation</h4>
-                    <div class="spacer"></div>
-                    <div class="row">
+                <div class="col-lg-9 bg-white p-0 shadow-sm">
+                    <h4 class="mb-4 bg-dark text-white px-5 py-3">My Reservation</h4>
+                    <div class="row px-5 mb-2">
                         @if ($reserves->isEmpty())
                             <div class="p-3">You dont have reservation yet! Check our events now and inquire for reservation <a href="/services">here</a>. </div>
                         @else
@@ -46,7 +45,7 @@
                                 <div class="col-md-6 mb-3">
                                     <div class="card border" style="height: 14rem">
                                         <div class="card-header d-flex justify-content-between align-items-center">
-                                            <small class="font-weight-bold">Reservation No. {{ $reserve->id }}</small>
+                                            <small class="font-weight-bold">Reservation #{{ $reserve->id }}</small>
                                             <small>| <a href="{{ route('reservation.show', $reserve->id ) }}">Order Details</a></small>
                                         </div>
                                         <div class="card-body d-flex p-0 align-items-center">
@@ -60,7 +59,7 @@
                                         <div class="card-footer d-flex justify-content-between px-3 py-2">
                                             <div>
                                                 @if ($reserve->confirmation == 0)
-                                                    <small>Status: <span class="bg-danger px-2 py-0 rounded text-white" style="font-size: 12px">Not Confirmed</span></small>
+                                                    <small>Status: <span class="bg-success px-2 py-0 rounded text-white" style="font-size: 12px">Pending</span></small>
                                                 @else
                                                     <small>Status: <span class="bg-success px-2 py-0 rounded text-white" style="font-size: 12px">Confirmed</span></small>
                                                 @endif

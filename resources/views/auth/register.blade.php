@@ -6,7 +6,7 @@
         <div class="col-lg-3"></div>
         <div class="col-lg-6">
             <div class="card px-5 pt-5">
-                <div class="px-5">
+                <div class="px-5 text-center">
                     <h1>Create Account</h1>
                 </div>
 
@@ -16,7 +16,7 @@
 
                         <div class="form-group d-flex justify-content-center align-items-center" style="position: relative">
                             <i class="far fa-user icon p-3 text-muted" style="position: absolute; left:5px;"></i>
-                                <input id="name" type="name" class="form-control pl-5 @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Name" required autocomplete="name" autofocus>
+                                <input id="name" type="name" class="form-control pl-5 @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Full name" required autocomplete="name" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -59,15 +59,17 @@
                         </div>
 
                         <div class="form-group d-flex justify-content-center align-items-center" style="position: relative">
-                            <i class="fas fa-lock icon p-3 text-muted" style="position: absolute; left:5px;"></i>
-                            <!-- <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label> -->
+                            <div class="w-100">
+                                <i class="fas fa-lock icon p-3 text-muted" style="position: absolute; left:5px;"></i>
+                                <!-- <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label> -->
                                 <input id="password" type="password" class="form-control pl-5 @error('password') is-invalid @enderror" name="password" placeholder="Password" required autocomplete="new-password">
 
                                 @error('password')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback text-center" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                            </div>
                         </div>
 
                         <div class="form-group d-flex justify-content-center align-items-center" style="position: relative">

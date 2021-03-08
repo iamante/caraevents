@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Image;
+use DateTime;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
@@ -55,7 +56,6 @@ class UsersController extends Controller
      */
     public function edit()
     {
-        
         return view('pages.user-profile')->with('user', auth()->user());
     }
 

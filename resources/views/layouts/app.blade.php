@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Caraevents Consultancy and Co.</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -50,22 +50,78 @@
     </script>
     <!-- end of reCAPTCHA v3 -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/carousel.js') }}" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
     <script src="{{ asset('build/jquery.datetimepicker.full.min.js')}}"></script>
     <script>
+        $(".slick-testimonial").slick({
+            dots: true,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            responsive: [
+                {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    infinite: true,
+                    dots: true
+                }
+                },
+                {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                }
+                },
+            ]
+        });
+
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+
+        var todayDate = yyyy + '-' + mm + '-' + dd;
+        var expireDate = new Date(todayDate);
+        expireDate.setFullYear(expireDate.getFullYear() + 1);
+        expireDate.setDate(expireDate.getDate() -1);
+        var expiredDate = 
+                    expireDate.toLocaleString("en", { year: "numeric" }) + '-' +
+                    expireDate.toLocaleString("en", { month: "numeric"  }) + '-' +
+                    expireDate.toLocaleString("en", { day: "numeric"});
+                    
         $('.datepicker').datetimepicker({
                 timepicker:false,
                 format:'Y-m-d',
+                minDate: todayDate,
+                maxDate: expiredDate,
+                onShow:function(current_time,input){
+                input.datetimepicker( {mask: '2050-12-32'})
+                },
         });
 
         $('.timepicker').datetimepicker({
-            OnBlur: false,
             ampm: true,
             datepicker:false,
-            format:'H:i:s',
+            formatTime:'g:i a',
+            format:'g:i a',
+            minTime: '7:00',
+            maxTime: '23:00',
+            onShow:function(current_time,input){
+                input.datetimepicker( {mask: '10:00'})
+            },
+            validateOnBlur: false,
         });
+
+        $('#calendar').click(function(){
+            $('.timepicker').click()
+        })
 
         function onSubmit(token) {
             document.getElementById("demo-form").submit();

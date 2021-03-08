@@ -12,7 +12,7 @@
     color: #4d4d4d;
     font-size: 12px;
     font-weight: 550;
-    letter-spacing: .1rem;
+    letter-spacing: 0.1rem;
     text-decoration: none;
 }
 .top-icon i {
@@ -28,33 +28,39 @@
 }
 
 .dropdown a:hover {
-    color:  #5fafa8;
+    color: #5fafa8;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
     .top-icon i {
         margin-right: 2px;
         margin-left: 2px;
     }
 }
 
-@media only screen and (max-width:576px) {
+@media only screen and (max-width: 576px) {
     .top-icon i {
         margin: 0;
     }
 }
 
-.dropdown-menu-right, .dropdown-menu-left {
+.dropdown-menu-right,
+.dropdown-menu-left {
     z-index: 10 !important;
     position: absolute !important;
-    -webkit-box-shadow: 4px 4px 13px -4px rgba(209,209,209,1);
-    -moz-box-shadow: 4px 4px 13px -4px rgba(209,209,209,1);
-    box-shadow: 4px 4px 13px -4px rgba(209,209,209,1);
-    margin-top: 10px;
+    -webkit-box-shadow: 4px 4px 13px -4px rgba(209, 209, 209, 1);
+    -moz-box-shadow: 4px 4px 13px -4px rgba(209, 209, 209, 1);
+    box-shadow: 4px 4px 13px -4px rgba(209, 209, 209, 1);
 }
 
+.dropdown-menu-left {
+    margin-top: -10px;
+}
+.dropdown-menu-right {
+    margin-top: -2px;
+}
 .dropdown-menu-right::before {
-    content:"";
+    content: "";
     position: absolute;
     right: 20px;
     top: -10.5px;
@@ -63,11 +69,11 @@
     border-style: solid;
     border-width: 0 10px 10px 10px;
     border-color: transparent transparent #ffffff transparent;
-    z-index:9;
+    z-index: 9;
 }
 
 .dropdown-menu-right::after {
-    content:"";
+    content: "";
     position: absolute;
     right: 19.1px;
     top: -12px;
@@ -76,11 +82,11 @@
     border-style: solid;
     border-width: 0 11px 11.1px 11px;
     border-color: transparent transparent #d1d1d1 transparent;
-    z-index:8;
+    z-index: 8;
 }
 
 .dropdown-menu-left::before {
-    content:"";
+    content: "";
     position: absolute;
     left: 20px;
     top: -10.5px;
@@ -89,11 +95,11 @@
     border-style: solid;
     border-width: 0 10px 10px 10px;
     border-color: transparent transparent #ffffff transparent;
-    z-index:9;
+    z-index: 9;
 }
 
 .dropdown-menu-left::after {
-    content:"";
+    content: "";
     position: absolute;
     left: 19.1px;
     top: -12px;
@@ -102,5 +108,5 @@
     border-style: solid;
     border-width: 0 11.1px 11.2px 11.1px;
     border-color: transparent transparent #d1d1d1 transparent;
-    z-index:8;
+    z-index: 8;
 }

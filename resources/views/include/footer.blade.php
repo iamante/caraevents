@@ -34,15 +34,10 @@
                 </table>
             </div>
             <div class="col-lg-2 col-sm-6">
-                <h6 class="text-dark">Collection</h6>
+                <h6 class="text-dark">Terms and Policy</h6>
                 <ul class="footer-links">
-                    <li><a href="/"><i class="fa fa-angle-right"></i>Cake</a></li>
-                    <li><a href="/about"><i class="fa fa-angle-right"></i>Car</a></li>
-                    <li><a href="/reservation"><i class="fa fa-angle-right"></i>Dress</a></li>
-                    <li><a href="/services"><i class="fa fa-angle-right"></i>Batong</a></li>
-                    <li><a href="/rental"><i class="fa fa-angle-right"></i>Flowers</a></li>
-                    <li><a href="/blog"><i class="fa fa-angle-right"></i>Ribbons</a></li>
-                    <li><a href="/contact"><i class="fa fa-angle-right"></i>Church</a></li>
+                    <li><a href="/"><i class="fa fa-angle-right"></i>Privacy Policy</a></li>
+                    <li><a href="/"><i class="fa fa-angle-right"></i>Terms and Condition</a></li>
                 </ul>
             </div>
             <div class="col-lg-2 col-sm-6">

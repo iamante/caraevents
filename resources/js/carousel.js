@@ -1,1 +1,0 @@
-$('#my-calendar').datepicker()

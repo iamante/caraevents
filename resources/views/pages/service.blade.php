@@ -14,7 +14,7 @@
                 @endcomponent
                 
                 <h1 class=" font-weight-bold text-muted">{{ $service->name }}</h1>
-                <h6 class="mb-0 font-weight-bold" style="padding-top:3px; padding-bottom:3px; border-radius: 20px; text-transform: uppercase; color:azure; background-color:rgb(13, 192, 34); width: 120px; text-align:center"><i class="fas fa-box-open" style="font-size: 12px;"></i> {{ $service->details }}</h6>
+                <h6 class="mb-0 font-weight-bold" style="padding-top:3px; padding-bottom:3px; border-radius: 20px; text-transform: uppercase; color:azure; background-color:#57b67e; width: 120px; text-align:center"><i class="fas fa-box-open" style="font-size: 12px;"></i> {{ $service->details }}</h6>
                 <hr>
                 <p class="font-weight-bold">Inclusion:</p> 
                 <div class="d-flex justify-content-around border text-muted">
@@ -118,7 +118,7 @@
                       <input type="hidden" name="name" value="{{ $service->name }}">
                       <input type="hidden" name="price" value="{{ $service->price }}">
                       <input type="hidden" name="detail" value="{{ $service->details }}">
-                      <button type="submit" class="w-100 button-grad mt-2 py-1 text-uppercase btn btn-default">Reserve Now</button>
+                      <button type="submit" class="w-100 mt-2 py-1 text-white text-uppercase btn btn-success">Reserve Now</button>
                     </form>
                     </div>
 
@@ -137,7 +137,7 @@
           </div>
           <div class="col-lg-4 bg-white py-3 px-5">
             <small><i>Like us on <a href="">facebook</a> to get updates on our latest promotions! <br>
-              Subscibe us on <a href="" class="text-danger">youtube</a> to see our “behind the seams” updates!</i></small>
+              Subscibe us on <a href="" class="text-danger">youtube</a> to see our “behind the seems” updates!</i></small>
           </div>
         </div>
     </div>

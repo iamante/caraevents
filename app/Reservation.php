@@ -26,6 +26,12 @@ class Reservation extends Model
         return "₱ ".number_format($this->price, 0, '.',',');
     }
 
+    public function formatCreatedAt() {
+        $date = Carbon::parse($this->created_at);
+
+        return $date->isoFormat('MMMM D, YYYY h:mm a');
+    }
+
     public function formatDate()
     {
         $date = Carbon::parse($this->date);

@@ -1,4 +1,4 @@
-<div class="container-fluid top-login">
+<div class="container-fluid top-login py-0">
     <div class="container-fluid px-5 d-flex justify-content-between align-items-center">
             <div class="top-icon">
             <a href="tel:+639228097519" style="font-size: 11px">Call Us. <i class="fa fa-phone m-0 pr-1"></i><span class="tel" >+63 922 809 7519</span></a>
@@ -25,8 +25,8 @@
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
                         <div class="d-flex align-items-center">
-                            <a href="#"><i class="far fa-bell"></i> Notifications</a>  
-                            <li class="dropdown ml-2" > 
+                            {{-- <a href="#"><i class="far fa-bell"></i> Notifications</a>   --}}
+                            <li class="dropdown ml-2 py-2" > 
                                 <a href="#" class="dropdown-toggle text-muted username" data-toggle="dropdown" role="button" aria-expanded="false">
                                      @if (Auth::user()->avatar == 'users/default.png')
                                      <img src="{{ asset('storage/'. auth()->user()->avatar) }}" alt="" class="img-fluid ml-2" width="25" style="border: 1px solid #cccccc; border-radius: 50%;"> 
@@ -48,14 +48,14 @@
                                     </li>
                                     <li class="dropdown-item py-2">
                                         <a href="/my-reservation" class="d-flex align-items-center">
-                                            <i class="fas fa-tty pr-2 text-muted"></i>  Reservation
+                                            <i class="fas fa-tty pr-2 text-muted"></i>My Reservation
                                         </a>
                                     </li>
                                     <li class="dropdown-item">
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();" class="mr-4" >
-                                            <i class="fas fa-power-off text-muted"></i> Logout
+                                            <i class="fas fa-power-off text-muted"></i>&nbsp; Logout
                                         </a>
     
                                         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">

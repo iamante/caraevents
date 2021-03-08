@@ -4,11 +4,12 @@
     <div class="services-container container-fluid bg-white" style="padding-left: 90px; padding-right: 90px;">
         <div class="row">
             <div class="col-lg-2 col-sm-5 p-0 mt-4">
-                <div style="font-size: 13px;"><a href="/" class="text-muted">Home</a><i class="fa fa-angle-right mx-2 pr-0 text-muted" aria-hidden="true"></i>{{ $title }}</div>
+                <div style="font-size: 13px;"><a href="/" class="text-muted"> <i class="fa fa-home"></i> Home</a><i class="fa fa-angle-right mx-2 pr-0 text-muted" aria-hidden="true"></i>{{ $title }}</div>
                 <ul class="list-group">
-                    <div class="py-2 font-weight-bold"><a href="/services" style="color: black">Categories</a></div>
+                    <div class="mb-2 mt-4 mr-5 pl-2 font-weight-bold text-white bg-dark">Categories</div>
+                    <a href="/services" class=" text-dark"><div class="py-2 pl-3" style="font-size: 13px;">All Services</div></a>
                         @foreach ($categories as $category)
-                            <li style="font-size: 13px;" class="my-1 {{ request()->category == $category->slug ? 'active' : '' }}"><a class="text-dark" href={{ route('services.index', ['category' => $category->slug ]) }}>{{ $category->name}}</a> ( {{$category->services->count()}} )</li>
+                            <li style="font-size: 13px;" class="my-1 pl-3 {{ request()->category == $category->slug ? 'active' : '' }}"><a class="text-dark" href={{ route('services.index', ['category' => $category->slug ]) }}>{{ $category->name}}</a> ( {{$category->services->count()}} )</li>
                         @endforeach
                 </ul>
                 <div class="spacer my-3"></div>
@@ -23,30 +24,21 @@
                         @endif
                     </h3>
                 </div>
-                <div class="row mt-3">
-                    <div class="col-md-8">
-                        <div class="dropdown">
-                            <button class="btn btn-default border dropdown-toggle" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false" style="border-radius: 0;">
-                              Most Popular <i class="fa fa-angle-down mx-1" aria-hidden="true"></i>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                              <li><a class="dropdown-item" href="{{ route('services.index', ['catergory'=> request()->category, 'sort' => 'high_low']) }}">Price High to Low</a></li>
-                              <li><a class="dropdown-item" href="{{ route('services.index', ['catergory'=> request()->category, 'sort' => 'low_high']) }}">Price Low to High</a></li>
-                              <li><a class="dropdown-item" href="#">Recommended</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
+                <div class="row mt-3 justify-content-between">
+                    <div class="col-md-5">
                         <form action="{{ route('search') }}" method="GET" class="search-form">
-                        <div class="input-group border search" style="position: relative">
+                        <div class="input-group border search d-flex align-items-center">
                             <input id="query" type="search" name="query" class="form-control rounded border-0" placeholder="Search" aria-label="Search"
                               aria-describedby="search" value="{{ request()->input('query') }}" />
                             <i class="fas fa-times"></i>
-                            <button type="submit" class="input-group-text border-0 bg-light" id="search">
+                            <button type="submit" class="input-group-text border-0 bg-light py-3 px-4" id="search">
                               <i class="fas fa-search"></i>
                             </button type="submit">
                         </div>
                         </form>
+                    </div>
+                    <div class="col-md-7 d-flex align-items-center justify-content-end">
+                        <p class="mb-0 pt-2 font-weight-bold">Price: <a href="{{ route('services.index', ['catergory'=> request()->category, 'sort' => 'high_low']) }}" class=" text-dark">High to Low</a> | <a href="{{ route('services.index', ['catergory'=> request()->category, 'sort' => 'low_high']) }}" class=" text-dark">Low to High</a></p>
                     </div>
                 </div>
                 <div class="row">

@@ -51,14 +51,14 @@
 <!-- ----------------------------- end of carousel ---------------------------- -->
 
 <div class="container text-center my-5">
-    <h2 style="font-family: 'Times New Roman', Times, serif">We will give everything you need in one place.</h2>
+    <h2>We will give everything you need in one place.</h2>
     <p>Save the dates, invitations, video cover pages, event scheduling, RSVPs, notifications and more!</p>
 </div>
 
 <div class="container text-center my-5">
     <div class="row my-4">
         @foreach ($services as $service)
-            <div class="col-md-3 px-0">
+            <div class="col-md-4 px-0">
                 <img class="img-fluid service-border" src="{{ asset('images/border/border.svg') }}" alt="border" style="pointer-events:none; width: 100% ; height: 72%;object-fit: cover;">
                 <a href="{{ route('services.index') }}" style="text-decoration: none;">
                     <img src="{{ asset('storage/'. $service->image) }}" class="image-animate" alt="" style="width: 100% ; height: 70%;object-fit: cover; background-repeat: no-repeat;">
@@ -81,93 +81,46 @@
             <img src="images/icons/contract.svg" alt="" width="72" class="mr-4">
             <div>
                 <h4 class="mt-5">Documents / Consultancy</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p>We will take care of your paperwork for your wedding and other stuff.</p>
             </div>    
         </div>
         <div class="col-md-4 d-flex px-4">
             <img src="images/icons/bridal_car.svg" alt="" width="72" class="mr-4">
             <div>
                 <h4 class="mt-5">Bridal Car / Van Rentals</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p>Rent our hyundai accent wedding car and services van.</p>
             </div>
         </div>
         <div class="col-md-4 d-flex px-4">
             <img src="images/icons/gallery.svg" alt="" width="72" class="mr-4">
             <div>
                 <h4 class="mt-5">Video and Photo Coverage</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p>We give you the best photo and video cover for your celebration.</p>
             </div>
         </div>
         <div class="col-md-4 d-flex px-4">
             <img src="images/icons/building.svg" alt="" width="72" class="mr-4">
             <div>
                 <h4 class="mt-5">Venues</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p>Check out our best hotel and venue for you comfortable experience.</p>
             </div>
         </div>
         <div class="col-md-4 px-4 d-flex">
             <img src="images/icons/makeup.svg" alt="" width="72" class="mr-4">
             <div>
                 <h4 class="mt-5">Hair and Make up Artist</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p>The best hair and makeup artist to make you shine.</p>
             </div>
         </div>
         <div class="col-md-4 px-4 d-flex">
             <img src="images/icons/wedding-couple.svg" alt="" width="72" class="mr-4">
             <div>
                 <h4 class="mt-5">Money Tree / Money Dance</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p>Unique and fun activities for your wedding receptions.</p>
             </div>
         </div>
     </div>
 </div>
-
-
-<!-- --------------------------------- product --------------------------------
-    <section id="product">
-        <div class="container">
-            <div class="product-title">
-                <h6 class="mb-3">Featured Events</h6>
-            </div>
-            <div class="row">
-                @foreach ($services as $service)
-                <div class="col-md-12 col-lg-6">
-                    <div class="card figure">
-                        <img class="card-img-top featured-image" src={{ asset('storage/'. $service->image) }} alt="Card image cap" style="height: 100%">
-                    </div>
-                    <p class="text-dark text-center mb-0 mt-1" style="text-transform: uppercase; font-weight: 900; letter-spacing: 3px;">{{ $service->name }}</p>
-                    <p class="text-center">{{ $service->presentPrice() }}</p>
-                </div>
-                @endforeach
-                <div class="col-md-12 col-lg-6">
-                    <div class="row">   
-                        @foreach ($servicesSecondRow as $service) 
-                            <div class="col-md-6">
-                                <div class="card figure">
-                                    <a href="{{ route('services.show', $service->slug ) }}"><img class="card-img-top featured-image" src={{ asset('storage/'. $service->image) }} alt="Card image cap"></a>
-                                </div>
-                                <p class="text-dark text-center mb-0 mt-1" style="text-transform: uppercase; font-weight: 900; letter-spacing: 3px;">{{ $service->name }}</p>
-                                <p class="text-center mb-1">{{ $service->presentPrice() }}</p>
-                            </div>
-                        @endforeach
-                    </div>
-                        <div class="row">  
-                            @foreach ($servicesThirdRow as $service)
-                                <div class="col-md-6">
-                                    <div class="card figure">
-                                        <img class="card-img-top featured-image" src={{ asset('storage/'.$service->image) }} alt="Card image cap">
-                                    </div>
-                                    <p class="text-dark text-center mb-0 mt-1" style="text-transform: uppercase; font-weight: 900; letter-spacing: 3px;">{{ $service->name }}</p>
-                                    <p class="text-center">{{ $service->presentPrice() }}</p>
-                                </div>
-                            @endforeach  
-                        </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
------------------------------ end of product ----------------------------- -->
 
 <!-- ----------------------------------  --------------------------------- -->
 <section id="cara">
@@ -194,7 +147,7 @@
 <section class="testimonial"  style="overflow: hidden">
     <div class="testimonial-container container text-center pt-5 text-light">
         <p class="mb-0 text-light">TESTIMONIAL</p>
-        <h3 style="font-family: 'Times New Roman', Times, serif" class="text-light">What our clients say about us.</h3>
+        <h3 class="text-light">What our clients say about us.</h3>
         <div class="row my-4 text-left slick-testimonial">
             <div class="col-4">
                 <div class="card border-0 h-100">
@@ -331,17 +284,17 @@
     <div class="row my-5 bg-light p-3">
         <div class="col-4">
             <img src="images/icons/quality.png" alt="" width="50" class="m-2">
-            <h4 style="font-family: 'Times New Roman', Times, serif">HIGH QUALITY SERVICES</h4>
+            <h4>HIGH QUALITY SERVICES</h4>
             <p><small>Select services from top rated good quality services , No tech skills required to publish content instantly.</small></p>
         </div>
         <div class="col-4">
             <img src="images/icons/lowest-promo.png" alt="" width="50" class="m-2">
-            <h4 style="font-family: 'Times New Roman', Times, serif">LOWEST PROMO</h4>
+            <h4>LOWEST PROMO</h4>
             <p><small>Invite and delight your guests with one-to-one lowest promo for services, consultancy, and rentals.</small></p>
         </div>
         <div class="col-4">
             <img src="images/icons/reserve.png" alt="" width="85" class="m-2">
-            <h4 style="font-family: 'Times New Roman', Times, serif">MADE RESERVATION EASY</h4>
+            <h4>MADE RESERVATION EASY</h4>
             <p><small>Check whats knew for your reservation. Easy reserve and update what's happen from any device.</small></p>
         </div>
     </div>

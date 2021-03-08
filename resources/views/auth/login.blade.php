@@ -14,7 +14,7 @@
                         <div class="form-group d-flex justify-content-center" style="position: relative">
                             <!-- <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label> -->
                             <div class="w-100">
-                                <input id="email" type="email" class="form-control pl-5 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Username" autofocus>
+                                <input id="email" type="email" class="form-control pl-5 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email" autofocus>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -28,7 +28,7 @@
                         <div class="form-group d-flex justify-content-center" style="position: relative">
                             <!-- <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label> -->
                             <div class="w-100">
-                                <input id="password" type="password" class="form-control pl-5 @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Password">
+                                <input id="password" type="password" class="form-control pl-5 pr-3 @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -37,6 +37,7 @@
                                 @enderror
                             </div>
                                 <i class="fa fa-lock icon p-3 text-muted" style="position: absolute; left:5px; top: -5px;"></i>
+                                <i id="far-eye" class="far fa-eye icon py-3 pr-3 text-muted" style="cursor: pointer; position: absolute; right:5px; top: -5px;"></i>
                         </div>
 
                         <div class="form-group d-flex justify-content-between align-items-center">

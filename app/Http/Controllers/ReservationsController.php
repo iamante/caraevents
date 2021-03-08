@@ -53,7 +53,7 @@ class ReservationsController extends Controller
            'name' => $request->input('name'), 
            'details' => $request->input('details'), 
            'date' => $request->input('date'),
-           'time' => $request->input('time'),
+           'time' => date("H:i:s", strtotime($request->input('time'))),
            'price' => $request->input('price'),
            'image' => $request->input('image'),
         ]);
