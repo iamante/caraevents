@@ -26,5 +26,6 @@ class AppServiceProvider extends ServiceProvider
     {
         // Enable custom action for publish posts
         Voyager::addAction(\App\Actions\ConfirmAction::class);
+        Schema::defaultStringLength(191);
     }
 }
