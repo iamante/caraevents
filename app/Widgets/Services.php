@@ -29,9 +29,9 @@ class Services extends AbstractWidget
         return view('voyager::dimmer', array_merge($this->config, [
             'icon'   => 'voyager-bag',
             'title'  => "{$count} {$string}",
-            'text'   => 'You have ' .$count. ' services in your database. Click on button below to view all services.',
+            'text'   => 'You have ' .$count. ' services in your database.',
             'button' => [
-                'text' => 'View all service',
+                'text' => 'View service',
                 'link' => '/admin/services',
             ],
             'image' => voyager_asset('images/widget-backgrounds/02.jpg'),

@@ -29,12 +29,11 @@ class Reservations extends AbstractWidget
         return view('voyager::dimmer', array_merge($this->config, [
             'icon'   => 'voyager-receipt',
             'title'  => "{$count} {$string}",
-            'text'   => 'You have ' .$count. ' pending reservation in your database. Click on button below to view all reservations.',
+            'text'   => 'You have ' .$count. ' pending reservation in your database.',
             'button' => [
-                'text' => 'View all reservation',
-                'link' => '/admin/reservation',
+                'text' => 'View reservation',
+                'link' => '/admin/reservations',
             ],
-            'image' => voyager_asset('images/widget-backgrounds/03.jpg'),
         ]));
     }
 

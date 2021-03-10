@@ -1,0 +1,59 @@
+* {
+    font-family: "Quicksand", sans-serif;
+}
+
+.panel.widget .dimmer {
+    background-color: rgb(255, 255, 255) !important;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+    background: none;
+    border-radius: 5px;
+}
+
+.panel-content {
+    display: grid;
+    grid-template-columns: auto auto;
+    position: relative;
+}
+
+.panel-content .icon-voy a {
+    cursor: pointer;
+}
+
+.panel.widget.bgimage {
+    padding-left: 20px;
+}
+
+.panel.widget.center .text-voy {
+    text-align: left;
+    padding-left: 20px;
+    margin-left: 20px;
+    border-left: 1px solid rgb(221, 221, 221);
+}
+
+.panel.widget.center .text-voy p {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.panel.widget.center .text-voy .btn {
+    margin-bottom: 0;
+}
+
+.panel.widget.center .text-voy h4 {
+    color: black;
+    margin-top: 3px;
+}
+.panel.widget.center .text-voy .btn-success {
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+}
+
+.panel.widget i {
+    background-color: rgb(49, 194, 121);
+}
+
+.voyager .side-menu .navbar-header {
+    background-color: #2a363b;
+}
