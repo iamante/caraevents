@@ -21,7 +21,7 @@
                         
                         <ul class="list-unstyled bg-white shadow-sm p-3" style="font-size: 14px;">
                            <li class="pb-1"><i class="far fa-user mr-3 ml-1"></i><a href="/user-profile" class="font-weight-bold text-dark"> Profile</li></a>
-                            <li class="pb-1"><i class="far fa-bell mr-3 ml-1"></i><a href="#">Notification</a></li>
+                            {{-- <li class="pb-1"><i class="far fa-bell mr-3 ml-1"></i><a href="#">Notification</a></li> --}}
                             <li class="pb-1"><i class="fa fa-ticket-alt mr-3 ml-1"></i><a href="/my-reservation">Reservation</a></li>
                             <li class="pb-1"><img src="{{ asset('images/icons/logout.svg')}}" alt="logout" width="18" class="mr-3">
                                 <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -43,7 +43,7 @@
                             <h4 class="font-weight-bold">My Profile</h4 >
                             <p class="mb-0">Manage and Edit your profile</p>
                         </div>
-                        <div class="w-50 d-flex align-items-center">
+                        <div class="w-50 d-flex align-items-center ml-5">
                             @if (session('status'))
                                 <div class="alert alert-success" role="alert">
                                     {{ session('status') }}
@@ -51,7 +51,7 @@
                             @endif
                 
                         @if (count($errors) > 0)
-                            <div class="alert alert-danger">
+                            <div class="alert alert-danger ml-5">
                                 <ul class="list-unstyled mb-0">
                                     @foreach ($errors->all() as $error)
                                         <li>{{$error}}</li>

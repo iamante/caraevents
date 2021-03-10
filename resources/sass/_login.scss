@@ -1,16 +1,17 @@
-.grecaptcha-badge { 
-    visibility: hidden; 
+.grecaptcha-badge {
+    visibility: hidden;
 }
 
 .more-oauth-login-title:before {
     left: 0;
 }
 
-.more-oauth-login-title:after, .more-oauth-login-title:before {
-    content: '';
+.more-oauth-login-title:after,
+.more-oauth-login-title:before {
+    content: "";
     width: 34%;
     height: 1px;
-    background: #F0F0F0;
+    background: #f0f0f0;
     position: absolute;
     top: 50%;
 }
@@ -20,4 +21,3 @@
     position: relative;
     color: #ccc;
 }
-

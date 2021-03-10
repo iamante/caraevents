@@ -35,4 +35,15 @@ class PagesController extends Controller
     public function profile() {
         return view('pages.user-profile');
     }
+
+    public function termsconditions() {
+        // $title = 'Terms and Conditions';
+        return view('pages.termsconditions');
+    }
+
+    public function privacypolicy() {
+        return view('pages.privacypolicy');
+    }
+
+
 }

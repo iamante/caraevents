@@ -104,6 +104,13 @@
     }
 }
 
+@media only screen and (max-width: 400px) {
+    .top-padding {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+}
+
 .button-grad {
     color: white;
     border-radius: 20px;

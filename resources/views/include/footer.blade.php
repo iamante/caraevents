@@ -36,8 +36,8 @@
             <div class="col-lg-2 col-sm-6">
                 <h6 class="text-dark">Terms and Policy</h6>
                 <ul class="footer-links">
-                    <li><a href="/"><i class="fa fa-angle-right"></i>Privacy Policy</a></li>
-                    <li><a href="/"><i class="fa fa-angle-right"></i>Terms and Condition</a></li>
+                    <li><a href="/privacypolicy"><i class="fa fa-angle-right"></i>Privacy Policy</a></li>
+                    <li><a href="/termsconditions"><i class="fa fa-angle-right"></i>Terms and Condition</a></li>
                 </ul>
             </div>
             <div class="col-lg-2 col-sm-6">

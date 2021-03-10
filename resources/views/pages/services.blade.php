@@ -60,7 +60,7 @@
                             </a>
                         </div>
                     @empty
-                        <div class="ml-4 py-3">No items Found!</div>
+                        <div class="ml-4 py-5">No items Found!</div>
                     @endforelse
                     
                     <div class="mx-auto py-4">{{ $services->appends(request()->input())->links() }}</div>

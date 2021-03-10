@@ -62,7 +62,7 @@
                 <img class="img-fluid service-border" src="{{ asset('images/border/border.svg') }}" alt="border" style="pointer-events:none; width: 100% ; height: 72%;object-fit: cover;">
                 <a href="{{ route('services.index') }}" style="text-decoration: none;">
                     <img src="{{ asset('storage/'. $service->image) }}" class="image-animate" alt="" style="width: 100% ; height: 70%;object-fit: cover; background-repeat: no-repeat;">
-                    <h5 class="font-weight-bold mt-4" style="color: rgb(13, 209, 206)">{{ $service->name }}</h5>
+                    <h5 class="font-weight-bold mt-4" style="color: rgb(13, 209, 157)">{{ $service->name }}</h5>
                 </a>
                 <p class="px-3">{{ strip_tags($service->description) }}</p>
             </div>

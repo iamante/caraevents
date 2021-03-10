@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
+Route::get('/termsconditions', 'PagesController@termsconditions');
+Route::get('/privacypolicy', 'PagesController@privacypolicy');
 Route::get('/gallery', 'GallerysController@index');
 Route::get('/clothing', 'ClothRentalsController@index');
 Route::get('/clothing/{rentals}', 'ClothRentalsController@show')->name('clothrentals.show');

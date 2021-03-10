@@ -1,9 +1,10 @@
 @extends('layouts.app')
 @section('content')
 <img src={{ asset('storage/'. $service->image) }} alt="" style="object-fit: cover; max-height: 400px; width: 100%">
-    <div class="container pb-5 pt-3">
+<div class="bg-light">
+  <div class="container pb-5 pt-3">
         <div class="row pt-3 mb-4">
-            <div class="col-lg-8 border rounded bg-white py-3 mb-4">
+            <div class="col-lg-8 border-0 rounded shadow-sm bg-white py-3 mb-4">
               <div class="container">
                 @component('components.breadcrumbs')
                   <a href="/" style="font-size: 12px;"><i class="fa fa-home text-muted"></i></a>
@@ -53,7 +54,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="container">
-                  <div class="card">
+                  <div class="card shadow-sm border-0">
                     <iframe class="img-fluid" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15436.703142064003!2d121.0565013!3d14.7026491!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcace75fb83bd1c1e!2sCara%20Events%20Philippines!5e0!3m2!1sen!2sph!4v1600268794813!5m2!1sen!2sph" width="1920" height="1920" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
            
                     <div class="card-body">
@@ -128,17 +129,18 @@
         </div>
 
         <div class="row mb-4">
-          <div class="col-lg-8 border bg-white py-3 rounded">
+          <div class="col-lg-8 border-0 shadow-sm bg-white py-3 rounded">
            @if ($service->comments->count() == 0)
            @else
               <p>Comments {{ $service->comments->count() }}</p>
            @endif
             @comments(['model' => $service])
           </div>
-          <div class="col-lg-4 bg-white py-3 px-5">
+          <div class="col-lg-4 bg-light py-3 px-5">
             <small><i>Like us on <a href="">facebook</a> to get updates on our latest promotions! <br>
               Subscibe us on <a href="" class="text-danger">youtube</a> to see our “behind the seems” updates!</i></small>
           </div>
         </div>
     </div>
+</div>
 @endsection

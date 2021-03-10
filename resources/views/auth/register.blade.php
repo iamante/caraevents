@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container py-5">
+<div class="bg-light">
+    <div class="container py-5">
     <div class="row">
         <div class="col-lg-3"></div>
         <div class="col-lg-6">
-            <div class="card px-5 pt-5">
+            <div class="card px-5 pt-5 shadow-sm border-0">
                 <div class="px-5 text-center">
                     <h1>Create Account</h1>
                 </div>
@@ -48,19 +49,20 @@
                         </div> -->
 
                         <div class="form-group d-flex justify-content-center align-items-center" style="position: relative">
-                            <i class="far fa-envelope icon p-3 text-muted" style="position: absolute; left:5px;"></i>
+                            <div class="w-100">
+                                <i class="far fa-envelope icon p-3 text-muted" style="position: absolute; left:5px;"></i>
                                 <input id="email" type="email" class="form-control pl-5 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Email" required autocomplete="email" autofocus>
 
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback text-center" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                            </div>
                         </div>
 
                         <div class="form-group d-flex justify-content-center align-items-center" style="position: relative">
                             <div class="w-100">
-                                <i class="fas fa-lock icon p-3 text-muted" style="position: absolute; left:5px;"></i>
                                 <!-- <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label> -->
                                 <input id="password" type="password" class="form-control pl-5 @error('password') is-invalid @enderror" name="password" placeholder="Password" required autocomplete="new-password">
 
@@ -70,6 +72,8 @@
                                     </span>
                                 @enderror
                             </div>
+                            <i class="fa fa-lock icon p-3 text-muted" style="position: absolute; left:5px; top: -5px;"></i>
+                            <i id="far-eye" class="far fa-eye icon py-3 pr-3 text-muted" style="cursor: pointer; position: absolute; right:5px; top: -5px;"></i>
                         </div>
 
                         <div class="form-group d-flex justify-content-center align-items-center" style="position: relative">
@@ -84,7 +88,7 @@
                                 </button>
                         </div>
                         
-                        <div class="text-right">
+                        <div class="text-right my-4">
                             <a href="/login" class="my-2 text-dark" style="font-size: 11px;">Already have a account?</a>
                         </div>
 
@@ -100,5 +104,6 @@
         </div>
         <div class="col-lg-3"></div>
     </div>
+</div>
 </div>
 @endsection

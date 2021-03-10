@@ -1,8 +1,7 @@
 @extends('layouts.app')
 @section('content')
 @include('include.navigation')
-    <div class="bg-light py-3">
-
+<div class="bg-light py-3">
     <div class="container my-4">
         <div class="d-flex align-items-center rounded my-3 py-2" style="font-weight: 900;background-color: #67d896; color: #fff;border: 1px solid #38c172;">
             <i class="far fa-clock px-3 py-2"></i>
@@ -25,8 +24,7 @@
         @endif
         <div class="row ">
             <div class="col-lg-7 ">
-            
-                <div class="border rounded p-5 bg-white">
+                <div class="border rounded p-5 bg-white border-0 shadow-sm">
                     <div class="d-flex align-items-center">
                         <span class="mr-2 d-flex justify-content-center align-items-center text-white" style="border-radius: 50%; background-color: #50d487; width: 30px; height: 30px;"><i class="fas fa-exclamation"></i></span>
                         <h4 class="mb-0">Reservation</h4>
@@ -48,36 +46,36 @@
                         <div class="d-flex justify-content-between">
                             <div class="form-group w-100 mr-2">
                                 <label for="email">Email</label>
-                                <input type="email" name="email" value="{{ auth()->user()->email }}" class="form-control" required readonly>
+                                <input type="email" name="email" value="{{ auth()->user()->email }}" class="form-control shadow-sm border" required readonly>
                               </div>
                               <div class="form-group w-100 ml-2">
                                 <label for="phone">Phone</label>
-                                <input type="number" name="phone" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control" maxlength="11" required>
+                                <input type="number" name="phone" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control shadow-sm border" maxlength="11" required>
                               </div>
                         </div>
                         <div class="form-group w-100">
                             <label for="address">Your Address</label>
-                            <input type="text" name="address" class="form-control" required>
+                            <input type="text" name="address" class="form-control shadow-sm border" required>
                         </div>
                         <div class="d-flex justify-content-between">
                             <div class="form-group w-100 mr-2">
                                 <label for="city">City</label>
-                                <input type="text" name="city" class="form-control" required>
+                                <input type="text" name="city" class="form-control shadow-sm border" required>
                               </div>
                               <div class="form-group w-100 mx-2">
                                 <label for="province">Province</label>
-                                <input type="text" name="province" class="form-control" required>
+                                <input type="text" name="province" class="form-control shadow-sm border" required>
                               </div>
                               <div class="form-group w-100 ml-2">
                                 <label for="postal">Postal Code</label>
-                                <input type="text" name="postal" class="form-control" required>
+                                <input type="text" name="postal" class="form-control shadow-sm border" required>
                               </div>
                         </div>
                 </div>
             </div>
         
             <div class="col-lg-5 pb-5 pt-0">
-                <div class="border rounded mx-3 bg-white">
+                <div class="border-0 rounded mx-3 bg-white shadow-sm">
                     <h5 class="text-center bg-dark text-white py-3">Reservation Details</h5>
                     <div class="row px-4 pt-3">
                         <div class="col-6">
@@ -96,11 +94,11 @@
                     <p class="pl-4 pt-3 pb-1 mb-0 text-center">Reservation Date</p>
                     <div class="d-flex justify-content-between px-4 pb-0">
                         <div class="d-flex my-2 text-muted">
-                            <div class="d-flex w-50 mr-1 align-items-center border rounded">
+                            <div class="d-flex w-50 mr-1 align-items-center border rounded shadow-sm">
                               <i id="calendar" class="far fa-calendar-alt pl-3 pr-2 py-2" style="color: #38c172;"></i>
                               <input type="text" name="date" class="datepicker w-100" date-format='yy-mm-dd' placeholder="Date" style="border: none; outline: none" required>
                             </div>
-                            <div class="d-flex w-50 ml-1 align-items-center border rounded">
+                            <div class="d-flex w-50 ml-1 align-items-center border rounded shadow-sm">
                               <i class="far fa-clock pl-3 pr-2 py-2" style="color: #38c172;"></i>
                               <input type="text" name="time" class="timepicker w-100" placeholder="Time" style="border: none; outline: none" required>
                             </div>
@@ -108,7 +106,7 @@
                     </div>   
                     
                     <div class="px-4 pb-3 pt-0">
-                        <ul class="list-unstyled border w-100 p-2">
+                        <ul class="list-unstyled border w-100 p-2 shadow-sm">
                             <li><i class="fas fa-users pr-2"></i>30 Guest</li>
                             <li><i class="fas fa-volume-up pr-2"></i>Basic Sound System</li>
                             <li><i class="fas fa-utensils pr-2"></i>Menu No.1</li>
@@ -122,8 +120,8 @@
                         <input type="hidden" name="price" value="{{ $service->price}}">
                     </div>
                     <div class="px-4 pb-3">
-                        <button type="submit" class="btn btn-success text-white w-100">Request to Book</button>
-                        <a href="{{ route('services.show', $service->slug ) }}"><div class="btn w-100 mt-1 text-white" style="background-color: rgb(153, 152, 152)">Cancel</div></a>
+                        <button type="submit" class="btn btn-success text-white w-100 shadow-sm">Request to Book</button>
+                        <a href="{{ route('services.show', $service->slug ) }}"><div class="btn w-100 mt-1 text-white shadow-sm" style="background-color: rgb(153, 152, 152)">Cancel</div></a>
                     </div>
                 </div>
             </div>

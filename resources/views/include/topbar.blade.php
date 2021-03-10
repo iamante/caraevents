@@ -1,5 +1,5 @@
 <div class="container-fluid top-login py-0">
-    <div class="container-fluid px-5 d-flex justify-content-between align-items-center">
+    <div class="container-fluid top-padding d-flex justify-content-between align-items-center">
             <div class="top-icon">
             <a href="tel:+639228097519" style="font-size: 11px">Call Us. <i class="fa fa-phone m-0 pr-1"></i><span class="tel" >+63 922 809 7519</span></a>
             </div>

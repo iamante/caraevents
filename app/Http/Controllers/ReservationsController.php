@@ -6,6 +6,8 @@ use App\Service;
 use App\Reservation;
 use App\ReservationService;
 use Illuminate\Http\Request;
+use App\Mail\ReservationPlaced;
+use Illuminate\Support\Facades\Mail;
 
 class ReservationsController extends Controller
 {
@@ -59,6 +61,8 @@ class ReservationsController extends Controller
         ]);
 
         $reserve->save();
+        Mail::send(new ReservationPlaced($reserve));
+
         return redirect()->route('thankyou.index')->with('success_message','Well done Your Reservation has been send! Thank you!');
     
     }

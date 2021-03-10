@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container py-5">
+<div class="bg-light">
+    <div class="container py-5">
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
-            <div class="card text-center px-5 pt-5">
+            <div class="card text-center px-5 pt-5 shadow-sm border-0">
                 <h1>Sign in</h1>
                 <div class="card-body px-5">
                     <form method="POST" action="{{ route('login') }}">
@@ -22,7 +23,7 @@
                                     </span>
                                 @enderror
                             </div>
-                            <i class="fa fa-user icon p-3 text-muted" style="position: absolute; left:5px; top: -5px;"></i>
+                            <i class="far fa-user icon p-3 text-muted" style="position: absolute; left:5px; top: -5px;"></i>
                         </div>
 
                         <div class="form-group d-flex justify-content-center" style="position: relative">
@@ -36,7 +37,7 @@
                                     </span>
                                 @enderror
                             </div>
-                                <i class="fa fa-lock icon p-3 text-muted" style="position: absolute; left:5px; top: -5px;"></i>
+                                <i class="fas fa-lock icon p-3 text-muted" style="position: absolute; left:5px; top: -5px;"></i>
                                 <i id="far-eye" class="far fa-eye icon py-3 pr-3 text-muted" style="cursor: pointer; position: absolute; right:5px; top: -5px;"></i>
                         </div>
 
@@ -79,9 +80,9 @@
                         <div class="pt-5 text-muted">
                             <small>
                                 By sign in this way, you agree to our
-                                <a href="#" class="text-muted text-line"><u>Terms & Condition</u></a>
+                                <a href="/termsconditions" class="text-muted text-line"><u>Terms & Condition</u></a>
                                 and
-                                <a href="#" class="text-muted"><u>Privary Policy</u></a>
+                                <a href="/privacypolicy" class="text-muted"><u>Privary Policy</u></a>
                             </small>
                         </div>
                     </form>
@@ -90,5 +91,6 @@
         </div>
         <div class="col-md-3"></div>
     </div>
+</div>
 </div>
 @endsection

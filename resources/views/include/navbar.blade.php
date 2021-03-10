@@ -32,7 +32,7 @@
                     <div class="dropdown-divider my-1"></div>
                     <a class="dropdown-item py-2" href="/services?category=debut">Debut</a>
                     <div class="dropdown-divider my-1"></div>
-                    <a class="dropdown-item py-2" href="#">Accessories</a>
+                    <a class="dropdown-item py-2" href="/services?category=accessories">Accessories</a>
                 </div>
                 </li>
                 <li class="nav-item dropdown mr-3">
