@@ -17,34 +17,6 @@
                 <h1 class=" font-weight-bold text-muted">{{ $service->name }}</h1>
                 <h6 class="mb-0 font-weight-bold" style="padding-top:3px; padding-bottom:3px; border-radius: 20px; text-transform: uppercase; color:azure; background-color:#57b67e; width: 120px; text-align:center"><i class="fas fa-box-open" style="font-size: 12px;"></i> {{ $service->details }}</h6>
                 <hr>
-                <p class="font-weight-bold">Inclusion:</p> 
-                <div class="d-flex justify-content-around border text-muted">
-                  <div class="px-3 py-5 text-center">
-                    <i class="fas fa-users" style="font-size: 30px;"></i>
-                    <p class="mb-0 font-weight-bold pt-2" style="font-size: 12px;">30 Guests</p>
-                  </div>
-
-                  <div class="px-3 py-5 text-center">
-                    <i class="fas fa-volume-up" style="font-size: 30px;"></i>
-                      <p class="mb-0 font-weight-bold pt-2" style="font-size: 12px;">Basic Sound System</p>
-                  </div>
-
-                  <div class="px-3 py-5 text-center">
-                    <i class="fa fa-utensils" style="font-size: 30px;"></i>
-                      <p class="mb-0 font-weight-bold pt-2" style="font-size: 12px;">Menu No.1</p>
-                  </div>
-
-                  <div class="px-3 py-5 text-center">
-                    <i class="fa fa-birthday-cake" style="font-size: 30px;"></i>
-                      <p class="mb-0 font-weight-bold pt-2" style="font-size: 12px;">Wedding Cake</p>
-                  </div>
-
-                  <div class="px-3 py-5 text-center">
-                    <i class="fa fa-birthday-cake" style="font-size: 30px;"></i>
-                      <p class="mb-0 font-weight-bold pt-2" style="font-size: 12px;">Free Aircon Venue</p>
-                  </div>
-                </div>
-                <hr>
                 <div class="border p-4">
                   <h5 class="font-weight-bold">About this Service :</h5>
                     <p class="pl-5">{!! $service->description !!}</p>
@@ -65,53 +37,51 @@
                                 <span><i class="fas fa-share-alt"></i></span>
                             </div>
                         </div>
-                        <span class="text-muted text-uppercase">{{ $service->details }}</span>
+                        <span class="text-uppercase text-danger">{{ $service->details }}</span>
                         <p class="mb-0" style="font-size: 25px; font-weight: bold">{{ $service->presentPrice() }}</p>
-                      <div class="spacer my-1"></div>
+                      <hr>
                         <ul class="list-unstyled d-flex justify-content-around py-2">
                           <li class="w-100">
                             <div class="text-center">
-                              <i class="fas fa-users" style="font-size: 20px;"></i>
-                                <p class="mb-0 font-weight-bold pt-1" style="font-size: 12px;">30 Guests</p>
+                              <i class="fas fa-users text-dark" style="font-size: 20px;"></i>
+                                <p class="mb-0 font-weight-bold pt-1 text-dark" style="font-size: 12px;">30 Guests</p>
                             </div>
                           </li>
                           <li class="w-100">
                             <div class="text-center">
-                              <i class="fas fa-volume-up" style="font-size: 20px;"></i>
-                                <p class="mb-0 font-weight-bold pt-1" style="font-size: 12px;">Basic Sound System</p>
+                              <i class="fas fa-volume-up text-dark" style="font-size: 20px;"></i>
+                                <p class="mb-0 font-weight-bold pt-1 text-dark" style="font-size: 12px;">Basic Sound System</p>
                             </div>
                           </li>
                         </ul>
                         <ul class="list-unstyled d-flex justify-content-around">
                           <li class="w-100">
                             <div class="text-center">
-                              <i class="fa fa-utensils" style="font-size: 20px;"></i>
-                                <p class="mb-0 font-weight-bold pt-1" style="font-size: 12px;">Menu No.1</p>
+                              <i class="fa fa-utensils text-dark" style="font-size: 20px;"></i>
+                                <p class="mb-0 font-weight-bold pt-1 text-dark" style="font-size: 12px;">Menu No.1</p>
                             </div>
                           </li>
                           <li class="w-100">
                             <div class="text-center">
-                              <i class="fa fa-birthday-cake" style="font-size: 20px;"></i>
-                                <p class="mb-0 font-weight-bold pt-1" style="font-size: 12px;">Wedding Cake</p>
+                              <i class="fa fa-birthday-cake text-dark" style="font-size: 20px;"></i>
+                                <p class="mb-0 font-weight-bold pt-1 text-dark" style="font-size: 12px;">Wedding Cake</p>
                             </div>
                           </li>
                         </ul>
                         <ul class="list-unstyled d-flex justify-content-around">
                           <li class="w-100">
                             <div class="text-center">
-                              <i class="fa fa-birthday-cake" style="font-size: 20px;"></i>
-                                <p class="mb-0 font-weight-bold pt-1" style="font-size: 12px;">Wedding Cake</p>
+                              <i class="fa fa-birthday-cake text-dark" style="font-size: 20px;"></i>
+                                <p class="mb-0 font-weight-bold pt-1 text-dark" style="font-size: 12px;">Wedding Cake</p>
                             </div>
                           </li>
                           <li class="w-100">
                             <div class="text-center">
-                              <i class="fa fa-birthday-cake" style="font-size: 20px;"></i>
-                                <p class="mb-0 font-weight-bold pt-1" style="font-size: 12px;">Free Aircon Venue</p>
+                              <i class="fa fa-birthday-cake text-dark" style="font-size: 20px;"></i>
+                                <p class="mb-0 font-weight-bold pt-1 text-dark" style="font-size: 12px;">Free Aircon Venue</p>
                             </div>
                           </li>
                         </ul>
-                        <hr>
-
                       <form action="{{ route('reserve.index', $service->slug )}}" method="POST">
                         @method('GET')
                         @csrf
@@ -122,7 +92,6 @@
                       <button type="submit" class="w-100 mt-2 py-1 text-white text-uppercase btn btn-success">Reserve Now</button>
                     </form>
                     </div>
-
                   </div>
                 </div>
             </div>

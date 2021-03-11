@@ -54,8 +54,13 @@
                 </ul>
             </div>
             <div class="col-lg-4">
-                <h3 class="text-dark" style="margin-bottom: 0">Caraevents</h3>
-                <h3 class="text-dark">Consultancy and Co.</h3>
+                <div class="d-flex">
+                    <img src="{{ asset('storage/users/logo1.png') }}" alt="cara-logo" width="55">
+                    <div class="pl-2">
+                        <h4 class="text-dark" style="margin-bottom: 0">Caraevents</h4>
+                        <h4 class="text-dark">Consultancy and Co.</h4>
+                    </div>
+                </div>
                 <ul class="footer-links">
                     <li>For more information & Support</li>
                     <li><a href="tel:+639228097519"><i class="fa fa-phone"></i>+63 922 809 7519</a></li>

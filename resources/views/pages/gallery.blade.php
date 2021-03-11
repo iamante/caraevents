@@ -1,7 +1,5 @@
 @extends('layouts.app')
 @section('content')
-    @include('include.navigation')
-    
     <div class="container pt-5 pb-5">
         <div class="row">
             <div class="col-lg-12">

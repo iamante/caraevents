@@ -166,3 +166,14 @@
         transform: scale(0.96);
     }
 }
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+.input-reserve {
+    color: black;
+
+    &:focus {
+        border-color: black;
+    }
+}

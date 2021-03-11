@@ -95,22 +95,34 @@
                     expireDate.toLocaleString("en", { year: "numeric" }) + '-' +
                     expireDate.toLocaleString("en", { month: "numeric"  }) + '-' +
                     expireDate.toLocaleString("en", { day: "numeric"});
+
+        const monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+        ];
                     
         $('.datepicker').datetimepicker({
                 timepicker:false,
+                inline:true,
                 format:'Y-m-d',
                 minDate: todayDate,
                 maxDate: expiredDate,
                 onShow:function(current_time,input){
                 input.datetimepicker( {mask: '2050-12-32'})
                 },
+                onSelectDate:function(current_time,input){
+                    let d = new Date(input.val());
+                    let date = monthNames[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
+                    $('#date-val').html(date);
+                    $('.datepicker').val(input.val());
+                },
+                todayButton:false,
         });
 
         $('.timepicker').datetimepicker({
             ampm: true,
             datepicker:false,
-            formatTime:'g:i a',
-            format:'g:i a',
+            formatTime:'g:i A',
+            format:'g:i A',
             minTime: '7:00',
             maxTime: '23:00',
             onShow:function(current_time,input){

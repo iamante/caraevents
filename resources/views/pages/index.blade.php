@@ -121,28 +121,6 @@
         </div>
     </div>
 </div>
-
-<!-- ----------------------------------  --------------------------------- -->
-<section id="cara">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <h6 class="cara-title">
-                    Caraevents <br>
-                    <span>Consultancy and Co.</span>
-                </h6>
-                <p>We Offer Wedding, Debut, Kiddie Party, Birthdays, Baptismal, Corporate Events, School party, Reunion, Bridal Shower, Anniversary, Stag party, etc.</p>
-                <p>Our goal is to provide quality and excellent customer service to the satisfaction of the clients.</p>
-            
-                <a href="/about"><div class="btn btn-default button-grad" >Learn More</div></a>
-            </div>
-            <div class="col-lg-6">
-                <img src="images/4.jpg" class="img-fluid" alt="">
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- --------------------------------- -------------------------------- -->
 <section class="testimonial"  style="overflow: hidden">
     <div class="testimonial-container container text-center pt-5 text-light">
@@ -213,73 +191,6 @@
     </div>
 </section>
 
-<!-- ---------------------------------- blog --------------------------------- -->
-
-    <section id="blog">
-        <div class="container">
-                    <h6 class="blog-title mb-0">
-                        Latest Blog
-                    </h6>
-                    <p>For best consultancy that you ever have.</p>
-            <div class="row">
-                <div class="col-md-4 col-sm-12">
-                    <div class="card h-100">
-                        <iframe class="card-img-top" src="https://www.youtube.com/embed/2omvPtbNr2I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <div class="card-body">
-                            <h5 class="d-block g-color-gray-dark-v4 g-font-weight-600 g-font-size-12 text-uppercase mb-2">
-                                10/08/2020 </h5>
-                                <h5 class="h5 g-color-black g-font-weight-600 mb-3">
-                                    <a class="u-link-v5 g-color-black g-color-primary--hover g-cursor-pointer" href="https://www.youtube.com/watch?v=2omvPtbNr2I&amp;feature=share" target="_blank" rel="nofollow">ALL ABOUT MARRIAGE CONTRACT (CARA EVENTS PH) #26 <i class="fa fa-external-link g-color-primary"></i></a>
-                                    </h5>
-                                    <p class="g-color-gray-dark-v4 g-line-height-1_8">
-                                        MARAMING SALAMAT PO MONETIZED NA TAYO.<br>
-                                        MARAMING SALAMAT PO SA SUPPORTA NINYONG LAHAT.<br>
-                                        PLS. LIKE, SHARE, HIT THE BELL BUTTON AND SUBCRIBE.<br>
-                                        THANKS PO, CARA EVENTS PHILIPPINES. </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-12">
-                    <div class="card h-100">
-                        <iframe class="img-fluid"  src="https://www.youtube.com/embed/QbcBFAke-IE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <div class="card-body">
-                                <h5 class="d-block g-color-gray-dark-v4 g-font-weight-600 g-font-size-12 text-uppercase mb-2">
-                                    10/08/2020 </h5>
-                                    <h5 class="h5 g-color-black g-font-weight-600 mb-3">
-                                        <a class="u-link-v5 g-color-black g-color-primary--hover g-cursor-pointer" href="https://www.youtube.com/watch?v=2omvPtbNr2I&amp;feature=share" target="_blank" rel="nofollow">HOW TO GET 100 % APPROVAL FROM GOOGLE ADSENSE ? (CARA EVENTS PH) # 34 <i class="fa fa-external-link g-color-primary"></i></a>
-                                        </h5>
-                                        <p class="g-color-gray-dark-v4 g-line-height-1_8">
-                                            HOW TO GET 100 % APPROVAL FROM<br>
-                                            GOOGLE ADSENSE ? Wedding tips from a 22<br>
-                                            years of experience. PLS. LIKE, SHARE, HIT<br>
-                                            THE BELL BUTTOM AND SUBSCRIBE. <br>
-                                            # HANAPBUHAY.
-                                        </p>
-                            </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-12">
-                    <div class="card h-100">
-                        <iframe class="img-fluid" src="https://www.youtube.com/embed/kiLu7kobsxk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <div class="card-body">
-                                <h5 class="d-block g-color-gray-dark-v4 g-font-weight-600 g-font-size-12 text-uppercase mb-2">
-                                    10/08/2020 </h5>
-                                    <h5 class="h5 g-color-black g-font-weight-600 mb-3">
-                                        <a class="u-link-v5 g-color-black g-color-primary--hover g-cursor-pointer" href="https://www.youtube.com/watch?v=2omvPtbNr2I&amp;feature=share" target="_blank" rel="nofollow">REQUIREMENTS FOR ANNULLED & WIDOW/WIDOWER (CARA EVENTS PH) # 27 <i class="fa fa-external-link g-color-primary"></i></a>
-                                        </h5>
-                                        <p class="g-color-gray-dark-v4 g-line-height-1_8">
-                                            MARAMING SALAMAT PO MONETIZED NA TAYO.<br>
-                                            MARAMING SALAMAT PO SA SUPPORTA NINYONG LAHAT.<br>
-                                            PLS. LIKE, SHARE, HIT THE BELL BUTTON AND SUBCRIBE.<br>
-                                            THANKS PO, CARA EVENTS PHILIPPINES. </p>
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-<!-- ----------------------------- end of about ----------------------------- -->
-
 <div class="container text-center my-5">
     <div class="row my-5 bg-light p-3">
         <div class="col-4">
@@ -299,17 +210,4 @@
         </div>
     </div>
 </div>
-
-
-<!-- ----------------------------- map ----------------------------- -->
-
-    <iframe class="img-fluid" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.175785698266!2d121.05430725019416!3d14.702649089687183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ba0ce965a977%3A0xcace75fb83bd1c1e!2sCara%20Events%20Philippines!5e0!3m2!1sen!2sph!4v1600260000245!5m2!1sen!2sph" width="1920" height="200" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-
-
-<!-- ----------------------------- end of map ----------------------------- -->
-
-<!-- ----------------------------- newsletter ----------------------------- -->
-
-<!-- ----------------------------- end of newsletter ----------------------------- -->
-
 @endsection

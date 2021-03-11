@@ -18911,6 +18911,25 @@ a.text-dark:focus {
   }
 }
 
+.xdsoft_datetimepicker.xdsoft_inline {
+  width: 100%;
+  border-color: #333;
+}
+
+.xdsoft_datetimepicker .xdsoft_datepicker {
+  margin-right: 8px;
+  width: 98% !important;
+}
+
+.xdsoft_datetimepicker .xdsoft_calendar th {
+  color: #333 !important;
+}
+
+.table td {
+  padding: 0.3rem;
+  padding-left: 10px;
+}
+
 #service {
   padding-top: 40px;
   padding-bottom: 80px;
@@ -19366,6 +19385,20 @@ a.text-dark:focus {
   transform: scale(0.96);
 }
 
+input[type=text],
+input[type=number],
+input[type=email],
+.input-reserve {
+  color: black;
+}
+
+input[type=text]:focus,
+input[type=number]:focus,
+input[type=email]:focus,
+.input-reserve:focus {
+  border-color: black;
+}
+
 footer .container-fluid,
 footer .container-sm,
 footer .container-md,
@@ -19391,12 +19424,12 @@ footer .container-xl {
 
 .footer-links a,
 li {
-  color: #9e9e9e;
+  color: #000000;
 }
 
 .footer td {
   padding: 3px;
-  color: #9e9e9e;
+  color: #000000;
 }
 
 .fa-angle-right,
