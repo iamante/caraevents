@@ -27,7 +27,8 @@ class CreateReservationsTable extends Migration
             $table->string('name');
             $table->string('details')->nullable();
             $table->date('date');
-            $table->time('time');
+            $table->time('start_time');
+            $table->time('end_time');
             $table->integer('price');
             $table->boolean('confirmation')->default(false);
             $table->timestamps();

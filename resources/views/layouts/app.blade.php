@@ -37,7 +37,6 @@
     <footer class="footer text-white">
         @include('include.footer')
     </footer>
-    
     <!-- Scripts -->
     <!-- reCAPTCHA v3 -->
     <script src="https://www.google.com/recaptcha/api.js?render=6LfwIhUaAAAAALnjpTfDNt_xIHE1GYymjPsQ-4pQ"></script>
@@ -49,12 +48,14 @@
           });
     </script>
     <!-- end of reCAPTCHA v3 -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('build/jquery.datetimepicker.full.min.js')}}"></script>
+    {{-- <script src="{{ asset('js/jquery.min.js') }}" defer></script> --}}
+    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script> --}}
+    <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
     <script>
-        $(".slick-testimonial").slick({
+        $(document).ready(function() {
+            $(".slick-testimonial").slick({
             dots: true,
             infinite: false,
             speed: 300,
@@ -82,62 +83,12 @@
             ]
         });
 
-        var today = new Date();
-        var dd = String(today.getDate()).padStart(2, '0');
-        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-        var yyyy = today.getFullYear();
-
-        var todayDate = yyyy + '-' + mm + '-' + dd;
-        var expireDate = new Date(todayDate);
-        expireDate.setFullYear(expireDate.getFullYear() + 1);
-        expireDate.setDate(expireDate.getDate() -1);
-        var expiredDate = 
-                    expireDate.toLocaleString("en", { year: "numeric" }) + '-' +
-                    expireDate.toLocaleString("en", { month: "numeric"  }) + '-' +
-                    expireDate.toLocaleString("en", { day: "numeric"});
-
-        const monthNames = ["January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"
-        ];
-                    
-        $('.datepicker').datetimepicker({
-                timepicker:false,
-                inline:true,
-                format:'Y-m-d',
-                minDate: todayDate,
-                maxDate: expiredDate,
-                onShow:function(current_time,input){
-                input.datetimepicker( {mask: '2050-12-32'})
-                },
-                onSelectDate:function(current_time,input){
-                    let d = new Date(input.val());
-                    let date = monthNames[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
-                    $('#date-val').html(date);
-                    $('.datepicker').val(input.val());
-                },
-                todayButton:false,
-        });
-
-        $('.timepicker').datetimepicker({
-            ampm: true,
-            datepicker:false,
-            formatTime:'g:i A',
-            format:'g:i A',
-            minTime: '7:00',
-            maxTime: '23:00',
-            onShow:function(current_time,input){
-                input.datetimepicker( {mask: '10:00'})
-            },
-            validateOnBlur: false,
-        });
-
-        $('#calendar').click(function(){
-            $('.timepicker').click()
-        })
-
+        
         function onSubmit(token) {
             document.getElementById("demo-form").submit();
         }
+        })
+        
     </script>
 </body>
 </html>

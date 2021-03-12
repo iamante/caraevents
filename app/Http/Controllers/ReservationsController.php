@@ -21,7 +21,8 @@ class ReservationsController extends Controller
     {
         $title = 'Reservation';
         $service = Service::where('slug', $slug)->firstOrFail();
-        return view('pages.reservation')->with(['service' => $service, 'title' => $title]);
+        $reservations = Reservation::all()->pluck('date');
+        return view('pages.reservation')->with(['service' => $service, 'reservation' => $reservations, 'title' => $title]);
     }
 
     /**
@@ -55,7 +56,8 @@ class ReservationsController extends Controller
            'name' => $request->input('name'), 
            'details' => $request->input('details'), 
            'date' => $request->input('date'),
-           'time' => date("H:i:s", strtotime($request->input('time'))),
+           'start_time' => date("H:i:s", strtotime($request->input('start_time'))),
+           'end_time' => date("H:i:s", strtotime($request->input('end_time'))),
            'price' => $request->input('price'),
            'image' => $request->input('image'),
         ]);

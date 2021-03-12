@@ -8,7 +8,7 @@ use Carbon\Carbon;
 class Reservation extends Model
 {
     protected $fillable = [
-        'user_id', 'email', 'phone', 'address', 'city', 'province', 'postal', 'name', 'details', 'date', 'time', 'price', 'image',
+        'user_id', 'email', 'phone', 'address', 'city', 'province', 'postal', 'name', 'details', 'date', 'start_time', 'end_time', 'price', 'image',
     ];
 
     public function user() 
