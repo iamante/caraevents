@@ -21,6 +21,7 @@ class CategoryTableSeeder extends Seeder
             ['name' => 'Debut', 'slug' => 'debut', 'created_at' => $now, 'updated_at' => $now],
             ['name' => 'Catering', 'slug' => 'catering', 'created_at' => $now, 'updated_at' => $now],
             ['name' => 'Rings', 'slug' => 'rings', 'created_at' => $now, 'updated_at' => $now],
+            ['name' => 'Accessories', 'slug' => 'accessories', 'created_at' => $now, 'updated_at' => $now],
         ]);
     }
 }

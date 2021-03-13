@@ -28,16 +28,19 @@
 }
 
 .testimonial {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    background-image: linear-gradient(
+            rgba(255, 255, 255, 0.7),
+            rgba(255, 255, 255, 0.7)
+        ),
         url("/images/11.jpg");
     background-repeat: no-repeat;
-    height: 430px;
+    height: 470px;
     background-size: cover;
 }
 
 .testimonial .card {
-    background-color: rgb(34, 34, 34);
-    opacity: 0.6;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.9;
 }
 
 .spacer {

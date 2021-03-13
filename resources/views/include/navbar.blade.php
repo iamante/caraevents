@@ -1,12 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm bg-light p-0">
-    <div class="container-fluid px-5">
+    <div class="container-fluid px-5" style="position: relative">
         <div>
-            <a class="navbar-brantext-white d-flex align-items-center py-2" href="/" style="color: #af915f">
-                <img src="{{ asset('storage/users/logo1.png') }}" alt="" class="img-fluid mr-2" width="35" > 
+            <div class="navbar-brand d-flex align-items-center py-2">
+                <img src="{{ asset('storage/users/caralogo.png') }}" alt="" class="img-fluid mr-2 pb-2" width="60" > 
                 <div class="brands">
-                    <span>caraevents</span>
+                    Caraevents
+                    <p>Consultancy & Co.</p>
                 </div>
-            </a>
+            </div>
         </div>
         <button class="navbar-toggler collapsed border-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -55,7 +56,7 @@
                 <li class="nav-item mr-3">
                     <a class="nav-link" href="/about" style="color:#505050">ABOUT</a>
                 </li>
-                <li class="nav-item mr-3">
+                <li class="nav-item">
                     <a class="nav-link" href="/contact" style="color:#505050">CONTACT</a>
                 </li>
             </ul>

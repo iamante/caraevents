@@ -32,13 +32,13 @@
                             @csrf
                         <div class="d-flex justify-content-between">
                             <div class="form-group w-100 mr-2">
-                                <label for="name">Full Name</label>
-                                <input type="user_id" class="form-control shadow-sm" value="{{ auth()->user()->name }}" readonly>
+                                <label for="customer_name">Full Name</label>
+                                <input type="text" name="customer_name" class="form-control shadow-sm" value="{{ auth()->user()->name }}" readonly>
                                 
                               </div>
                               <div class="form-group w-100 ml-2">
-                                <label for="lname">Last name</label>
-                                <input type="lname" class="form-control shadow-sm" readonly>
+                                <label for="customer_lname">Last name</label>
+                                <input type="text" name="customer_lname" class="form-control shadow-sm">
                               </div>
                         </div>
         

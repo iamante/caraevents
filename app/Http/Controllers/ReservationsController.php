@@ -47,9 +47,12 @@ class ReservationsController extends Controller
         //return $request->all();
         $reserve = Reservation::create([
            'user_id' => auth()->user() ? auth()->user()->id : null,
+           'customer_name' => $request->input('customer_name'),
+           'customer_lname' => $request->input('customer_lname'),
            'email' => $request->input('email'),
            'phone' => $request->input('phone'),
            'address' => $request->input('address'),
+           'barangay' => $request->input('barangay'),
            'city' => $request->input('city'), 
            'province' => $request->input('province'), 
            'postal' => $request->input('postal'), 

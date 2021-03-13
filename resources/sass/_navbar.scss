@@ -1,33 +1,65 @@
 .brands {
-    span {
-        font-size: 19px;
-        font-family: "Quicksand", sans-serif;
-        letter-spacing: 0;
-    }
-}
+    cursor: default;
+    font-size: 19px;
+    letter-spacing: 1px;
+    display: block;
 
-.brands:hover {
-    color: #ca96a6;
+    p {
+        line-height: 18px;
+        color: rgb(0, 128, 62);
+    }
 }
 
 .register:hover {
     opacity: 0.5;
 }
 
-.nav-item .nav-link:hover {
-    color: #af915f;
+.nav-item {
+    position: relative;
 }
 
 .navbar a {
-    font-size: 13px;
+    font-size: 16px;
     letter-spacing: 2px;
     color: #3e3536 !important;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    transition: all 0.5s;
+    position: relative;
+    &::before {
+        transition: all 0.5s;
+    }
+    &::after {
+        transition: all 0.5s;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 0%;
+        content: ".";
+        color: transparent;
+        background: rgb(0, 128, 62);
+        height: 3px;
+    }
+
+    &:hover::after {
+        width: 80%;
+    }
+}
+
+.brands:hover::after {
+    color: #000;
+    width: 0;
+}
+
+.dropdown-item {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
 }
 
 .navbar a:hover {
-    color: #cccccc !important;
+    color: rgb(0, 128, 62) !important;
     text-decoration: none;
 }
 
@@ -116,4 +148,8 @@
         margin: auto;
         text-align: center;
     }
+}
+
+.nav-item a#current {
+    color: rgb(0, 128, 62) !important;
 }

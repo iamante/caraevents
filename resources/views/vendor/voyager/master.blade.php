@@ -113,7 +113,7 @@ if (\Illuminate\Support\Str::startsWith(Auth::user()->avatar, 'http://') || \Ill
         </div>
     </div>
 </div>
-@include('voyager::partials.app-footer')
+{{-- @include('voyager::partials.app-footer') --}}
 
 <!-- Javascript Libs -->
 

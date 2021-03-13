@@ -41350,58 +41350,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery_ui_ui_widgets_tabs_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery_ui_ui_widgets_tabs_js__WEBPACK_IMPORTED_MODULE_2__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./main */ "./resources/js/main.js");
+
 
 window.$ = window.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;
 global.$ = global.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 
-/* $('.datepicker').datepicker({
-    duration: "slow",
-}); 
- */
-
-jquery__WEBPACK_IMPORTED_MODULE_0___default()("#service-tabs").tabs();
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('[data-toggle="popover"]').popover();
-jquery__WEBPACK_IMPORTED_MODULE_0___default()("#my-calendar").datepicker();
-jquery__WEBPACK_IMPORTED_MODULE_0___default()("#far-eye").on("click", function () {
-  var type = jquery__WEBPACK_IMPORTED_MODULE_0___default()("#password").attr("type") === "password" ? "text" : "password";
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#password").attr("type", type);
-  this.classList.toggle("fa-eye-slash");
-});
-jquery__WEBPACK_IMPORTED_MODULE_0___default()(".inpFile").on("click", function () {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#inpFile").trigger("click");
-});
-var inpFile = document.getElementById("inpFile");
-var imageContainer = document.getElementById("imageContainer");
-var imagePreview = document.querySelector(".imagePreview");
-
-if (inpFile) {
-  inpFile.addEventListener("change", function () {
-    var file = this.files[0];
-
-    if (file) {
-      var reader = new FileReader();
-      reader.addEventListener("load", function () {
-        imagePreview.setAttribute("src", this.result);
-      });
-      reader.readAsDataURL(file);
-    }
-  });
-}
-
-jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on("scroll", function () {
-  if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).scrollTop() > 100) {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()("#scroll").fadeIn();
-  } else {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()("#scroll").fadeOut();
-  }
-});
-jquery__WEBPACK_IMPORTED_MODULE_0___default()("#scroll").on("click", function () {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("html, body").animate({
-    scrollTop: 0
-  }, 1200);
-  return false;
-});
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
@@ -41448,6 +41403,70 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/main.js":
+/*!******************************!*\
+  !*** ./resources/js/main.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(function () {
+  var currentLocation = location.href;
+  var menuItem = $(".nav-link");
+  var menuLength = menuItem.length;
+
+  for (var i = 0; i < menuLength; i++) {
+    if (menuItem[i].href === currentLocation) {
+      menuItem[i].id = "current";
+    }
+  }
+
+  $("#service-tabs").tabs();
+  $('[data-toggle="popover"]').popover();
+  $("#my-calendar").datepicker();
+  $("#far-eye").on("click", function () {
+    var type = $("#password").attr("type") === "password" ? "text" : "password";
+    $("#password").attr("type", type);
+    this.classList.toggle("fa-eye-slash");
+  });
+  $(".inpFile").on("click", function () {
+    $("#inpFile").trigger("click");
+  });
+  var inpFile = document.getElementById("inpFile");
+  var imageContainer = document.getElementById("imageContainer");
+  var imagePreview = document.querySelector(".imagePreview");
+
+  if (inpFile) {
+    inpFile.addEventListener("change", function () {
+      var file = this.files[0];
+
+      if (file) {
+        var reader = new FileReader();
+        reader.addEventListener("load", function () {
+          imagePreview.setAttribute("src", this.result);
+        });
+        reader.readAsDataURL(file);
+      }
+    });
+  }
+
+  $(window).on("scroll", function () {
+    if ($(this).scrollTop() > 100) {
+      $("#scroll").fadeIn();
+    } else {
+      $("#scroll").fadeOut();
+    }
+  });
+  $("#scroll").on("click", function () {
+    $("html, body").animate({
+      scrollTop: 0
+    }, 1200);
+    return false;
+  });
+});
 
 /***/ }),
 

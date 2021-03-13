@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-    @include('include.navigation')
     <div class="services-container container-fluid bg-white" style="padding-left: 90px; padding-right: 90px;">
         <div class="row">
             <div class="col-lg-2 col-sm-5 p-0 mt-4">

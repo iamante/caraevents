@@ -123,20 +123,20 @@
 </div>
 <!-- --------------------------------- -------------------------------- -->
 <section class="testimonial"  style="overflow: hidden">
-    <div class="testimonial-container container text-center pt-5 text-light">
-        <p class="mb-0 text-light">TESTIMONIAL</p>
-        <h3 class="text-light">What our clients say about us.</h3>
+    <div class="testimonial-container container text-center pt-5 text-dark">
+        <p class="mb-0 text-dark">TESTIMONIAL</p>
+        <h3 class="text-dark">What our clients say about us.</h3>
         <div class="row my-4 text-left slick-testimonial">
             <div class="col-4">
-                <div class="card border-0 h-100">
-                    <div class="card-body">
+                <div class="card border-0 h-100 shadow-sm">
+                    <div class="card-body pb-0">
                         <div class="d-flex justify-content-between align-items-center">
                             <i class="fa fa-quote-left py-2" aria-hidden="true" style="color: #ca96a6"></i>
                             <i class="fa fa-quote-right py-2" aria-hidden="true" style="color: #ca96a6"></i>
                         </div>
                         <p class="text-center">Its good experience I highly recommend them <br> very professional and friendly staff.</p>
                     </div>
-                    <div class="card-footer">
+                    <div class="card-footer border-0 bg-white pb-4 ">
                         <div class="d-flex align-items-center justify-content-center">
                             <img src="{{ asset('images/testimonial/eddie.jpg') }}" alt="" width="50" class="rounded-circle">
                             <div class="text-left mx-2">
@@ -148,15 +148,15 @@
                 </div>
             </div>
             <div class="col-4">
-                <div class="card border-0 h-100">
-                    <div class="card-body">
+                <div class="card border-0 h-100 shadow-sm">
+                    <div class="card-body pb-0">
                         <div class="d-flex justify-content-between align-items-center">
                             <i class="fa fa-quote-left py-2" aria-hidden="true" style="color: #ca96a6"></i>
                             <i class="fa fa-quote-right py-2" aria-hidden="true" style="color: #ca96a6"></i>
                         </div>
                         <p class="text-center">Sobrang nirerecomend po natin ito dahil naging maayos at pinaka masayang araw ng buhay namin ang araw ng aming kasal. thank you po..</p>
                     </div>
-                    <div class="card-footer">
+                    <div class="card-footer border-0 bg-white pb-4">
                         <div class="d-flex align-items-center justify-content-center">
                             <img src="{{ asset('images/testimonial/shiela.jpg') }}" alt="" width="50" class="rounded-circle">
                             <div class="text-left mx-2">
@@ -168,15 +168,15 @@
                 </div>
             </div>
             <div class="col-4">
-                <div class="card border-0 h-100">
-                    <div class="card-body">
+                <div class="card border-0 h-100 shadow-sm">
+                    <div class="card-body pb-0">
                         <div class="d-flex justify-content-between align-items-center">
                             <i class="fa fa-quote-left py-2" aria-hidden="true" style="color: #ca96a6"></i>
                             <i class="fa fa-quote-right py-2" aria-hidden="true" style="color: #ca96a6"></i>
                         </div>
                         <p class="text-center">They were very accommodating and helps you in everything you need in an any event💞💝</p>
                     </div>
-                    <div class="card-footer">
+                    <div class="card-footer border-0 bg-white pb-4">
                         <div class="d-flex align-items-center justify-content-center">
                             <img src="{{ asset('images/testimonial/raquel.jpg') }}" alt="" width="50" class="rounded-circle">
                             <div class="mx-2">

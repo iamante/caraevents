@@ -8,7 +8,7 @@ use Carbon\Carbon;
 class Reservation extends Model
 {
     protected $fillable = [
-        'user_id', 'email', 'phone', 'address', 'city', 'province', 'postal', 'name', 'details', 'date', 'start_time', 'end_time', 'price', 'image',
+        'user_id','customer_name', 'customer_lname', 'email', 'phone', 'address', 'barangay', 'city', 'province', 'postal', 'name', 'details', 'date', 'start_time', 'end_time', 'price', 'image',
     ];
 
     public function user() 
@@ -41,7 +41,14 @@ class Reservation extends Model
 
     public function formatTime()
     {
-        $time = Carbon::parse($this->time);
+        $time = Carbon::parse($this->start_time);
+
+        return $time->isoFormat('h:mm a');
+    }
+
+    public function formatEndTime()
+    {
+        $time = Carbon::parse($this->end_time);
 
         return $time->isoFormat('h:mm a');
     }

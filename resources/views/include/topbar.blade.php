@@ -29,9 +29,9 @@
                             <li class="dropdown ml-2 py-2" > 
                                 <a href="#" class="dropdown-toggle text-muted username" data-toggle="dropdown" role="button" aria-expanded="false">
                                      @if (Auth::user()->avatar == 'users/default.png')
-                                     <img src="{{ asset('storage/'. auth()->user()->avatar) }}" alt="" class="img-fluid ml-2" width="25" style="border: 1px solid #cccccc; border-radius: 50%;"> 
+                                     <img src="{{ asset('storage/'. auth()->user()->avatar) }}" alt="" class="img-fluid ml-2" width="25" style="border: 2px solid #3c3c3c; border-radius: 50%;"> 
                                      @else
-                                     <img src="{{ asset('storage/users/'. auth()->user()->avatar) }}" alt="" class="img-fluid ml-2" width="25" style="border: 1px solid #cccccc; border-radius: 50%;"> 
+                                     <img src="{{ asset('storage/users/'. auth()->user()->avatar) }}" alt="" class="img-fluid ml-2" width="25" style="border: 2px solid #3c3c3c; border-radius: 50%;"> 
                                      @endif
                                      My account
                                 </a>

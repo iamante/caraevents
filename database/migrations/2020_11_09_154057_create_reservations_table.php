@@ -18,9 +18,12 @@ class CreateReservationsTable extends Migration
             $table->bigInteger('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users')
                   ->onUpdate('cascade')->onDelete('set null');
+            $table->string('customer_name');
+            $table->string('customer_lname');
             $table->string('email');
-            $table->integer('phone');
+            $table->bigInteger('phone');
             $table->text('address');
+            $table->string('barangay');
             $table->string('city');
             $table->string('province');
             $table->string('postal');
@@ -30,7 +33,7 @@ class CreateReservationsTable extends Migration
             $table->time('start_time');
             $table->time('end_time');
             $table->integer('price');
-            $table->boolean('confirmation')->default(false);
+            $table->boolean('status')->default(false);
             $table->timestamps();
         });
     }

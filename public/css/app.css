@@ -18529,13 +18529,13 @@ a.text-dark:focus {
 }
 
 .top-login {
-  background-color: #f8f9fa;
+  background-color: #f8faf8;
   padding: 5px;
 }
 
 .top-login a {
   color: #4d4d4d;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 550;
   letter-spacing: 0.1rem;
   text-decoration: none;
@@ -18639,34 +18639,70 @@ a.text-dark:focus {
   z-index: 8;
 }
 
-.brands span {
+.brands {
+  cursor: default;
   font-size: 19px;
-  font-family: "Quicksand", sans-serif;
-  letter-spacing: 0;
+  letter-spacing: 1px;
+  display: block;
 }
 
-.brands:hover {
-  color: #ca96a6;
+.brands p {
+  line-height: 18px;
+  color: #00803e;
 }
 
 .register:hover {
   opacity: 0.5;
 }
 
-.nav-item .nav-link:hover {
-  color: #af915f;
+.nav-item {
+  position: relative;
 }
 
 .navbar a {
-  font-size: 13px;
+  font-size: 16px;
   letter-spacing: 2px;
   color: #3e3536 !important;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  transition: all 0.5s;
+  position: relative;
+}
+
+.navbar a::before {
+  transition: all 0.5s;
+}
+
+.navbar a::after {
+  transition: all 0.5s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: ".";
+  color: transparent;
+  background: #00803e;
+  height: 3px;
+}
+
+.navbar a:hover::after {
+  width: 80%;
+}
+
+.brands:hover::after {
+  color: #000;
+  width: 0;
+}
+
+.dropdown-item {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
 }
 
 .navbar a:hover {
-  color: #cccccc !important;
+  color: #00803e !important;
   text-decoration: none;
 }
 
@@ -18751,6 +18787,10 @@ a.text-dark:focus {
     margin: auto;
     text-align: center;
   }
+}
+
+.nav-item a#current {
+  color: #00803e !important;
 }
 
 .carousel-indicators li {
@@ -18975,6 +19015,19 @@ a.text-dark:focus {
 .table td {
   padding: 0.3rem;
   padding-left: 10px;
+}
+
+.gallery-category li {
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  color: black;
+  width: 130px;
+  margin: auto;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 #service {
@@ -19293,15 +19346,15 @@ a.text-dark:focus {
 }
 
 .testimonial {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/images/11.jpg");
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("/images/11.jpg");
   background-repeat: no-repeat;
-  height: 430px;
+  height: 470px;
   background-size: cover;
 }
 
 .testimonial .card {
-  background-color: #222222;
-  opacity: 0.6;
+  background-color: white;
+  opacity: 0.9;
 }
 
 .spacer {

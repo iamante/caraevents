@@ -105,8 +105,8 @@
                             <div class="col-md-6">
                                 <h5 class="pb-3" style="font-weight:800;">Requested Date :</h5> 
                                 <div style="display: flex;">
-                                    <p>{{ $dataTypeContent->formatDate() }}</p><span style="padding-right: 10px; padding-left: 10px;">at</span>  
-                                    {{ $dataTypeContent->formatTime() }}
+                                    <p style="padding-right: 10px;">{{ $dataTypeContent->formatDate() }}</p> 
+                                    {{ $dataTypeContent->formatTime() }} <span style="padding-right: 10px; padding-left: 10px;">to</span> {{ $dataTypeContent->formatEndTime() }} 
                                 </div>
                         </div>
                     </div>
@@ -130,12 +130,12 @@
                         <h5>₱ {{ $dataTypeContent->price }}</h5>
                     </div>
                     
-                        @if ( $dataTypeContent->confirmation == "1" )
-                        <div class="btn btn-success disabled" style="width: 100%" aria-disabled="true" tabindex="-1" disabled>
+                        @if ( $dataTypeContent->status == "1" )
+                        <div class="btn btn-success disabled" style="width: 100%; cursor: default" aria-disabled="true" tabindex="-1" disabled>
                         <img src="{{ asset('storage/users/tick.png') }}" alt="" width="20" style="margin-right: 5px; "><span style="border: 2px solid rgb(255, 255, 255); border-radius: 50%; padding-left: 3px; padding-right: 1px; margin-right: 5px;">&#10003; </span> {{ 'Reserved' }}
                         </div>
                         @else
-                        <div class="btn btn-danger disabled" style="width: 100%" aria-disabled="true" tabindex="-1" disabled>
+                        <div class="btn btn-danger disabled" style="width: 100%; cursor: default" aria-disabled="true" tabindex="-1" disabled>
                             {{ 'Not Confirm' }}
                         </div>
                         @endif
