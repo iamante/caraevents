@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Voyager;
 
 use Exception;
-use App\Service;
-use App\Category;
-use App\CategoryService;
+use App\Gallery;
+use App\CategoryImage;
+use App\CategoryImageGallery;
 use Illuminate\Http\Request;
 use TCG\Voyager\Facades\Voyager;
 use Illuminate\Support\Facades\DB;
@@ -20,7 +20,7 @@ use TCG\Voyager\Database\Schema\SchemaManager;
 use TCG\Voyager\Http\Controllers\VoyagerBaseController;
 use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
 
-class ServicesController extends VoyagerBaseController
+class GalleriesController extends VoyagerBaseController
 {
     use BreadRelationshipParser;
 
@@ -305,13 +305,12 @@ class ServicesController extends VoyagerBaseController
             $view = "voyager::$slug.edit-add";
         }
 
-        $allCategories = Category::all();
+        $allCategories = CategoryImage::all();
 
-        $service = Service::find($id);
-        dd($service->categories()->get());
-        $categoriesForService = $service->categories()->get();
+        $gallery = Gallery::find($id);
+        $categoriesForGallery = $gallery->categories()->get();
 
-        return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable', 'allCategories', 'categoriesForService'));
+        return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable', 'allCategories', 'categoriesForGallery'));
     }
 
     // POST BR(E)AD
@@ -344,9 +343,9 @@ class ServicesController extends VoyagerBaseController
 
         event(new BreadDataUpdated($dataType, $data));
 
-        CategoryService::where('service_id', $id)->delete();
+        CategoryImageGallery::where('gallery_id', $id)->delete();
 
-        $this->updateServiceCategories($request, $id);
+        $this->updateGalleryCategories($request, $id);
 
         if (auth()->user()->can('browse', app($dataType->model_name))) {
             $redirect = redirect()->route("voyager.{$dataType->slug}.index");
@@ -405,10 +404,10 @@ class ServicesController extends VoyagerBaseController
             $view = "voyager::$slug.edit-add";
         }
 
-        $allCategories = Category::all();
-        $categoriesForService = collect([]);
+        $allCategories = CategoryImage::all();
+        $categoriesForGallery = collect([]);
 
-        return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable', 'allCategories', 'categoriesForService'));
+        return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable', 'allCategories', 'categoriesForGallery'));
     }
 
     /**
@@ -435,7 +434,7 @@ class ServicesController extends VoyagerBaseController
 
         event(new BreadDataAdded($dataType, $data));
 
-        $this->updateServiceCategories($request, $data->id);
+        $this->updateGalleryCategories($request, $data->id);
 
         if (!$request->has('_tagging')) {
             if (auth()->user()->can('browse', $data)) {
@@ -948,13 +947,13 @@ class ServicesController extends VoyagerBaseController
         return response()->json([], 404);
     }
 
-    protected function updateServiceCategories(Request $request, $id)
+    protected function updateGalleryCategories(Request $request, $id)
     {
         if($request->category){
             foreach ($request->category as $category) {
-                CategoryService::create([
-                    'service_id' => $id,
-                    'category_id' => $category,
+                CategoryImageGallery::create([
+                    'gallery_id' => $id,
+                    'category_image_id' => $category,
                 ]);
             }
         }

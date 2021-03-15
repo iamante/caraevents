@@ -3,10 +3,7 @@
 }
 
 .panel.widget .dimmer {
-    background-color: rgb(255, 255, 255) !important;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
-    background: none;
-    border-radius: 5px;
+    background: none !important;
 }
 
 .panel-content {
@@ -15,43 +12,64 @@
     position: relative;
 }
 
+.panel-content .icon-voy .voyager-people {
+    margin-top: 7px;
+    background: linear-gradient(87deg, #11cdef 0, #1171ef 100%) !important;
+    font-size: 40px;
+}
+
+.panel-content .icon-voy .voyager-receipt {
+    margin-top: 7px;
+    background: linear-gradient(87deg, #2dce89 0, #2dcecc 100%) !important;
+    font-size: 40px;
+}
+
+.panel-content .icon-voy .voyager-bag {
+    margin-top: 7px;
+    background: linear-gradient(87deg, #f5365c 0, #f56036 100%) !important;
+    font-size: 40px;
+}
+
+.panel-content .icon-voy .voyager-people:before {
+    position: absolute !important;
+    top: 20px !important;
+    right: 40px !important;
+}
+
+.panel-content .icon-voy .voyager-bag:before {
+    position: absolute !important;
+    top: 20px !important;
+    right: 40px !important;
+}
+
+.panel-content .icon-voy .voyager-receipt:before {
+    position: absolute !important;
+    top: 20px !important;
+    right: 40px !important;
+}
+
 .panel-content .icon-voy a {
     cursor: pointer;
 }
 
-.panel.widget.bgimage {
-    padding-left: 20px;
+.panel-content .icon-voy i {
+    width: 70px;
+    height: 70px;
 }
 
 .panel.widget.center .text-voy {
     text-align: left;
-    padding-left: 20px;
-    margin-left: 20px;
-    border-left: 1px solid rgb(221, 221, 221);
 }
 
 .panel.widget.center .text-voy p {
-    margin-top: 15px;
     margin-bottom: 20px;
     color: black;
 }
 
-.panel.widget.center .text-voy .btn {
-    margin-bottom: 0;
-}
-
-.panel.widget.center .text-voy h4 {
+.panel.widget.center .text-voy h1,
+a {
     color: black;
     margin-top: 3px;
-}
-.panel.widget.center .text-voy .btn-success {
-    position: absolute;
-    bottom: 3px;
-    right: 3px;
-}
-
-.panel.widget i {
-    background-color: rgb(49, 194, 121);
 }
 
 .voyager .side-menu .navbar-header {

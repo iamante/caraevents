@@ -35,8 +35,8 @@ class Users extends AbstractWidget
         return view('voyager::dimmer', array_merge($this->config, [
             'icon'   => 'voyager-people',
             // 'title'  => "{$count} Total {$string}",
-            'title'  => "{$count['weekly']} New {$string} Added",
-            'text'   => 'You have ' .$count['monthly']. ' new users in your database.',
+            'title'  => "New {$string} Added",
+            'text'   => "+{$count['monthly']}",
             'button' => [
                 'text' => 'View Users',
                 'link' => route('voyager.users.index'),

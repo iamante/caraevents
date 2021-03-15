@@ -28,8 +28,8 @@ class Services extends AbstractWidget
 
         return view('voyager::dimmer', array_merge($this->config, [
             'icon'   => 'voyager-bag',
-            'title'  => "{$count} {$string}",
-            'text'   => 'You have ' .$count. ' services in your database.',
+            'title'  => "All {$string}",
+            'text'   => $count,
             'button' => [
                 'text' => 'View service',
                 'link' => '/admin/services',

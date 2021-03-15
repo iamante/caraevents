@@ -28,7 +28,7 @@ class ServicesController extends Controller
 
         } else {
             $title = 'Services';    
-            $services = Service::take(12);
+            $services = Service::take($paginate);
             $categoriesName = 'Featured';
         }
 

@@ -17,7 +17,7 @@ Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/termsconditions', 'PagesController@termsconditions');
 Route::get('/privacypolicy', 'PagesController@privacypolicy');
-Route::get('/gallery', 'GallerysController@index');
+Route::get('/gallery', 'GallerysController@index')->name('galleries.index');
 Route::get('/clothing', 'ClothRentalsController@index');
 Route::get('/clothing/{rentals}', 'ClothRentalsController@show')->name('clothrentals.show');
 Route::get('/services', 'ServicesController@index')->name('services.index');

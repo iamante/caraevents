@@ -14,7 +14,7 @@ class AddImageToGalleriesTable extends Migration
     public function up()
     {
         Schema::table('galleries', function (Blueprint $table) {
-            $table->string('image')->nullable()->after('name');
+            $table->string('image')->nullable()->after('slug');
         });
     }
 
