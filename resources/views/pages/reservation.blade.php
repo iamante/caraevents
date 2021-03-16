@@ -68,7 +68,7 @@
                                 <input type="text" name="city" class="form-control shadow-sm" required>
                               </div>
                               <div class="form-group w-100 mx-2">
-                                <label for="province">Province</label>
+                                <label for="province">State/Province</label>
                                 <input type="text" name="province" class="form-control shadow-sm" required>
                               </div>
                               <div class="form-group w-100 ml-2">

@@ -33,19 +33,23 @@
 .panel-content .icon-voy .voyager-people:before {
     position: absolute !important;
     top: 20px !important;
-    right: 40px !important;
+    right: 45px !important;
 }
 
 .panel-content .icon-voy .voyager-bag:before {
     position: absolute !important;
     top: 20px !important;
-    right: 40px !important;
+    right: 45px !important;
 }
 
 .panel-content .icon-voy .voyager-receipt:before {
     position: absolute !important;
     top: 20px !important;
-    right: 40px !important;
+    right: 45px !important;
+}
+
+.panel-content .icon-voy {
+    position: relative !important;
 }
 
 .panel-content .icon-voy a {
@@ -74,4 +78,35 @@ a {
 
 .voyager .side-menu .navbar-header {
     background-color: #2a363b;
+}
+
+/* recent reservation */
+
+.recent-reservation {
+    width: 100%;
+    position: relative;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 25px;
+    float: left;
+}
+
+.recent-reservation-no {
+    background-color: rgb(247, 84, 84);
+    color: #fff;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 5px;
+}
+
+.recent-reservation-ok {
+    background-color: rgb(58, 190, 113);
+    color: #fff;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 5px;
 }

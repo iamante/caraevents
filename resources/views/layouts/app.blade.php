@@ -50,8 +50,6 @@
     <!-- end of reCAPTCHA v3 -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('build/jquery.datetimepicker.full.min.js')}}"></script>
-    {{-- <script src="{{ asset('js/jquery.min.js') }}" defer></script> --}}
-    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script> --}}
     <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
     <script>
         $(document).ready(function() {

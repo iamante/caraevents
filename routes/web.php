@@ -26,7 +26,7 @@ Route::get('/search', 'ServicesController@search')->name('search');
 
 Route::get('/rental', 'RentalsController@index')->name('rental.index');
 
-
+Route::get('/reservation', 'ReserveController@index')->name('reserve.home')->middleware(['auth' => 'auth_reservation']);
 Route::get('/reservation/{service}', 'ReservationsController@index')->name('reserve.index')->middleware(['auth' => 'verified']);
 Route::post('/reservation', 'ReservationsController@store')->name('reserve.store');
 
@@ -41,6 +41,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
+    Route::get('/', ['uses' => 'Voyager\DashboardController@index',   'as' => 'voyager.dashboard']);
 });
 
 Route::get('login/{website}', 'Auth\LoginController@redirectToProvider');

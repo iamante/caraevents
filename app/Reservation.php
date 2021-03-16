@@ -43,13 +43,13 @@ class Reservation extends Model
     {
         $time = Carbon::parse($this->start_time);
 
-        return $time->isoFormat('h:mm a');
+        return $time->isoFormat('h:mm A');
     }
 
     public function formatEndTime()
     {
         $time = Carbon::parse($this->end_time);
 
-        return $time->isoFormat('h:mm a');
+        return $time->isoFormat('h:mm A');
     }
 }

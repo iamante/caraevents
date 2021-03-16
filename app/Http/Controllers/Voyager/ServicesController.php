@@ -308,7 +308,6 @@ class ServicesController extends VoyagerBaseController
         $allCategories = Category::all();
 
         $service = Service::find($id);
-        dd($service->categories()->get());
         $categoriesForService = $service->categories()->get();
 
         return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable', 'allCategories', 'categoriesForService'));

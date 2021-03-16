@@ -3,7 +3,60 @@
 @section('content')
     <div class="page-content">
         @include('voyager::alerts')
+        <div>
+            <h3 style="margin-left: 30px; color: #333; font-weight:800px;"><img src={{ asset('storage/users/logo1.png')}} alt="logo" width="35"> Hello admin, Welcome back!</h3>
+        </div>
         @include('voyager::dimmers')
+        <div class="clearfix container-fluid row">
+            <div class="col-xs-12 col-sm-12 col-md-6">
+                
+            </div>
+        </div>
+        <div class="recent-reservation">
+            <div class="panel panel-bordered">
+                <div class="panel-body">
+                    <h4 style="margin-bottom: 20px">Recent Reservation</h4>
+                    <div class="table-responsive">
+                        <table id="dataTable" class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th><a href="http://localhost:8000/admin/services?sort_order=desc&amp;order_by=id">id</a></th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                    <th>FirstName</th>
+                                    <th>LastName</th>
+                                    <th>ServiceName</th>
+                                    <th>StartTime</th>
+                                    <th>EndTime</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($count as $item)
+                                <tr>
+                                    <td><div>#{{ $item->id }}</div></td>
+                                    <td>
+                                        @if ($item->status == 0)
+                                            <div><span class="recent-reservation-no">waiting for confirmation</span></div>
+                                        @else
+                                            <div><span class="recent-reservation-ok">confirmed</span></div>
+                                        @endif
+                                    </td>
+                                    <td><div>{{ $item->formatDate() }}</div></td>
+                                    <td><div>{{ $item->customer_name }}</div></td>
+                                    <td><div>{{ $item->customer_lname }}</div></td>
+                                    <td><div>{{ $item->name }}</div></td>
+                                    <td><div>{{ $item->formatTime() }}</div></td>
+                                    <td><div>{{ $item->formatEndTime() }}</div></td>
+                                    <td><div>{{ $item->presentPrice() }}</div></td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="analytics-container">
             <?php $google_analytics_client_id = Voyager::setting("admin.google_analytics_client_id"); ?>
             @if (isset($google_analytics_client_id) && !empty($google_analytics_client_id))
@@ -99,7 +152,6 @@
                 };
             }(window, document, 'script'));
         </script>
-
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.1.1/Chart.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
         <script>
@@ -468,6 +520,7 @@
             });
 
         </script>
+        
 
     @endif
 

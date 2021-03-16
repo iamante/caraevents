@@ -9,6 +9,7 @@
             <div class="card px-5 pt-5 shadow-sm border-0">
                 <div class="px-5 text-center">
                     <h1>Create Account</h1>
+                    <p>To get started fill in this form to start your reservations.</p>
                 </div>
 
                 <div class="card-body px-5">

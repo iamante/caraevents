@@ -6,9 +6,9 @@
                 <div style="font-size: 13px;"><a href="/" class="text-muted"> <i class="fa fa-home"></i> Home</a><i class="fa fa-angle-right mx-2 pr-0 text-muted" aria-hidden="true"></i>{{ $title }}</div>
                 <ul class="list-group">
                     <div class="mb-2 mt-4 mr-5 pl-2 font-weight-bold text-white bg-dark">Categories</div>
-                    <a href="/services" class=" text-dark"><div class="py-2 pl-3" style="font-size: 13px;">All Services</div></a>
+                    <a href="/services" class=" text-dark"><div class="py-2 pl-3">All Services</div></a>
                         @foreach ($categories as $category)
-                            <li style="font-size: 13px;" class="my-1 pl-3 {{ request()->category == $category->slug ? 'active' : '' }}"><a class="text-dark" href={{ route('services.index', ['category' => $category->slug ]) }}>{{ $category->name}}</a> ( {{$category->services->count()}} )</li>
+                            <li class="my-1 pl-3 {{ request()->category == $category->slug ? 'active' : '' }}"><a class="text-dark" href={{ route('services.index', ['category' => $category->slug ]) }}>{{ $category->name}}</a> ( {{$category->services->count()}} )</li>
                         @endforeach
                 </ul>
                 <div class="spacer my-3"></div>
