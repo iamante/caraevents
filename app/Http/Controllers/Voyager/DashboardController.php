@@ -16,8 +16,9 @@ class DashboardController extends VoyagerBaseController
         $count['daily'] = Reservation::where('created_at','>=',Carbon::today())->count();
         $count['weekly'] = Reservation::where('created_at','>=',Carbon::today()->subDays(7))->orderByDesc('created_at')->limit(10)->get();
         $count['monthly'] = Reservation::where('created_at','>=',Carbon::today()->subDays(30))->count();
+        $reservation = Reservation::get(['id','name','date','start_time','end_time']);
 
-        return Voyager::view('voyager::index')->with('count', $count['weekly']);
+        return Voyager::view('voyager::index')->with(['count' => $count['weekly'], 'reservation' => $reservation]);
     }
 }
 

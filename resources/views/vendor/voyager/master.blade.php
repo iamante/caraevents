@@ -22,6 +22,8 @@
 
     <!-- App CSS -->
     <link rel="stylesheet" href="{{ voyager_asset('css/app.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.min.js"></script>
 
     @yield('css')
     @if(__('voyager::generic.is_rtl') == 'true')
@@ -116,8 +118,6 @@ if (\Illuminate\Support\Str::startsWith(Auth::user()->avatar, 'http://') || \Ill
 {{-- @include('voyager::partials.app-footer') --}}
 
 <!-- Javascript Libs -->
-
-
 <script type="text/javascript" src="{{ voyager_asset('js/app.js') }}"></script>
 
 <script>

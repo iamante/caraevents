@@ -8,8 +8,13 @@
         </div>
         @include('voyager::dimmers')
         <div class="clearfix container-fluid row">
-            <div class="col-xs-12 col-sm-12 col-md-6">
-                
+            <div class="col-xs-12 col-sm-12 col-md-8">
+                <div class="panel panel-bordered" style="margin-left: 10px;">
+                    <div class="panel-body">
+                        <h3>Incoming Events</h3>
+                        <div id='calendar'></div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="recent-reservation">
@@ -131,6 +136,42 @@
         </div>
     </div>
 @stop
+
+<script>
+     document.addEventListener('DOMContentLoaded', function() {
+        $reservations = {!! collect($reservation) !!}
+        let dates = $reservations.map(obj=>{
+            return {
+                title: obj.name,
+                start: obj.date + 'T' + obj.start_time,
+                end: obj.date + 'T' + obj.end_time,
+                backgroundColor: '#12a962',
+                borderColor: '#12a962',
+                url: 'admin/reservations/'+ obj.id
+            }
+        })
+    var calendarEl = document.getElementById("calendar");
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: "dayGridMonth",
+        dayMaxEvents: 2,
+        selectable: true,
+        headerToolbar: {
+            start: 'today prev,next',
+            center: '',
+            end: 'title',
+        },
+        eventTimeFormat: {
+            hour: 'numeric',
+            minute: '2-digit',
+            meridiem: 'short'
+        },
+        displayEventEnd: true,
+        events: dates
+    });
+    calendar.render();
+});
+
+</script>
 
 @section('javascript')
 
