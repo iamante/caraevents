@@ -34,7 +34,7 @@ class Service extends Model
 
     public function presentPrice()
     {
-        return "₱".number_format($this->price, 0, '.',',');
+        return "₱".number_format($this->price, 2, '.',',');
     }
 
     public function categories()

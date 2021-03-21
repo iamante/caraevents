@@ -8,14 +8,14 @@
         <div class="col-md-6">
             <div class="card text-center px-5 pt-5 shadow-sm border-0">
                 <h1>Sign in</h1>
-                <div class="card-body px-5">
+                <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
-                        <div class="form-group d-flex justify-content-center" style="position: relative">
+                        <div class="form-group d-flex justify-content-center align-items-center" style="position: relative">
                             <!-- <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label> -->
                             <div class="w-100">
-                                <input id="email" type="email" class="form-control pl-5 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email" autofocus>
+                                <input id="email" type="email" class="form-control pl-5 @error('email') is-invalid @enderror" style="outline: none" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email" autofocus>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -23,10 +23,10 @@
                                     </span>
                                 @enderror
                             </div>
-                            <i class="far fa-user icon p-3 text-muted" style="position: absolute; left:5px; top: -5px;"></i>
+                            <i class="fas fa-envelope icon p-3 text-muted" style="position: absolute; left:5px; top: -5px;"></i>
                         </div>
 
-                        <div class="form-group d-flex justify-content-center" style="position: relative">
+                        <div class="form-group d-flex justify-content-center align-items-center" style="position: relative">
                             <!-- <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label> -->
                             <div class="w-100">
                                 <input id="password" type="password" class="form-control pl-5 pr-3 @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Password">
@@ -61,7 +61,7 @@
                         
 
                         <div class="form-group">
-                            <button type="submit" class="btn btn-default button-grad w-100 text-white bg-dark">
+                            <button type="submit" class="btn btn-success w-100 text-white">
                                 {{ __('Login') }}
                             </button>
                         </div>
@@ -79,7 +79,7 @@
 
                         <div class="pt-5 text-muted">
                             <small>
-                                By sign in this way, you agree to our
+                                By sign in, you agree to our
                                 <a href="/termsconditions" class="text-muted text-line"><u>Terms & Condition</u></a>
                                 and
                                 <a href="/privacypolicy" class="text-muted"><u>Privary Policy</u></a>

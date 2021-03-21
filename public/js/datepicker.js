@@ -91,7 +91,6 @@ $(function() {
         ampm: true,
         datepicker: false,
         inline: true,
-        timepickerScrollbar: false,
         scrollTime: true,
         weeks: false,
         formatTime: "g:i A",
@@ -114,7 +113,6 @@ $(function() {
     $(".timepicker2").datetimepicker({
         ampm: true,
         datepicker: false,
-        timepickerScrollbar: false,
         scrollTime: true,
         inline: true,
         scrollTime: true,

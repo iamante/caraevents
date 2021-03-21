@@ -3,6 +3,7 @@
 namespace App\Http;
 
 use App\Http\Middleware\AuthReservation;
+use App\Http\Middleware\AuthVoyagerAdmin;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -65,5 +66,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'auth_reservation' => \App\Http\Middleware\AuthReservation::class,
+        'auth_voyager_admin' => \App\Http\Middleware\AuthVoyagerAdmin::class,
     ];
 }

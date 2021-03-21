@@ -7,7 +7,7 @@
 @endphp
 
 @if($comments->count() < 1)
-    <div class="alert alert-warning">There are no comments yet.</div>
+    <div class="alert alert-warning text-dark bg-light border-0">There are no comments yet.</div>
 @endif
 
 <ul class="list-unstyled">
@@ -64,10 +64,9 @@
         'guest_commenting' => true
     ])
 @else
-    <div class="card" style="background-color: #fce5ba; color: #a76846;">
+    <div class="card text-dark border-0 bg-light">
         <div class="card-body">
-            <h5 class="font-weight-bold">Information</h5>
-            <p class="card-text">
+            <p class="card-text"><i class="fas fa-exclamation-circle mr-1"></i>
                 Would you like to leave your comment? Please <a href="{{ route('login') }}">Login</a> to your account to leave comments. Don't have an account? You can <a href="{{ route('register') }}">create a free account</a> now.</p>
             
         </div>

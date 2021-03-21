@@ -64,7 +64,6 @@
                     <img src="{{ asset('storage/'. $service->image) }}" class="image-animate" alt="" style="width: 100% ; height: 70%;object-fit: cover; background-repeat: no-repeat;">
                     <h5 class="font-weight-bold mt-4" style="color: rgb(13, 209, 157)">{{ $service->name }}</h5>
                 </a>
-                <p class="px-3">{{ strip_tags($service->description) }}</p>
             </div>
         @endforeach
     </div>

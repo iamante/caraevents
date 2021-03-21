@@ -172,11 +172,20 @@
 
 input[type="text"],
 input[type="number"],
+input[type="password"]:focus,
+[type="tel"].form-control:focus,
 input[type="email"],
 .input-reserve {
     color: black;
 
     &:focus {
-        border-color: black;
+        border-color: #38c172;
     }
+}
+
+.custom-control-label:before {
+    background-color: red;
+}
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #38c172;
 }

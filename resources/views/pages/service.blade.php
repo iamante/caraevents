@@ -4,93 +4,84 @@
 <div class="bg-light">
   <div class="container pb-5 pt-3">
         <div class="row pt-3 mb-4">
-            <div class="col-lg-8 border-0 rounded shadow-sm bg-white py-3 mb-4">
-              <div class="container">
+            <div class="col-lg-8 border-0 rounded shadow-sm bg-white px-0 mb-4">
+              <div class="px-5 pt-5 pb-4">
                 @component('components.breadcrumbs')
-                  <a href="/" style="font-size: 12px;"><i class="fa fa-home text-muted"></i></a>
+                  <a href="/" style="font-size: 12px;">Home</a>
                   <i class="fa fa-chevron-right breadcrumb-separator px-2 text-muted"  style="font-size: 12px"></i>
                   <span><a href="{{ route('services.index') }}"  style="font-size: 12px" class=" text-muted">Services</a></span>
                   <i class="fa fa-chevron-right breadcrumb-separator px-2 text-muted"  style="font-size: 12px"></i>
                   <span class="text-muted"  style="font-size: 12px">{{ $service->name }}</span>
                 @endcomponent
-                
-                <h1 class=" font-weight-bold text-muted">{{ $service->name }}</h1>
-                <h6 class="mb-0 font-weight-bold" style="padding-top:3px; padding-bottom:3px; border-radius: 20px; text-transform: uppercase; color:azure; background-color:#57b67e; width: 120px; text-align:center"><i class="fas fa-box-open" style="font-size: 12px;"></i> {{ $service->details }}</h6>
-                <hr>
-                <div class="border p-4">
+                <h1 class=" font-weight-bold text-muted" style="letter-spacing: 2px;">{{ $service->name }}</h1>
+                <h6 class="mb-0 font-weight-bold" style="padding-top:3px; padding-bottom:3px; border-radius: 20px; text-transform: uppercase; color:azure; background-color:#38c172; width: 120px; text-align:center"><i class="fas fa-box-open" style="font-size: 12px;"></i> {{ $service->details }}</h6>
+              </div>
+              <hr>
+                <div class="px-5 py-3">
                   <h5 class="font-weight-bold">About this Service :</h5>
                     <p class="pl-5">{!! $service->description !!}</p>
-                  
+                    <details>
+                    <summary>Menus</summary>
+                    <p>The arrangement of type involves the selection of typefaces, point size, line length, leading (line spacing), adjusting the spaces between groups of letters (tracking) and adjusting the space between pairs of letters (kerning).</p>
+                    </details>
                 </div>
-              </div>
             </div>
             <div class="col-lg-4">
                 <div class="container">
                   <div class="card shadow-sm border-0">
-                    <iframe class="img-fluid" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15436.703142064003!2d121.0565013!3d14.7026491!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcace75fb83bd1c1e!2sCara%20Events%20Philippines!5e0!3m2!1sen!2sph!4v1600268794813!5m2!1sen!2sph" width="1920" height="1920" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-           
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <h5 class="mb-0 font-weight-bold">{{ $service->name }}</h5>
-                            <div class="text-muted">
-                                <span><i class="far fa-heart px-1"></i></span>
-                                <span><i class="fas fa-share-alt"></i></span>
-                            </div>
+                    <div class="card-body p-0">
+                        <div class="bg-dark p-4">
+                          <h5 class="mb-0 font-weight-bold text-white">{{ $service->name }}</h5>
+                          <span class="text-uppercase text-white">({{ $service->details }})</span>
                         </div>
-                        <span class="text-uppercase text-danger">{{ $service->details }}</span>
-                        <p class="mb-0" style="font-size: 25px; font-weight: bold">{{ $service->presentPrice() }}</p>
-                      <hr>
-                        <ul class="list-unstyled d-flex justify-content-around py-2">
-                          <li class="w-100">
-                            <div class="text-center">
-                              <i class="fas fa-users text-dark" style="font-size: 20px;"></i>
-                                <p class="mb-0 font-weight-bold pt-1 text-dark" style="font-size: 12px;">30 Guests</p>
+                        <div class="p-4">
+                          <div class="row align-items-center">
+                            <div class="col-4">
+                              <p class="text-muted text-right">Guest</p>
                             </div>
-                          </li>
-                          <li class="w-100">
-                            <div class="text-center">
-                              <i class="fas fa-volume-up text-dark" style="font-size: 20px;"></i>
-                                <p class="mb-0 font-weight-bold pt-1 text-dark" style="font-size: 12px;">Basic Sound System</p>
+                            <div class="col-8 pl-0">
+                              <input type="text" class="form-control mb-3" value="30" readonly>
                             </div>
-                          </li>
-                        </ul>
-                        <ul class="list-unstyled d-flex justify-content-around">
-                          <li class="w-100">
-                            <div class="text-center">
-                              <i class="fa fa-utensils text-dark" style="font-size: 20px;"></i>
-                                <p class="mb-0 font-weight-bold pt-1 text-dark" style="font-size: 12px;">Menu No.1</p>
+                            <div class="col-4 ">
+                              <p class="text-muted text-right">Location</p>
                             </div>
-                          </li>
-                          <li class="w-100">
-                            <div class="text-center">
-                              <i class="fa fa-birthday-cake text-dark" style="font-size: 20px;"></i>
-                                <p class="mb-0 font-weight-bold pt-1 text-dark" style="font-size: 12px;">Wedding Cake</p>
+                            <div class="col-8 pl-0">
+                              <select class="browser-default custom-select mb-3 text-center">
+                                <option value="" selected>Quezon City</option>
+                                <option value="">Manila</option>
+                                <option value="">Bulacan</option>
+                              </select>
                             </div>
-                          </li>
-                        </ul>
-                        <ul class="list-unstyled d-flex justify-content-around">
-                          <li class="w-100">
-                            <div class="text-center">
-                              <i class="fa fa-birthday-cake text-dark" style="font-size: 20px;"></i>
-                                <p class="mb-0 font-weight-bold pt-1 text-dark" style="font-size: 12px;">Wedding Cake</p>
+                            <div class="col-4">
+                              <p class="text-muted text-right">Menu</p>
                             </div>
-                          </li>
-                          <li class="w-100">
-                            <div class="text-center">
-                              <i class="fa fa-birthday-cake text-dark" style="font-size: 20px;"></i>
-                                <p class="mb-0 font-weight-bold pt-1 text-dark" style="font-size: 12px;">Free Aircon Venue</p>
+                            <div class="col-8 pl-0">
+                              <select class="browser-default custom-select mb-3 text-center">
+                                <option value="" selected>Menu #1</option>
+                                <option value="">Menu #2</option>
+                                <option value="">Menu #3</option>
+                              </select>
                             </div>
-                          </li>
-                        </ul>
-                      <form action="{{ route('reserve.index', $service->slug )}}" method="POST">
-                        @method('GET')
-                        @csrf
-                      <input type="hidden" name="id" value="{{ $service->id }}">
-                      <input type="hidden" name="name" value="{{ $service->name }}">
-                      <input type="hidden" name="price" value="{{ $service->price }}">
-                      <input type="hidden" name="detail" value="{{ $service->details }}">
-                      <button type="submit" class="w-100 mt-2 py-1 text-white text-uppercase btn btn-success">Reserve Now</button>
+                          </div>
+                          <p class="mb-0 text-right py-2" style="font-size: 18px"><span class="pr-2">Total</span> {{ $service->presentPrice() }}</p>
+                          <form action="{{ route('reserve.index', $service->slug )}}" method="POST">
+                            @method('GET')
+                            @csrf
+                          <input type="hidden" name="id" value="{{ $service->id }}">
+                          <input type="hidden" name="name" value="{{ $service->name }}">
+                          <input type="hidden" name="price" value="{{ $service->price }}">
+                          <input type="hidden" name="detail" value="{{ $service->details }}">
+                          <button type="submit" class="w-100 mt-2 py-2 text-white text-uppercase btn btn-success">Reserve Now</button>
+                        </div>
                     </form>
+                    </div>
+                    <div class="card-footer text-center">
+                      <ul class="list-unstyled d-flex justify-content-around align-items-center my-2">
+                        <li><a href="tel:+639228097519"><i class="fas fa-phone text-muted"></i></a></li>
+                        <li><a href="mailto:caraevents@gmail.com"><i class="fa fa-envelope text-muted"></i></a></li>
+                        <li><a href="https://www.facebook.com/caraevents/"><i class="fab fa-facebook-f text-muted"></i></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCwnkAYO7K2WKn4aZt3iyCFw"><i class="fab fa-youtube text-muted"></i></a></li>
+                      </ul>
                     </div>
                   </div>
                 </div>
@@ -98,16 +89,17 @@
         </div>
 
         <div class="row mb-4">
-          <div class="col-lg-8 border-0 shadow-sm bg-white py-3 rounded">
+          <div class="col-lg-8 border-0 shadow-sm py-3 bg-white rounded">
            @if ($service->comments->count() == 0)
            @else
-              <p>Comments {{ $service->comments->count() }}</p>
+              <p class="bg-light p-3">Comments {{ $service->comments->count() }}</p>
            @endif
             @comments(['model' => $service])
           </div>
-          <div class="col-lg-4 bg-light py-3 px-5">
-            <small><i>Like us on <a href="">facebook</a> to get updates on our latest promotions! <br>
-              Subscibe us on <a href="" class="text-danger">youtube</a> to see our “behind the seems” updates!</i></small>
+          <div class="col-md-4 p-4">
+            <small>
+              <i>Like us on <a href="https://www.facebook.com/caraevents/">facebook</a> to get updates on our latest promotions! <br>
+                Subscibe us on <a href="https://www.youtube.com/channel/UCwnkAYO7K2WKn4aZt3iyCFw" class="text-danger">youtube</a>to see our “behind the seems” updates!</i></small>
           </div>
         </div>
     </div>

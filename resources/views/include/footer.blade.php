@@ -70,7 +70,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid py-3">
         <div class="container p-2 bot-footer d-flex justify-content-between align-items-center">
             <div>
                 <span class="text-dark" style="font-size: 11px">Caraevents | &copy; 2020 All right reserved</span>

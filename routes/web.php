@@ -41,7 +41,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
-    Route::get('/', ['uses' => 'Voyager\DashboardController@index',   'as' => 'voyager.dashboard']);
+    Route::get('/', ['uses' => 'Voyager\VoyagerController@index',   'as' => 'voyager.dashboard'])->middleware('auth_voyager_admin');
 });
 
 Route::get('login/{website}', 'Auth\LoginController@redirectToProvider');

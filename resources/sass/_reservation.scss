@@ -21,6 +21,7 @@
 .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box {
     border-bottom: none !important;
     border: none !important;
+    height: 290px !important;
 }
 
 .xdsoft_datetimepicker.xdsoft_inline {
@@ -35,6 +36,21 @@
 
 .xdsoft_datetimepicker .xdsoft_calendar th {
     color: #333 !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div {
+    font-size: 15px !important;
+    margin-bottom: 15px;
+}
+
+.xdsoft_datetimepicker .xdsoft_calendar table {
+    height: 300px !important;
+}
+
+.xdsoft_datetimepicker .xdsoft_label {
+    float: none !important;
 }
 
 .xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_highlighted_default {
@@ -69,4 +85,97 @@
 .table td {
     padding: 0.3rem;
     padding-left: 10px;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+    border-color: #dc3545;
+}
+
+/* Hide all steps by default: */
+.tab {
+    display: none;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+    height: 55px;
+    width: 55px;
+    margin-right: 100px;
+    background-color: #38c172;
+    border: none;
+    border-radius: 50%;
+    opacity: 0.5;
+    position: relative;
+}
+
+.step::after {
+    content: "";
+    position: absolute;
+    width: 102px;
+    height: 5px;
+    background-color: #38c172;
+    top: 23px;
+    left: 55px;
+}
+
+.last-step {
+    height: 55px;
+    width: 55px;
+    margin: 0 2px;
+    background-color: #38c172;
+    border: none;
+    border-radius: 50%;
+    opacity: 0.5;
+    position: relative;
+}
+
+.thankyou-step {
+    height: 55px;
+    width: 55px;
+    margin-right: 100px;
+    background-color: #38c172;
+    border: none;
+    border-radius: 50%;
+    position: relative;
+}
+
+.thankyou-step::after {
+    content: "";
+    position: absolute;
+    width: 102px;
+    height: 5px;
+    background-color: #38c172;
+    top: 23px;
+    left: 55px;
+}
+
+.thankyou-last-step {
+    height: 55px;
+    width: 55px;
+    margin: 0 2px;
+    background-color: #38c172;
+    border: none;
+    border-radius: 50%;
+    position: relative;
+}
+
+/* Mark the active step: */
+.step.active {
+    opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+    background-color: #38c172;
+    opacity: 1;
+}
+
+.was-validated .form-control:invalid,
+.form-control.is-invalid {
+    background-image: none !important;
+}
+
+.was-validated .form-control:valid {
+    background-image: none !important;
 }
