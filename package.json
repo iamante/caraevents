@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.14.0",
+        "jquery-typeahead": "^2.11.1",
         "normalize.css": "^8.0.1",
         "slick-carousel": "^1.8.1"
     }

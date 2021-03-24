@@ -67,7 +67,7 @@
     <div class="card text-dark border-0 bg-light">
         <div class="card-body">
             <p class="card-text"><i class="fas fa-exclamation-circle mr-1"></i>
-                Would you like to leave your comment? Please <a href="{{ route('login') }}">Login</a> to your account to leave comments. Don't have an account? You can <a href="{{ route('register') }}">create a free account</a> now.</p>
+                Would you like to leave your comment? Please <a href="{{ route('login') }}" style="color: #1A8A8A">Login</a> to your account to leave comments. Don't have an account? You can <a href="{{ route('register') }}" style="color: #1A8A8A">create a free account</a> now.</p>
             
         </div>
     </div>

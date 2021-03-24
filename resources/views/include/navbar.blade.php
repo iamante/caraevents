@@ -2,7 +2,7 @@
     <div class="container-fluid px-5" style="position: relative">
         <div>
             <div class="navbar-brand d-flex align-items-center py-2">
-                <img src="{{ asset('storage/users/caralogo.png') }}" alt="" class="img-fluid mr-2 pb-2" width="60" > 
+                <img src="{{ asset('storage/users/logo1.png') }}" alt="" class="img-fluid mr-2 pb-2" width="60" > 
                 <div class="brands">
                     Caraevents
                     <p>Consultancy & Co.</p>

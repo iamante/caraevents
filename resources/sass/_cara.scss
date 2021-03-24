@@ -29,8 +29,8 @@
 
 .testimonial {
     background-image: linear-gradient(
-            rgba(255, 255, 255, 0.7),
-            rgba(255, 255, 255, 0.7)
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)
         ),
         url("/images/11.jpg");
     background-repeat: no-repeat;
@@ -39,7 +39,7 @@
 }
 
 .testimonial .card {
-    background-color: rgb(255, 255, 255);
+    background-color: none;
     opacity: 0.9;
 }
 

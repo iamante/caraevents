@@ -142,3 +142,66 @@
 * {
     font-family: "Quicksand", sans-serif;
 }
+
+.btn-success {
+    border-radius: 0 !important;
+}
+
+.twitter-typeahead {
+    width: 100% !important;
+}
+
+#default-suggestions .league-name {
+    margin: 0 20px 5px 20px;
+    padding: 3px 0;
+    border-bottom: 1px solid #ccc;
+    cursor: default;
+}
+
+.typeahead:focus {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.tt-query {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.tt-hint {
+  color: rgb(248, 119, 119)
+}
+
+.tt-menu {    /* used to be tt-dropdown-menu in older versions */
+  width: 400px;
+  font-size: 13px;
+  color: rgb(85, 85, 85);
+  margin-top: 4px;
+  padding: 4px 0;
+  background-color: rgb(250, 250, 250);
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+     -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+          box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.tt-suggestion {
+    color: rgb(87, 87, 87);
+    padding: 3px 20px;
+    line-height: 24px;
+}
+
+
+.tt-suggestion.tt-cursor,.tt-suggestion:hover {
+  color: #fff !important;
+  background-color: #38c172;
+}
+
+.tt-suggestion p {
+  margin: 0;
+}

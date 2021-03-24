@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
     public function index() {
-        $services = Service::latest()->take(3)->get();
+        $services = Service::latest()->take(4)->get();
         $servicesSecondRow = Service::skip(1)->take(2)->get();
         $servicesThirdRow = Service::skip(3)->take(2)->get();
         return view('pages.index')->with(['services' => $services, 'servicesSecondRow' => $servicesSecondRow, 'servicesThirdRow' => $servicesThirdRow]);

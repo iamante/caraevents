@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="bg-light py-3">
-    <div class="container my-4">
+    <div class="container my-5 py-5">
         {{-- <div class="d-flex align-items-center rounded my-3 py-2" style="font-weight: 900;background-color: #67d896; color: #fff;border: 1px solid #38c172;">
             <i class="far fa-clock px-3 py-2"></i>
             <span>Enjoy and Reserve with Confidence</span>

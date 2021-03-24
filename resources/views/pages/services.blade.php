@@ -50,7 +50,7 @@
                                     </div>
                                     <div class="col-12 py-1 text-center mb-4">
                                         <h5 class="card-title mb-1" style="line-height: 12px;">{{ $service->name }}</h5>
-                                        <span class="text-muted" style="border-radius: 20px;font-size: 15px;"><i>{{ $service->details }}</i></span>
+                                        <span class="text-muted" style="border-radius: 20px;font-size: 15px;">{{ $service->details }}</span>
                                         <p class="mb-0 text-dark" style="font-size: 18px; font-weight:bold; letter-spacing:1px; line-height: 20px;">{{ $service->presentPrice() }}</p>
                                         <div class="d-flex justify-content-between align-items-center">
                                         </div>

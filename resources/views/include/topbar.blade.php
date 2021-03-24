@@ -6,7 +6,7 @@
             
         <div class="nav-item">
             @guest
-                <div class="my-1">
+                <div class="my-2">
                     @if (Route::has('register')) 
                     <a href="{{ route('register') }}" class="py-2 px-2 register">{{ __('Sign Up') }}</a>
                     @endif
@@ -70,31 +70,5 @@
             </div>
             @endguest
         </div>
-
-            <!-- Right Side Of Navbar -->
-                <!-- Authentication Links -->
-            <!--@guest
-                <div>
-                    <a class="mr-3" href="{{ route('login') }}">{{ __('Login') }}</a>
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}">{{ __('Register') }}</a>
-                    @endif
-                </div>
-            @else
-                <div>    
-                    <a class="mr-3" href="#">
-                        {{ Auth::user()->name }}
-                     </a>
-                    <a href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                    </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                            @csrf
-                    </form>
-                </div>
-            @endguest-->
     </div>
 </div>

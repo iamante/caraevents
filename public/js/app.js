@@ -41414,6 +41414,66 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 /***/ (function(module, exports) {
 
 $(function () {
+  $(".slick-testimonial").slick({
+    dots: true,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    responsive: [{
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        infinite: true,
+        dots: true
+      }
+    }, {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000
+      }
+    }]
+  }); // function onSubmit(token) {
+  //     document.getElementById("demo-form").submit();
+  // }
+
+  var cars = ['Castillo Royale Ortigas Events Venue - Ortigas Ave Ext, Taytay, Rizal', 'Marias Events Place - 14 Neptune, Taytay, 1920 Rizal', 'Casa Bella Events Place - 14 Neptune, Taytay, 1920 Rizal', 'Ferrari', 'Ford', 'Lamborghini', 'Mercedes Benz', 'Porsche', 'Rolls-Royce', 'Volkswagen'];
+  var cars = new Bloodhound({
+    datumTokenizer: Bloodhound.tokenizers.whitespace,
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    local: cars
+  });
+
+  function carsDefault(q, sync) {
+    if (q === '') {
+      sync(cars.get('Castillo Royale Ortigas Events Venue - Ortigas Ave Ext, Taytay, Rizal', 'Marias Events Place - 14 Neptune, Taytay, 1920 Rizal', 'Casa Bella Events Place - 14 Neptune, Taytay, 1920 Rizal'));
+    } else {
+      cars.search(q, sync);
+    }
+  }
+
+  $('.typehead').on('click', function () {
+    $('.tt-suggestion');
+  }); // Default Select
+
+  $('#default-suggestions .typeahead').typeahead({
+    minLength: 0,
+    highlight: true,
+    hint: true
+  }, {
+    name: 'cars',
+    source: carsDefault,
+    templates: {
+      header: '<p class="league-name mb-1 py-2">Caraevents Suggested Venue</p>',
+      suggestion: function suggestion(data) {
+        return '<div><i class="fa fa-map-marker-alt pr-2 text-success"></i>' + data + '</div>';
+      }
+    }
+  });
   var currentLocation = location.href;
   var menuItem = $(".nav-link");
   var menuLength = menuItem.length;

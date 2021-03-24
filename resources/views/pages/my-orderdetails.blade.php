@@ -21,7 +21,6 @@
                         
                         <ul class="list-unstyled bg-white shadow-sm p-3" style="font-size: 14px;">
                             <li class="pb-1"><i class="far fa-user mr-3 ml-1"></i><a href="/user-profile">Profile</a></li>
-                            <li class="pb-1"><i class="far fa-bell mr-3 ml-1"></i>Notification</li>
                             <li class="pb-1"><i class="fa fa-ticket-alt mr-3 ml-1"></i><a href="/my-reservation">Reservation</a></li>
                             <li class="pb-1"><img src="{{ asset('images/icons/logout.svg')}}" alt="logout" width="18" class="mr-3 rounded">
                                 <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

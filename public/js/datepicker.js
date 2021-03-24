@@ -1,10 +1,18 @@
 $(function() {
     var today = new Date();
-    var dd = String(today.getDate() + 8).padStart(2, "0");
-    var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+    var dd = String(today.getDate()).padStart(2, "0");
+    var mm = String(today.getMonth() + 1).padStart(2, "0");
     var yyyy = today.getFullYear();
 
     var todayDate = yyyy + "-" + mm + "-" + dd;
+    var nowDate = new Date(todayDate);
+    nowDate.setDate(nowDate.getDate() + 8);
+    var d = nowDate.getDate();
+    var m = nowDate.getMonth() + 1;
+    var y = nowDate.getFullYear();
+
+    var todayFormattedDate = y + "-"+ m + "-" + d;
+
     var expireDate = new Date(todayDate);
     expireDate.setFullYear(expireDate.getFullYear() + 1);
     expireDate.setDate(expireDate.getDate() - 1);
@@ -58,17 +66,17 @@ $(function() {
     }
 
     let occupiedDates = find_duplicate_in_array(dates);
+
     $(".datepicker").datetimepicker({
         timepicker: false,
         inline: true,
         monthChangeSpinner: true,
         initTime: true,
         format: "Y-m-d",
-        lazyInit: true,
         highlightedDates: occupiedDates,
         disabledDates: occupiedDates,
         formatDate: "Y-m-d",
-        minDate: todayDate,
+        minDate: todayFormattedDate,
         maxDate: expiredDate,
         onShow: function(current_time, input) {
             input.datetimepicker({ mask: "2050-12-32" });

@@ -1,5 +1,6 @@
-footer .container-fluid {
-    background-color: #ffffff;
+footer {
+    background-color: #1e1e1e;
+    color: #fff;
 }
 
 .bot-footer a {
@@ -16,13 +17,24 @@ footer .container-fluid {
 }
 
 .footer-links a,
-li {
-    color: #000000;
+.footer-links li {
+    color: #ffffff;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-bottom: 13px;
+    display: block;
+    word-break: break-word;
+    transition: all .3s ease 0s;
+    text-decoration: none;
+
+    &:hover {
+        color: #38c172;
+    }
 }
 
 .footer td {
     padding: 3px;
-    color: #000000;
+    color: #ffffff;
 }
 
 .fa-angle-right,
@@ -33,10 +45,11 @@ li {
 }
 
 .footer-icon i {
-    color: white;
+    color: rgb(0, 0, 0);
     width: 30px;
     height: 30px;
     padding: 8px;
     border-radius: 50%;
-    background-color: #38c172;
+    background-color: #ffffff;
+    margin-right: 10px;
 }

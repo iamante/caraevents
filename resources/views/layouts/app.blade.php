@@ -17,7 +17,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
-    <link rel="icon" href="{{ asset('storage/users/logo1.png') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{ asset("storage/users/logo1.png") }}">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('build/jquery.datetimepicker.min.css') }}" >
@@ -49,44 +50,9 @@
     </script>
     <!-- end of reCAPTCHA v3 -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/handlebars.js') }}"></script>
+    <script src="{{ asset('js/typeahead.bundle.js') }}"></script>
     <script src="{{ asset('build/jquery.datetimepicker.full.min.js')}}"></script>
     <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
-    <script>
-        $(document).ready(function() {
-            $(".slick-testimonial").slick({
-            dots: true,
-            infinite: false,
-            speed: 300,
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            responsive: [
-                {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    infinite: true,
-                    dots: true
-                }
-                },
-                {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    autoplay: true,
-                    autoplaySpeed: 2000,
-                }
-                },
-            ]
-        });
-
-        
-        function onSubmit(token) {
-            document.getElementById("demo-form").submit();
-        }
-        })
-        
-    </script>
 </body>
 </html>
