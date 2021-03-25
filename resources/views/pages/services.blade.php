@@ -3,7 +3,7 @@
     <div class="services-container container-fluid bg-white" style="padding-left: 90px; padding-right: 90px;">
         <div class="row">
             <div class="col-lg-2 col-sm-5 p-0 mt-4">
-                <div style="font-size: 13px;"><a href="/" class="text-muted"> <i class="fa fa-home"></i> Home</a><i class="fa fa-angle-right mx-2 pr-0 text-muted" aria-hidden="true"></i>{{ $title }}</div>
+                <div style="font-size: 13px;"><a href="/" class="text-dark"> <i class="fa fa-home"></i> Home</a><i class="fa fa-angle-right mx-2 pr-0 text-muted" aria-hidden="true"></i>{{ $title }}</div>
                 <ul class="list-group">
                     <div class="mb-2 mt-4 mr-5 pl-2 font-weight-bold text-white bg-dark">Categories</div>
                     <a href="/services" class=" text-dark"><div class="py-2 pl-3">All Services</div></a>
@@ -49,9 +49,9 @@
                                         <img class="img-fluid w-100 mb-2 services-image rounded" src={{ asset('storage/'. $service->image) }} alt="" style="height: 250px;">
                                     </div>
                                     <div class="col-12 py-1 text-center mb-4">
-                                        <h5 class="card-title mb-1" style="line-height: 12px;">{{ $service->name }}</h5>
-                                        <span class="text-muted" style="border-radius: 20px;font-size: 15px;">{{ $service->details }}</span>
-                                        <p class="mb-0 text-dark" style="font-size: 18px; font-weight:bold; letter-spacing:1px; line-height: 20px;">{{ $service->presentPrice() }}</p>
+                                        <h3 class="card-title mb-2 text-dark" style="line-height: 12px;">{{ $service->name }}</h3>
+                                        <span style="color: rgb(10, 112, 10);border-radius: 20px;font-size: 15px;">{{ $service->details }}</span>
+                                        <p class="mb-0 text-dark" style="font-size: 18px; letter-spacing:1px; line-height: 20px;">{{ $service->presentPrice() }}</p>
                                         <div class="d-flex justify-content-between align-items-center">
                                         </div>
                                     </div>

@@ -40,7 +40,7 @@
                                         <textarea name="textbox" id="" cols="50" rows="10" class="form-control w-100" required></textarea>
                                     </div>
                                     <div>
-                                        <button type="submit" class="btn btn-default my-2 button-grad">Send Mail</button>
+                                        <button type="submit" class="btn btn-success my-2">Send Mail</button>
                                     </div>
                                 </div>
                             </div>

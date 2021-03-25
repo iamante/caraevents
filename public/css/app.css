@@ -18652,7 +18652,7 @@ a.text-dark:focus {
 }
 
 .register:hover {
-  opacity: 0.5;
+  color: #38c172;
 }
 
 .nav-item {
@@ -19142,6 +19142,35 @@ input.invalid {
   padding-bottom: 6px;
   margin-bottom: 10px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.gallery-category button {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.gallery-category .active {
+  color: #fff;
+  background-color: #666 !important;
+}
+
+.gallery-category a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.gallery-category a :hover {
+  background-color: #666;
+  color: #fff;
+}
+
+.gallery-img .card-columns {
+  -moz-column-gap: 0rem !important;
+       column-gap: 0rem !important;
 }
 
 #service {

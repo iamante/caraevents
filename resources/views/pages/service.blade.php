@@ -7,10 +7,10 @@
             <div class="col-lg-8 border-0 rounded shadow-sm bg-white px-0 mb-4">
               <div class="px-5 pt-5 pb-4">
                 @component('components.breadcrumbs')
-                  <a href="/" style="font-size: 12px;" class=" text-muted">Home</a>
-                  <i class="fa fa-chevron-right breadcrumb-separator px-2 text-muted"  style="font-size: 12px"></i>
-                  <span><a href="{{ route('services.index') }}"  style="font-size: 12px" class=" text-muted">Services</a></span>
-                  <i class="fa fa-chevron-right breadcrumb-separator px-2 text-muted"  style="font-size: 12px"></i>
+                  <a href="/" style="font-size: 12px;" class="text-dark">Home</a>
+                  <i class="fa fa-chevron-right breadcrumb-separator px-2 text-dark"  style="font-size: 12px"></i>
+                  <span><a href="{{ route('services.index') }}"  style="font-size: 12px" class=" text-dark">Services</a></span>
+                  <i class="fa fa-chevron-right breadcrumb-separator px-2 text-dark"  style="font-size: 12px"></i>
                   <span class="text-muted"  style="font-size: 12px">{{ $service->name }}</span>
                 @endcomponent
                 <h1 class=" font-weight-bold" style="letter-spacing: 2px;">{{ $service->name }}</h1>
@@ -18,8 +18,8 @@
               </div>
               <hr>
                 <div class="px-5 py-3">
-                  <h5 class="font-weight-bold">About this Service</h5>
-                    <p class="pl-5">{!! $service->description !!}</p>
+                  <h5 class="font-weight-bold text-dark">About this Service</h5>
+                    <p class="pl-5 text-dark">{!! $service->description !!}</p>
                     <details>
                     <summary>Menus</summary>
                     <p>The arrangement of type involves the selection of typefaces, point size, line length, leading (line spacing), adjusting the spaces between groups of letters (tracking) and adjusting the space between pairs of letters (kerning).</p>

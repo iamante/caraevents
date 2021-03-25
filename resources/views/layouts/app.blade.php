@@ -24,7 +24,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('build/jquery.datetimepicker.min.css') }}" >
     <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css')}}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css')}}"/>
-
+    <!-- Add fancyBox -->
+    <link rel="stylesheet" href="{{ asset('css/jquery.fancybox.css')}}" type="text/css" media="screen" />
     
 </head>
 <body>
@@ -53,6 +54,7 @@
     <script src="{{ asset('js/handlebars.js') }}"></script>
     <script src="{{ asset('js/typeahead.bundle.js') }}"></script>
     <script src="{{ asset('build/jquery.datetimepicker.full.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.fancybox.pack.js') }}"></script>
     <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
 </body>
 </html>

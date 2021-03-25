@@ -10,3 +10,33 @@
     margin-bottom: 10px;
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 20%), 0 2px 10px 0 rgb(0 0 0 / 10%);
 }
+
+.gallery-category button {
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    font-size: 14px;   
+}
+
+
+.gallery-category .active {
+    color: #fff;
+    background-color: #666 !important;
+}
+
+.gallery-category a {
+    text-decoration: none;
+    color: #fff;
+
+    :hover {
+        background-color: #666;
+        color: #fff;
+    }
+}
+
+.gallery-img .card-columns {
+    column-gap: 0rem !important;
+}
+

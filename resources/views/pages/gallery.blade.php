@@ -1,26 +1,33 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container pt-5 pb-5">
-        <div class="row">
-            <div class="col-2">
-                <ul class="list-group">
-                    <div class="mb-2 mt-4 mr-5 pl-2 font-weight-bold text-white bg-dark">Categories</div>
-                    <a href="/gallery" class=" text-dark"><div class="py-2 pl-3" style="font-size: 13px;">All Services</div></a>
-                        @foreach ($categories as $category)
-                            <li style="font-size: 13px;" class="my-1 pl-3 {{ request()->category == $category->slug ? 'active' : '' }}"><a class="text-dark" href={{ route('galleries.index', ['category' => $category->slug ]) }}>{{ $category->name}}</a> ( {{$category->galleries->count()}} )</li>
-                        @endforeach
-                </ul>
-            </div>
-            <div class="col-md-10">
+    <div class="container pt-3 pb-5">
+        <div class="text-center my-3 gallery-category">
+            <h1 class="mb-4 text-success">Our Gallery</h1>
+            @if (Request::fullUrl() == Request::url())
+                <a href="/gallery"><button class="text-white" style="background-color: #666; ">All</button></a>
+            @else
+                <a href="/gallery"><button>All</button></a>
+            @endif
+            @foreach ($categories as $category)
+                <a href={{ route('galleries.index', ['category' => $category->slug ]) }}><button class="mx-1 {{ request()->category == $category->slug ? 'active' : '' }}">{{ $category->name}}</button></a>
+            @endforeach
+        </div>
+        <div class="row no-gutters my-5 gallery-img">
+            <div class="col-md-12">
                 <div class="card-columns">
-                  <div class="card-container">
-                      @forelse ($galleries as $gallery)
-                          <img alt="picture" src={{ asset('storage/'. $gallery->image) }} class="img-fluid img-thumbnail mb-2">
+                    @forelse ($galleries as $gallery)
+                        <div class="card-container">
+                      
+                        <a rel="gallery" href="{{ asset('storage/'. $gallery->image) }}" class="fancybox" data-caption="{{ $gallery->name }}" data-id="{{ $gallery->id }}" data-fancybox>
+                            <img alt="picture" src={{ asset('storage/'. $gallery->image) }} class="img-fluid">
+                        </a>
+                        
                         @empty
                         <div class="ml-4 py-5">No items Found!</div>
-                        @endforelse
-                      <div class="mx-auto py-4">{{ $galleries->appends(request()->input())->links() }}</div>
-                   </div>
+                       
+                            <div class="mx-auto py-4">{{ $galleries->appends(request()->input())->links() }}</div>
+                        </div>
+                    @endforelse
                 </div>
             </div>
         </div>

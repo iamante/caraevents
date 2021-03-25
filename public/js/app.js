@@ -41414,6 +41414,24 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 /***/ (function(module, exports) {
 
 $(function () {
+  $('.fancybox').attr('rel', 'gallery').fancybox({
+    helpers: {
+      overlay: {
+        css: {
+          'background': 'rgba(0, 0, 0, 0.9)'
+        }
+      }
+    },
+    padding: 0,
+    margin: 0,
+    openEffect: 'none',
+    closeEffect: 'none',
+    nextClick: true,
+    scrollOutside: false,
+    autoResize: true,
+    scrolling: 'no',
+    arrows: true
+  });
   $(".slick-testimonial").slick({
     dots: true,
     infinite: false,
