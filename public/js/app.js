@@ -41468,7 +41468,7 @@ $(function () {
 
   function carsDefault(q, sync) {
     if (q === '') {
-      sync(cars.get('Castillo Royale Ortigas Events Venue - Ortigas Ave Ext, Taytay, Rizal', 'Marias Events Place - 14 Neptune, Taytay, 1920 Rizal', 'Casa Bella Events Place - 14 Neptune, Taytay, 1920 Rizal'));
+      sync(cars.get('Castillo Royale Ortigas Events Venue - Ortigas Ave Ext, Taytay, Rizal', 'Marias Events Place - 14 Neptune, Taytay, 1920 Rizal', 'Casa Bella Events Place - 14 Neptune, Taytay, 1920 Rizal', 'Ferrari', 'Ford', 'Lamborghini', 'Mercedes Benz', 'Porsche', 'Rolls-Royce', 'Volkswagen'));
     } else {
       cars.search(q, sync);
     }
@@ -41488,9 +41488,10 @@ $(function () {
     templates: {
       header: '<p class="league-name mb-1 py-2">Caraevents Suggested Venue</p>',
       suggestion: function suggestion(data) {
-        return '<div><i class="fa fa-map-marker-alt pr-2 text-success"></i>' + data + '</div>';
+        return '<div>' + data + '</div>';
       }
-    }
+    },
+    limit: 'Infinity'
   });
   var currentLocation = location.href;
   var menuItem = $(".nav-link");
