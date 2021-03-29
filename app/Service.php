@@ -41,4 +41,9 @@ class Service extends Model
     {
         return $this->belongsToMany('App\Category');
     }
+
+    public function locations()
+    {
+        return $this->belongsToMany('App\Location');
+    }
 }

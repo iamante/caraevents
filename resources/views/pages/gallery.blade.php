@@ -19,8 +19,9 @@
                         <div class="card-container">
                       
                         <a rel="gallery" href="{{ asset('storage/'. $gallery->image) }}" class="fancybox" data-caption="{{ $gallery->name }}" data-id="{{ $gallery->id }}" data-fancybox>
-                            <img alt="picture" src={{ asset('storage/'. $gallery->image) }} class="img-fluid">
+                            <img alt="picture" src={{ asset('storage/'. $gallery->image) }} class="img-fluid gallery-pic">
                         </a>
+
                         
                         @empty
                         <div class="ml-4 py-5">No items Found!</div>

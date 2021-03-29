@@ -40,3 +40,21 @@
     column-gap: 0rem !important;
 }
 
+.gallery-img {
+    .card-container {
+        .fancybox {
+            position: relative;
+
+            img {
+                z-index: 1;
+            
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+
+        
+    }
+}
+

@@ -40,6 +40,7 @@
         @include('include.footer')
     </footer>
     <!-- Scripts -->
+    @yield('extra-js')
     <!-- reCAPTCHA v3 -->
     <script src="https://www.google.com/recaptcha/api.js?render=6LfwIhUaAAAAALnjpTfDNt_xIHE1GYymjPsQ-4pQ"></script>
     <script>
@@ -51,8 +52,8 @@
     </script>
     <!-- end of reCAPTCHA v3 -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/handlebars.js') }}"></script>
     <script src="{{ asset('js/typeahead.bundle.js') }}"></script>
+    <script src="{{ asset('js/handlebars.js') }}"></script>
     <script src="{{ asset('build/jquery.datetimepicker.full.min.js')}}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery.fancybox.pack.js') }}"></script>
     <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>

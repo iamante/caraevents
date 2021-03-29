@@ -22,6 +22,7 @@ Route::get('/clothing', 'ClothRentalsController@index');
 Route::get('/clothing/{rentals}', 'ClothRentalsController@show')->name('clothrentals.show');
 Route::get('/services', 'ServicesController@index')->name('services.index');
 Route::get('/services/{service}', 'ServicesController@show')->name('services.show');
+Route::get('location.json',array('as'=>'location','uses'=>'ServicesController@location'));
 Route::get('/search', 'ServicesController@search')->name('search');
 
 Route::get('/rental', 'RentalsController@index')->name('rental.index');

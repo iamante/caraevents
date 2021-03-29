@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Venue;
 use App\Service;
 use App\Category;
+use App\Location;
 use Illuminate\Http\Request;
 
 class ServicesController extends Controller
@@ -78,9 +80,25 @@ class ServicesController extends Controller
      */
     public function show($slug)
     {
+        // $venues = Location::has('venues')->get();
+
         $title = 'Service';
+        $locations = Location::has('services')->get();
+        $services = Service::with('locations')->get();
         $service = Service::where('slug', $slug)->firstOrFail();
-        return view('pages.service')->with(['service' => $service, 'title' => $title]);
+        return view('pages.service')->with([
+            'service' => $service, 
+            'title' => $title,
+            'locations' => $locations,
+            // 'venues' => $venues,
+            ]);
+    }
+
+    public function location(Request $request)
+    {
+        $data = Location::select("location","venue","image")->where("location","LIKE","%{$request->input('query')}%")->get();
+
+        return response()->json($data);
     }
 
      public function search(Request $request)

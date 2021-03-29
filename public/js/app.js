@@ -41455,41 +41455,47 @@ $(function () {
         autoplaySpeed: 2000
       }
     }]
-  }); // function onSubmit(token) {
-  //     document.getElementById("demo-form").submit();
-  // }
-
-  var cars = ['Castillo Royale Ortigas Events Venue - Ortigas Ave Ext, Taytay, Rizal', 'Marias Events Place - 14 Neptune, Taytay, 1920 Rizal', 'Casa Bella Events Place - 14 Neptune, Taytay, 1920 Rizal', 'Ferrari', 'Ford', 'Lamborghini', 'Mercedes Benz', 'Porsche', 'Rolls-Royce', 'Volkswagen'];
-  var cars = new Bloodhound({
-    datumTokenizer: Bloodhound.tokenizers.whitespace,
-    queryTokenizer: Bloodhound.tokenizers.whitespace,
-    local: cars
   });
-
-  function carsDefault(q, sync) {
-    if (q === '') {
-      sync(cars.get('Castillo Royale Ortigas Events Venue - Ortigas Ave Ext, Taytay, Rizal', 'Marias Events Place - 14 Neptune, Taytay, 1920 Rizal', 'Casa Bella Events Place - 14 Neptune, Taytay, 1920 Rizal', 'Ferrari', 'Ford', 'Lamborghini', 'Mercedes Benz', 'Porsche', 'Rolls-Royce', 'Volkswagen'));
-    } else {
-      cars.search(q, sync);
+  var loc = new Bloodhound({
+    datumTokenizer: Bloodhound.tokenizers.whitespace('venue'),
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    // identify: function(obj) { 
+    //     console.log(obj)
+    //     return obj.location; 
+    // },
+    // local: loc
+    // prefetch: '../location.json',
+    remote: {
+      url: '../location.json?query=%QUERY',
+      wildcard: '%QUERY',
+      transform: function transform(response) {
+        return $.map(response, function (profile) {
+          return {
+            location: profile.location,
+            venue: profile.venue,
+            image: profile.image
+          };
+        });
+      }
     }
-  }
-
+  });
+  loc.initialize();
   $('.typehead').on('click', function () {
     $('.tt-suggestion');
-  }); // Default Select
-
+  });
   $('#default-suggestions .typeahead').typeahead({
     minLength: 0,
     highlight: true,
     hint: true
   }, {
-    name: 'cars',
-    source: carsDefault,
+    name: 'locations',
+    display: function display(data) {
+      return data.location + ' - ' + data.venue;
+    },
+    source: loc.ttAdapter(),
     templates: {
       header: '<p class="league-name mb-1 py-2">Caraevents Suggested Venue</p>',
-      suggestion: function suggestion(data) {
-        return '<div>' + data + '</div>';
-      }
+      suggestion: Handlebars.compile('<div class="d-flex"><img src="/storage/{{image}}" width="70"><div class="pl-2"><p><strong>{{location}}</strong></p><p><i class="fas fa-map-marker-alt pr-1"></i>{{venue}}</p></div></div>')
     },
     limit: 'Infinity'
   });

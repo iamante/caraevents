@@ -29,7 +29,7 @@
                             <li class="dropdown ml-2 py-2" > 
                                 <a href="#" class="dropdown-toggle text-muted username" data-toggle="dropdown" role="button" aria-expanded="false">
                                      @if (Auth::user()->avatar == 'users/default.png')
-                                     <img src="{{ asset('storage/'. auth()->user()->avatar) }}" alt="" class="img-fluid ml-2" width="25" style="border: 2px solid #3c3c3c; border-radius: 50%;"> 
+                                     <i class="fas fa-user p-2 text-white" style="background-color: #a9a9a9; border-radius: 50%"></i> 
                                      @else
                                      <img src="{{ asset('storage/users/'. auth()->user()->avatar) }}" alt="" class="img-fluid ml-2" width="25" style="border: 2px solid #3c3c3c; border-radius: 50%;"> 
                                      @endif

@@ -90,14 +90,29 @@
                                 </div>
                             @endforeach
                             
-                            <div class="form-group">
-                                <label>Categories</label>
-                                <ul class="list-unstyled">
-                                    @foreach ($allCategories as $category)
-                                        <li><label><input style="margin-right: 5px;" type="checkbox" name="category[]" value="{{ $category->id }}" {{ $categoriesForService->contains($category) ? 'checked' : '' }}>{{ $category->name }}</label></li>
-                                    @endforeach
-                                </ul>
+                            <div class="services-row">
+                                <div class="col-md-4">
+                                    <div class="form-group pl-4">
+                                        <h3>Categories</h3>
+                                        <ul class="list-unstyled">
+                                            @foreach ($allCategories as $category)
+                                                <li><label><input style="margin-right: 5px;" type="checkbox" name="category[]" value="{{ $category->id }}" {{ $categoriesForService->contains($category) ? 'checked' : '' }}>{{ $category->name }}</label></li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group pl-4">
+                                        <h3>Locations</h3>
+                                        <ul class="list-unstyled">
+                                            @foreach ($allLocations as $location)
+                                                <li><label><input style="margin-right: 5px;" type="checkbox" name="location[]" value="{{ $location->id }}" {{ $locationsForService->contains($location) ? 'checked' : '' }}>{{ $location->location }} - {{ $location->venue }}</label></li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
+
                         </div><!-- panel-body -->
 
                         <div class="panel-footer">

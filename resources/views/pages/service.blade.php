@@ -101,9 +101,10 @@
               <i>Like us on <a href="https://www.facebook.com/caraevents/">facebook</a> to get updates on our latest promotions! <br>
                 Subscibe us on <a href="https://www.youtube.com/channel/UCwnkAYO7K2WKn4aZt3iyCFw" class="text-danger">youtube</a>to see our “behind the seems” updates!</i></small>
                 
-          </div>
+            </div>
         </div>
     </div>
 </div>
 @endsection
+
    

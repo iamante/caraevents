@@ -19173,6 +19173,18 @@ input.invalid {
        column-gap: 0rem !important;
 }
 
+.gallery-img .card-container .fancybox {
+  position: relative;
+}
+
+.gallery-img .card-container .fancybox img {
+  z-index: 1;
+}
+
+.gallery-img .card-container .fancybox img:hover {
+  opacity: 0.8;
+}
+
 #service {
   padding-top: 40px;
   padding-bottom: 80px;
@@ -19353,7 +19365,7 @@ input.invalid {
 }
 
 .tt-hint {
-  color: #f87777;
+  color: #aeaeae !important;
 }
 
 .tt-menu {
@@ -19374,7 +19386,7 @@ input.invalid {
   color: #575757;
   padding: 3px 20px;
   line-height: 24px;
-  border: 1px solid #ebebeb;
+  border-bottom: 1px solid gainsboro;
 }
 
 .tt-suggestion.tt-cursor,

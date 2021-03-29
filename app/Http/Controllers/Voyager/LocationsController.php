@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers\Voyager;
 
+use App\Venue;
 use Exception;
-use App\Service;
-use App\Category;
 use App\Location;
-use App\CategoryService;
-use App\LocationService;
 use Illuminate\Http\Request;
 use TCG\Voyager\Facades\Voyager;
 use Illuminate\Support\Facades\DB;
@@ -22,7 +19,7 @@ use TCG\Voyager\Database\Schema\SchemaManager;
 use TCG\Voyager\Http\Controllers\VoyagerBaseController;
 use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
 
-class ServicesController extends VoyagerBaseController
+class LocationsController extends VoyagerBaseController
 {
     use BreadRelationshipParser;
 
@@ -307,14 +304,12 @@ class ServicesController extends VoyagerBaseController
             $view = "voyager::$slug.edit-add";
         }
 
-        $allCategories = Category::all();
-        $allLocations = Location::all();
+        $allVenues = Venue::all();
 
-        $service = Service::find($id);
-        $categoriesForService = $service->categories()->get();
-        $locationsForService = $service->locations()->get();
+        $location = Location::find($id);
+        $VenuesForLocation = $location->venues()->get();
 
-        return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable', 'allCategories', 'categoriesForService', 'allLocations', 'locationsForService'));
+        return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable', 'allVenues', 'VenuesForLocation'));
     }
 
     // POST BR(E)AD
@@ -347,11 +342,9 @@ class ServicesController extends VoyagerBaseController
 
         event(new BreadDataUpdated($dataType, $data));
 
-        CategoryService::where('service_id', $id)->delete();
-        LocationService::where('service_id', $id)->delete();
+        VenueLocation::where('location_id', $id)->delete();
 
-        $this->updateServiceCategories($request, $id);
-        $this->updateServiceLocations($request, $id);
+        $this->updateLocationVenues($request, $id);
 
         if (auth()->user()->can('browse', app($dataType->model_name))) {
             $redirect = redirect()->route("voyager.{$dataType->slug}.index");
@@ -410,13 +403,10 @@ class ServicesController extends VoyagerBaseController
             $view = "voyager::$slug.edit-add";
         }
 
-        $allCategories = Category::all();
-        $categoriesForService = collect([]);
+        $allVenues = Venue::all();
+        $VenuesForLocation = collect([]);
 
-        $allLocations = Location::all();
-        $locationsForService = collect([]);
-
-        return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable', 'allCategories', 'categoriesForService', 'allLocations', 'locationsForService'));
+        return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable', 'allVenues', 'VenuesForLocation'));
     }
 
     /**
@@ -443,8 +433,7 @@ class ServicesController extends VoyagerBaseController
 
         event(new BreadDataAdded($dataType, $data));
 
-        $this->updateServiceCategories($request, $data->id);
-        $this->updateServiceLocations($request, $data->id);
+        $this->updateLocationVenues($request, $data->id);
 
         if (!$request->has('_tagging')) {
             if (auth()->user()->can('browse', $data)) {
@@ -957,25 +946,13 @@ class ServicesController extends VoyagerBaseController
         return response()->json([], 404);
     }
 
-    protected function updateServiceCategories(Request $request, $id)
+    protected function updateLocationVenues(Request $request, $id)
     {
         if($request->category){
             foreach ($request->category as $category) {
-                CategoryService::create([
-                    'service_id' => $id,
-                    'category_id' => $category,
-                ]);
-            }
-        }
-    }
-
-    protected function updateServiceLocations(Request $request, $id)
-    {
-        if($request->location){
-            foreach ($request->location as $location) {
-                LocationService::create([
-                    'service_id' => $id,
-                    'location_id' => $location,
+                VenueLocation::create([
+                    'location_id' => $id,
+                    'category_image_id' => $category,
                 ]);
             }
         }
