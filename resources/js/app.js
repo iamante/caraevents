@@ -1,9 +1,8 @@
 require("./bootstrap");
+require('bootstrap-select/dist/js/bootstrap-select.min');
+// require('bootstrap-select/js/bootstrap-select.js');
 require("./main");
 
-import $ from "jquery";
-window.$ = window.jQuery = $;
-global.$ = global.jQuery = require("jquery");
 
 import "jquery-ui/ui/widgets/datepicker.js";
 import "jquery-ui/ui/widgets/tabs.js";

@@ -91,6 +91,18 @@ a {
     float: left;
 }
 
+.recent-reservation h4, .recent-reservation th {
+    color: black !important;
+}
+
+.fc .fc-daygrid-day.fc-day-today {
+    background-color: rgba(40, 255, 112, 0.15) !important;
+}
+
+.panel-body h3, .panel-body h2 {
+    color: #000 !important;
+}
+
 .recent-reservation-no {
     background-color: rgb(247, 84, 84);
     color: #fff;
@@ -130,6 +142,10 @@ a {
     width: 33.33333333%;
     color: #2a363b;
     margin: 20px 0;
+}
+
+.fc-direction-ltr .fc-daygrid-event.fc-event-end {
+    overflow-x: hidden !important;
 }
 
 @media screen and (max-width:720px) {

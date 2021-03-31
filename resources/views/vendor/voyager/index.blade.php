@@ -31,6 +31,7 @@
                                     <th>FirstName</th>
                                     <th>LastName</th>
                                     <th>ServiceName</th>
+                                    <th>Location</th>
                                     <th>StartTime</th>
                                     <th>EndTime</th>
                                     <th>Total</th>
@@ -51,6 +52,7 @@
                                     <td><div>{{ $item->customer_name }}</div></td>
                                     <td><div>{{ $item->customer_lname }}</div></td>
                                     <td><div>{{ $item->name }}</div></td>
+                                    <td><div>{{ $item->location }}</div></td>
                                     <td><div>{{ $item->formatTime() }}</div></td>
                                     <td><div>{{ $item->formatEndTime() }}</div></td>
                                     <td><div>{{ $item->presentPrice() }}</div></td>
@@ -137,7 +139,9 @@
     </div>
 @stop
 
-<script>
+@section('javascript')
+
+    <script>
      document.addEventListener('DOMContentLoaded', function() {
         $reservations = {!! collect($reservation) !!}
         let dates = $reservations.map(obj=>{
@@ -147,33 +151,40 @@
                 end: obj.date + 'T' + obj.end_time,
                 backgroundColor: '#12a962',
                 borderColor: '#12a962',
-                url: 'admin/reservations/'+ obj.id
+                url: 'admin/reservations/'+ obj.id,
+                popup: {
+                    title: obj.name + '\x0A' + obj.location + '\x0A---',
+                }
             }
-        })
-    var calendarEl = document.getElementById("calendar");
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: "dayGridMonth",
-        dayMaxEvents: 2,
-        selectable: true,
-        headerToolbar: {
-            start: 'today prev,next',
-            center: '',
-            end: 'title',
-        },
-        eventTimeFormat: {
-            hour: 'numeric',
-            minute: '2-digit',
-            meridiem: 'short'
-        },
-        displayEventEnd: true,
-        events: dates
+        });
+
+        var calendarEl = document.getElementById("calendar");
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: "dayGridMonth",
+            dayMaxEvents: 2,
+            selectable: true,
+            headerToolbar: {
+                start: 'today prev,next',
+                center: '',
+                end: 'title',
+            },
+            eventTimeFormat: {
+                hour: 'numeric',
+                minute: '2-digit',
+                meridiem: 'short'
+            },
+            displayEventEnd: true,
+            events: dates,
+            eventMouseEnter: function(info){
+                var tis=info.el;
+                var popup=info.event.extendedProps.popup;
+                $('.fc-event-future').attr('title',popup.title);
+            }
+        });
+        calendar.render();
     });
-    calendar.render();
-});
 
-</script>
-
-@section('javascript')
+    </script>
 
     @if(isset($google_analytics_client_id) && !empty($google_analytics_client_id))
         <script>

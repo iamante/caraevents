@@ -1,4 +1,7 @@
 window._ = require("lodash");
+import $ from "jquery";
+window.$ = window.jQuery = $;
+global.$ = global.jQuery = require("jquery");
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -10,7 +13,8 @@ try {
     window.Popper = require("popper.js").default;
     window.$ = window.jQuery = require("jquery");
 
-    require("bootstrap");
+    require("bootstrap/dist/js/bootstrap.bundle");
+    // require("bootstrap");
 } catch (e) {}
 
 /**

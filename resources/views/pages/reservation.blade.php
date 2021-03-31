@@ -33,10 +33,10 @@
                 @csrf
 
                 <div class="row tab mb-3">
-                    <div class="col-md-8 mb-3 bg-white shadow-sm px-5 pt-4">
+                    <div class="col-md-8 mb-3 bg-white shadow-sm p-5">
 
-                        <div class="mb-5 text-center">
-                            <h4 class="text-success"><i class="fa fa-user-friends mr-1"></i> Personal Information</h4>
+                        <div class="mb-4">
+                            <h5 class="mb-0">Personal Information</h5>
                             <small>Fill up the information below to proceed.</small>
                         </div>
                         
@@ -48,7 +48,7 @@
 
                             <div class="form-group w-100 ml-2">
                                 <label for="customer_lname">Last Name</label>
-                                <input type="text" name="customer_lname" class="form-control shadow-sm" placeholder="Last Name" required>
+                                <input type="text" name="customer_lname" class="form-control shadow-sm" required>
                             </div>
                         </div>
 
@@ -111,8 +111,8 @@
 
                     </div>
 
-                    <div class="col-md-4 mb-3 bg-white shadow-sm px-5 pt-4">
-                        <h5 class="mb-4 text-success text-center"><i class="fa fa-clipboard-list mr-1" aria-hidden="true"></i> Reservation Overview</h5>
+                    <div class="col-md-4 mb-3 bg-white shadow-sm p-5">
+                        <h6 class="mb-4">Reservation Overview</h6>
                         
                         <div class="mb-3">
                             <img src={{ asset('storage/'. $service->image) }} alt="" class="img-fluid rounded">
@@ -132,7 +132,11 @@
                                     </tr>
                                     <tr>
                                         <td>Guest</td>
-                                        <td>30</td>
+                                        <td>{{ $service->guests }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Menu</td>
+                                        <td>Menu No.{{ $menu }}</td>
                                     </tr>
                                     <tr>
                                         <td>Price</td>
@@ -140,7 +144,7 @@
                                     </tr>
                                     <tr>
                                         <td>Location</td>
-                                        <td>Quezon City</td>
+                                        <td>{{ $location }}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -171,7 +175,7 @@
 
                     <div class="col-md-4 mb-3 bg-white shadow-sm px-3 pt-4">
 
-                        <h5 class="mb-3 text-center text-success"><i class="fa fa-clock mr-1"></i> Schedule Date</h5>
+                        <h5 class="mb-3 text-center"><i class="fa fa-clock mr-1"></i> Schedule Date</h5>
                         <div class="d-flex">
                             <div class="w-100 mr-1 my-2">
                                 <p class="text-center mb-3">Start time</p>
@@ -186,7 +190,7 @@
 
                     <div class="col-md-3 mb-3 bg-white shadow-sm px-3 pt-4">
 
-                        <h5 class="mb-3 text-center text-success"><i class="fa fa-clipboard-list" aria-hidden="true"></i> Reservation Overview</h5>
+                        <h6 class="mb-3">Reservation Overview</h6>
                         
                         <div class="mb-3">
                             <img src={{ asset('storage/'. $service->image) }} alt="" class="img-fluid rounded">
@@ -206,7 +210,11 @@
                                     </tr>
                                     <tr>
                                         <td>Guest</td>
-                                        <td>30</td>
+                                        <td>{{ $service->guests }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Menu</td>
+                                        <td>Menu No.{{ $menu }}</td>
                                     </tr>
                                     <tr>
                                         <td>Price</td>
@@ -214,7 +222,7 @@
                                     </tr>
                                     <tr>
                                         <td>Location</td>
-                                        <td>Quezon City</td>
+                                        <td>{{ $location }}</td>
                                     </tr>
                                     <tr>
                                         <td>Date</td>
@@ -229,6 +237,9 @@
                             <small class="text-center text-muted d-flex justify-content-center align-items-center py-1"><i class="fas fa-exclamation-circle pr-2 text-muted"></i>Please check your reservation details.</small>
                             <input type="hidden" name="name" value="{{ $service->name }}">
                             <input type="hidden" name="details" value="{{ $service->details }}">
+                            <input type="hidden" name="guests" value="{{ $service->guests }}">
+                            <input type="hidden" name="menu" value="Menu No.{{ $menu }}">
+                            <input type="hidden" name="location" value="{{ $location }}">
                         </div>
                             
                         <div class="d-flex justify-content-between pt-2">
@@ -250,11 +261,16 @@
             </form>
         </div>
     </div>
+@endsection
+
+
+@section('extra-js')
     {{-- <script src="{{ asset('js/datepicker.js') }}"></script> --}}
     <script type="text/javascript" src="{{ URL::to('js/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::to('js/datepicker.js') }}"></script>
     <script src="{{ asset('build/jquery.datetimepicker.full.min.js')}}"></script>
     <script>
+        
         let dates = {!! collect($reservation) !!};
         var currentTab = 0; // Current tab is set to be the first tab (0)
         showTab(currentTab); // Display the current tab
@@ -295,7 +311,11 @@
             return false;
         }
         // Hide the current tab:
-        x[0].style.display = "none";
+        if (n == 1) {
+            x[0].style.display = "none";
+        } else {
+            x[1].style.display = "none";
+        }
 
         // Increase or decrease the current tab by 1:
         currentTab = currentTab + n;
@@ -342,5 +362,5 @@
         x[n].className += " active";
         }
     </script>
-
+     
 @endsection

@@ -18,6 +18,7 @@ class CreateServicesTable extends Migration
             $table->string('name');
             $table->string('slug')->unique();
             $table->string('details')->nullable();
+            $table->string('guests')->nullable();
             $table->integer('price');
             $table->text('description');
             $table->timestamps();

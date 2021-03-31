@@ -34,13 +34,18 @@
                           <h5 class="mb-0 font-weight-bold text-white">{{ $service->name }}</h5>
                           <span class="text-uppercase text-white">({{ $service->details }})</span>
                         </div>
+                        
+                        <form action="{{ route('reserve.index', $service->slug )}}" method="POST">
+                          @method('GET')
+                          @csrf
+
                         <div class="p-4">
 
                           <div class="form-group" style="border-bottom: 1px solid #ced4da; border-radius: 0">
                             <small class="text-muted">
                             <label for="" class="mb-0">Guest</label></small>
                             <div class="d-flex align-items-center">
-                              <input type="text" class="form-control pl-0 pt-0 bg-white border-0" value="30 Persons for 3 table" readonly>
+                              <input type="text" name="guests" class="form-control pl-0 pt-0 bg-white border-0" value="{{ $service->guests}}" readonly>
                             </div>
                           </div>
                           
@@ -48,15 +53,28 @@
                             <small class="text-muted">
                             <label for="" class="mb-0">Menus</label></small>
                             <div class="d-flex align-items-center">
-                              <input type="text" class="form-control pl-0 pt-0 border-0" value="Menu no.1">
+                              <select id="service-menu" name="menu" class="browser-default custom-select border-0 pl-0">
+                                <option value="1" selected class="p-3">Menu No.1</option>
+                                <option value="1" disabled>&nbsp;&nbsp;&nbsp;Menudo</option>
+                                <option value="1" disabled>&nbsp;&nbsp;&nbsp;Mechado</option>
+                                <option value="1" disabled>&nbsp;&nbsp;&nbsp;Caldereta</option>
+                                <option value="2">Menu No.2</option>
+                                <option value="1" disabled>&nbsp;&nbsp;&nbsp;Menudo</option>
+                                <option value="1" disabled>&nbsp;&nbsp;&nbsp;Mechado</option>
+                                <option value="1" disabled>&nbsp;&nbsp;&nbsp;Caldereta</option>
+                                <option value="3">Menu No.3</option>
+                                <option value="1" disabled>&nbsp;&nbsp;&nbsp;Menudo</option>
+                                <option value="1" disabled>&nbsp;&nbsp;&nbsp;Mechado</option>
+                                <option value="1" disabled>&nbsp;&nbsp;&nbsp;Caldereta</option> 
+                              </select>
                             </div>
-                            </div>
+                          </div>
 
                           <div class="form-group" style="border-bottom: 1px solid #ced4da; border-radius: 0">
                             <small class="text-muted">
                             <label for="" class="mb-0">Location</label></small>
                             <div id="default-suggestions" class="d-flex align-items-cente border-0">
-                              <input type="text" class="typeahead form-control pl-0 pt-0 border-0 w-100" placeholder="Enter your desire location">
+                              <input type="text" name="location" class="typeahead form-control pl-0 pt-0 border-0 w-100" placeholder="Enter your desire location" required>
                             </div>
                           </div>
                           <div class="d-flex justify-content-between align-items-center">
@@ -64,9 +82,6 @@
                             <p class="mb-0 text-right py-2"><span class="pl-2" style="font-weight: 800; font-size: 30px; color: #1a8a8a">{{ $service->presentPrice() }}</span> </p>
                           </div>
                           
-                          <form action="{{ route('reserve.index', $service->slug )}}" method="POST">
-                            @method('GET')
-                            @csrf
                           <input type="hidden" name="id" value="{{ $service->id }}">
                           <input type="hidden" name="name" value="{{ $service->name }}">
                           <input type="hidden" name="price" value="{{ $service->price }}">

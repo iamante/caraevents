@@ -212,3 +212,8 @@
 .tt-suggestion p {
   margin: 0;
 }
+
+#service-menu:focus {
+    box-shadow: inset 0 -1px 0 #ddd;
+    outline: 0 !important;
+}

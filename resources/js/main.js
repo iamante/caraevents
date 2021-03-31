@@ -1,4 +1,6 @@
 $(function() {
+    $('.selectpicker').selectpicker();
+     $.fn.selectpicker.Constructor.BootstrapVersion = '4';
 
     $('.fancybox').attr('rel', 'gallery').fancybox({
         helpers : {

@@ -17,6 +17,7 @@ class ServicesTableSeeder extends Seeder
                 'name' => 'Birthday',
                 'slug' => 'b-day-package-',
                 'details' => 'Package',
+                'guests' => '30 persons for 3 table',
                 'price' => '50000',
                 'description' => 'lorem ipsul dolore asd kasd',
         ])->categories()->attach(1);
@@ -27,6 +28,7 @@ class ServicesTableSeeder extends Seeder
                 'name' => 'Catering Wedding',
                 'slug' => 'catering-b',
                 'details' => 'Package B',
+                'guests' => '50 persons for 3 table',
                 'price' => '65000',
                 'description' => 'lorem ipsul dolore asd kasd',
         ])->categories()->attach(2);
@@ -35,6 +37,7 @@ class ServicesTableSeeder extends Seeder
             'name' => 'Bachelor',
             'slug' => 'bachelor-a',
             'details' => 'Package A',
+            'guests' => '30 persons for 3 table',
             'price' => '35000',
             'description' => 'lorem ipsul dolore asd kasd',
             ])->categories()->attach(3);
@@ -43,6 +46,7 @@ class ServicesTableSeeder extends Seeder
             'name' => 'Bridal Shower',
             'slug' => 'bridalshower-c',
             'details' => 'Package C',
+            'guests' => '70 persons for 3 table',
             'price' => '75000',
             'description' => 'lorem ipsul dolore asd kasd',
             ])->categories()->attach(4);
@@ -51,6 +55,7 @@ class ServicesTableSeeder extends Seeder
             'name' => 'Civil Wedding',
             'slug' => 'civil-a',
             'details' => 'Package A',
+            'guests' => '30 persons for 3 table',
             'price' => '50000',
             'description' => 'lorem ipsul dolore asd kasd',
             ])->categories()->attach(5);
@@ -59,6 +64,7 @@ class ServicesTableSeeder extends Seeder
             'name' => 'Civil Wedding (B)',
             'slug' => 'civil-b',
             'details' => 'Package B',
+            'guests' => '50 persons for 3 table',
             'price' => '65000',
             'description' => 'lorem ipsul dolore asd kasd',
             ])->categories()->attach(5);

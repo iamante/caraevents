@@ -29,6 +29,9 @@ class CreateReservationsTable extends Migration
             $table->string('postal');
             $table->string('name');
             $table->string('details')->nullable();
+            $table->string('guests')->nullable();
+            $table->string('menu')->nullable();
+            $table->string('location')->nullable();
             $table->date('date');
             $table->time('start_time');
             $table->time('end_time');

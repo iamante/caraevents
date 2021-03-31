@@ -17,12 +17,20 @@ class ReservationsController extends Controller
      * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
-    public function index($slug)
+    public function index(Request $request , $slug)
     {
         $title = 'Reservation';
+        $menu = $request->input('menu');
+        $location = $request->input('location');
         $service = Service::where('slug', $slug)->firstOrFail();
         $reservations = Reservation::all()->pluck('date');
-        return view('pages.reservation')->with(['service' => $service, 'reservation' => $reservations, 'title' => $title]);
+        return view('pages.reservation')->with([
+            'service' => $service, 
+            'reservation' => $reservations, 
+            'title' => $title,
+            'menu' => $menu,
+            'location' => $location,
+            ]);
     }
 
     /**
@@ -57,7 +65,10 @@ class ReservationsController extends Controller
            'province' => $request->input('province'), 
            'postal' => $request->input('postal'), 
            'name' => $request->input('name'), 
-           'details' => $request->input('details'), 
+           'details' => $request->input('details'),
+           'guests' => $request->input('guests'), 
+           'menu' => $request->input('menu'), 
+           'location' => $request->input('location'),  
            'date' => $request->input('date'),
            'start_time' => date("H:i:s", strtotime($request->input('start_time'))),
            'end_time' => date("H:i:s", strtotime($request->input('end_time'))),
