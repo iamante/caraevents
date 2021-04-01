@@ -5,7 +5,7 @@
         <div class="container py-5">
             <div class="row">
                 <div class="col-md-4">
-                    <div class="card shadow-sm border-bottom-0" style="margin-left: 100px">
+                    <div class="card shadow-sm border-bottom-0 rounded-top" style="margin-left: 100px; border-radius: 0">
                         <div class="card-header bg-white">
                             <h6 class="mb-0">Transmission</h6>
                         </div>
@@ -31,13 +31,19 @@
                         </div>
                     </div>
 
-                    <div class="card shadow-sm border-top-0" style="margin-left: 100px">
+                    <div class="card shadow-sm border-top-0 rounded-bottom" style="margin-left: 100px; border-radius: 0">
                         <div class="card-header bg-white">
                             <h6 class="mb-0">Passenger Capacity</h6>
                         </div>
                         <div class="card-body p-0">
                             <div class="form-check mt-3 mb-4 ml-4">
                                 <input class="form-check-input" type="radio" name="flexRadio" id="flexRadio1" checked>
+                                <label class="form-check-label" for="flexRadio1">
+                                    All
+                                </label>
+                            </div>
+                            <div class="form-check mt-3 mb-4 ml-4">
+                                <input class="form-check-input" type="radio" name="flexRadio" id="flexRadio1">
                                 <label class="form-check-label" for="flexRadio1">
                                     4
                                 </label>
@@ -58,47 +64,29 @@
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <div class="row bg-white mb-3 shadow-sm py-4 pl-5 pr-3">
-                        <div class="col-md-4 py-3 d-flex justify-content-center">
-                            <img src="{{ asset('images/rent/car-hyundai.png')}}" alt="" class="img-fluid" width="200">
-                            
-                        </div>
-                        <div class="col-md-8 my-3 d-flex justify-content-between">
-                            <div>
-                                <h4 class="text-dark font-weight-bolder">Hyundai Accent 2019</h4>
-                                <p class="mb-3 text-center rounded" style="width: 100px; color: rgb(74, 75, 75); background-color:rgb(242, 243, 243);">Automatic</p>
-                                <p class="mb-0"><i class="fas fa-tint text-muted pr-2"></i> Color - White</p>
-                                <p class="mb-0"><i class="fas fa-user-tie text-muted pr-2"></i>4 seats</p>
-                            </div>
-                            <div class="align-items-end d-flex flex-column">
-                                <small class="mt-auto">Price rentals from</small>
-                                <h3 class="text-right mb-0 font-weight-bold text-success">P3,500<small class="text-muted">/ day</small></h3>
-                                <small class="mb-2 text-dark">Around Quezon City</small>
-                                <div class="btn btn-success text-center px-5 rounded">Rent</div>
-                            </div>
-                        </div>
-                    </div>
+                    @foreach ($car_rental as $car)
 
-                    <div class="row bg-white shadow-sm py-4 pl-5 pr-3">
-                        <div class="col-md-4 py-3 d-flex justify-content-center">
-                            <img src="{{ asset('images/rent/van.png')}}" alt="" class="img-fluid" width="200">
-                            
-                        </div>
-                        <div class="col-md-8 my-3 d-flex justify-content-between">
-                            <div>
-                                <h4 class="text-dark font-weight-bolder">Wedding Van</h4>
-                                <p class="mb-3 text-center rounded" style="width: 100px; color: rgb(74, 75, 75); background-color:rgb(242, 243, 243);">Automatic</p>
-                                <p class="mb-0"><i class="fas fa-tint text-muted pr-2"></i> Color - White</p>
-                                <p class="mb-0"><i class="fas fa-user-tie text-muted pr-2"></i> 15 seats</p>
+                        <div class="row bg-white mb-3 shadow-sm py-4 pl-5 pr-3">
+                            <div class="col-md-4 py-3 d-flex justify-content-center">
+                                <img src="{{ asset('storage/'. $car->image)}}" alt="" class="img-fluid" width="200">
                             </div>
-                            <div class="align-items-end d-flex flex-column">
-                                <small class="mt-auto">Price rentals from</small>
-                                <h3 class="text-right mb-0 font-weight-bold  text-success">P5,500<small class="text-muted">/ day</small></h3>
-                                <small class="mb-2 text-dark">Around Quezon City</small>
-                                <div class="btn btn-success text-center px-5 rounded">Rent</div>
+                            <div class="col-md-8 my-3 d-flex justify-content-between">
+                                <div>
+                                    <h4 class="text-dark font-weight-bolder">{{ $car->car_name }}</h4>
+                                    <p class="mb-3 text-center rounded" style="width: 100px; color: rgb(74, 75, 75); background-color:rgb(242, 243, 243);">{{ $car->transmission }}</p>
+                                    <p class="mb-0"><i class="fas fa-tint text-muted pr-2"></i> Color - {{ $car->color }}</p>
+                                    <p class="mb-0"><i class="fas fa-user-tie text-muted pr-2"></i>{{ $car->seats }}</p>
+                                </div>
+                                <div class="align-items-end d-flex flex-column">
+                                    <small class="mt-auto">Price rentals from</small>
+                                    <h3 class="text-right mb-0 font-weight-bold text-success">{{ $car->presentPrice() }}<small class="text-muted">/ day</small></h3>
+                                    <small class="mb-2 text-dark">Around Quezon City</small>
+                                    <a href="{{ route('car-rental.show', $car->slug ) }}"><div class="btn btn-success text-center px-5 rounded">Rent</div></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        
+                    @endforeach
                 </div>
             </div>
         </div>

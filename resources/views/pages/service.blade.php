@@ -20,10 +20,15 @@
                 <div class="px-5 py-3">
                   <h5 class="font-weight-bold text-dark">About this Service</h5>
                     <p class="pl-5 text-dark">{!! $service->description !!}</p>
-                    <details>
+                    {{-- <details>
                     <summary>Menus</summary>
                     <p>The arrangement of type involves the selection of typefaces, point size, line length, leading (line spacing), adjusting the spaces between groups of letters (tracking) and adjusting the space between pairs of letters (kerning).</p>
-                    </details>
+                    </details> --}}
+                    <div class="mt-5">
+                        <h5>Caraevents Office</h5>
+                        <p class="mb-1">Block 85 Lot 29A, Riyal Street, United North Park, Phase 8, Fairview Subdivision Quezon City</p>
+                        <iframe class="img-fluid mt-3" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15436.703142064003!2d121.0565013!3d14.7026491!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcace75fb83bd1c1e!2sCara%20Events%20Philippines!5e0!3m2!1sen!2sph!4v1600268794813!5m2!1sen!2sph" width="1920" height="1920" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-4">

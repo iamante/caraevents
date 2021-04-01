@@ -27,6 +27,7 @@ Route::get('/search', 'ServicesController@search')->name('search');
 
 Route::get('/rental', 'RentalsController@index')->name('rental.index');
 Route::get('/car-rental', 'CarRentalsController@index')->name('car-rental.index');
+Route::get('/car-rental/{car}', 'CarRentalsController@show')->name('car-rental.show');
 
 Route::get('/reservation', 'ReserveController@index')->name('reserve.home')->middleware(['auth' => 'auth_reservation']);
 Route::get('/reservation/{service}', 'ReservationsController@index')->name('reserve.index')->middleware(['auth' => 'verified']);

@@ -19001,77 +19001,88 @@ a.text-dark:focus {
   }
 }
 
-.xdsoft_datetimepicker {
+.reservation-date .xdsoft_datetimepicker,
+.reservation-time .xdsoft_datetimepicker {
   border: none !important;
 }
 
-.xdsoft_time_box > div > div {
+.reservation-time .xdsoft_time_box > div > div {
   border-top: none !important;
   color: #333 !important;
   background: none !important;
 }
 
-.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div.xdsoft_current {
+.reservation-time .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div.xdsoft_current,
+.reservation-date .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div.xdsoft_current {
   background-color: #2cc973 !important;
   box-shadow: #12a962 0 1px 3px 0 inset !important;
   color: #fff !important;
 }
 
-.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box {
+.reservation-time .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box {
   border-bottom: none !important;
   border: none !important;
   height: 290px !important;
 }
 
-.xdsoft_datetimepicker.xdsoft_inline {
+.reservation-time .xdsoft_datetimepicker.xdsoft_inline,
+.reservation-date .xdsoft_datetimepicker.xdsoft_inline {
   width: 100%;
   border-color: #333;
 }
 
-.xdsoft_datetimepicker .xdsoft_datepicker {
+.reservation-date .xdsoft_datetimepicker .xdsoft_datepicker {
   margin-right: 8px;
   width: 98% !important;
 }
 
-.xdsoft_datetimepicker .xdsoft_calendar th {
+.reservation-date .xdsoft_datetimepicker .xdsoft_calendar th {
   color: #333 !important;
   padding-top: 10px !important;
   padding-bottom: 10px !important;
 }
 
-.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div {
+.reservation-time .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div {
   font-size: 15px !important;
   margin-bottom: 15px;
 }
 
-.xdsoft_datetimepicker .xdsoft_calendar table {
+.reservation-date .xdsoft_datetimepicker .xdsoft_calendar table {
   height: 300px !important;
 }
 
-.xdsoft_datetimepicker .xdsoft_label {
+.reservation-date .xdsoft_datetimepicker .xdsoft_label {
   float: none !important;
 }
 
-.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_highlighted_default {
+.reservation-date .xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_highlighted_default {
   -webkit-text-decoration: red line-through;
           text-decoration: red line-through;
 }
 
-.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current {
+.reservation-date .xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current {
   background-color: #2cc973 !important;
   box-shadow: #12a962 0 1px 3px 0 inset !important;
 }
 
-.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_highlighted_default div:hover {
+.reservation-date .xdsoft_datetimepicker .xdsoft_monthpicker {
+  margin-bottom: 25px;
+}
+
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_disabled {
+  cursor: not-allowed !important;
+}
+
+.reservation-date .xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_highlighted_default div:hover {
   color: #070707 !important;
 }
 
-.xdsoft_datetimepicker .xdsoft_timepicker {
+.reservation-time .xdsoft_datetimepicker .xdsoft_timepicker {
   width: 100% !important;
   padding-right: 10px !important;
 }
 
-.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_prev,
+.reservation-time .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_prev,
 .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_next {
   margin-left: 50px !important;
   display: none !important;

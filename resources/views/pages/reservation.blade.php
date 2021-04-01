@@ -164,24 +164,24 @@
 
                 <div class="row tab mb-3">
 
-                    <div class="col-md-5 mb-3 bg-white shadow-sm px-3 pt-4">
-                        <h5 class="mb-3 text-center text-success"><i class="fa fa-calendar-alt mr-1"></i> Schedule Date</h5>
+                    <div class="col-md-5 mb-3 bg-white shadow-sm px-3 pt-5">
+                        <h5 class="mb-3 ml-3 text-dark"><i class="fa fa-calendar-alt mr-1 text-success"></i> Schedule Date</h5>
                         <div class="pb-0">
-                            <div class="my-2 d-flex">
+                            <div class="my-2 d-flex reservation-date">
                                 <input type="text" name="date" class="datepicker w-100" date-format='yy-mm-dd' placeholder="Date" style="border: none; outline: none">
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-4 mb-3 bg-white shadow-sm px-3 pt-4">
+                    <div class="col-md-4 mb-3 bg-white shadow-sm px-3 pt-5">
 
-                        <h5 class="mb-3 text-center"><i class="fa fa-clock mr-1"></i> Schedule Date</h5>
+                        <h5 class="mb-3 ml-3"><i class="fa fa-clock mr-1 text-success"></i> Schedule Time</h5>
                         <div class="d-flex">
-                            <div class="w-100 mr-1 my-2">
+                            <div class="w-100 mr-1 my-2 reservation-time">
                                 <p class="text-center mb-3">Start time</p>
-                            <input type="text" name="start_time" class="timepicker1 w-100" placeholder="Start Time" style="border: none; outline: none">
+                                <input type="text" name="start_time" class="timepicker1 w-100" placeholder="Start Time" style="border: none; outline: none">
                             </div>
-                            <div class="ml-1 w-100 my-2">
+                            <div class="ml-1 w-100 my-2 reservation-time">
                                 <p class="text-center mb-3">End time</p>
                                 <input type="text" name="end_time" class="timepicker2 w-100" placeholder="End Time" style="border: none; outline: none">
                             </div>
@@ -190,7 +190,7 @@
 
                     <div class="col-md-3 mb-3 bg-white shadow-sm px-3 pt-4">
 
-                        <h6 class="mb-3">Reservation Overview</h6>
+                        <h6 class="mb-3 mt-4">Reservation Overview</h6>
                         
                         <div class="mb-3">
                             <img src={{ asset('storage/'. $service->image) }} alt="" class="img-fluid rounded">

@@ -41,7 +41,7 @@
                     RENTALS<span class="arrow-down"></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-left dropdown-menu-sm-center py-1 dropdown-services" aria-labelledby="navbarDropdown" style="border-radius: 0">
-                    <a class="dropdown-item py-2" href="/rental">CAR</a>
+                    <a class="dropdown-item py-2" href="/car-rental">CAR</a>
                     <div class="dropdown-divider my-1"></div>
                     <a class="dropdown-item py-2" href="/clothing">GOWN</a>
                     <div class="dropdown-divider my-1"></div>
