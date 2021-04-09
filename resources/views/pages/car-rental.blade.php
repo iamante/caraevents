@@ -1,6 +1,17 @@
 @extends('layouts.app')
 @section('content')
-<img src="{{ asset('images/bg-confi.jpg')}}" alt="" class="img-fluid">
+
+    <div class="parallax-img bg-dark" style="">
+        <img src="{{ asset('images/car-hero.jpg')}}" alt="" class="img-fluid">
+        <div class="parallax-text">
+            <h1 class="mb-3" style="font-weight: 400;">Rent a Car</h1>
+            <div class="position-relative">
+                <i class="fas fa-car"></i>
+                <div class="hr-line"></div>
+            </div>
+        </div>
+    </div>
+
     <div style="background-color: #e6eaed">
         <div class="container py-5">
             <div class="row">
@@ -17,10 +28,12 @@
                                 </label>
                             </div>
                             <div class="form-check mb-4 ml-4">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                                <label class="form-check-label" for="flexRadioDefault2">
-                                Automatic
-                                </label>
+                                <a href="">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                    Automatic
+                                    </label>
+                                </a>
                             </div>
                             <div class="form-check mb-4 ml-4">
                                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
@@ -73,14 +86,14 @@
                             <div class="col-md-8 my-3 d-flex justify-content-between">
                                 <div>
                                     <h4 class="text-dark font-weight-bolder">{{ $car->car_name }}</h4>
-                                    <p class="mb-3 text-center rounded" style="width: 100px; color: rgb(74, 75, 75); background-color:rgb(242, 243, 243);">{{ $car->transmission }}</p>
+                                    <p class="mb-2 text-center rounded" style="width: 100px; color: rgb(74, 75, 75); background-color:rgb(242, 243, 243);">{{ $car->transmission }}</p>
                                     <p class="mb-0"><i class="fas fa-tint text-muted pr-2"></i> Color - {{ $car->color }}</p>
                                     <p class="mb-0"><i class="fas fa-user-tie text-muted pr-2"></i>{{ $car->seats }}</p>
+                                    <small class="bg-info text-white px-1">For Rent</small>
                                 </div>
                                 <div class="align-items-end d-flex flex-column">
                                     <small class="mt-auto">Price rentals from</small>
-                                    <h3 class="text-right mb-0 font-weight-bold text-success">{{ $car->presentPrice() }}<small class="text-muted">/ day</small></h3>
-                                    <small class="mb-2 text-dark">Around Quezon City</small>
+                                    <h3 class="text-right font-weight-bold text-success">{{ $car->presentPrice() }}<small class="text-muted">/ day</small></h3>
                                     <a href="{{ route('car-rental.show', $car->slug ) }}"><div class="btn btn-success text-center px-5 rounded">Rent</div></a>
                                 </div>
                             </div>

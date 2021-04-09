@@ -5,30 +5,6 @@
 @section('page_header')
     <h1 class="page-title">
         <i class="{{ $dataType->icon }}"></i> {{ __('voyager::generic.viewing') }} {{ ucfirst($dataType->getTranslatedAttribute('display_name_singular')) }} &nbsp;
-
-        @can('edit', $dataTypeContent)
-            <a href="{{ route('voyager.'.$dataType->slug.'.edit', $dataTypeContent->getKey()) }}" class="btn btn-info">
-                <span class="glyphicon glyphicon-pencil"></span>&nbsp;
-                {{ __('voyager::generic.edit') }}
-            </a>
-        @endcan
-        @can('delete', $dataTypeContent)
-            @if($isSoftDeleted)
-                <a href="{{ route('voyager.'.$dataType->slug.'.restore', $dataTypeContent->getKey()) }}" title="{{ __('voyager::generic.restore') }}" class="btn btn-default restore" data-id="{{ $dataTypeContent->getKey() }}" id="restore-{{ $dataTypeContent->getKey() }}">
-                    <i class="voyager-trash"></i> <span class="hidden-xs hidden-sm">{{ __('voyager::generic.restore') }}</span>
-                </a>
-            @else
-                <a href="javascript:;" title="{{ __('voyager::generic.delete') }}" class="btn btn-danger delete" data-id="{{ $dataTypeContent->getKey() }}" id="delete-{{ $dataTypeContent->getKey() }}">
-                    <i class="voyager-trash"></i> <span class="hidden-xs hidden-sm">{{ __('voyager::generic.delete') }}</span>
-                </a>
-            @endif
-        @endcan
-        @can('browse', $dataTypeContent)
-        <a href="{{ route('voyager.'.$dataType->slug.'.index') }}" class="btn btn-warning">
-            <span class="glyphicon glyphicon-list"></span>&nbsp;
-            {{ __('voyager::generic.return_to_list') }}
-        </a>
-        @endcan
     </h1>
     @include('voyager::multilingual.language-selector')
 @stop
@@ -75,47 +51,70 @@
     </style>
     <div class="page-content read container-fluid">
         <div class="row">
-            <div class="col-md-9" style="border: none">
+            <div class="col-md-9" style="border: none;">
                 <div class="reserve-alert">
-                    <p class="mb-0">Well done! The reservation has been confirm.</p>
+                    <p class="mb-0">Well done! The reservation has been confirmed.</p>
                 </div>
-                <div class="panel panel-bordered" style="padding:20px;" >
-                    <div class="panel-heading" style="border-bottom:0;">
+                <div class="panel panel-bordered" style="padding:20px; box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;" >
+                    <div class="panel-heading" style="border-bottom:0; display: flex; align-items: center; justify-content: space-between">
                        <h3 class="panel-title" style="font-weight:800 "> Reservation #{{ $dataTypeContent->id }}</h3>
+                       <div class="d-flex" style="display: flex;">
+                            <p style="margin-bottom: 0; margin-right: 40px;"><small>Date:</small> {{ $dataTypeContent->formatCreatedAt() }}</p>
+                       </div>
                     </div><hr>
-                    <div class="panel-body">
+                    <div class="panel-body text-dark">
                         <div class="row">
-                            <div class="col-md-6">
-                                <h5 style="font-weight:800;">Date :</h5> {{ $dataTypeContent->formatCreatedAt() }}
+                            <div class="col-md-5">
+                                <h4 class="pb-3" style="font-weight:800;">From</h4>
                             </div>
-                            <div class="col-md-6">
-                                <h5 class="pb-3" style="font-weight:800;">Customer Detail :</h5> 
+                            <div class="col-md-7"> 
+                                {{ $dataTypeContent->customer_name }} {{ $dataTypeContent->customer_lname }} <br>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <h4 style="font-weight:800;">Contact</h4> 
+                            </div>
+                            <div class="col-md-7">
                                 {{ $dataTypeContent->email }} <br>
                                 {{ $dataTypeContent->phone }} <br>
                                 {{ $dataTypeContent->address }} <br>
-                                {{ $dataTypeContent->city }} &nbsp; {{ $dataTypeContent->province }} &nbsp; ({{ $dataTypeContent->postal }})<br> 
+                                {{ $dataTypeContent->city }} &nbsp; {{ $dataTypeContent->province }} &nbsp; ({{ $dataTypeContent->postal }})<br>
                             </div>
                         </div>
+                        <hr>
+
                         <div class="row">
-                            <div class="col-md-6">
-                                <h5 style="font-weight:800;">Service :</h5> 
-                                {{ $dataTypeContent->name }} <br>
-                              ( {{ $dataTypeContent->details }} )
+                            <div class="col-md-5">
+                                <h4 style="font-weight:800;">Service</h4> 
                             </div>
-                            <div class="col-md-6">
-                                <h5 class="pb-3" style="font-weight:800;">Requested Date :</h5> 
+                            <div class="col-md-7">
+                                {{ $dataTypeContent->name }} ({{ $dataTypeContent->details }})<br>
+                                {{ $dataTypeContent->menu }}<br>
+                                {{ $dataTypeContent->guests }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-5">
+                                <h4 class="pb-3" style="font-weight:800;">Requested Date</h4> 
+                            </div>
+                            <div class="col-md-7">
                                 <div style="display: flex;">
                                     <p style="padding-right: 10px;">{{ $dataTypeContent->formatDate() }}</p> 
                                     {{ $dataTypeContent->formatTime() }} <span style="padding-right: 10px; padding-left: 10px;">to</span> {{ $dataTypeContent->formatEndTime() }} 
                                 </div>
+                            </div>
                         </div>
-                    </div>
+
+
                 </div>
             </div>
         </div>
         
         <div class="col-md-3">
-            <div class="panel panel-bordered" style="padding:10px;">
+            <div class="panel panel-bordered" style="padding:10px; box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important">
                 <div class="panel-heading" style="border-bottom:0;">
                     <h5 class="panel-title" style="font-weight:800;padding-bottom:0 "> Payment</h5>
                  </div>

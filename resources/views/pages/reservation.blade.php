@@ -43,19 +43,19 @@
                         <div class="d-flex justify-content-between">
                             <div class="form-group w-100 mr-2">
                                 <label for="customer_name">First Name</label>
-                                <input type="text" name="customer_name" class="form-control shadow-sm" value="{{ auth()->user()->name }}" placeholder="First Name" readonly>
+                                <input type="text" name="customer_name" class="form-control shadow-sm border-0 rounded-0" value="{{ auth()->user()->name }}" placeholder="First Name" readonly>
                             </div>
 
                             <div class="form-group w-100 ml-2">
                                 <label for="customer_lname">Last Name</label>
-                                <input type="text" name="customer_lname" class="form-control shadow-sm" required>
+                                <input type="text" name="customer_lname" class="form-control shadow-sm rounded-0" required>
                             </div>
                         </div>
 
                         <div class="d-flex justify-content-between">
                             <div class="form-group w-100 mr-2">
                                 <label for="email">Email Address</label>
-                                <input type="email" name="email" value="{{ auth()->user()->email }}" class="form-control shadow-sm" required readonly>
+                                <input type="email" name="email" value="{{ auth()->user()->email }}" class="form-control shadow-sm border-0 rounded-0" required readonly>
                             </div>
 
                             <div class="form-group w-100 ml-2">

@@ -153,3 +153,23 @@ a {
         width: 100%;
     }
 }
+
+.container-fluid {
+    background-color: #f0f0f0 !important;
+}
+
+#dataTable td > span, #dataTable td div, #dataTable td > p {
+    color: #2a363b !important;
+}
+
+ #dataTable td > .label-info, #dataTable td > .label-primary, #dataTable td > .recent-reservation-ok, #dataTable td > .recent-reservation-no {
+     color: #f0f0f0 !important;
+ }
+
+.edit-reserve .toggle-group .btn.btn-default {
+     padding-left: 15px !important;
+ }
+
+ .edit-reserve .btn-primary{
+    background-color: #2ec985 !important;
+ }

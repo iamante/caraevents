@@ -2,11 +2,28 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use App\User;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Model;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class Reservation extends Model
 {
+    use LogsActivity;
+
+    public function getDescriptionForEvent(string $eventName): string
+    {
+        return "The reservation has been {$eventName}";
+    }
+
+    protected static $logName = 'Reservations';
+
+    protected static $logAttributes = ['*'];
+
+    protected static $logOnlyDirty = true;
+
+    protected static $submitEmptyLogs = false;
+
     protected $fillable = [
         'user_id',
         'customer_name', 

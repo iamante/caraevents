@@ -1,8 +1,19 @@
 @extends('layouts.app')
 @section('content')
+
+    <div class="parallax-img bg-dark" style="">
+        <img src="{{ asset('images/gallery-hero.jpg')}}" alt="" class="img-fluid">
+        <div class="parallax-text">
+            <h1 class="mb-3" style="font-weight: 400;">Our Gallery</h1>
+            <div class="position-relative">
+                <i class="fas fa-photo-video"></i>
+                <div class="hr-line"></div>
+            </div>
+        </div>
+    </div>
+
     <div class="container pt-3 pb-5">
         <div class="text-center my-3 gallery-category">
-            <h1 class="mb-4 text-success">Our Gallery</h1>
             @if (Request::fullUrl() == Request::url())
                 <a href="/gallery"><button class="text-white" style="background-color: #666; ">All</button></a>
             @else

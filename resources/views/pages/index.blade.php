@@ -4,7 +4,6 @@
 <!-- -------------------------------- hero page -------------------------------- -->
 
     <div style="position: relative">
-        <a href="#" id="scroll" style="display: none;"><span><img src="/images/icons/arrow-up.svg" alt="arrow-up"></span></a>
         <div class="cara-bgimage">
             <div class="cara-text text-center">
                 <h1 style="font-size: 40px" class="cara-head">Caraevents<br> Consultancy and Co.</h1>
@@ -39,10 +38,10 @@
                     </div>
                     <div class="card-body text-center bg-light pb-5">
                         <ul class="list-unstyled py-3" style="font-size: 18px">
-                            <li class="mb-3">5 Hours</li>
-                            <li class="mb-3">Up to 30 Persons</li>
-                            <li class="mb-3">Decoring</li>
-                            <li class="mb-3">Catering</li>
+                            <li class="mb-3"><small>Up to <br>{{ $service->guests }}</small></li>
+                            <li class="mb-3"><small>Free EMCEE <br>& Coordinators</small></li>
+                            <li class="mb-3"><small>Main dish</small></li>
+                            <li class="mb-3"><small>Sound System</small></li>
                         </ul>
                         <a href={{ route('services.show', $service->slug ) }}><button class="btn btn-success">Inquire Now</button></a>
                     </div>

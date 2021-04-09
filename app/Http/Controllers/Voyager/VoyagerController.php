@@ -4,14 +4,15 @@ namespace App\Http\Controllers\Voyager;
 use App\Service;
 use Carbon\Carbon;
 use App\Reservation;
+use League\Flysystem\Util;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use TCG\Voyager\Facades\Voyager;
+use Intervention\Image\Constraint;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Str;
-use Intervention\Image\Constraint;
 use Intervention\Image\Facades\Image;
-use League\Flysystem\Util;
+use TCG\Voyager\Events\BreadDataAdded;
 use TCG\Voyager\Http\Controllers\Controller;
 use TCG\Voyager\Http\Controllers\VoyagerBaseController;
 
@@ -21,10 +22,10 @@ class VoyagerController extends Controller
     {
         $count = array("daily" => 0, "weekly" => 0, "monthly" => 0);
         $count['daily'] = Reservation::where('created_at','>=',Carbon::today())->count();
-        $count['weekly'] = Reservation::where('created_at','>=',Carbon::today()->subDays(7))->orderByDesc('created_at')->limit(10)->get();
+        $count['weekly'] = Reservation::where('created_at','>=',Carbon::today()->subDays(7))->orderByDesc('created_at')->limit(5)->get();
         $count['monthly'] = Reservation::where('created_at','>=',Carbon::today()->subDays(30))->count();
         $reservation = Reservation::where('status', 1)->get(['id','name','date','start_time','end_time','customer_name','customer_lname','location']);
-    
+
         return Voyager::view('voyager::index')->with(['count' => $count['weekly'], 'reservation' => $reservation]);
     }
 

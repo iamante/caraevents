@@ -2,15 +2,50 @@
 
 namespace App;
 
+use Illuminate\Support\Facades\Auth;
 use Laravelista\Comments\Commentable;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Activitylog\Models\Activity;
+use Spatie\Activitylog\Traits\LogsActivity;
 use Nicolaslopezj\Searchable\SearchableTrait;
 
 
 class Service extends Model
 {
     use Commentable;
-    use SearchableTrait;
+    use SearchableTrait, LogsActivity;
+
+    // public function getDescriptionForEvent(string $eventName): string
+    // {
+        
+    //     return "The services has been {$eventName}";
+    // }
+
+    protected static $logName = 'Services';
+
+    protected $fillable = ['name', 'slug', 'details', 'guests', 'price', 'description', 'image',];
+
+    protected static $logAttributes = ['name', 'slug', 'details', 'guests', 'price', 'description', 'image'];
+
+    protected static $logOnlyDirty = true;
+
+    protected static $submitEmptyLogs = false;
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function tapActivity(Activity $activity, string $eventName)
+    {
+        foreach ($activity->properties['attributes'] as $key => $names ) {
+            if ($key === array_key_first($activity->properties['attributes']))
+                $name = ucfirst(strtolower($names));
+        }
+
+        $activity->description = "{$name} service has been {$eventName}";
+    }
+    
 
      /**
      * Searchable rules.

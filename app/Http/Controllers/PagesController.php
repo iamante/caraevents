@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Rental;
 use App\Gallery;
 use App\Service;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Spatie\Activitylog\Models\Activity;
 
 class PagesController extends Controller
 {
@@ -13,6 +16,7 @@ class PagesController extends Controller
         $services = Service::latest()->take(4)->get();
         $servicesSecondRow = Service::skip(1)->take(2)->get();
         $servicesThirdRow = Service::skip(3)->take(2)->get();
+
         return view('pages.index')->with(['services' => $services, 'servicesSecondRow' => $servicesSecondRow, 'servicesThirdRow' => $servicesThirdRow]);
     }
     

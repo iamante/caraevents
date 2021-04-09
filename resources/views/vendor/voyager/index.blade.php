@@ -30,32 +30,32 @@
                                     <th>Date</th>
                                     <th>FirstName</th>
                                     <th>LastName</th>
-                                    <th>ServiceName</th>
+                                    <th>Service</th>
                                     <th>Location</th>
                                     <th>StartTime</th>
                                     <th>EndTime</th>
                                     <th>Total</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody style="color: #202020">
                                 @foreach ($count as $item)
                                 <tr>
                                     <td><div>#{{ $item->id }}</div></td>
                                     <td>
                                         @if ($item->status == 0)
-                                            <div><span class="recent-reservation-no">waiting for confirmation</span></div>
+                                            <span class="recent-reservation-no">waiting for confirmation</span>
                                         @else
-                                            <div><span class="recent-reservation-ok">confirmed</span></div>
+                                            <span class="recent-reservation-ok">confirmed</span>
                                         @endif
                                     </td>
-                                    <td><div>{{ $item->formatDate() }}</div></td>
-                                    <td><div>{{ $item->customer_name }}</div></td>
-                                    <td><div>{{ $item->customer_lname }}</div></td>
-                                    <td><div>{{ $item->name }}</div></td>
-                                    <td><div>{{ $item->location }}</div></td>
-                                    <td><div>{{ $item->formatTime() }}</div></td>
-                                    <td><div>{{ $item->formatEndTime() }}</div></td>
-                                    <td><div>{{ $item->presentPrice() }}</div></td>
+                                    <td>{{ $item->formatDate() }}</td>
+                                    <td>{{ $item->customer_name }}</td>
+                                    <td>{{ $item->customer_lname }}</td>
+                                    <td>{{ $item->name }}</td>
+                                    <td>{{ $item->location }}</td>
+                                    <td>{{ $item->formatTime() }}</td>
+                                    <td>{{ $item->formatEndTime() }}</td>
+                                    <td>{{ $item->presentPrice() }}</td>
                                 </tr>
                                 @endforeach
                             </tbody>

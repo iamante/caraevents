@@ -36,20 +36,20 @@
                     <a class="dropdown-item py-2" href="/services?category=accessories">Accessories</a>
                 </div>
                 </li>
-                <li class="nav-item dropdown mr-3">
+                {{-- <li class="nav-item dropdown mr-3">
                     <a style="color:#505050" class="nav-link dropdown-toggle" href="/rentals" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     RENTALS<span class="arrow-down"></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-left dropdown-menu-sm-center py-1 dropdown-services" aria-labelledby="navbarDropdown" style="border-radius: 0">
-                    <a class="dropdown-item py-2" href="/car-rental">CAR</a>
+                    <a class="dropdown-item py-2" href="/car-rental">Bridal Car</a>
                     <div class="dropdown-divider my-1"></div>
-                    <a class="dropdown-item py-2" href="/clothing">GOWN</a>
+                    <a class="dropdown-item py-2" href="/clothing-rental">Clothing</a>
                     <div class="dropdown-divider my-1"></div>
                     <a class="dropdown-item py-2" href="/clothing">BARONG</a>
                     <div class="dropdown-divider my-1"></div>
                     <a class="dropdown-item py-2" href="/clothing">COAT</a>
                 </div>
-                </li>
+                </li> --}}
                 <li class="nav-item mr-3">
                     <a class="nav-link" href="/gallery" style="color:#505050">GALLERY</a>
                 </li>

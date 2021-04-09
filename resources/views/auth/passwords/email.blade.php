@@ -47,7 +47,7 @@
                 </div>
                 <div class="card-footer bg-white border-0">
                     <div class="text-center">
-                        <a href="/" class="text-muted"><i class="fa fa-angle-left pr-2"></i> Back to login</a>
+                        <a href="/login" class="text-muted"><i class="fa fa-angle-left pr-2"></i> Back to login</a>
                     </div>
                 </div>
             </div>

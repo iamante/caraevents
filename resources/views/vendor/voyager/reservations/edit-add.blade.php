@@ -17,15 +17,72 @@
         {{ "Confirm Reservation" }}
     </h1>
     @include('voyager::multilingual.language-selector')
+
+    
 @stop
 
 
 @section('content')
     <div class="page-content edit-add container-fluid">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
+                <div class="panel panel-bordered" style="padding:20px; box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;" >
+                    <div class="panel-heading" style="border-bottom:0; display: flex; align-items: center; justify-content: space-between">
+                       <h3 class="panel-title" style="font-weight:800 "> Reservation #{{ $dataTypeContent->id }}</h3>
+                       <div class="d-flex" style="display: flex;">
+                            <p style="margin-bottom: 0; margin-right: 40px;"><small>Date:</small> {{ $dataTypeContent->formatCreatedAt() }}</p>
+                       </div>
+                    </div><hr>
+                    <div class="panel-body text-dark">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <h4 class="pb-3" style="font-weight:800;">From</h4>
+                            </div>
+                            <div class="col-md-7"> 
+                                {{ $dataTypeContent->customer_name }} {{ $dataTypeContent->customer_lname }} <br>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <h4 style="font-weight:800;">Contact</h4> 
+                            </div>
+                            <div class="col-md-7">
+                                {{ $dataTypeContent->email }} <br>
+                                {{ $dataTypeContent->phone }} <br>
+                                {{ $dataTypeContent->address }} <br>
+                                {{ $dataTypeContent->city }} &nbsp; {{ $dataTypeContent->province }} &nbsp; ({{ $dataTypeContent->postal }})<br>
+                            </div>
+                        </div>
+                        <hr>
 
-                <div class="panel panel-bordered">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <h4 style="font-weight:800;">Service</h4> 
+                            </div>
+                            <div class="col-md-7">
+                                {{ $dataTypeContent->name }} ({{ $dataTypeContent->details }})<br>
+                                {{ $dataTypeContent->menu }}<br>
+                                {{ $dataTypeContent->guests }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-5">
+                                <h4 class="pb-3" style="font-weight:800;">Requested Date</h4> 
+                            </div>
+                            <div class="col-md-7">
+                                <div style="display: flex;">
+                                    <p style="padding-right: 10px;">{{ $dataTypeContent->formatDate() }}</p> 
+                                    {{ $dataTypeContent->formatTime() }} <span style="padding-right: 10px; padding-left: 10px;">to</span> {{ $dataTypeContent->formatEndTime() }} 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="panel panel-bordered edit-reserve" style="box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;">
                     <!-- form start -->
                     <form role="form"
                             class="form-edit-add"
@@ -92,14 +149,17 @@
                             @endforeach
 
                         </div><!-- panel-body -->
-                        
 
                         <div class="panel-footer" style="margin-left: 15px;">
                             @section('submit-buttons')
-                                <button type="submit" class="btn btn-primary save">{{ __('voyager::generic.save') }}</button>
+                                <button type="submit" class="btn btn-primary save" style="width: 100%">{{ __('voyager::generic.save') }}</button>
                             @stop
                             @yield('submit-buttons')
+
+                            
                         </div>
+
+
                     </form>
 
                     <iframe id="form_target" name="form_target" style="display:none"></iframe>

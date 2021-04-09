@@ -17,7 +17,7 @@ class ServicesController extends Controller
      */
     public function index()
     {   
-        $paginate = 12;
+        $paginate = 9;
         $categories = Category::all();
 
         if (request()->category) {

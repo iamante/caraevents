@@ -18,7 +18,7 @@
 
                         <div class="form-group d-flex justify-content-center align-items-center" style="position: relative">
                             <i class="far fa-user icon p-3 text-muted" style="position: absolute; left:5px;"></i>
-                                <input id="name" type="name" class="form-control pl-5 @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Full name" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control pl-5 @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Your Name" required autocomplete="name" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">

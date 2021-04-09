@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    @include('include.navigation')
-    <div class="services-container container-fluid bg-white" style="padding-left: 90px; padding-right: 90px;">
+    <div class="services-container container-fluid bg-white py-5" style="padding-left: 90px; padding-right: 90px;">
         <div class="row">
             <div class="col-lg-12 col-sm-7">
                 <div class="mt-3" style="font-size: 13px;"><a href="/" class="text-muted">Home</a><i class="fa fa-angle-right mx-2 pr-0 text-muted" aria-hidden="true"></i>{{ $title }}</div>

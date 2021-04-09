@@ -87,4 +87,5 @@ class ReservationsController extends VoyagerBaseController
 
         return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable', 'isSoftDeleted','reserve'));
     }
+
 }

@@ -1,10 +1,21 @@
 @extends('layouts.app')
 @section('content')
-    <img src="images/about.jpg" alt="" class="img-fluid">
+
+    <div class="parallax-img bg-dark" style="">
+        <img src="{{ asset('images/about.jpg')}}" alt="" class="img-fluid">
+        <div class="parallax-text">
+            <h1 class="mb-3" style="font-weight: 400;">About Us</h1>
+            <div class="position-relative">
+                <i class="fas fa-users"></i>
+                <div class="hr-line"></div>
+            </div>
+        </div>
+    </div>
+
     <div class="container py-5">
         <div class="row">
             <div class="col-lg-6">
-                <h1>About Us</h1>
+                
                 <p class="text-justify">The business opens last December 30, 1998. It started with Gowns and Barongs for rent. The shop is located at 1886 Metom St. Manggahan GAO, Brgy. Commonwealth, Quezon City. Then we offer coordination on different Hotels and Restaurants for the reception. More and more Services added, then the rest was history. We are proud that the company is now, a ONE STOP SHOP, carrying License services to honeymoon packages.</p>
                 <h4>Our Mission</h4>
                 <p>To provide quality and excellent customer service to the satisfaction of the clients</p>

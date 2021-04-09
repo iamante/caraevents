@@ -9,7 +9,7 @@ class CarRentalsController extends Controller
 {
     public function index()
     {
-        $car_rental = CarRental::paginate(9);
+        $car_rental = CarRental::all();
 
         return view('pages.car-rental')->with('car_rental', $car_rental );
     }

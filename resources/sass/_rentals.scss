@@ -1,0 +1,42 @@
+.parallax-img {
+    position: relative;
+
+    img {
+        -webkit-mask-image: linear-gradient(to top, transparent 5%, #000000c4 100%);
+        mask-image: linear-gradient(to top, transparent 5%, black 100%);
+    }
+
+    .parallax-text {
+        
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+
+        h1 {
+            letter-spacing: 5px;
+        }
+
+        .hr-line {
+            margin: auto;
+            width: 80%;
+            height: 1px;
+            background-color: rgb(181, 181, 181);
+            opacity: 0.5;
+        }
+
+        .position-relative {
+            i {
+                font-size: 20px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: rgb(243, 243, 243);
+                opacity: 0.5;
+            }
+        }
+    }
+}

@@ -3,9 +3,27 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class Location extends Model
 {
+
+    use LogsActivity;
+
+    public function getDescriptionForEvent(string $eventName): string
+    {
+        return "The location has been {$eventName}";
+    }
+
+    protected static $logName = 'Services Location';
+
+    protected static $logAttributes = ['*'];
+
+    protected static $logOnlyDirty = true;
+
+    protected static $submitEmptyLogs = false;
+
+
     protected $fillable = [
       'location','venue'
     ];

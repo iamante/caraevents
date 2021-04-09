@@ -18,7 +18,7 @@ Route::get('/about', 'PagesController@about');
 Route::get('/termsconditions', 'PagesController@termsconditions');
 Route::get('/privacypolicy', 'PagesController@privacypolicy');
 Route::get('/gallery', 'GallerysController@index')->name('galleries.index');
-Route::get('/clothing', 'ClothRentalsController@index');
+Route::get('/clothing-rental', 'ClothRentalsController@index');
 Route::get('/clothing/{rentals}', 'ClothRentalsController@show')->name('clothrentals.show');
 Route::get('/services', 'ServicesController@index')->name('services.index');
 Route::get('/services/{service}', 'ServicesController@show')->name('services.show');
@@ -30,13 +30,16 @@ Route::get('/car-rental', 'CarRentalsController@index')->name('car-rental.index'
 Route::get('/car-rental/{car}', 'CarRentalsController@show')->name('car-rental.show');
 
 Route::get('/reservation', 'ReserveController@index')->name('reserve.home')->middleware(['auth' => 'auth_reservation']);
-Route::get('/reservation/{service}', 'ReservationsController@index')->name('reserve.index')->middleware(['auth' => 'verified']);
+Route::get('/reservation/service/{service}', 'ReservationsController@index')->name('reserve.index')->middleware(['auth' => 'verified']);
+Route::get('/reservation/car-rental/{car}', 'ReservationsController@car_index')->name('reserve.car_index')->middleware(['auth' => 'verified']);
 Route::post('/reservation', 'ReservationsController@store')->name('reserve.store');
+Route::post('/reservation/car-rental', 'ReservationsController@car_store')->name('reserve.car_store');
 
 Route::get('/thankyou', 'ThankyouController@index')->name('thankyou.index');
 
 Route::get('/blog', 'PagesController@blog');
-Route::get('/contact', 'PagesController@contact');
+Route::get('/contact', 'ContactsController@contact');
+Route::post('/contact', 'ContactsController@store')->name('contact.store');;
 
 Auth::routes(['verify' => true]);
 
@@ -50,7 +53,7 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('login/{website}', 'Auth\LoginController@redirectToProvider');
 Route::get('login/{website}/callback', 'Auth\LoginController@handleProviderCallback');
 
-Route::middleware('auth')->group(function () {
+Route::group(['middleware' => ['auth', 'verified']], function() {
     Route::get('/user-profile', 'UsersController@edit')->name('users.edit');
     Route::patch('user-profile', 'UsersController@update')->name('users.update');
     Route::get('/my-reservation', 'ReservesController@index')->name('reservation.index');

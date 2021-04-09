@@ -9,8 +9,8 @@
     "license": "MIT",
     "require": {
         "php": "^7.2.5",
-        "ext-gd": "*",
         "ext-exif": "*",
+        "ext-gd": "*",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^6.3",
@@ -23,6 +23,7 @@
         "laravelista/comments": "^3.6",
         "nesbot/carbon": "^2.40",
         "nicolaslopezj/searchable": "^1.13",
+        "spatie/laravel-activitylog": "^3.17",
         "tcg/voyager": "^1.4"
     },
     "require-dev": {

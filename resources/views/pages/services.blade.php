@@ -1,5 +1,17 @@
 @extends('layouts.app')
 @section('content')
+
+    <div class="parallax-img bg-dark" style="">
+        <img src="{{ asset('images/services-hero.jpg')}}" alt="" class="img-fluid">
+        <div class="parallax-text">
+            <h1 class="mb-3" style="font-weight: 400;">Services Package</h1>
+            <div class="position-relative">
+                <i class="fas fa-concierge-bell"></i>
+                <div class="hr-line"></div>
+            </div>
+        </div>
+    </div>
+
     <div class="services-container container-fluid bg-white" style="padding-left: 90px; padding-right: 90px;">
         <div class="row">
             <div class="col-lg-2 col-sm-5 p-0 mt-4">
@@ -12,34 +24,39 @@
                         @endforeach
                 </ul>
                 <div class="spacer my-3"></div>
+
+                <ul class="list-group">
+                    <div class="mb-2 mt-4 mr-5 pl-2 font-weight-bold text-white bg-dark">Price</div>
+                    <li class="my-1 pl-3"><a href="{{ route('services.index', ['catergory'=> request()->category, 'sort' => 'high_low']) }}" class=" text-dark">> High to Low</a></li>
+                    <li class="my-1 pl-3"><a href="{{ route('services.index', ['catergory'=> request()->category, 'sort' => 'low_high']) }}" class=" text-dark">> Low to High</a></p></li>
+                </ul>
+
             </div>
             <div class="col-lg-10 col-sm-7">
-                <div class="bg-light py-3 px-4 mt-4 d-flex align-items-center">
-                    <h3 class="mb-0 pr-3 font-weight-bold">{{ $categoriesName }} 
-                        @if ($services->count() == 0)
-                        <span class="text-muted" style="font-size: 14px; font-weight: 100;">Showing {{$services->total()}} results</span>
-                        @else
-                        <span class="text-muted" style="font-size: 14px; font-weight: 100;">Showing 1-{{ $services->count() }} of {{$services->total()}} results</span> 
-                        @endif
-                    </h3>
-                </div>
-                <div class="row mt-3 justify-content-between">
+                <div class="row py-3 mt-4 bg-light">
+                    <div class="col-md-7">
+                        <h3 class="mb-0 mt-2 pr-3 font-weight-bold">{{ $categoriesName }} 
+                            @if ($services->count() == 0)
+                            <span class="text-muted" style="font-size: 14px; font-weight: 100;">Showing {{$services->total()}} results</span>
+                            @else
+                            <span class="text-muted" style="font-size: 14px; font-weight: 100;">Showing 1-{{ $services->count() }} of {{$services->total()}} results</span> 
+                            @endif
+                        </h3>
+                    </div>
                     <div class="col-md-5">
                         <form action="{{ route('search') }}" method="GET" class="search-form">
-                        <div class="input-group border search d-flex align-items-center">
-                            <input id="query" type="search" name="query" class="form-control rounded border-0" placeholder="Search" aria-label="Search"
-                              aria-describedby="search" value="{{ request()->input('query') }}" />
-                            <i class="fas fa-times"></i>
-                            <button type="submit" class="input-group-text border-0 bg-light py-3 px-4" id="search">
-                              <i class="fas fa-search"></i>
-                            </button type="submit">
-                        </div>
+                            <div class="input-group bg-white border search d-flex align-items-center">
+                                <input id="query" type="search" name="query" class="form-control rounded border-0" placeholder="Search" aria-label="Search"
+                                aria-describedby="search" value="{{ request()->input('query') }}" />
+                                <i class="fas fa-times"></i>
+                                <button type="submit" class="input-group-text border-0 bg-light py-3 px-4" id="search">
+                                <i class="fas fa-search"></i>
+                                </button type="submit">
+                            </div>
                         </form>
                     </div>
-                    <div class="col-md-7 d-flex align-items-center justify-content-end">
-                        <p class="mb-0 pt-2 font-weight-bold">Price: <a href="{{ route('services.index', ['catergory'=> request()->category, 'sort' => 'high_low']) }}" class=" text-dark">High to Low</a> | <a href="{{ route('services.index', ['catergory'=> request()->category, 'sort' => 'low_high']) }}" class=" text-dark">Low to High</a></p>
-                    </div>
                 </div>
+                
                 <div class="row">
                     @forelse ($services as $service)
                         <div class="col-lg-4 col-md-12 col-sm-12 p-1 services-card">
@@ -49,7 +66,7 @@
                                         <img class="img-fluid w-100 mb-2 services-image rounded" src={{ asset('storage/'. $service->image) }} alt="" style="height: 250px;">
                                     </div>
                                     <div class="col-12 py-1 text-center mb-4">
-                                        <h3 class="card-title mb-2 text-dark" style="line-height: 12px;">{{ $service->name }}</h3>
+                                        <h3 class="card-title mb-2 text-dark">{{ $service->name }}</h3>
                                         <span style="color: rgb(10, 112, 10);border-radius: 20px;font-size: 15px;">{{ $service->details }}</span>
                                         <p class="mb-0 text-dark" style="font-size: 18px; letter-spacing:1px; line-height: 20px;">{{ $service->presentPrice() }}</p>
                                         <div class="d-flex justify-content-between align-items-center">
@@ -62,7 +79,9 @@
                         <div class="ml-4 py-5">No items Found!</div>
                     @endforelse
                     
-                    <div class="mx-auto py-4">{{ $services->appends(request()->input())->links() }}</div>
+                </div>
+                <div class="d-flex justify-content-center">
+                     <div class="mx-auto py-4">{{ $services->appends(request()->input())->links() }}</div>
                 </div>
             </div>
         </div>

@@ -192,3 +192,9 @@ input.invalid {
 .was-validated .form-control:valid {
     background-image: none !important;
 }
+
+.car-reserve {
+    .form-control {
+        background-color: #e6eaed !important;
+    }
+}

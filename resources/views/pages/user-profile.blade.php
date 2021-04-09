@@ -63,7 +63,7 @@
                         <div class="row px-5 pb-4">
                             <div class="col-md-6">
                                 <div class="form-group w-100">
-                                    <label for="name">Fullname</label>
+                                    <label for="name">Name</label>
                                     <input name="name" type="text" class="form-control" value="{{ old('name', $user->name)}}">
                                 </div>
                                 <div class="form-group w-100">

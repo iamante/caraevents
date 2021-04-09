@@ -45,7 +45,7 @@ class ServicesController extends VoyagerBaseController
 
         // GET THE DataType based on the slug
         $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
-
+        
         // Check permission
         $this->authorize('browse', app($dataType->model_name));
 
@@ -438,8 +438,6 @@ class ServicesController extends VoyagerBaseController
         // Validate fields with ajax
         $val = $this->validateBread($request->all(), $dataType->addRows)->validate();
         $data = $this->insertUpdateData($request, $slug, $dataType->addRows, new $dataType->model_name());
-
-
 
         event(new BreadDataAdded($dataType, $data));
 

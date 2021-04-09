@@ -26,7 +26,12 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-4">
+                    <form action="{{ route('reserve.car_index', $car_rental->slug )}}" method="POST">
+                        @method('GET')
+                        @csrf
+
                     <div class="card shadow-sm rounded-top border-bottom-0" style="border-radius: 0">
                         <div class="card-header bg-white font-weight-bold">
                             Pick-up location <span class="text-danger">*</span>
@@ -37,7 +42,7 @@
                                     <i class="fas fa-map-marker-alt text-success mt-1 pr-2"></i>
                                     <label for="">Location</label>
                                 </div>
-                                <input type="text" name="" class="form-control w-100" placeholder="Enter your desire location">
+                                <input type="text" name="pickup_location" class="form-control w-100" placeholder="Enter your desire location" required>
                             </div>
                             
                             <div class="d-flex align-items-center justify-content-between mt-3">
@@ -46,19 +51,20 @@
                                         <i class="fas fa-calendar-alt pt-1 pr-2 text-success"></i>
                                         <label for="">Start date</label>
                                     </div>
-                                    <input type="text" name="start_date" class="car-start-datepicker form-control w-100">
+                                    <input type="text" name="start_date" class="car-start-datepicker form-control w-100" required>
                                 </div>
                                 <div class="">
                                     <div class="d-flex">
                                         <i class="fas fa-clock pt-1 pr-2 text-success"></i>
                                         <label for="">Start time</label>
                                     </div>
-                                    <input type="text" name="start_time" class="car-start-timepicker form-control w-100">
+                                    <input type="text" name="start_time" class="car-start-timepicker form-control w-100" required>
                                 </div>
                             </div>
 
                         </div>
                     </div>
+                    
 
                     <div class="card shadow-sm rounded-bottom border-top-0 mb-3" style="border-radius: 0">
                         <div class="card-header bg-white font-weight-bold">
@@ -70,7 +76,7 @@
                                     <i class="fas fa-map-marker-alt text-success mt-1 pr-2"></i>
                                     <label for="">Location</label>
                                 </div>
-                                <input type="text" name="" class="form-control w-100" placeholder="Enter your desire location">
+                                <input type="text" name="dropoff_location" class="form-control w-100" placeholder="Enter your desire location" required>
                             </div>
 
                             <div class="d-flex align-items-center justify-content-between mt-3">
@@ -79,14 +85,14 @@
                                         <i class="fas fa-calendar-alt pt-1 pr-2 text-success"></i>
                                         <label for="">End date</label>
                                     </div>
-                                    <input type="text" name="end_date" class="car-end-datepicker form-control w-100">
+                                    <input type="text" name="end_date" class="car-end-datepicker form-control w-100" required>
                                 </div>
                                 <div class="">
                                     <div class="d-flex">
                                         <i class="fas fa-clock pt-1 pr-2 text-success"></i>
                                         <label for="">End time</label>
                                     </div>
-                                    <input type="text" name="end_time" class="car-end-timepicker form-control w-100">
+                                    <input type="text" name="end_time" class="car-end-timepicker form-control w-100" required>
                                 </div>
                             </div>
 
@@ -98,24 +104,34 @@
                             <h6 class="mb-0 font-weight-bold">Rental Summary</h6>
                         </div>
                         <div class="card-body">
-                            <div class="d-flex mb-4">
-                                <img src="{{ asset('storage/'. $car_rental->image )}}" alt="" class="img-fluid mr-3" width="150">
-                                <div>
-                                    <p class="mb-0">{{ $car_rental->car_name }}</p>
-                                    <p class="mb-0"><small><i class="fas fa-dharmachakra text-muted pr-1"></i>{{ $car_rental->transmission }}</small></p>
-                                    <p class="mb-0"><small class="mb-0"><i class="fas fa-tint text-muted pr-1"></i> Color - {{ $car_rental->color }}</small></p>
-                                    <p class="mb-0"><small class="mb-0"><i class="fas fa-user-tie text-muted pr-1"></i>{{ $car_rental->seats }}</small></p>
+
+                            <div class="row">
+                                <div class="col-5">
+                                    <img src="{{ asset('storage/'. $car_rental->image )}}" alt="" class="img-fluid" width="150">
+                                </div>
+                                <div class="col-7 pl-0">
+                                    <ul class="list-unstyled">
+                                        <li>{{ $car_rental->car_name }}</li>
+                                        <li>{{ $car_rental->transmission }}</li>
+                                        <li>Color - {{ $car_rental->color }}</li>
+                                        <li>{{ $car_rental->seats }}</li>
+                                    </ul>
                                 </div>
                             </div>
-                            <p class="mb-0">Total Price</p>
-                            <h3 class="font-weight-bold" style="color: #1A8A8A">{{ $car_rental->presentPrice() }}</h3>
-                        </div>
-                        <div class="card-footer">
-                            <div class="btn btn-success w-100 border-radius">
-                                Continue
+
+                            <div class="d-flex justify-content-between px-2">
+                                <p class="font-weight-bold">Total</p>
+                                <h3 class="font-weight-bold" style="color: #1A8A8A">{{ $car_rental->presentPrice() }}</h3>
                             </div>
                         </div>
+
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-success w-100 border-radius">
+                                Continue
+                            </button>
+                        </div>
                     </div>
+                    </form>
                 </div>
             </div>
 
