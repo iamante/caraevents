@@ -28,6 +28,7 @@
         "@fortawesome/fontawesome-free": "^5.14.0",
         "@popperjs/core": "^2.9.1",
         "bootstrap-select": "^1.13.18",
+        "chart.js": "^3.0.2",
         "jquery-typeahead": "^2.11.1",
         "normalize.css": "^8.0.1",
         "slick-carousel": "^1.8.1"

@@ -29,14 +29,15 @@ class Users extends AbstractWidget
         $count['daily'] = User::where('created_at','>=',Carbon::today())->count();
         $count['weekly'] = User::where('created_at','>=',Carbon::today()->subDays(7))->count();
         $count['monthly'] = User::where('created_at','>=',Carbon::today()->subDays(30))->count();
-        // $count = User::count();
+        $counts = User::count();
         $string = trans_choice('voyager::dimmer.user', $count);
 
         return view('voyager::dimmer', array_merge($this->config, [
             'icon'   => 'voyager-people',
             // 'title'  => "{$count} Total {$string}",
-            'title'  => "New {$string} Added",
-            'text'   => "+{$count['monthly']}",
+            'title'  => "Total {$string}",
+            // 'text'   => "+{$count['monthly']}",
+            'text' => "{$counts}",
             'button' => [
                 'text' => 'View Users',
                 'link' => route('voyager.users.index'),

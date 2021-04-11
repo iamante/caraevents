@@ -23,12 +23,13 @@ class Reservations extends AbstractWidget
      */
     public function run()
     {
-        $count = Reservation::where('status','0')->count();
+        // $count = Reservation::where('status','0')->count();
+        $count = Reservation::count();
         $string = trans_choice('Reservations', $count);
 
         return view('voyager::dimmer', array_merge($this->config, [
             'icon'   => 'voyager-receipt',
-            'title'  => "Pending {$string}",
+            'title'  => "Total {$string}",
             'text'   => $count,
             'button' => [
                 'text' => 'View reservation',

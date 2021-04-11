@@ -13,39 +13,42 @@
 }
 
 .panel-content .icon-voy .voyager-people {
-    margin-top: 7px;
+    margin-top: 15px;
     background: linear-gradient(87deg, #11cdef 0, #1171ef 100%) !important;
-    font-size: 40px;
+    font-size: 60px;
+    position: relative !important;
 }
 
 .panel-content .icon-voy .voyager-receipt {
-    margin-top: 7px;
+    margin-top: 15px;
     background: linear-gradient(87deg, #2dce89 0, #2dcecc 100%) !important;
-    font-size: 40px;
+    font-size: 55px;
+    position: relative !important;
 }
 
 .panel-content .icon-voy .voyager-bag {
-    margin-top: 7px;
+    margin-top: 15px;
     background: linear-gradient(87deg, #f5365c 0, #f56036 100%) !important;
-    font-size: 40px;
+    font-size: 60px;
+    position: relative !important;
 }
 
 .panel-content .icon-voy .voyager-people:before {
     position: absolute !important;
-    top: 20px !important;
-    right: 45px !important;
+    top: 8px !important;
+    left: 10px !important;
 }
 
 .panel-content .icon-voy .voyager-bag:before {
     position: absolute !important;
-    top: 20px !important;
-    right: 45px !important;
+    top: 10px !important;
+    left: 10px !important;
 }
 
 .panel-content .icon-voy .voyager-receipt:before {
     position: absolute !important;
-    top: 20px !important;
-    right: 45px !important;
+    top: 12px !important;
+    left: 9px !important;
 }
 
 .panel-content .icon-voy {
@@ -57,8 +60,8 @@
 }
 
 .panel-content .icon-voy i {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
 }
 
 .panel.widget.center .text-voy {
@@ -70,10 +73,21 @@
     color: black;
 }
 
+.panel.widget.center .text-voy h4,
+a {
+    color: #2a363b;
+    margin-top: 3px;
+}
+
 .panel.widget.center .text-voy h1,
 a {
-    color: black;
+    color: #2a363b;
     margin-top: 3px;
+}
+
+.panel.widget.bgimage {
+    padding: 20px;
+    padding-left: 10px;
 }
 
 .voyager .side-menu .navbar-header {
@@ -86,8 +100,6 @@ a {
     width: 100%;
     position: relative;
     min-height: 1px;
-    padding-right: 10px;
-    padding-left: 25px;
     float: left;
 }
 
@@ -173,3 +185,12 @@ a {
  .edit-reserve .btn-primary{
     background-color: #2ec985 !important;
  }
+
+ canvas{
+  height: 451px !important;
+
+}
+
+.fc-list-event-title, .fc-list-event-time {
+    color: #2a363b !important;
+}

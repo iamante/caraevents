@@ -32,9 +32,9 @@ class LoginSuccessful
     public function handle(Login $event)
     {
         
-
+        $role = Auth::user()->role->name;
         $event->subject = 'Login';
-        $event->description = 'Logging in as user';
+        $event->description = 'Logging in as '. ucfirst(strtolower($role));
         $event->user_name = Auth::user()->name;
         $event->user_email = Auth::user()->email;
 

@@ -53,6 +53,7 @@
                             <table id="dataTable" class="table table-hover">
                                 <thead>
                                     <tr>
+                                        <th>id</th>
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Log name</th>
@@ -63,6 +64,7 @@
                                 <tbody style="color: #333 !important">
                                     @foreach ($activities as $activity)
                                         <tr>
+                                            <td>{{ $activity->id }}</td>
                                             @if ($activity->causer_id == true)
                                                 <td>{{ $activity->causer->name }}</td>
                                                 <td>{{ $activity->causer->email }}</td>

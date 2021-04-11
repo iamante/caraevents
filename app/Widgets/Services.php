@@ -28,7 +28,7 @@ class Services extends AbstractWidget
 
         return view('voyager::dimmer', array_merge($this->config, [
             'icon'   => 'voyager-bag',
-            'title'  => "All {$string}",
+            'title'  => "Total {$string}",
             'text'   => $count,
             'button' => [
                 'text' => 'View service',

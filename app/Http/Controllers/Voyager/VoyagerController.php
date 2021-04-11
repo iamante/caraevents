@@ -8,6 +8,7 @@ use League\Flysystem\Util;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use TCG\Voyager\Facades\Voyager;
+use Illuminate\Support\Facades\DB;
 use Intervention\Image\Constraint;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
@@ -24,9 +25,30 @@ class VoyagerController extends Controller
         $count['daily'] = Reservation::where('created_at','>=',Carbon::today())->count();
         $count['weekly'] = Reservation::where('created_at','>=',Carbon::today()->subDays(7))->orderByDesc('created_at')->limit(5)->get();
         $count['monthly'] = Reservation::where('created_at','>=',Carbon::today()->subDays(30))->count();
-        $reservation = Reservation::where('status', 1)->get(['id','name','date','start_time','end_time','customer_name','customer_lname','location']);
+        $reservation = Reservation::where('status', 1)->get(['id','name','date','start_time','end_time','customer_name','customer_lname','location','status','price']);
+        
+        $price = Reservation::where('status',1)->select(DB::raw('sum(price) as sums'), 
+            DB::raw("DATE_FORMAT(date,'%M %Y') as months"),
+            DB::raw("DATE_FORMAT(date,'%m') as monthKey"))->groupBy('months', 'monthKey')
+            ->orderBy('created_at', 'ASC')
+            ->get();
+        $data = [0,0,0,0,0,0,0,0,0,0,0,0];
+        foreach($price as $order){
+            $data[$order->monthKey-1] = $order->sums;
+        }
 
-        return Voyager::view('voyager::index')->with(['count' => $count['weekly'], 'reservation' => $reservation]);
+        $notconfirm = Reservation::where('status',0)->count();
+        $reserved = Reservation::where('status',1)->count();
+        $completed = Reservation::where('status', '=','completed')->count();
+        $reservation_status = [$notconfirm,$reserved,$completed];
+
+
+        return Voyager::view('voyager::index')->with([
+            'count' => $count['weekly'], 
+            'reservation' => $reservation, 
+            'data' => $data,
+            'reservation_status' => $reservation_status,
+            ]);
     }
 
     public function logout()

@@ -6,64 +6,81 @@
         <div>
             <h3 style="margin-left: 30px; color: #333; font-weight:800px;"><img src={{ asset('storage/users/logo1.png')}} alt="logo" width="35"> Hello admin, Welcome back!</h3>
         </div>
-        @include('voyager::dimmers')
+            @include('voyager::dimmers')
         <div class="clearfix container-fluid row">
             <div class="col-xs-12 col-sm-12 col-md-8">
-                <div class="panel panel-bordered" style="margin-left: 10px;">
+                <div class="panel panel-bordered" style="margin-left: 10px">
                     <div class="panel-body">
-                        <h3>Incoming Events</h3>
+                        <canvas id="revenueChart" width="400" height="400"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-4">
+                <div class="panel panel-bordered" style="margin-right: 17px; margin-left: 10px;">
+                    <div class="panel-body">
+                        <canvas id="pieChart" width="400" height="400"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-5">
+                <div class="panel panel-bordered" style="margin-left: 17px;">
+                    <div class="panel-body">
+                        <h3>Upcoming Events</h3>
                         <div id='calendar'></div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="recent-reservation">
-            <div class="panel panel-bordered">
-                <div class="panel-body">
-                    <h4 style="margin-bottom: 20px">Recent Reservation</h4>
-                    <div class="table-responsive">
-                        <table id="dataTable" class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th><a href="http://localhost:8000/admin/services?sort_order=desc&amp;order_by=id">id</a></th>
-                                    <th>Status</th>
-                                    <th>Date</th>
-                                    <th>FirstName</th>
-                                    <th>LastName</th>
-                                    <th>Service</th>
-                                    <th>Location</th>
-                                    <th>StartTime</th>
-                                    <th>EndTime</th>
-                                    <th>Total</th>
-                                </tr>
-                            </thead>
-                            <tbody style="color: #202020">
-                                @foreach ($count as $item)
-                                <tr>
-                                    <td><div>#{{ $item->id }}</div></td>
-                                    <td>
-                                        @if ($item->status == 0)
-                                            <span class="recent-reservation-no">waiting for confirmation</span>
-                                        @else
-                                            <span class="recent-reservation-ok">confirmed</span>
-                                        @endif
-                                    </td>
-                                    <td>{{ $item->formatDate() }}</td>
-                                    <td>{{ $item->customer_name }}</td>
-                                    <td>{{ $item->customer_lname }}</td>
-                                    <td>{{ $item->name }}</td>
-                                    <td>{{ $item->location }}</td>
-                                    <td>{{ $item->formatTime() }}</td>
-                                    <td>{{ $item->formatEndTime() }}</td>
-                                    <td>{{ $item->presentPrice() }}</td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+            <div class="col-xs-12 col-sm-12 col-md-7">
+                <div class="recent-reservation">
+                    <div class="panel panel-bordered" style="margin-right: 10px;">
+                        <div class="panel-body">
+                            <h4 style="margin-bottom: 20px">Recent Reservation</h4>
+                            <div class="table-responsive">
+                                <table id="dataTable" class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th><a href="http://localhost:8000/admin/services?sort_order=desc&amp;order_by=id">id</a></th>
+                                            <th>Status</th>
+                                            <th>Date</th>
+                                            <th>FirstName</th>
+                                            <th>LastName</th>
+                                            <th>Service</th>
+                                            <th>Location</th>
+                                            <th>StartTime</th>
+                                            <th>EndTime</th>
+                                            {{-- <th>Total</th> --}}
+                                        </tr>
+                                    </thead>
+                                    <tbody style="color: #202020">
+                                        @foreach ($count as $item)
+                                        <tr>
+                                            <td><div>#{{ $item->id }}</div></td>
+                                            <td>
+                                                @if ($item->status == 0)
+                                                    <span class="recent-reservation-no">waiting for confirmation</span>
+                                                @else
+                                                    <span class="recent-reservation-ok">confirmed</span>
+                                                @endif
+                                            </td>
+                                            <td>{{ $item->formatDate() }}</td>
+                                            <td>{{ $item->customer_name }}</td>
+                                            <td>{{ $item->customer_lname }}</td>
+                                            <td>{{ $item->name }}</td>
+                                            <td>{{ $item->location }}</td>
+                                            <td>{{ $item->formatTime() }}</td>
+                                            <td>{{ $item->formatEndTime() }}</td>
+                                            {{-- <td>{{ $item->presentPrice() }}</td> --}}
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        
         <div class="analytics-container">
             <?php $google_analytics_client_id = Voyager::setting("admin.google_analytics_client_id"); ?>
             @if (isset($google_analytics_client_id) && !empty($google_analytics_client_id))
@@ -140,16 +157,133 @@
 @stop
 
 @section('javascript')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.2/chart.min.js"></script>
+    <script>
+        let reservations = {!! collect($reservation) !!}
+        let data = {!! collect($data)!!}
+        let status = {!! collect($reservation_status)!!}
 
+        var ctx = document.getElementById('revenueChart').getContext('2d');
+        Chart.defaults.font.family = 'Quicksand';
+                var revenueChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+                        datasets: [{
+                            label: 'Total Revenue',
+                            data: data,
+                            fill: true,
+                            backgroundColor: [
+                                'rgba(46, 204, 113, 0.2)',
+                            ],
+                            borderColor: [
+                                'rgba(46, 204, 113, 1)',
+                            ],
+                            borderWidth: 1,
+                            tension: 0.3
+                        }
+                    ]
+                    },
+                    options: {
+
+                        layout: {
+                            padding: {
+                                left: 15,
+                                right: 25
+                            }
+                        },
+                        plugins: {
+                            title: {
+                            display: true,
+                            text: 'Caraevents Consultancy & Co.',
+                            weight: 300
+                        },
+                        legend: {
+                            display: true,
+                            labels: {
+                                font: {
+                                    size: 20,
+                                    weight: 700
+                                },
+                                color: 'black',
+                                
+                            },
+                        }
+                        },
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+
+        var pie = document.getElementById('pieChart').getContext('2d');
+        var revenueChart = new Chart(pie, {
+            type: 'doughnut',
+            data: {
+                labels: [
+                    'Pending','Reserved', 'Completed',
+                ],
+                datasets: [{
+                    data: status,
+                    backgroundColor: [
+                    'rgb(231, 82, 82)',
+                    'rgb(18, 169, 98)',
+                    'rgb(54, 162, 235)',
+                    ],
+                    // hoverOffset: 4
+                }],
+            },
+            options: {
+                maintainAspectRatio: false,
+                layout: {
+                    padding: 20
+                },
+                plugins: {
+                        title: {
+                        display: true,
+                        text: 'RESERVATION STATS',
+                        color: 'black',
+                        font: {
+                            size: 16,
+                        },
+                        padding: {
+                            top: -10,
+                            bottom: 20
+                        }
+                    },
+                    legend: {
+                        display: true,
+                        maxHeight: 120,
+                        maxWidth: 100,
+                        position: 'bottom',
+                        labels: {
+                            padding: 20,
+                            usePointStyle: true
+                        }
+                    }
+                },
+                
+            },
+        });
+    </script>
+    
     <script>
      document.addEventListener('DOMContentLoaded', function() {
         $reservations = {!! collect($reservation) !!}
         let dates = $reservations.map(obj=>{
             return {
-                title: obj.name,
+                title: obj.name + ' - ' + obj.customer_name + ' ' + obj.customer_lname,
                 start: obj.date + 'T' + obj.start_time,
                 end: obj.date + 'T' + obj.end_time,
+                // extendedProps: {
+                //     status: obj.status,
+                // },
                 backgroundColor: '#12a962',
+                
                 borderColor: '#12a962',
                 url: 'admin/reservations/'+ obj.id,
                 popup: {
@@ -160,7 +294,8 @@
 
         var calendarEl = document.getElementById("calendar");
         var calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: "dayGridMonth",
+            // initialView: "dayGridMonth",
+            initialView: "listMonth",
             dayMaxEvents: 2,
             selectable: true,
             headerToolbar: {
@@ -179,7 +314,20 @@
                 var tis=info.el;
                 var popup=info.event.extendedProps.popup;
                 $('.fc-event-future').attr('title',popup.title);
-            }
+            },
+            // eventDidMount: function(info) {
+            //     if (info.event.extendedProps.status === 1) {
+
+            //     // Change background color of row
+            //     info.el.style.backgroundColor = 'red';
+
+            //     // Change color of dot marker
+            //     var dotEl = info.el.getElementsByClassName('fc-event-dot')[0];
+            //         if (dotEl) {
+            //             dotEl.style.backgroundColor = 'white';
+            //         }
+            //     }
+            // }
         });
         calendar.render();
     });
