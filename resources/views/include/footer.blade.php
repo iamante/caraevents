@@ -1,8 +1,8 @@
 <div class="container top-footer pt-5 pb-3">
         <div class="row justify-content-between">
                 
-            <div class="col-md-5 mb-4">
-                <div class="d-flex mb-5">
+            <div class="col-md-4 mb-4">
+                <div class="d-flex mb-4">
                     <img src="{{ asset('storage/users/logo1.png') }}" alt="cara-logo" width="55">
                     <div class="pl-2">
                         <h4 style="margin-bottom: 0">Caraevents</h4>
@@ -10,14 +10,38 @@
                     </div>
                 </div>
 
-                <div class="mb-4 col-sm-6 d-flex justify-content-between">
-                    <div>
-                        <h6 style="color: #d4d4d4;" class="mb-4">Terms and Policy</h6>
-                        <ul class="footer-links">
-                            <li><a href="/privacypolicy">Privacy Policy</a></li>
-                            <li><a href="/termsconditions">Terms and Condition</a></li>
-                        </ul>
-                    </div>
+                <div class="mb-4">
+                    <h6 style="color: #d4d4d4;">Opening Hours</h6>
+                <table class="table table-borderless w-60">
+                    <tr>
+                        <td class="py-1">Monday</td>
+                        <td>8:00AM - 11:00PM</td>
+                    </tr>
+                    <tr>
+                        <td class="py-1">Tuesday</td>
+                        <td>8:00AM - 11:00PM</td>
+                    </tr>
+                    <tr>
+                        <td class="py-1">Wednesday</td>
+                        <td>8:00AM - 11:00PM</td>
+                    </tr>
+                    <tr>
+                        <td class="py-1">Thursday</td>
+                        <td>8:00AM - 11:00PM</td>
+                    </tr>
+                    <tr>
+                        <td class="py-1">Friday</td>
+                        <td>8:00AM - 11:00PM</td>
+                    </tr>
+                    <tr>
+                        <td class="py-1">Saturday</td>
+                        <td>8:00AM - 11:00PM</td>
+                    </tr>
+                    <tr>
+                        <td class="py-1">Sunday</td>
+                        <td>11:00AM - 11:00PM</td>
+                    </tr>
+                </table>
                 </div>
 
             </div>
@@ -71,22 +95,43 @@
                 </div>
                 
             </div> --}}
-
-            <div class="col-md-3 mb-4 col-sm-6 d-flex justify-content-between">
-                <div>
+            
+            <div class="col-md-4 mb-4 col-sm-6">
+                <div class="w-100 mb-4">
                     <h6 style="color: #d4d4d4;" class="mb-4">Useful Links</h6>
+                    <div class="d-flex justify-content-between">
+                        <ul class="footer-links">
+                            <li><a href="/gallery">Gallery</a></li>
+                            <li><a href="/reservation">Reservation</a></li>
+                            <li><a href="/services">Services</a></li>
+                            <li><a href="/rental">Rentals</a></li>
+                        </ul>
+                        <ul class="footer-links pr-5">
+                            <li><a href="/about">About Us</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <h6 style="color: #d4d4d4;" class="mb-4">Terms and Policy</h6>
                     <ul class="footer-links">
-                        <li><a href="/gallery">Gallery</a></li>
-                        <li><a href="/reservation">Reservation</a></li>
-                        <li><a href="/services">Services</a></li>
-                        <li><a href="/rental">Rentals</a></li>
-                        <li><a href="/about">About us</a></li>
-                        <li><a href="/contact">Contact us</a></li>
+                        <li><a href="/privacypolicy">Privacy Policy</a></li>
+                        <li><a href="/termsconditions">Terms and Condition</a></li>
                     </ul>
                 </div>
             </div>
+            
+            {{-- <div class="mb-4 col-sm-6 col-md-3 d-flex justify-content-between">
+                <div>
+                    <h6 style="color: #d4d4d4;" class="mb-4">Terms and Policy</h6>
+                    <ul class="footer-links">
+                        <li><a href="/privacypolicy">Privacy Policy</a></li>
+                        <li><a href="/termsconditions">Terms and Condition</a></li>
+                    </ul>
+                </div>
+            </div> --}}
 
-            <div class="col-md-4 mb-4">
+            <div class="col-md-3 mb-4">
                     <p style="color: #d4d4d4;">For more information & Support</p>
                 <ul class="footer-links">
                     <li><a href="tel:+639228097519"><i class="fa fa-phone"></i>+63 922 809 7519</a></li>

@@ -4,7 +4,7 @@
     <div class="page-content">
         @include('voyager::alerts')
         <div>
-            <h3 style="margin-left: 30px; color: #333; font-weight:800px;"><img src={{ asset('storage/users/logo1.png')}} alt="logo" width="35"> Hello admin, Welcome back!</h3>
+            <h3 style="margin-left: 30px; color: #333; font-weight:800px;"><img src={{ asset('storage/users/logo1.png')}} alt="logo" width="35"> Hello {{ Auth::user()->name }}, Welcome back!</h3>
         </div>
             @include('voyager::dimmers')
         <div class="clearfix container-fluid row">
@@ -57,9 +57,9 @@
                                             <td><div>#{{ $item->id }}</div></td>
                                             <td>
                                                 @if ($item->status == 0)
-                                                    <span class="recent-reservation-no">waiting for confirmation</span>
+                                                    <span class="recent-reservation-no" style="border-radius: 20px; padding-bottom: 5px;">pending</span>
                                                 @else
-                                                    <span class="recent-reservation-ok">confirmed</span>
+                                                    <span class="recent-reservation-ok" style="border-radius: 20px;">confirmed</span>
                                                 @endif
                                             </td>
                                             <td>{{ $item->formatDate() }}</td>
@@ -81,10 +81,10 @@
             </div>
         </div>
         
-        <div class="analytics-container">
+        {{-- <div class="analytics-container">
             <?php $google_analytics_client_id = Voyager::setting("admin.google_analytics_client_id"); ?>
             @if (isset($google_analytics_client_id) && !empty($google_analytics_client_id))
-                {{-- Google Analytics Embed --}}
+                
                 <div id="embed-api-auth-container"></div>
             @else
                 <p style="border-radius:4px; padding:20px; background:#fff; margin:0; color:#999; text-align:center;">
@@ -152,13 +152,29 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div> --}}
+
+        
     </div>
 @stop
 
 @section('javascript')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.2/chart.min.js"></script>
     <script>
+        
+        $('.count-dashboard-widget').each(function () {
+            $(this).prop('Counter',0).animate({
+                Counter: $(this).text()
+            }, {
+                duration: 1000,
+                easing: 'swing',
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        });
+
+
         let reservations = {!! collect($reservation) !!}
         let data = {!! collect($data)!!}
         let status = {!! collect($reservation_status)!!}

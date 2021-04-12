@@ -32,6 +32,7 @@ class VoyagerController extends Controller
             DB::raw("DATE_FORMAT(date,'%m') as monthKey"))->groupBy('months', 'monthKey')
             ->orderBy('created_at', 'ASC')
             ->get();
+        
         $data = [0,0,0,0,0,0,0,0,0,0,0,0];
         foreach($price as $order){
             $data[$order->monthKey-1] = $order->sums;

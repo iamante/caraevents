@@ -43,20 +43,38 @@ class UserReportsController extends VoyagerBaseController
         //     return Carbon::parse($date->created_at)->format('Y-m-d');
         // });
         
-        $date = Auth::user()->actions->where('log_name','Login')->where('created_at', '>=', Carbon::today())->count();
+        $todayDate = Auth::user()->actions->where('log_name','Login')->where('created_at', '>=', Carbon::today())->count();
 
-        $userAdded = User::where('created_at','>=',Carbon::today())->count();
-            // dd($date);
+        $userAdded = User::where('created_at','>=', Carbon::today())->count();
+
         // $date = count($dates[$today]);
+        // dd($todayDate);
 
         $weekUser = Auth::user()->actions->where('log_name','Login')->where('created_at', '>=', Carbon::today()->subDays(7))->count();
 
         $monthUser = Auth::user()->actions->where('log_name','Login')->where('created_at', '>=', Carbon::today()->subDays(30))->count();
 
+        // $user = User::all()->groupBy(function($date) {
+        //     return Carbon::parse($date->created_at)->format('Y-m-d');
+        // });
+
+        $user = User::select(DB::raw('count(name) as count'),
+            DB::raw("DATE_FORMAT(created_at,'%M %Y') as months"),
+            DB::raw("DATE_FORMAT(created_at,'%m') as monthKey"))->groupBy('months', 'monthKey')
+            ->orderBy('created_at', 'ASC')
+            ->get();
+
+        $totalUser = [0,0,0,0,0,0,0,0,0,0,0,0];
+
+        foreach($user as $date){
+            $totalUser[$date->monthKey-1] = $date->count;
+        }
+
         return view('/vendor/voyager/user-reports/browse')->with([
             // 'dates' => $dates,
+            'todayDate' => $todayDate,
+            'totalUser' => $totalUser,
             'userAdded' => $userAdded,
-            'date' => $date,
             'weekUser' => $weekUser,
             'monthUser' => $monthUser,
         ]);

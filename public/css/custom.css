@@ -14,7 +14,8 @@
 
 .panel-content .icon-voy .voyager-people {
     margin-top: 15px;
-    background: linear-gradient(87deg, #11cdef 0, #1171ef 100%) !important;
+    /* background: linear-gradient(87deg, #11cdef 0, #1171ef 100%) !important; */
+    background: linear-gradient(87deg, #2dce89 0, #2dcecc 100%) !important;
     font-size: 60px;
     position: relative !important;
 }
@@ -28,7 +29,8 @@
 
 .panel-content .icon-voy .voyager-bag {
     margin-top: 15px;
-    background: linear-gradient(87deg, #f5365c 0, #f56036 100%) !important;
+    /* background: linear-gradient(87deg, #f5365c 0, #f56036 100%) !important; */
+    background: linear-gradient(87deg, #2dce89 0, #2dcecc 100%) !important;
     font-size: 60px;
     position: relative !important;
 }

@@ -40,10 +40,18 @@
 
 <style>
     .label-info {
-        background-color: rgb(22, 173, 22);
+        background-color: #2abe68;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
     .label-primary {
         background-color: rgb(224, 100, 28);
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 </style>
     <div class="page-content browse container-fluid">

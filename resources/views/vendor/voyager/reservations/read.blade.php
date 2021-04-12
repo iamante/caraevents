@@ -51,13 +51,16 @@
     </style>
     <div class="page-content read container-fluid">
         <div class="row">
-            <div class="col-md-9" style="border: none;">
+            <div class="col-md-7" style="border: none;">
                 <div class="reserve-alert">
                     <p class="mb-0">Well done! The reservation has been confirmed.</p>
                 </div>
-                <div class="panel panel-bordered" style="padding:20px; box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;" >
+                <div class="panel panel-bordered" style="color: #333 ;padding:20px; box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;" >
                     <div class="panel-heading" style="border-bottom:0; display: flex; align-items: center; justify-content: space-between">
-                       <h3 class="panel-title" style="font-weight:800 "> Reservation #{{ $dataTypeContent->id }}</h3>
+                       <div class="brand" style="display: flex; align-items: center;">
+                           <p style="margin-bottom: 0px"><img src="{{ asset('storage/users/logo1.png')}}" alt="logo" width="30"></p>
+                           <h3 class="panel-title" style="font-weight:800; padding-left: 7px; "> Reservation #{{ $dataTypeContent->id }}</h3>
+                       </div>
                        <div class="d-flex" style="display: flex;">
                             <p style="margin-bottom: 0; margin-right: 40px;"><small>Date:</small> {{ $dataTypeContent->formatCreatedAt() }}</p>
                        </div>
@@ -65,7 +68,7 @@
                     <div class="panel-body text-dark">
                         <div class="row">
                             <div class="col-md-5">
-                                <h4 class="pb-3" style="font-weight:800;">From</h4>
+                                <h5 class="pb-3" style="font-weight:800;">From</h5>
                             </div>
                             <div class="col-md-7"> 
                                 {{ $dataTypeContent->customer_name }} {{ $dataTypeContent->customer_lname }} <br>
@@ -74,7 +77,7 @@
                         <hr>
                         <div class="row">
                             <div class="col-md-5">
-                                <h4 style="font-weight:800;">Contact</h4> 
+                                <h5 style="font-weight:800;">Contact</h5> 
                             </div>
                             <div class="col-md-7">
                                 {{ $dataTypeContent->email }} <br>
@@ -87,7 +90,7 @@
 
                         <div class="row">
                             <div class="col-md-5">
-                                <h4 style="font-weight:800;">Service</h4> 
+                                <h5 style="font-weight:800;">Service</h5> 
                             </div>
                             <div class="col-md-7">
                                 {{ $dataTypeContent->name }} ({{ $dataTypeContent->details }})<br>
@@ -98,7 +101,16 @@
 
                         <div class="row">
                             <div class="col-md-5">
-                                <h4 class="pb-3" style="font-weight:800;">Requested Date</h4> 
+                                <h5 style="font-weight:800;">Location</h5> 
+                            </div>
+                            <div class="col-md-7">
+                                {{ $dataTypeContent->location }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-5">
+                                <h5 class="pb-3" style="font-weight:800;">Requested Date</h5> 
                             </div>
                             <div class="col-md-7">
                                 <div style="display: flex;">
@@ -114,9 +126,9 @@
         </div>
         
         <div class="col-md-3">
-            <div class="panel panel-bordered" style="padding:10px; box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important">
+            <div class="panel panel-bordered" style="color: #333 ;padding:10px; box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important">
                 <div class="panel-heading" style="border-bottom:0;">
-                    <h5 class="panel-title" style="font-weight:800;padding-bottom:0 "> Payment</h5>
+                    <h5 class="panel-title" style="font-weight:500;padding-bottom:0 "> Payment</h5>
                  </div>
                  <hr style="margin: 10px;">
                  <div class="panel-body">
@@ -128,7 +140,7 @@
                         <h5 style="font-weight:800; margin-bottom:0">Price :</h5>
                         <h5>₱ {{ $dataTypeContent->price }}</h5>
                     </div>
-                    
+                        <h5 style="font-weight:800;">Status:</h5>
                         @if ( $dataTypeContent->status == "1" )
                         <div class="btn btn-success disabled" style="width: 100%; cursor: default" aria-disabled="true" tabindex="-1" disabled>
                         <img src="{{ asset('storage/users/tick.png') }}" alt="" width="20" style="margin-right: 5px; "><span style="border: 2px solid rgb(255, 255, 255); border-radius: 50%; padding-left: 3px; padding-right: 1px; margin-right: 5px;">&#10003; </span> {{ 'Reserved' }}
