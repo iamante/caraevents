@@ -37,6 +37,7 @@ class CreateReservationsTable extends Migration
             $table->time('end_time');
             $table->integer('price');
             $table->boolean('status')->default(false);
+            // $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

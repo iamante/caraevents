@@ -41,17 +41,23 @@
 <style>
     .label-info {
         background-color: #2abe68;
+        letter-spacing: 1px;
         padding-top: 5px;
         padding-bottom: 5px;
         padding-left: 10px;
         padding-right: 10px;
+        font-weight: 500;
+        font-size: 13px;
     }
     .label-primary {
         background-color: rgb(224, 100, 28);
+        letter-spacing: 1px;
         padding-top: 5px;
         padding-bottom: 5px;
         padding-left: 10px;
         padding-right: 10px;
+        font-weight: 500;
+        font-size: 13px;
     }
 </style>
     <div class="page-content browse container-fluid">

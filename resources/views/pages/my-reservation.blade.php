@@ -7,9 +7,9 @@
                     <div >
                         <div class="d-flex align-items-center mb-3 bg-white shadow-sm p-3">
                             @if (auth()->user()->avatar == 'users/default.png')
-                            <img src="{{ asset('storage/'. auth()->user()->avatar) }}" alt="" class="img-fluid mr-3" width="50"style="border: 1px solid #cccccc; border-radius: 50%;">
+                            <img src="{{ asset('storage/'. auth()->user()->avatar) }}" alt="" class="img-fluid mr-3" width="50"style="border-radius: 50%;">
                             @else
-                            <img src="{{ asset('storage/users/'. auth()->user()->avatar) }}" alt="" class="img-fluid mr-3" width="50"style="border: 1px solid #cccccc; border-radius: 50%;">
+                            <img src="{{ asset('storage/users/'. auth()->user()->avatar) }}" alt="" class="img-fluid mr-3" width="50"style="border-radius: 50%;">
                             @endif
                             <div>
                                 <a href="/user-profile" class="text-dark font-weight-bold">
@@ -35,35 +35,35 @@
                     </div>
                 </div>
                 <div class="col-lg-9 bg-white p-0 shadow-sm">
-                    <h4 class="mb-4 bg-dark text-white px-5 py-3">My Reservation</h4>
+                    <h4 class="mb-4 bg-dark text-white px-5 py-4">My Reservation</h4>
                     <div class="row px-5 mb-2">
                         @if ($reserves->isEmpty())
                             <div class="p-3">You dont have reservation yet! Check our events now and inquire for reservation <a href="/services">here</a>. </div>
                         @else
                             @foreach ($reserves as $reserve)
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-6 mb-3  font-weight-bold">
                                     <div class="card border" style="height: 14rem">
                                         <div class="card-header d-flex justify-content-between align-items-center">
-                                            <small class="font-weight-bold">Reservation #{{ $reserve->id }}</small>
-                                            <small>| <a href="{{ route('reservation.show', $reserve->id ) }}">Order Details</a></small>
+                                            <p class="font-weight-bold mb-0">Reservation #{{ $reserve->id }}</p>
+                                            <p class=" mb-0">| <a href="{{ route('reservation.show', $reserve->id ) }}">Order Details</a></p>
                                         </div>
                                         <div class="card-body d-flex p-0 align-items-center">
                                             <img src={{ asset('storage/'. $reserve->image) }} alt="" class="img-fluid w-50 p-3">
                                             <div class="w-50 pl-2">
                                                 <div class="mb-0 font-weight-bold">{{ $reserve->name }}</div>
-                                                <small>{{ $reserve->details }}</small>
-                                                <div>Reserve Date: <br> {{ $reserve->formatDate() }} {{ $reserve->formatTime() }}</div>
+                                                <p>{{ $reserve->details }}</p>
+                                                <p class="font-weight-bold">Reserve Date: <br> {{ $reserve->formatDate() }} {{ $reserve->formatTime() }}</p>
                                             </div>
                                         </div>
                                         <div class="card-footer d-flex justify-content-between px-3 py-2">
                                             <div>
                                                 @if ($reserve->confirmation == 0)
-                                                    <small>Status: <span class="bg-success px-2 py-0 rounded text-white" style="font-size: 12px">Pending</span></small>
+                                                    <p class="mb-0">Status: <span class="bg-danger px-4 py-1 rounded text-white" style="font-size: 12px">Pending</span></small>
                                                 @else
-                                                    <small>Status: <span class="bg-success px-2 py-0 rounded text-white" style="font-size: 12px">Confirmed</span></small>
+                                                    <p class="mb-0">Status: <span class="bg-success px-4 py-1 rounded text-white" style="font-size: 12px">Confirmed</span></p>
                                                 @endif
                                             </div>
-                                            <small class="font-weight-bold">Total: {{ $reserve->presentPrice() }}</small>
+                                            <p class="mb-0 font-weight-bold">Total: {{ $reserve->presentPrice() }}</p>
                                         </div>
                                     </div>
                                 </div>

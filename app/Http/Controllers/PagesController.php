@@ -6,6 +6,7 @@ use App\User;
 use App\Rental;
 use App\Gallery;
 use App\Service;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Spatie\Activitylog\Models\Activity;

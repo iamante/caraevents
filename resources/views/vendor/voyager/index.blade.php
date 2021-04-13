@@ -59,7 +59,7 @@
                                                 @if ($item->status == 0)
                                                     <span class="recent-reservation-no" style="border-radius: 20px; padding-bottom: 5px;">pending</span>
                                                 @else
-                                                    <span class="recent-reservation-ok" style="border-radius: 20px;">confirmed</span>
+                                                    <span class="recent-reservation-ok" style="border-radius: 20px; padding-bottom: 5px;">reserved</span>
                                                 @endif
                                             </td>
                                             <td>{{ $item->formatDate() }}</td>

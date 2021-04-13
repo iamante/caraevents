@@ -19105,13 +19105,34 @@ input.invalid {
   display: none;
 }
 
+.step .personal {
+  position: absolute;
+  color: #000;
+  bottom: -45px;
+  left: -2px;
+}
+
+.step .date {
+  position: absolute;
+  color: #000;
+  bottom: -45px;
+  left: 10px;
+}
+
+.last-step .finish {
+  position: absolute;
+  color: #000;
+  bottom: -45px;
+  left: 10px;
+}
+
 /* Make circles that indicate the steps of the form: */
 
 .step {
   height: 55px;
   width: 55px;
   margin-right: 100px;
-  background-color: #38c172;
+  background-color: #333;
   border: none;
   border-radius: 50%;
   opacity: 0.5;
@@ -19123,7 +19144,7 @@ input.invalid {
   position: absolute;
   width: 102px;
   height: 5px;
-  background-color: #38c172;
+  background-color: #333;
   top: 23px;
   left: 55px;
 }
@@ -19132,7 +19153,7 @@ input.invalid {
   height: 55px;
   width: 55px;
   margin: 0 2px;
-  background-color: #38c172;
+  background-color: #333;
   border: none;
   border-radius: 50%;
   opacity: 0.5;
@@ -19143,7 +19164,7 @@ input.invalid {
   height: 55px;
   width: 55px;
   margin-right: 100px;
-  background-color: #38c172;
+  background-color: #333;
   border: none;
   border-radius: 50%;
   position: relative;
@@ -19154,7 +19175,7 @@ input.invalid {
   position: absolute;
   width: 102px;
   height: 5px;
-  background-color: #38c172;
+  background-color: #333;
   top: 23px;
   left: 55px;
 }
@@ -19163,7 +19184,7 @@ input.invalid {
   height: 55px;
   width: 55px;
   margin: 0 2px;
-  background-color: #38c172;
+  background-color: #333;
   border: none;
   border-radius: 50%;
   position: relative;
@@ -19178,7 +19199,7 @@ input.invalid {
 /* Mark the steps that are finished and valid: */
 
 .step.finish {
-  background-color: #38c172;
+  background-color: #333;
   opacity: 1;
 }
 

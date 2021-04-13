@@ -102,9 +102,7 @@
                     <div class="d-flex justify-content-between">
                         <ul class="footer-links">
                             <li><a href="/gallery">Gallery</a></li>
-                            <li><a href="/reservation">Reservation</a></li>
                             <li><a href="/services">Services</a></li>
-                            <li><a href="/rental">Rentals</a></li>
                         </ul>
                         <ul class="footer-links pr-5">
                             <li><a href="/about">About Us</a></li>

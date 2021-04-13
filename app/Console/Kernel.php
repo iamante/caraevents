@@ -2,7 +2,9 @@
 
 namespace App\Console;
 
+use App\User;
 use Illuminate\Console\Scheduling\Schedule;
+use App\Console\Commands\DeleteUserNotVerified;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
@@ -13,7 +15,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        DeleteUserNotVerified::class,
     ];
 
     /**
@@ -24,7 +26,11 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+        $schedule->command('user:verified')->daily();
         // $schedule->command('inspire')->hourly();
+        // $schedule->call(function() {
+        //     User::whereNull('email_verified_at')->where('created_at','<', now()->subDays(2))->delete();
+        // })->everyMinute();
     }
 
     /**

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="bg-light py-3">
-    <div class="container my-5 py-5">
+    <div class="container my-5 py-3">
         {{-- <div class="d-flex align-items-center rounded my-3 py-2" style="font-weight: 900;background-color: #67d896; color: #fff;border: 1px solid #38c172;">
             <i class="far fa-clock px-3 py-2"></i>
             <span>Enjoy and Reserve with Confidence</span>
@@ -23,10 +23,19 @@
         @endif
                         
             <!-- Circles which indicates the steps of the form: -->
-            <div class="mb-5 d-flex align-items-center justify-content-center">
-                <span class="step d-flex align-items-center justify-content-center text-white"><i class="fas fa-users" aria-hidden="true"></i></span>
-                <span class="step d-flex align-items-center justify-content-center text-white"><i class="fas fa-calendar-alt" aria-hidden="true"></i></span>
-                <span class="last-step d-flex align-items-center justify-content-center text-white"><i class="fas fa-check"></i></span>
+            <div class="mb-5 pb-5 d-flex align-items-center justify-content-center">
+                <span class="step d-flex align-items-center justify-content-center text-white">
+                    <p class="personal">Personal</p>
+                    <i class="fas fa-users" aria-hidden="true"></i>
+                </span>
+                <span class="step d-flex align-items-center justify-content-center text-white">
+                    <p class="date">Date</p>
+                    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                </span>
+                <span class="last-step d-flex align-items-center justify-content-center text-white">
+                    <p class="finish">Finish</p>
+                    <i class="fas fa-check"></i>
+                </span>
             </div>
 
             <form id="reservation-form" action="{{ route('reserve.store') }}" method="POST" class="g-3 needs-validation">

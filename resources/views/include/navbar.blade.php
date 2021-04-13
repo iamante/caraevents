@@ -5,7 +5,7 @@
                 <img src="{{ asset('storage/users/logo1.png') }}" alt="" class="img-fluid mr-2 pb-2" width="60" > 
                 <div class="brands">
                     Caraevents
-                    <p>Consultancy & Co.</p>
+                    <p>& Consultancy Co.</p>
                 </div>
             </div>
         </div>

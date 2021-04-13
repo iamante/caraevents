@@ -37,12 +37,12 @@
                 <a href="#" class="dropdown-toggle text-right" data-toggle="dropdown" role="button"
                    aria-expanded="false"><img src="{{ $user_avatar }}" class="profile-img"> <span
                             class="caret"></span></a>
-                <ul class="dropdown-menu dropdown-menu-animated">
+                <ul class="dropdown-menu dropdown-menu-animated" style="color: #333">
                     <li class="profile-img">
                         <img src="{{ $user_avatar }}" class="profile-img">
                         <div class="profile-body">
-                            <h5>{{ Auth::user()->name }}</h5>
-                            <h6>{{ Auth::user()->email }}</h6>
+                            <h4 style="float: left !important; margin-bottom: 0 !important;">{{ Auth::user()->name }}</h4>
+                            <h4 style="float: left !important; margin-top: 0 !important;">({{ ucfirst(strtolower(Auth::user()->role->name)) }})</h4>
                         </div>
                     </li>
                     <li class="divider"></li>
@@ -65,7 +65,7 @@
                             @if(isset($item['icon_class']) && !empty($item['icon_class']))
                             <i class="{!! $item['icon_class'] !!}"></i>
                             @endif
-                            {{__($name)}}
+                            {{__($name)}}   Page
                         </a>
                         @endif
                     </li>

@@ -16,6 +16,11 @@
 <!-- ----------------------------- end of hero page ---------------------------- -->
 
 <!-- --------------------------------- services -------------------------------- -->
+{{-- @if (session('status'))
+    <div class="alert alert-success" role="alert">
+        {{ session('status') }}
+    </div>
+@endif --}}
 
 <div class="container text-center my-5">
     <h2>We will give everything you need in one place.</h2>

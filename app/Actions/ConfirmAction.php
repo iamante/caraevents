@@ -9,7 +9,7 @@ class ConfirmAction extends AbstractAction
     public function getTitle()
     {
         // Action title which display in button based on current status
-        return $this->data->{'status'}=="CONFIRMED"?'Confirm':'View Details';
+        return $this->data->{'status'}=="RESERVED"?'Confirm':'View Details';
         // return 'Confirm';
     }
 
@@ -23,7 +23,7 @@ class ConfirmAction extends AbstractAction
     public function getAttributes()
     {
         // Action button class
-        if($this->data->{'status'}=="CONFIRMED"){
+        if($this->data->{'status'}=="RESERVED"){
             return [
             'class' => 'btn btn-sm btn-success pull-right',
             ];
@@ -44,7 +44,7 @@ class ConfirmAction extends AbstractAction
     public function getDefaultRoute()
     {
         // URL for action button when click
-        if($this->data->{'status'}=="CONFIRMED"){
+        if($this->data->{'status'}=="RESERVED"){
             return route('voyager.'.$this->dataType->slug.'.edit', $this->data->{$this->data->getKeyName()});
         }
         else {

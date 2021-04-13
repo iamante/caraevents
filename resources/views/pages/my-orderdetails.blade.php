@@ -7,9 +7,9 @@
                     <div >
                         <div class="d-flex align-items-center mb-3 bg-white shadow-sm p-3">
                             @if (auth()->user()->avatar == 'users/default.png')
-                            <img src="{{ asset('storage/'. auth()->user()->avatar) }}" alt="" class="img-fluid mr-3" width="50"style="border: 1px solid #cccccc; border-radius: 50%;">
+                            <img src="{{ asset('storage/'. auth()->user()->avatar) }}" alt="" class="img-fluid mr-3" width="50"style="border-radius: 50%;">
                             @else
-                            <img src="{{ asset('storage/users/'. auth()->user()->avatar) }}" alt="" class="img-fluid mr-3" width="50"style="border: 1px solid #cccccc; border-radius: 50%;">
+                            <img src="{{ asset('storage/users/'. auth()->user()->avatar) }}" alt="" class="img-fluid mr-3" width="50"style="border-radius: 50%;">
                             @endif
                             <div>
                                 <a href="/user-profile" class="text-dark font-weight-bold">
@@ -34,40 +34,62 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-7 bg-white px-5 py-3 shadow-sm rounded">
-                    <h4 class="font-weight-bold text-center w-100 p-3" style="border-bottom: 1px dashed rgb(206, 206, 206);">Reserve no. {{ $service->id }}</h4>
-                    <table class="table table-borderless">
-                        <tbody>
-                            <tr>
-                                <td class="text-muted">Customer Name</td>
-                                <td>{{ auth()->user()->name }}</td>
-                            </tr>
-                            <tr>
-                                <td class="text-muted">Address</td>
-                                <td>{{ $service->address }}</td>
-                            </tr>
-                            <tr>
-                                <td class="text-muted">City / Provice</td>
-                                <td>{{ $service->city }}, {{ $service->province }} {{ $service->postal }}</td>
-                            </tr>
-                            <tr>
-                                <td class="text-muted">Reservation Name</td>
-                                <td>{{ $service->name }}, ( {{ $service->details }} )</td>
-                            </tr>
-                            <tr>
-                                <td class="text-muted">Reserve Date</td>
-                                <td>{{ $service->date }}, {{ $service->time}}</td>
-                            </tr>
-                            <tr>
-                                <td class="text-muted">Total Amount</td>
-                                <td>{{ $service->presentPrice() }}</td>
-                            </tr>
-                            <tr>
-                                <td class="text-muted">Email Receipt Send To</td>
-                                <td>{{ auth()->user()->email }}</td>
-                            </tr>
-                        </tbody>
-                      </table>
+                <div class="col-lg-7 bg-white shadow-sm rounded px-0 font-weight-bold">
+                    <div class="bg-dark text-white">
+                        <h4 class="font-weight-bold py-4 px-5">Reserve no. {{ $service->id }}</h4>
+                    </div>
+                    <div class="row px-5 py-3">
+                        <div class="col-6">
+                            <p class="">Customer Info</p>
+                        </div>
+                        <div class="col-6">
+                            <p class="mb-1">{{ auth()->user()->name }} {{ $service->customer_lname }}</p>
+                            <p class="mb-1">{{ $service->address }} {{ $service->barangay }}</p>
+                            <p class="mb-1">{{ $service->city }}, {{ $service->province }} {{ $service->postal }}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row px-5 py-3">
+                        <div class="col-6">
+                            <p>Reservation Info</p>
+                        </div>
+                        <div class="col-6">
+                            <p class="mb-1">{{ $service->name }}<br> ( {{ $service->details }} )</p>
+                            <p class="mb-1">{{ $service->guests }}</p>
+                            <p class="mb-1">{{ $service->menu }}</p>
+                            <p class="mb-1">{{ $service->location }}</p>
+                            
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row px-5 py-3">
+                        
+                        <div class="col-6 mb-3">
+                            <p>Date</p>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <p class="mb-1">{{ $service->formatDate() }}</p>
+                            <p class="mb-1">From {{ $service->formatTime() }} to {{ $service->formatEndTime() }}</p>
+                        </div>
+                        
+                        <div class="col-6">
+                            <p>Total</p>
+                        </div>
+                        <div class="col-6">
+                            <p>{{ $service->presentPrice() }}</p>
+                        </div>
+
+                    </div>
+                    <hr>
+                    <div class="row px-5 py-3">
+                        <div class="col-6">
+                            <p>Email receipt sent to</p>
+                        </div>
+                        <div class="col-6">
+                            <p class="mb-1">{{ auth()->user()->email }}</p>
+                        </div>
+                    </div>
+                                
                     <div class="p-3 text-center">
                         <img src="{{ asset('storage/users/logo1.png') }}" alt="logo" class="img-fluid" width="50">
                         <div>
