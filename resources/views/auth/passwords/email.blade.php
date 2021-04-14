@@ -8,8 +8,8 @@
             <div class="card shadow-sm">
                 <div class="card-header text-center bg-white border-0 pt-4">
                     <img src="{{ asset('storage/users/logo1.png') }}" alt="" class="img-fluid mr-2" width="50" > <br>
-                    {{ __('Forgot Password') }} <br>
-                    <small class="text-muted">Enter your email and we'll send you a link <br> to reset your password.</small>
+                    <h5>{{ __('Forgot Password') }}</h5> <br>
+                    <p class="text-dark">Enter your email and we'll send you a link <br> to reset your password.</p>
                 </div>
 
                 <div class="card-body px-5">

@@ -160,6 +160,7 @@
 
 @section('javascript')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.2/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
     <script>
         
         $('.count-dashboard-widget').each(function () {
@@ -179,12 +180,27 @@
         let data = {!! collect($data)!!}
         let status = {!! collect($reservation_status)!!}
 
+        let sData = [
+            ['Jan ', moment().year()], 
+            ['Feb ', moment().year()],
+            ['Mar ', moment().year()],
+            ['Apr ', moment().year()],
+            ['May ', moment().year()],
+            ['Jun ', moment().year()],
+            ['Jul ', moment().year()],
+            ['Aug ', moment().year()],
+            ['Sep ', moment().year()],
+            ['Oct ', moment().year()],
+            ['Nov ', moment().year()],
+            ['Dec ', moment().year()], 
+        ]
+
         var ctx = document.getElementById('revenueChart').getContext('2d');
         Chart.defaults.font.family = 'Quicksand';
                 var revenueChart = new Chart(ctx, {
                     type: 'line',
                     data: {
-                        labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+                        labels: sData,
                         datasets: [{
                             label: 'Total Revenue',
                             data: data,

@@ -82,7 +82,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-6">
                     <div class="panel panel-bordered">
                         <div class="panel-body">
-                            <h4 style="margin-bottom: 20px">Last logged in Users</h4>
+                            <h4 style="margin-bottom: 20px; color: #333">Last logged in Users</h4>
                             <div class="table-responsive">
                                 <table id="dataTable" class="table table-hover">
                                     <thead>
@@ -93,11 +93,13 @@
                                         </tr>
                                     </thead>
                                     <tbody style="color: #202020">
-                                        <tr>
-                                            <td>james amante</td>
-                                            <td>jamesamante@gmail.com</td>
-                                            <td>2021-04-03 3:00 AM</td>
-                                        </tr>
+                                        @foreach ($lastUserLoginUnique as $item)
+                                            <tr>
+                                                <td>{{  $item->causer->name }}</td>
+                                                <td>{{  $item->causer->email }}</td>
+                                                <td>{{ $item->created_at->format('l - F j, Y, g:i A') }}</td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -119,11 +121,13 @@
                                         </tr>
                                     </thead>
                                     <tbody style="color: #202020">
-                                        <tr>
-                                            <td>james amante</td>
-                                            <td>jamesamante@gmail.com</td>
-                                            <td>2021-04-03 3:00 AM</td>
-                                        </tr>
+                                        @foreach ($userNotLoginForMonth as $item)
+                                            <tr>
+                                                <td>{{  $item->causer->name }}</td>
+                                                <td>{{  $item->causer->email }}</td>
+                                                <td>{{ $item->created_at->format('l - F j, Y, g:i A') }}</td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -169,8 +173,6 @@
             ['Dec ', moment().year()], 
         ]
 
-        console.log(sData.label)
-
         var ctx = document.getElementById('userChart').getContext('2d');
         Chart.defaults.font.family = 'Quicksand';
                 var revenueChart = new Chart(ctx, {
@@ -188,15 +190,16 @@
                                 'rgba(46, 204, 113, 1)',
                             ],
                             borderWidth: 1,
-                            tension: 0.3,
+                            // tension: 0.3,
                             order: 1,
-                        },{
-                            label: 'Total Users in a Week',
-                            data: [10, 9, 8, 2],
-                            type: 'bar',
-                            // this dataset is drawn on top
-                            order: 1
                         }
+                        // ,{
+                        //     label: 'Total Users in a Week',
+                        //     data: [10, 9, 8, 2],
+                        //     type: 'bar',
+                        //     // this dataset is drawn on top
+                        //     order: 1
+                        // }
                     ]
                     },
                     options: {

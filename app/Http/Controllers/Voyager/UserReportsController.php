@@ -18,6 +18,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use TCG\Voyager\Database\Schema\SchemaManager;
 use TCG\Voyager\Http\Controllers\VoyagerBaseController;
 use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
+use Spatie\Activitylog\Models\Activity;
 
 class UserReportsController extends VoyagerBaseController
 {
@@ -38,26 +39,19 @@ class UserReportsController extends VoyagerBaseController
     public function index(Request $request)
     {
         $today = Carbon::today()->format('Y-m-d');
-
-        // $dates = Auth::user()->actions->where('log_name','Login')->groupBy(function($date) {
-        //     return Carbon::parse($date->created_at)->format('Y-m-d');
-        // });
         
-        $todayDate = Auth::user()->actions->where('log_name','Login')->where('created_at', '>=', Carbon::today())->count();
+        $todayDateLogin = Activity::where('log_name','Login')->where('created_at', '>=', Carbon::today())->get();
+        $todayDate = $todayDateLogin->unique('properties')->count();
+
 
         $userAdded = User::where('created_at','>=', Carbon::today())->count();
 
-        // $date = count($dates[$today]);
-        // dd($todayDate);
+        $weekUserLogin = Activity::where('log_name','Login')->where('created_at', '>=', Carbon::today()->subDays(7))->get();
+        $weekUser = $weekUserLogin->unique('properties')->count();
 
-        $weekUser = Auth::user()->actions->where('log_name','Login')->where('created_at', '>=', Carbon::today()->subDays(7))->count();
-
-        $monthUser = Auth::user()->actions->where('log_name','Login')->where('created_at', '>=', Carbon::today()->subDays(30))->count();
-
-        // $user = User::all()->groupBy(function($date) {
-        //     return Carbon::parse($date->created_at)->format('Y-m-d');
-        // });
-
+        $monthUserLogin = Activity::where('log_name','Login')->where('created_at', '>=', Carbon::today()->subDays(30))->get();
+        $monthUser = $monthUserLogin->unique('properties')->count();
+        
         $user = User::select(DB::raw('count(name) as count'),
             DB::raw("DATE_FORMAT(created_at,'%M %Y') as months"),
             DB::raw("DATE_FORMAT(created_at,'%m') as monthKey"))->groupBy('months', 'monthKey')
@@ -70,8 +64,16 @@ class UserReportsController extends VoyagerBaseController
             $totalUser[$date->monthKey-1] = $date->count;
         }
 
+        $lastUserLogin = Activity::where('log_name','Login')->take(3)->get();
+        $lastUserLoginUnique = $lastUserLogin->unique('properties');
+
+        $userNotLogin = Activity::where('log_name','Login')->where('created_at', '<', Carbon::today()->subDays(30))->take(3)->get();
+        $userNotLoginForMonth = $userNotLogin->unique('properties');
+
+
         return view('/vendor/voyager/user-reports/browse')->with([
-            // 'dates' => $dates,
+            'userNotLoginForMonth' => $userNotLoginForMonth,
+            'lastUserLoginUnique' => $lastUserLoginUnique,
             'todayDate' => $todayDate,
             'totalUser' => $totalUser,
             'userAdded' => $userAdded,

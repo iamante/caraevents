@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Laravelista\Comments\Commenter;
 use Spatie\Activitylog\Models\Activity;
 use Illuminate\Notifications\Notifiable;
@@ -68,5 +69,11 @@ class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
 
     public function socialProviders(){
         return $this->hasMany(SocialProvider::class);
+    }
+
+    public function formatUpdatedAt() {
+        $date = Carbon::parse($this->updated_at);
+
+        return $date->isoFormat('MMMM D, YYYY h:mm a');
     }
 }

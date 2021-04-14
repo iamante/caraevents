@@ -66,7 +66,7 @@
                                         <img class="img-fluid w-100 mb-2 services-image rounded" src={{ asset('storage/'. $service->image) }} alt="" style="height: 250px;">
                                     </div>
                                     <div class="col-12 py-1 text-center mb-4">
-                                        <h3 class="card-title mb-2 text-dark">{{ $service->name }}</h3>
+                                        <h3 class="card-title mb-1 text-dark">{{ $service->name }}</h3>
                                         <span style="color: rgb(10, 112, 10);border-radius: 20px;font-size: 15px;">{{ $service->details }}</span>
                                         <p class="mb-0 text-dark" style="font-size: 18px; letter-spacing:1px; line-height: 20px;">{{ $service->presentPrice() }}</p>
                                         <div class="d-flex justify-content-between align-items-center">
