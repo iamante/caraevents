@@ -9,7 +9,7 @@ class ConfirmAction extends AbstractAction
     public function getTitle()
     {
         // Action title which display in button based on current status
-        return $this->data->{'status'}=="RESERVED"?'Confirm':'View Details';
+        return $this->data->{'status'}=="RESERVED"?'Confirm':'Details';
         // return 'Confirm';
     }
 

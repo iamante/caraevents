@@ -22,7 +22,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-5">
+            <div class="col-xs-12 col-sm-12 col-md-6">
                 <div class="panel panel-bordered" style="margin-left: 17px;">
                     <div class="panel-body">
                         <h3>Upcoming Events</h3>
@@ -30,7 +30,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-7">
+            <div class="col-xs-12 col-sm-12 col-md-6">
                 <div class="recent-reservation">
                     <div class="panel panel-bordered" style="margin-right: 10px;">
                         <div class="panel-body">
@@ -39,7 +39,7 @@
                                 <table id="dataTable" class="table table-hover">
                                     <thead>
                                         <tr>
-                                            <th><a href="http://localhost:8000/admin/services?sort_order=desc&amp;order_by=id">id</a></th>
+                                            {{-- <th><a href="http://localhost:8000/admin/services?sort_order=desc&amp;order_by=id">id</a></th> --}}
                                             <th>Status</th>
                                             <th>Date</th>
                                             <th>FirstName</th>
@@ -54,7 +54,7 @@
                                     <tbody style="color: #202020">
                                         @foreach ($count as $item)
                                         <tr>
-                                            <td><div>#{{ $item->id }}</div></td>
+                                            {{-- <td><div>#{{ $item->id }}</div></td> --}}
                                             <td>
                                                 @if ($item->status == 0)
                                                     <span class="recent-reservation-no" style="border-radius: 20px; padding-bottom: 5px;">pending</span>
@@ -305,29 +305,33 @@
     
     <script>
      document.addEventListener('DOMContentLoaded', function() {
-        $reservations = {!! collect($reservation) !!}
-        let dates = $reservations.map(obj=>{
+        let reservations = {!! collect($reservation) !!}
+        let dates = reservations.map(obj=>{
+            var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            var today  = new Date(obj.date);
+            var todayFormatted = today.toLocaleDateString("en-US", options);
+
             return {
                 title: obj.name + ' - ' + obj.customer_name + ' ' + obj.customer_lname,
                 start: obj.date + 'T' + obj.start_time,
                 end: obj.date + 'T' + obj.end_time,
-                // extendedProps: {
-                //     status: obj.status,
-                // },
+                extendedProps: {
+                    status: obj.date,
+                },
                 backgroundColor: '#12a962',
                 
                 borderColor: '#12a962',
                 url: 'admin/reservations/'+ obj.id,
                 popup: {
-                    title: obj.name + '\x0A' + obj.location + '\x0A---',
+                    title: obj.name + '\x0A' + obj.location + '\x0A' + todayFormatted + '\x0A---',
                 }
             }
         });
 
         var calendarEl = document.getElementById("calendar");
         var calendar = new FullCalendar.Calendar(calendarEl, {
-            // initialView: "dayGridMonth",
-            initialView: "listMonth",
+            initialView: "dayGridMonth",
+            // initialView: "listMonth",
             dayMaxEvents: 2,
             selectable: true,
             headerToolbar: {
@@ -347,19 +351,26 @@
                 var popup=info.event.extendedProps.popup;
                 $('.fc-event-future').attr('title',popup.title);
             },
-            // eventDidMount: function(info) {
-            //     if (info.event.extendedProps.status === 1) {
+            eventDidMount: function(info) {
+                let today = new Date();
+                var dd = String(today.getDate()).padStart(2, '0');
+                var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                var yyyy = today.getFullYear();
 
-            //     // Change background color of row
-            //     info.el.style.backgroundColor = 'red';
+                let todayDates = yyyy + '-' + mm + '-' + dd;
+                let tod = reservations.map(obj => obj.date );
+                if (info.event.extendedProps.status < todayDates) {
 
-            //     // Change color of dot marker
-            //     var dotEl = info.el.getElementsByClassName('fc-event-dot')[0];
-            //         if (dotEl) {
-            //             dotEl.style.backgroundColor = 'white';
-            //         }
-            //     }
-            // }
+                // Change background color of row
+                info.el.style.textDecoration = 'line-through';
+
+                // Change color of dot marker
+                var dotEl = info.el.getElementsByClassName('fc-daygrid-event-dot')[0];
+                    if (dotEl) {
+                        dotEl.style.borderColor = '#4D96D4 ';
+                    }
+                }
+            }
         });
         calendar.render();
     });

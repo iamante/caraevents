@@ -59,6 +59,10 @@
         font-weight: 500;
         font-size: 13px;
     }
+
+    #dataTable .bread-actions .btn {
+        width: 100%;
+    }
 </style>
     <div class="page-content browse container-fluid">
         @include('voyager::alerts')

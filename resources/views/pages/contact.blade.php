@@ -60,7 +60,7 @@
                                 <div class="col-lg-6 mb-3">
                                     <div>
                                         <label for="">Phone Number</label><br>
-                                        <input type="text" name="phone" class="form-control w-100" value="{{Request::old('phone')}}" required>
+                                        <input type="number" name="phone" class="form-control w-100" value="{{Request::old('phone')}}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="11" required>
                                     </div>
                                 </div>
                                 <div class="col">

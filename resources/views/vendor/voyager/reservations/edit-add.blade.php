@@ -18,6 +18,11 @@
     </h1>
     @include('voyager::multilingual.language-selector')
 
+    {{-- @can('delete', app($dataType->model_name))
+        @if($usesSoftDeletes)
+            <input type="checkbox" @if ($showSoftDeleted) checked @endif id="show_soft_deletes" data-toggle="toggle" data-on="{{ __('voyager::bread.soft_deletes_off') }}" data-off="{{ __('voyager::bread.soft_deletes_on') }}">
+        @endif
+    @endcan --}}
     
 @stop
 
@@ -25,7 +30,7 @@
 @section('content')
     <div class="page-content edit-add container-fluid">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-7">
                 <div class="panel panel-bordered" style="padding:20px; color: #333; box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;" >
                     <div class="panel-heading" style="border-bottom:0; display: flex; align-items: center; justify-content: space-between">
                        <div class="brand" style="display: flex; align-items: center;">

@@ -25,15 +25,15 @@ Route::get('/services/{service}', 'ServicesController@show')->name('services.sho
 Route::get('location.json',array('as'=>'location','uses'=>'ServicesController@location'));
 Route::get('/search', 'ServicesController@search')->name('search');
 
-Route::get('/rental', 'RentalsController@index')->name('rental.index');
-Route::get('/car-rental', 'CarRentalsController@index')->name('car-rental.index');
-Route::get('/car-rental/{car}', 'CarRentalsController@show')->name('car-rental.show');
+// Route::get('/rental', 'RentalsController@index')->name('rental.index');
+// Route::get('/car-rental', 'CarRentalsController@index')->name('car-rental.index');
+// Route::get('/car-rental/{car}', 'CarRentalsController@show')->name('car-rental.show');
 
 Route::get('/reservation', 'ReserveController@index')->name('reserve.home')->middleware(['auth' => 'auth_reservation']);
 Route::get('/reservation/service/{service}', 'ReservationsController@index')->name('reserve.index')->middleware(['auth' => 'verified']);
-Route::get('/reservation/car-rental/{car}', 'ReservationsController@car_index')->name('reserve.car_index')->middleware(['auth' => 'verified']);
-Route::post('/reservation', 'ReservationsController@store')->name('reserve.store');
-Route::post('/reservation/car-rental', 'ReservationsController@car_store')->name('reserve.car_store');
+// Route::get('/reservation/car-rental/{car}', 'ReservationsController@car_index')->name('reserve.car_index')->middleware(['auth' => 'verified']);
+// Route::post('/reservation', 'ReservationsController@store')->name('reserve.store');
+// Route::post('/reservation/car-rental', 'ReservationsController@car_store')->name('reserve.car_store');
 
 Route::get('/thankyou', 'ThankyouController@index')->name('thankyou.index');
 

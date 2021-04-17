@@ -46,37 +46,60 @@
 
                         <div class="p-4">
 
-                          <div class="form-group" style="border-bottom: 1px solid #ced4da; border-radius: 0">
-                            <small class="text-muted">
+                          <div class="form-group mb-4" style="border-bottom: 1px solid #ced4da; border-radius: 0">
+                            <small class="text-dark">
                             <label for="" class="mb-0">Guest</label></small>
                             <div class="d-flex align-items-center">
                               <input type="text" name="guests" class="form-control pl-0 pt-0 bg-white border-0" value="{{ $service->guests}}" readonly>
                             </div>
                           </div>
                           
-                          <div class="form-group" style="border-bottom: 1px solid #ced4da; border-radius: 0">
-                            <small class="text-muted">
-                            <label for="" class="mb-0">Menus</label></small>
+                          <div class="form-group mb-4" style="border-bottom: 1px solid #ced4da; border-radius: 0">
+
+                              <div class="d-flex align-items-center">
+                                <button type="button" class="bg-white border-0 text-primary" data-toggle="modal" data-target="#exampleModal">
+                                      <small class="text-dark pr-1">Menus</small>
+                                      <i class="fas fa-concierge-bell text-white bg-info rounded p-1"></i>
+                                </button>
+                              </div>
+                                
+
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog modal-dialog-centered modal-xl">
+                                  <div class="modal-content">
+                                      {{-- <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalLabel">Menus</h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                      </div> --}}
+                                      <div class="modal-body">
+                                          <img src="{{ asset('storage/'. $service->menu_image) }}" alt="menu" class="img-fluid">
+                                      </div>
+                                  </div>
+                              </div>
+                            </div>
+
+
                             <div class="d-flex align-items-center">
                               <select id="service-menu" name="menu" class="browser-default custom-select border-0 pl-0">
                                 <option value="1" selected class="p-3">Menu No.1</option>
-                                <option value="1" disabled>&nbsp;&nbsp;&nbsp;Menudo</option>
+                                {{-- <option value="1" disabled>&nbsp;&nbsp;&nbsp;Menudo</option>
                                 <option value="1" disabled>&nbsp;&nbsp;&nbsp;Mechado</option>
-                                <option value="1" disabled>&nbsp;&nbsp;&nbsp;Caldereta</option>
+                                <option value="1" disabled>&nbsp;&nbsp;&nbsp;Caldereta</option> --}}
                                 <option value="2">Menu No.2</option>
-                                <option value="1" disabled>&nbsp;&nbsp;&nbsp;Menudo</option>
-                                <option value="1" disabled>&nbsp;&nbsp;&nbsp;Mechado</option>
-                                <option value="1" disabled>&nbsp;&nbsp;&nbsp;Caldereta</option>
                                 <option value="3">Menu No.3</option>
-                                <option value="1" disabled>&nbsp;&nbsp;&nbsp;Menudo</option>
-                                <option value="1" disabled>&nbsp;&nbsp;&nbsp;Mechado</option>
-                                <option value="1" disabled>&nbsp;&nbsp;&nbsp;Caldereta</option> 
                               </select>
                             </div>
                           </div>
 
+                          {{-- <div class="d-flex align-items-center ml-1 mt-2 mb-4">
+                            <i class="fas fa-exclamation-circle pr-1 text-muted" style="font-size: 10px;"></i>
+                            <small class="text-danger">Click the menu icon to see what's in the menu</small>
+                          </div> --}}
+
                           <div class="form-group" style="border-bottom: 1px solid #ced4da; border-radius: 0">
-                            <small class="text-muted">
+                            <small class="text-dark">
                             <label for="" class="mb-0">Location</label></small>
                             <div id="default-suggestions" class="d-flex align-items-cente border-0">
                               <input type="text" name="location" class="typeahead form-control pl-0 pt-0 border-0 w-100" placeholder="Enter your desire location" required>

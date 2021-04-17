@@ -141,8 +141,8 @@
                         <h5>₱ {{ $dataTypeContent->price }}</h5>
                     </div>
                         <h5 style="font-weight:800;">Status:</h5>
-                        @if ( $dataTypeContent->status == "1" )
-                        <div class="btn btn-success disabled" style="width: 100%; cursor: default" aria-disabled="true" tabindex="-1" disabled>
+                        @if ( $dataTypeContent->status == 1 )
+                        <div id="reserve-status" class="btn btn-success disabled " style="width: 100%; cursor: default" aria-disabled="true" tabindex="-1" disabled>
                         <img src="{{ asset('storage/users/tick.png') }}" alt="" width="20" style="margin-right: 5px; "><span style="border: 2px solid rgb(255, 255, 255); border-radius: 50%; padding-left: 3px; padding-right: 1px; margin-right: 5px;">&#10003; </span> {{ 'Reserved' }}
                         </div>
                         @else
@@ -180,10 +180,29 @@
 @stop
 
 @section('javascript')
+    <script>
+        var currentDate = {!! collect($dataTypeContent->date) !!}
+        var reserve = $('#reserve-status');
+        let today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+
+        let todayDates = yyyy + '-' + mm + '-' + dd;
+
+        if (currentDate < todayDates) {
+            $('#reserve-status').html('Completed').css("background-color", "#22a7f0");
+            $('.reserve-alert').css("background-color", "#22a7f0");
+            $('.reserve-alert p').html('Congratulations! This events is already finished.')
+        }
+    </script>
+
     @if ($isModelTranslatable)
         <script>
             $(document).ready(function () {
                 $('.side-body').multilingual();
+
+
             });
         </script>
     @endif

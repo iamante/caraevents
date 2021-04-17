@@ -26,7 +26,7 @@ class VoyagerController extends Controller
         $count['weekly'] = Reservation::where('created_at','>=',Carbon::today()->subDays(7))->orderByDesc('created_at')->limit(5)->get();
         $count['monthly'] = Reservation::where('created_at','>=',Carbon::today()->subDays(30))->count();
         $reservation = Reservation::where('status', 1)->get(['id','name','date','start_time','end_time','customer_name','customer_lname','location','status','price']);
-        
+
         $price = Reservation::where('status',1)->select(DB::raw('sum(price) as sums'), 
             DB::raw("DATE_FORMAT(date,'%M %Y') as months"),
             DB::raw("DATE_FORMAT(date,'%m') as monthKey"))->groupBy('months', 'monthKey')
@@ -40,7 +40,8 @@ class VoyagerController extends Controller
 
         $notconfirm = Reservation::where('status',0)->count();
         $reserved = Reservation::where('status',1)->count();
-        $completed = Reservation::where('status', '=','completed')->count();
+        $completed = Reservation::where('status',1)->where('date', '<', Carbon::today())->count();
+
         $reservation_status = [$notconfirm,$reserved,$completed];
 
 
