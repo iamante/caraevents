@@ -31,8 +31,8 @@ Route::get('/search', 'ServicesController@search')->name('search');
 
 Route::get('/reservation', 'ReserveController@index')->name('reserve.home')->middleware(['auth' => 'auth_reservation']);
 Route::get('/reservation/service/{service}', 'ReservationsController@index')->name('reserve.index')->middleware(['auth' => 'verified']);
+Route::post('/reservation', 'ReservationsController@store')->name('reserve.store');
 // Route::get('/reservation/car-rental/{car}', 'ReservationsController@car_index')->name('reserve.car_index')->middleware(['auth' => 'verified']);
-// Route::post('/reservation', 'ReservationsController@store')->name('reserve.store');
 // Route::post('/reservation/car-rental', 'ReservationsController@car_store')->name('reserve.car_store');
 
 Route::get('/thankyou', 'ThankyouController@index')->name('thankyou.index');
@@ -49,6 +49,7 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
     Route::get('/', ['uses' => 'Voyager\VoyagerController@index',   'as' => 'voyager.dashboard'])->middleware('auth_voyager_admin');
     Route::get('/user-reports', ['uses' => 'Voyager\UserReportsController@index',   'as' => 'voyager.user-reports'])->middleware('auth_voyager_admin');
+    Route::get('/sales-reports', ['uses' => 'Voyager\SaleReportsController@index',   'as' => 'voyager.user-reports'])->middleware('auth_voyager_admin');
 });
 
 Route::get('login/{website}', 'Auth\LoginController@redirectToProvider');

@@ -32,11 +32,13 @@ class CreateReservationsTable extends Migration
             $table->string('guests')->nullable();
             $table->string('menu')->nullable();
             $table->string('location')->nullable();
+            $table->string('additional_info')->nullable();
             $table->date('date');
             $table->time('start_time');
             $table->time('end_time');
             $table->integer('price');
             $table->boolean('status')->default(false);
+            $table->dateTime('deleted_at')->nullable();
             // $table->string('status')->default('pending');
             $table->timestamps();
         });

@@ -263,7 +263,7 @@
                     data: status,
                     backgroundColor: [
                     'rgb(231, 82, 82)',
-                    'rgb(18, 169, 98)',
+                    'rgb(88, 214, 141)',
                     'rgb(54, 162, 235)',
                     ],
                     // hoverOffset: 4
@@ -332,6 +332,7 @@
         var calendar = new FullCalendar.Calendar(calendarEl, {
             initialView: "dayGridMonth",
             // initialView: "listMonth",
+            height: 560,
             dayMaxEvents: 2,
             selectable: true,
             headerToolbar: {

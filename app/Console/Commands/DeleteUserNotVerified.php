@@ -42,6 +42,5 @@ class DeleteUserNotVerified extends Command
         $user = User::where('email_verified_at',null)->where('created_at','<', Carbon::today()->subDays(3))->delete();
         
         return $user;
-        // return 0;
     }
 }

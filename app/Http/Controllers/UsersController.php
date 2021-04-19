@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Image;
 use DateTime;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
@@ -77,9 +78,14 @@ class UsersController extends Controller
 
         if ($request->hasFile('avatar'))
         {
+            $date = new DateTime();
+            $dates = Carbon::parse($date);
+            $todayDate = $dates->isoFormat('MMMMYYYY');
+            $userFilePath = 'users\\'.$todayDate.'\\';
             $avatar = $request->file('avatar');
-            $filename = time() . '.' . $avatar->getClientOriginalExtension();
-            Image::make($avatar)->resize(300,300)->save( public_path('storage/users/'. $filename));
+            $filename = $userFilePath . time() . '.' . $avatar->getClientOriginalExtension();
+            // dd($filename);
+            Image::make($avatar)->resize(300,300)->save( public_path('storage/'. $filename));
             
             $user->avatar = $filename;
             $user->save();

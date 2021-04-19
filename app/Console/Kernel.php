@@ -26,7 +26,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('user:verified')->daily();
+        $schedule->command('user:verified')->everyMinute();
         // $schedule->command('inspire')->hourly();
         // $schedule->call(function() {
         //     User::whereNull('email_verified_at')->where('created_at','<', now()->subDays(2))->delete();

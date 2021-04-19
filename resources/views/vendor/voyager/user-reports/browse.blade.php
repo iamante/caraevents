@@ -14,11 +14,14 @@
                             </div>
                             <div class="text-voy">
                                 <h5>New Users Added Today</h5>
-                                @if ($userAdded == 0)
-                                    <h1 class="count-user-widget" style="float: right; margin-right: 20px">{{ $userAdded }}</h1>
-                                @else
-                                    <h1 class="count-user-widget" style="float: right; margin-right: 20px"><small style="padding-right: 10px;">+</small>{{ $userAdded }}</h1>
-                                @endif
+                                <div style="display: flex; align-items:center; float: right">
+                                    @if ($userAdded == 0)
+                                         <h1 class="count-user-widget" style="float: right; margin-right: 20px">{{ $userAdded }}</h1>
+                                    @else
+                                        <h1 style="color: rgb(18, 169, 98);">+</h1>
+                                        <h1 class="count-user-widget" style="float: right; margin-right: 20px">{{ $userAdded }}</h1>
+                                    @endif
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -49,7 +52,7 @@
                                 <i class="voyager-bar-chart" style="border-radius: 0; background-color: rgb(18, 169, 98);"></i>
                             </div>
                             <div class="text-voy">
-                                <h5>Users login Last 7 Days</h5>
+                                <h5>Users login for the week</h5>
                                 <h1 class="count-user-widget" style="float: right; margin-right: 20px">{{ $weekUser }}</h1>
                             </div>
                         </div>
@@ -64,7 +67,7 @@
                                 <i class="voyager-bar-chart" style="border-radius: 0; background-color: rgb(18, 169, 98);"></i>
                             </div>
                             <div class="text-voy">
-                                <h5>Users Login Last 30 Days</h5>
+                                <h5>Users Login for the month</h5>
                                 <h1 class="count-user-widget" style="float: right; margin-right: 20px">{{ $monthUser }}</h1>
                             </div>
                         </div>

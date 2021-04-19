@@ -52,19 +52,25 @@
                         <div class="d-flex justify-content-between">
                             <div class="form-group w-100 mr-2">
                                 <label for="customer_name">First Name</label>
-                                <input type="text" name="customer_name" class="form-control shadow-sm border-0 rounded-0" value="{{ auth()->user()->name }}" placeholder="First Name" readonly>
+                                <input type="text" name="customer_name" class="form-control shadow-sm border rounded-0" value="{{ auth()->user()->name }}" placeholder="First Name" required>
+                                <div class="invalid-feedback text-center">
+                                    Please input your first name.
+                                </div>
                             </div>
 
                             <div class="form-group w-100 ml-2">
                                 <label for="customer_lname">Last Name</label>
                                 <input type="text" name="customer_lname" class="form-control shadow-sm rounded-0" required>
+                                <div class="invalid-feedback text-center">
+                                    Please input your last name.
+                                </div>
                             </div>
                         </div>
 
                         <div class="d-flex justify-content-between">
                             <div class="form-group w-100 mr-2">
                                 <label for="email">Email Address</label>
-                                <input type="email" name="email" value="{{ auth()->user()->email }}" class="form-control shadow-sm border-0 rounded-0" required readonly>
+                                <input type="email" name="email" value="{{ auth()->user()->email }}" class="form-control shadow-sm border rounded-0" required readonly>
                             </div>
 
                             <div class="form-group w-100 ml-2">
@@ -118,6 +124,11 @@
                             </div>
                         </div>
 
+                        <div class="form-group mt-3">
+                            <label for="addtional_info">Additional Info (optional)</label>
+                            <textarea  name="additional_info" class="form-control text-area" rows="4" placeholder="Do you have something to say to your chosen service?"></textarea>
+                        </div>
+
                     </div>
 
                     <div class="col-md-4 mb-3 bg-white shadow-sm p-5">
@@ -164,7 +175,7 @@
                             
                         <div class="d-flex justify-content-between pt-2">
                             <h6 class="font-weight-bold">Total</h6>
-                            <p class="font-weight-bold">{{ $service->presentPrice() }}</p>
+                            <h4 class="font-weight-bold">{{ $service->presentPrice() }}</h4>
                             <input type="hidden" name="price" value="{{ $service->price}}">
                         </div>
 

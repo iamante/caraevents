@@ -12,7 +12,8 @@
         </div>
     </div>
 
-    <div class="container p-5">
+    <div class="bg-light">
+        <div class="container p-5">
         <div class="row">
             <div class="col-lg-8">
                 @if (session()->has('success_message'))
@@ -36,36 +37,36 @@
                         @csrf
                         <div class="form-group">
                             <div class="row">
-                                <div class="col-lg-12">
+                                <div class="col-lg-12 mb-4">
                                     <div class="d-flex align-items-center"><h3>Message Us</h3><hr style="width: 75%; height:1px;"></div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div>
-                                        <label for="">Name</label><br>
+                                        <label for="">Name <span class="text-danger">*</span></label><br>
                                         <input type="text" name="name" class="form-control w-100" value="{{Request::old('name')}}" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 mb-3">
                                     <div>
-                                        <label for="">Email</label><br>
+                                        <label for="">Email <span class="text-danger">*</span></label><br>
                                         <input type="email" name="email" class="form-control w-100" value="{{Request::old('email')}}" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div>
-                                        <label for="">Subject</label><br>
+                                        <label for="">Subject <span class="text-danger">*</span></label><br>
                                         <input type="text" name="subject" class="form-control w-100" value="{{Request::old('subject')}}" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 mb-3">
                                     <div>
-                                        <label for="">Phone Number</label><br>
+                                        <label for="">Phone Number <span class="text-danger">*</span></label><br>
                                         <input type="number" name="phone" class="form-control w-100" value="{{Request::old('phone')}}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="11" required>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div>
-                                        <label for="">Message</label> <br>
+                                        <label for="">Message <span class="text-danger">*</span></label> <br>
                                         <textarea name="message" id="message" cols="50" rows="10" value="{{Request::old('message')}}" class="form-control w-100" required></textarea>
                                     </div>
                                     <div>
@@ -105,9 +106,10 @@
             </div>
 
             <div class="col">
-                <iframe class="img-fluid mt-3" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15436.703142064003!2d121.0565013!3d14.7026491!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcace75fb83bd1c1e!2sCara%20Events%20Philippines!5e0!3m2!1sen!2sph!4v1600268794813!5m2!1sen!2sph" width="1920" height="1920" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                <iframe class="img-fluid border mt-3" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15436.703142064003!2d121.0565013!3d14.7026491!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcace75fb83bd1c1e!2sCara%20Events%20Philippines!5e0!3m2!1sen!2sph!4v1600268794813!5m2!1sen!2sph" width="1920" height="1920" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
             </div>
 
         </div>
+    </div>
     </div>
 @endsection

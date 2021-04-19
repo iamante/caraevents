@@ -6,11 +6,9 @@
                 <div class="col-lg-3 px-3">
                     <div >
                         <div class="d-flex align-items-center mb-3 bg-white shadow-sm p-3">
-                            @if (auth()->user()->avatar == 'users/default.png')
+                            
                             <img src="{{ asset('storage/'. auth()->user()->avatar) }}" alt="" class="img-fluid mr-3" width="50"style="border-radius: 50%;">
-                            @else
-                            <img src="{{ asset('storage/users/'. auth()->user()->avatar) }}" alt="" class="img-fluid mr-3" width="50"style="border-radius: 50%;">
-                            @endif
+                           
                             <div>
                                 <a href="/user-profile" class="text-dark font-weight-bold">
                                     {{ Auth::user()->name }}

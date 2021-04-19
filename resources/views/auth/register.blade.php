@@ -79,12 +79,12 @@
 
                         <div class="form-group d-flex justify-content-center align-items-center" style="position: relative">
                             <i class="fas fa-lock icon p-3 text-muted" style="position: absolute; left:5px;"></i>
-                                <input id="password" type="password" class="form-control pl-5" name="password_confirmation" placeholder="Confirm Password" required autocomplete="new-password">
+                            <input id="password" type="password" class="form-control pl-5" name="password_confirmation" placeholder="Confirm Password" required autocomplete="new-password">
                         </div>
 
                         <input type="hidden" class="g-recaptcha" name="g-recaptcha">
                         <div class="d-flex align-items-center mb-4">
-                            <input type="checkbox" checked="checked" name="remember" class="mr-2"> 
+                            <input type="checkbox" name="remember" class="mr-2" required> 
                             <small>By creating an account you agree to our <a href="/termsconditions">Terms</a> & <a href="/privacypolicy">Privacy.</a></small>
                         </div>
 

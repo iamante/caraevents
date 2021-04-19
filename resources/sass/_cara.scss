@@ -143,11 +143,13 @@
     }
 }
 
-input[type="text"],
-input[type="number"],
+
+input[type="text"]:focus,
+input[type="number"]:focus,
 input[type="password"]:focus,
 [type="tel"].form-control:focus,
 input[type="email"],
+textarea:focus,
 .input-reserve {
     color: black;
 

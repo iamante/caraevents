@@ -45,56 +45,6 @@
                 </div>
 
             </div>
-
-            {{-- <div class="col-lg-3">
-
-                <h6>Opening Hours</h6>
-                <table class="table table-borderless w-60">
-                    <tr>
-                        <td>Monday</td>
-                        <td>08:00 - 23:00</td>
-                    </tr>
-                    <tr>
-                        <td>Tuesday</td>
-                        <td>08:00 - 23:00</td>
-                    </tr>
-                    <tr>
-                        <td>Wednesday</td>
-                        <td>08:00 - 23:00</td>
-                    </tr>
-                    <tr>
-                        <td>Thursday</td>
-                        <td>08:00 - 23:00</td>
-                    </tr>
-                    <tr>
-                        <td>Friday</td>
-                        <td>08:00 - 23:00</td>
-                    </tr>
-                    <tr>
-                        <td>Saturday</td>
-                        <td>08:00 - 23:00</td>
-                    </tr>
-                    <tr>
-                        <td>Sunday</td>
-                        <td>11:00 - 23:00</td>
-                    </tr>
-                </table>
-
-                
-                
-                <div class="d-flex pl-5">
-                    <ul class="footer-links mr-5">
-                        <li><a href="/gallery">Gallery</a></li>
-                        <li><a href="/reservation">Reservation</a></li>
-                        <li><a href="/services">Services</a></li>
-                    </ul>
-                    <ul class="footer-links">
-                        <li><a href="/rental">Rentals</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                    </ul>
-                </div>
-                
-            </div> --}}
             
             <div class="col-md-4 mb-4 col-sm-6">
                 <div class="w-100 mb-4">
@@ -113,8 +63,8 @@
                 <div>
                     <h6 style="color: #d4d4d4;" class="mb-4">Terms and Policy</h6>
                     <ul class="footer-links">
-                        <li><a href="/privacypolicy">Privacy Policy</a></li>
-                        <li><a href="/termsconditions">Terms and Condition</a></li>
+                        <li><a href="/privacypolicy" target="_blank">Privacy Policy</a></li>
+                        <li><a href="/termsconditions" target="_blank">Terms and Condition</a></li>
                     </ul>
                 </div>
             </div>

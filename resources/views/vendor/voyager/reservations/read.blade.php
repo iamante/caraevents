@@ -41,19 +41,23 @@
             box-shadow: none !important;
         }
         .reserve-alert {
-            padding: 15px 10px 6px 30px;
+            padding: 15px 10px 15px 30px;
             margin-bottom: 10px;
             border-radius: 2px;
             color: #fff;
             background: #68c085;
         }
 
+        .reservation-alert-btn {
+            background-color: none !important;
+        }
+
     </style>
     <div class="page-content read container-fluid">
         <div class="row">
             <div class="col-md-7" style="border: none;">
-                <div class="reserve-alert">
-                    <p class="mb-0">Well done! The reservation has been confirmed.</p>
+                <div class="reserve-alert" style="display: flex; justify-content: space-between; align-self: center">
+                    <p style="margin-bottom: 0">Well done! The reservation has been confirmed.</p>
                 </div>
                 <div class="panel panel-bordered" style="color: #333 ;padding:20px; box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;" >
                     <div class="panel-heading" style="border-bottom:0; display: flex; align-items: center; justify-content: space-between">
@@ -119,6 +123,22 @@
                                 </div>
                             </div>
                         </div>
+
+                        @if (!$dataTypeContent->additional_info == null)
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <h5 class="pb-3" style="font-weight:800;">Additional Info</h5> 
+                                </div>
+                                <div class="col-md-7">
+                                    <div style="display: flex;">
+                                        <p style="padding-right: 10px;">{{ $dataTypeContent->additional_info }}</p> 
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
 
 
                 </div>

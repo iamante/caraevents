@@ -6,10 +6,13 @@ use App\User;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Reservation extends Model
 {
     use LogsActivity;
+    use SoftDeletes;
+    protected $dates = ['deleted_at'];
 
     public function getDescriptionForEvent(string $eventName): string
     {
@@ -36,6 +39,7 @@ class Reservation extends Model
         'menu', 'location', 'date', 
         'start_time', 'end_time', 
         'price', 'image',
+        'additional_info'
     ];
 
     public function user() 

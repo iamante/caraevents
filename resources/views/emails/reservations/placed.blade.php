@@ -1,10 +1,6 @@
 @component('mail::message')
 
-@component('mail::panel')
-
 **Reservation Received!**  Thankyou for your reservation.
-
-@endcomponent
 
 **Reservation No. {{ $reserve->id }}** <br>
 

@@ -6,11 +6,9 @@
 @else
   <li id="comment-{{ $comment->getKey() }}" class="media">
 @endif
-    @if ($comment->commenter->avatar == 'users/default.png')
+    
     <img class="mr-2 img-fluid rounded-circle" width="60" src="{{ asset('storage/'. $comment->commenter->avatar ?? $comment->guest_email) }} " alt="{{ $comment->commenter->name ?? $comment->guest_name }} Avatar">
-    @else
-    <img class="mr-2 img-fluid rounded-circle" width="60" src="{{ asset('storage/users/'. $comment->commenter->avatar ?? $comment->guest_email) }} " alt="{{ $comment->commenter->name ?? $comment->guest_name }} Avatar">
-    @endif
+    
     <div class="media-body">
             <h5 class="mt-0 mb-1 text-dark">{{ $comment->commenter->name ?? $comment->guest_name }} <small class="text-dark">- {{ $comment->created_at->diffForHumans() }}</small></h5>
 

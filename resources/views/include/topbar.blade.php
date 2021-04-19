@@ -31,7 +31,7 @@
                                      @if (Auth::user()->avatar == 'users/default.png')
                                      <i class="fas fa-user p-2 text-white" style="background-color: #a9a9a9; border-radius: 50%"></i> 
                                      @else
-                                     <img src="{{ asset('storage/users/'. auth()->user()->avatar) }}" alt="" class="img-fluid ml-2" width="25" style="border-radius: 50%;"> 
+                                     <img src="{{ asset('storage/'. auth()->user()->avatar) }}" alt="" class="img-fluid ml-2" width="25" style="border-radius: 50%;"> 
                                      @endif
                                      My account
                                 </a>
