@@ -66,8 +66,17 @@
                         </div>
                     </div>
                 </div>
+                
 
-                <div class="col-xs-12 col-sm-12 col-md-8">
+                <div class="col-xs-12 col-sm-12 col-md-5">
+                    <div class="panel panel-bordered">
+                        <div class="panel-body">
+                            <canvas id="itemChart" width="400" height="400"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xs-12 col-sm-12 col-md-7">
                     <div class="panel panel-bordered">
                         <div class="panel-body">
                             <canvas id="revenuesChart" width="400" height="400"></canvas>
@@ -75,7 +84,7 @@
                     </div>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4">
+                {{-- <div class="col-xs-12 col-sm-6 col-md-4">
                     <div class="panel widget center bgimage">
                         <div class="dimmer"></div>
                         <div class="panel-content">
@@ -108,7 +117,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
             </div>
         </div>
@@ -142,6 +151,7 @@
 
         let reservations = {!! collect($reservation) !!}
         let data = {!! collect($data)!!}
+        let dataItem = {!! collect($dataItem)!!}
 
         let sData = [
             ['Jan ', moment().year()], 
@@ -161,7 +171,7 @@
         var ctx = document.getElementById('revenuesChart').getContext('2d');
         Chart.defaults.font.family = 'Quicksand';
                 var revenueChart = new Chart(ctx, {
-                    type: 'bar',
+                    type: 'line',
                     data: {
                         labels: sData,
                         datasets: [{
@@ -214,6 +224,65 @@
                         }
                     }
                 });
+
+
+
+            var ctx = document.getElementById('itemChart').getContext('2d');
+            Chart.defaults.font.family = 'Quicksand';
+                    var revenueChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['Wedding','Birthday','Debut', 'Catering', 'Corporate'],
+                            datasets: [{
+                                label: 'Popular Services',
+                                data: dataItem,
+                                fill: true,
+                                backgroundColor: [
+                                    'rgba(46, 204, 113, 0.2)',
+                                ],
+                                borderColor: [
+                                    'rgba(46, 204, 113, 1)',
+                                ],
+                                borderWidth: 1,
+                                tension: 0.3
+                            }
+                        ]
+                        },
+                        options: {
+                            indexAxis: 'y',
+                            layout: {
+                                padding: {
+                                    left: 15,
+                                    right: 25
+                                }
+                            },
+                            plugins: {
+                                title: {
+                                display: true,
+                                text: 'Caraevents Consultancy & Co.',
+                                weight: 300
+                            },
+                            legend: {
+                                display: true,
+                                labels: {
+                                    font: {
+                                        size: 20,
+                                        weight: 700
+                                    },
+                                    color: 'black',
+                                    
+                                },
+                            }
+                            },
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
     </script>
 
 @endsection

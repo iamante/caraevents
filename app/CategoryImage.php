@@ -11,7 +11,7 @@ class CategoryImage extends Model
 
     public function getDescriptionForEvent(string $eventName): string
     {
-        return "The catergory has been {$eventName}";
+        return "{$eventName} a category for image";
     }
 
     protected static $logName = 'Galleries';

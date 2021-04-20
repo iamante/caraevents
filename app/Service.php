@@ -15,11 +15,11 @@ class Service extends Model
     use Commentable;
     use SearchableTrait, LogsActivity;
 
-    // public function getDescriptionForEvent(string $eventName): string
-    // {
+    public function getDescriptionForEvent(string $eventName): string
+    {
         
-    //     return "The services has been {$eventName}";
-    // }
+        return "{$eventName} a services";
+    }
 
     protected static $logName = 'Services';
 

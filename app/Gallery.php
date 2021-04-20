@@ -11,7 +11,7 @@ class Gallery extends Model
 
     public function getDescriptionForEvent(string $eventName): string
     {
-        return "The gallery has been {$eventName}";
+        return "{$eventName} a gallery";
     }
 
     protected static $logName = 'Galleries';

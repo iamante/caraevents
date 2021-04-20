@@ -93,7 +93,7 @@ $(function() {
 
         templates: {
             header: '<p class="league-name mb-1 py-2">Caraevents Suggested Venue</p>',
-            suggestion: Handlebars.compile('<div class="d-flex"><img src="/storage/{{image}}" width="70"><div class="pl-2"><p><strong>{{location}}</strong></p><p><i class="fas fa-map-marker-alt pr-1"></i>{{venue}}</p></div></div>')
+            suggestion: Handlebars.compile('<div class="row"><div class="col-4"><img src="/storage/{{image}}" class="img-fluid"></div><div class="col-8 px-0"><div><p><strong>{{venue}}</strong></p><p><i class="fas fa-map-marker-alt pr-1"></i>{{location}}</p></div></div></div>')
         },
         limit: 'Infinity'
         }

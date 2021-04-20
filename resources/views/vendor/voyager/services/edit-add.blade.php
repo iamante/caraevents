@@ -91,17 +91,26 @@
                             @endforeach
                             
                             <div class="services-row">
-                                <div class="col-md-4">
+                                <div class="col-md-8">
                                     <div class="form-group pl-4">
-                                        <h3>Categories</h3>
-                                        <ul class="list-unstyled">
+                                        <h3 style="padding-left: 20px; margin-bottom: 20px; padding-top: 40px">Categories</h3>
+                                        <div class="row" style="padding-left: 25px">
+                                            
+                                                @foreach ($allCategories as $category)
+                                                <div class="col-md-3">
+                                                    <label style="display: flex"><input style="margin-right: 5px;" type="checkbox" name="category[]" value="{{ $category->id }}" {{ $categoriesForService->contains($category) ? 'checked' : '' }}>{{ $category->name }}</label>
+                                                </div>
+                                                @endforeach
+                                            
+                                        </div>
+                                        {{-- <ul class="list-unstyled">
                                             @foreach ($allCategories as $category)
                                                 <li><label><input style="margin-right: 5px;" type="checkbox" name="category[]" value="{{ $category->id }}" {{ $categoriesForService->contains($category) ? 'checked' : '' }}>{{ $category->name }}</label></li>
                                             @endforeach
-                                        </ul>
+                                        </ul> --}}
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                {{-- <div class="col-md-4">
                                     <div class="form-group pl-4">
                                         <h3>Locations</h3>
                                         <ul class="list-unstyled">
@@ -110,12 +119,12 @@
                                             @endforeach
                                         </ul>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
 
                         </div><!-- panel-body -->
 
-                        <div class="panel-footer">
+                        <div class="panel-footer" style="padding-left: 40px">
                             @section('submit-buttons')
                                 <button type="submit" class="btn btn-primary save">{{ __('voyager::generic.save') }}</button>
                             @stop

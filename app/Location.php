@@ -12,7 +12,7 @@ class Location extends Model
 
     public function getDescriptionForEvent(string $eventName): string
     {
-        return "The location has been {$eventName}";
+        return "{$eventName} a location";
     }
 
     protected static $logName = 'Services Location';

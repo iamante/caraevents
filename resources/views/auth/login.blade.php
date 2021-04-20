@@ -66,7 +66,7 @@
                             </button>
                         </div>
 
-                            <p class="more-oauth-login-title">
+                            <p class="more-oauth-login-title text-dark">
                                 Or sign in using   
                             </p>
 

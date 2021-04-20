@@ -61,9 +61,24 @@ class SaleReportsController extends VoyagerBaseController
             $data[$order->monthKey-1] = $order->sums;
         }
 
+        $reservationCompute = Reservation::where('name', 'like', '%wedding%')->count();
+        $reservationComputeBirthday = Reservation::where('name', 'like', '%birthday%')->count();
+        $reservationComputeDebut = Reservation::where('name', 'like', '%debut%')->count();
+        $reservationComputeCatering = Reservation::where('name', 'like', '%cater%')->count();
+        $reservationComputeCorporate = Reservation::where('name', 'like', '%corporate%')->count();
+
+        $dataItem = [
+            $reservationCompute,
+            $reservationComputeBirthday,
+            $reservationComputeDebut,
+            $reservationComputeCatering,
+            $reservationComputeCorporate,
+        ];
+
         return view('/vendor/voyager/sales-reports/browse')->with([
             'reservation' => $reservation,
             'data' => $data,
+            'dataItem' => $dataItem,
             'totalRevenueForToday' => $totalRevenueForToday,
             'totalRevenueForWeek' => $totalRevenueForWeek,
             'totalRevenue' => $totalRevenue,

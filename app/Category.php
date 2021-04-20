@@ -11,7 +11,7 @@ class Category extends Model
 
     public function getDescriptionForEvent(string $eventName): string
     {
-        return "The category has been {$eventName}";
+        return "{$eventName} a category";
     }
 
     protected static $logName = 'Category';

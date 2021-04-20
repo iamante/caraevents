@@ -16,7 +16,7 @@ class Reservation extends Model
 
     public function getDescriptionForEvent(string $eventName): string
     {
-        return "The reservation has been {$eventName}";
+        return "{$eventName} a reservation";
     }
 
     protected static $logName = 'Reservations';

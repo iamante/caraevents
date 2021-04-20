@@ -19460,7 +19460,8 @@ input.invalid {
 .tt-menu {
   max-height: 300px;
   overflow-y: auto;
-  width: 400px;
+  overflow-x: hidden;
+  width: 420px;
   font-size: 13px;
   color: #555555;
   padding: 0 0;
