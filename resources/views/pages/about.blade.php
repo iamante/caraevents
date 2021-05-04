@@ -25,7 +25,7 @@
                 <h4 style="color: rgb(17, 151, 17)">Our Mission</h4>
                 <p class="mb-5">To provide quality and excellent customer service to the satisfaction of the clients</p>
                 <h4 style="color: rgb(17, 151, 17)">Our Vision</h4>
-                <p>To provide quality and excellent customer service to the satisfaction of the clients. <br>To be the top leading company in the field of events coordination that would fit one’s budget.</p>
+                <p>1. To be competitive in the area of events coordination and consultancy.<br>2. To be the top leading company in the field of events coordination that would fit one’s budget.</p>
                 
             </div>
         </div>

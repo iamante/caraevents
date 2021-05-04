@@ -90,7 +90,7 @@ class LoginController extends Controller
 
         
         $socialProvider = SocialProvider::where('provider_id', $socialUsers->getId())->first();
-        
+        // dd($socialProvider);
         if(!$socialProvider)
         {
             $user = User::firstOrCreate(
@@ -111,4 +111,37 @@ class LoginController extends Controller
         return redirect('/');
     }
 
+    // public function redirectToFacebook()
+    // {
+    //     return Socialite::driver('facebook')->redirect();
+
+    // }
+
+    // public function handleFacebookCallback()
+    // {
+
+    //    $user = Socialite::driver('google')->user();
+
+    //    $this->_registerOrLoginUser();
+
+    //    return redirect()->route('/');
+
+    // }
+
+    // protected function _registerOrLoginUser($data)
+    // {
+    //     $user = User::where('email', $data->email)->first();
+
+    //     if(!$user)
+    //     {
+    //         $user = new User();
+    //         $user->name = $data->name;
+    //         $user->email = $data->email;
+    //         $user->provider_id = $data->provider_id;
+    //         $user->avatar = $data->avatar;
+    //         $user->save();
+    //     }
+
+    //     Auth::login($user);
+    // }
 }

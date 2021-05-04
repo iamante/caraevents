@@ -69,9 +69,9 @@ class SaleReportsController extends VoyagerBaseController
 
         $dataItem = [
             $reservationCompute,
-            $reservationComputeBirthday,
-            $reservationComputeDebut,
             $reservationComputeCatering,
+            $reservationComputeDebut,
+            $reservationComputeBirthday,
             $reservationComputeCorporate,
         ];
 

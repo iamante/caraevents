@@ -61,3 +61,11 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
     Route::get('/my-reservation', 'ReservesController@index')->name('reservation.index');
     Route::get('/my-reservation/{id}', 'ReservesController@show')->name('reservation.show');
 });
+
+// //Google login
+// Route::get('login/google', 'Auth\LoginController@redirectToGoogle')->name('login.google');
+// Route::get('login/google/callback', 'Auth\LoginController@handleGoogleCallback');
+
+// //Facebook login
+// Route::get('login/facebook', 'Auth\LoginController@redirectToFacebook')->name('login.facebook');
+// Route::get('login/facebook/callback', 'Auth\LoginController@handleFacebookCallback');

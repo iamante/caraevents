@@ -232,7 +232,7 @@
                     var revenueChart = new Chart(ctx, {
                         type: 'bar',
                         data: {
-                            labels: ['Wedding','Birthday','Debut', 'Catering', 'Corporate'],
+                            labels: ['Wedding','Catering','Debut', 'Birthday', 'Corporate'],
                             datasets: [{
                                 label: 'Popular Services',
                                 data: dataItem,

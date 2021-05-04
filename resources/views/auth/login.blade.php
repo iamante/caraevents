@@ -70,12 +70,19 @@
                                 Or sign in using   
                             </p>
 
-                        <ul class="d-flex align-items-center justify-content-around more-oauth-login-list text-uppercase list-unstyled">
+                        <ul class="d-flex align-items-center justify-content-around more-oauth-login-list list-unstyled">
                             <li class="d-flex justify-content-center border px-3 py-2 w-100 btn btn-light ">
-                                <img src="{{ asset('images/icons/google.svg')}}" alt="" class="mx-1" width="15">
-                                <a href="login/google" class="text-decoration-none text-muted">google</a>
+                                <img src="{{ asset('images/icons/google.svg')}}" alt="" class="mx-2" width="15">
+                                <a href="login/google" class="text-decoration-none text-muted">Sign in with google</a>
                             </li>
                         </ul>
+
+                        {{-- <ul class="d-flex align-items-center justify-content-around more-oauth-login-list list-unstyled">
+                            <li class="d-flex justify-content-center align-items-center border px-3 py-2 w-100 btn btn-light ">
+                                <i class="fab fa-facebook-f text-primary pr-2" style="font-size: 16px;"></i>
+                                <a href="" class="text-decoration-none text-muted">Sign in with Facebook</a>
+                            </li>
+                        </ul> --}}
 
                         <div class="pt-5 text-muted">
                             <small>

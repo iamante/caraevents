@@ -55,7 +55,7 @@
                                         </div>
                                         <div class="card-footer d-flex justify-content-between px-3 py-2">
                                             <div>
-                                                @if ($reserve->confirmation == 0)
+                                                @if ($reserve->status == 0)
                                                     <p class="mb-0">Status: <span class="bg-danger px-4 py-1 rounded text-white" style="font-size: 12px">Pending</span></small>
                                                 @else
                                                     <p class="mb-0">Status: <span class="bg-success px-4 py-1 rounded text-white" style="font-size: 12px">Confirmed</span></p>

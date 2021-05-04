@@ -52,7 +52,7 @@
                         <div class="d-flex justify-content-between">
                             <div class="form-group w-100 mr-2">
                                 <label for="customer_name">First Name</label>
-                                <input type="text" name="customer_name" class="form-control shadow-sm border rounded-0" value="{{ auth()->user()->name }}" placeholder="First Name" required>
+                                <input type="text" name="customer_name" class="form-control shadow-sm  rounded-0"  required>
                                 <div class="invalid-feedback text-center">
                                     Please input your first name.
                                 </div>

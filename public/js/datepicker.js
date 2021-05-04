@@ -1,5 +1,4 @@
 $(function() {
-
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, "0");
     var mm = String(today.getMonth() + 1).padStart(2, "0");
@@ -12,7 +11,7 @@ $(function() {
     var m = nowDate.getMonth() + 1;
     var y = nowDate.getFullYear();
 
-    var todayFormattedDate = y + "-"+ m + "-" + d;
+    var todayFormattedDate = y + "-" + m + "-" + d;
 
     var expireDate = new Date(todayDate);
     expireDate.setFullYear(expireDate.getFullYear() + 1);
@@ -46,8 +45,6 @@ $(function() {
     //         })
     //         .tooltip({ show: { effect: "blind", duration: 800 } });
 
-    
-
     function find_duplicate_in_array(arra1) {
         var object = {};
         var result = [];
@@ -68,7 +65,6 @@ $(function() {
 
     let occupiedDates = find_duplicate_in_array(dates);
 
-
     $(".datepicker").datetimepicker({
         timepicker: false,
         inline: true,
@@ -80,20 +76,18 @@ $(function() {
         formatDate: "Y-m-d",
         minDate: todayFormattedDate,
         maxDate: expiredDate,
-        onGenerate: function(){
-            $(".xdsoft_highlighted_default")
-            .attr({
+        onGenerate: function() {
+            $(".xdsoft_highlighted_default").attr({
                 "data-toggle": "tooltip",
                 "data-placement": "bottom",
                 title: "This date is fully scheduled."
-            })
+            });
 
-            $(".xdsoft_highlighted_default > div")
-            .attr({
+            $(".xdsoft_highlighted_default > div").attr({
                 "data-toggle": "tooltip",
                 "data-placement": "bottom",
                 title: "This date is fully scheduled."
-            })
+            });
         },
         onSelectDate: function(current_time, input) {
             let d = new Date(input.val());
