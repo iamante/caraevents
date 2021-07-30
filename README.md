@@ -1,25 +1,16 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+<h1>Caraevents Management System</h1>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+An online reservation system that focuses on reservation, inquiries and advertising the client's product thru online, build using Laravel Framework and Bootstrap. A capstone project for the Bachelor's Degree of Information Technology in Access Computer College - lagro.
 
-## About Laravel
+## Getting Started
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Pre-requisite
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- [XAMPP](https://www.apachefriends.org/download.html)
+- [NPM](https://nodejs.org/en/download/)
+- [Git/Git bash](https://git-scm.com/downloads)
+- [Composer](https://getcomposer.org/download/)
+- Knowledge in PHP and MySQL
 
 ## Learning Laravel
 
@@ -44,18 +35,17 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 - **[DevSquad](https://devsquad.com)**
 - **[OP.GG](https://op.gg)**
 
-## Contributing
+## Built with
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Main Tech
+- HTML, CSS, SASS, Javascript, PHP and MySQL
+- [Laravel Framework](https://laravel.com)
+- [JQuery](https://jquery.com)
+- [Bootstrap 4](https://getbootstrap.com)
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Plugin
+- [Voyager](https://voyager.devdojo.com) - Admin package for Laravel
+- [Chart.js](https://www.chartjs.org) - Javascript plugin for flexible charting
+- [Typeahead.js](https://twitter.github.io/typeahead.js/example) - Auto suggestion javascript plugin
+- [Slick.js](https://kenwheeler.github.io/slick) - Easy carousel javascript plugin
+- [jQuery datetimepicker](https://xdsoft.net/jqplugins/datetimepicker) - Date and Time picker calendar plugin
