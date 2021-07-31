@@ -2,7 +2,7 @@
 
 ![Caraevents](public/images/GIF_2.gif)
 
-An online reservation system that focuses on reservation, inquiries and advertising the client's product thru online, build using Laravel Framework and Bootstrap. A capstone project for the Bachelor's Degree of Information Technology in Access Computer College - lagro.
+An online reservation system that focuses on reservation, inquiries and advertising the client's product thru online, built using Laravel Framework and Bootstrap. A capstone project for the Bachelor's Degree of Information Technology in Access Computer College - lagro.
 
 ## Getting Started
 
