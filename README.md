@@ -1,4 +1,6 @@
-<h1>Caraevents Management System</h1>
+# Caraevents Management System
+
+![Caraevents](public/images/GIF_2.gif)
 
 An online reservation system that focuses on reservation, inquiries and advertising the client's product thru online, build using Laravel Framework and Bootstrap. A capstone project for the Bachelor's Degree of Information Technology in Access Computer College - lagro.
 
@@ -12,28 +14,100 @@ An online reservation system that focuses on reservation, inquiries and advertis
 - [Composer](https://getcomposer.org/download/)
 - Knowledge in PHP and MySQL
 
-## Learning Laravel
+### Installation
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+#### 1. Clone the Repository <a name="clone-repo"></a>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+a. In your terminal Go to `C:/xampp/htdocs`
 
-## Laravel Sponsors
+```bash
+cd 'C:/xampp/htdocs'
+```
+b. Clone the repository
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+```bash
+git clone https://github.com/iamante/caraevents.git
+```
 
-### Premium Partners
+c. Go to the `caraevents` directory
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+```bash
+cd 'caraevents'
+```
+
+d. Install Dependencies
+
+```bash
+composer install
+```
+#### 2. Database configuration
+
+a. Run both `Apache` and `mySQL` in the XAMPP Control Panel.
+
+b. Go to `localhost/phpmyadmin` in your browser. Then login and create a database named `caraevents`. In the main directory of `caraevents`, find .env.example. Open it and update the database information below. After that, save it as .env.
+
+> **Note**
+> Set your APP_URL in your .env file. This is needed for Voyager to correctly resolve asset URLs.
+> 
+> The default credentials for the phpMyAdmin are:
+>
+> username: root
+>
+> password:
+>
+> _You can leave the password blank._
+
+```
+APP_NAME='Caraevents'
+APP_URL=http://localhost:8000 
+...
+DB_DATABASE=caraevents
+DB_USERNAME=YourUsername
+DB_PASSWORD=YourPassword
+```
+c. Go to your terminal to generate key
+
+```bash
+php artisan key:generate
+```
+
+d. Run the Database Migration
+
+```
+php artisan migrate
+```
+
+e. Migrate dummy data
+
+```
+composer dump-autoload
+```
+
+```
+php artisan db:seed
+```
+
+f. Create a symbolic link:
+
+```bash
+php artisan storage:link
+```
+
+g. Install voyager and packages
+
+```bash
+npm install
+```
+
+#### 3. Check the Apps
+
+a. `npm run dev`
+
+b. `php artisan serve`
+
+c. Visit `localhost:8000` in your browser
+
+d. Visit `/admin` if you want to access the Voyager admin backend. Admin User/Password: `admin@admin.com/password`. Admin Web User/Password: `caraevents@admin.com/123123123`
 
 ## Built with
 
